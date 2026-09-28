@@ -146,6 +146,7 @@ def main():
     files = [p.relative_to(ROOT) for p in sorted((SRC / 'pages').glob('*.html')) + sorted((SRC / 'partials').glob('*.html'))]
     report = {}
     for lang in langs:
+        SPACING.clear()  # spacing is learned per language
         tables, glob = {}, {}
         for rel in files:
             old_en = git_show(ref, str(rel))
