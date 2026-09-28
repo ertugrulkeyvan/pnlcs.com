@@ -1,7 +1,7 @@
 <!--
 title: Showcase
 cta: no
-description: Hosting companies running PNLCS in production.
+description: Hosting companies running PNLCS in production, and how to add yours with a pull request.
 section: Community
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Community
     <div>
     {{crumbs}}
     <h1>Hosting companies running PNLCS</h1>
-    <p class="lede">Real businesses billing real customers with PNLCS. If you run it in production, add your company to this page.</p>
+    <p class="lede">Real businesses billing real customers with PNLCS. If you run it in production, add your company with a pull request.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Add your company</a><a class="btn btn--ghost-dark" href="#add">How it works</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="The ikahost.com storefront, running on PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Shared hosting, one-click Docker apps and virtual servers, sold and managed entirely through PNLCS. Orders are provisioned on Panelica and Proxmox VE, and customers manage their services from the PNLCS client portal.</p>
-        <p class="draft-note">Draft entry for review. Wording to be confirmed with ikahost and the PNLCS team before publishing.</p>
-      </div>
-      <dl>
-        <dt>Sells</dt><dd>Shared hosting, Docker apps, VPS</dd>
-        <dt>Provisioning</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Portal</dt><dd>Custom theme</dd>
-        <dt>Contributes</dt><dd>Themes, add-ons, pull requests</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Companies</h2><p class="lede">Company entries are written by the companies themselves, in English.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>Running PNLCS? Add your company.</h2>
-      <ol>
-        <li>Open a discussion on GitHub with your company name and website.</li>
-        <li>Tell us what you sell and which modules you use.</li>
-        <li>A maintainer adds you to this page.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Start a discussion</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Add your company</h2>
+      <p class="lede">The showcase is a file in this website’s repository. GitHub can open a pull request for you from the browser; you do not need to install anything.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Edit the showcase file</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Full instructions</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Open the showcase file on GitHub</strong><span>The button opens it in the editor. GitHub makes a copy in your account the first time.</span></span></li>
+      <li><span><strong>Add your entry</strong><span>Name, website, what you sell and the modules you run. Keep the description under 400 characters.</span></span></li>
+      <li><span><strong>Open a pull request</strong><span>An automatic check builds the site with your entry. A maintainer reviews it and merges.</span></span></li>
+    </ol>
   </div>
 </section>

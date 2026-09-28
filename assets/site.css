@@ -687,3 +687,34 @@ a.mega-feature:hover { background: var(--navy-tint); color: var(--text); }
 .menu li a:hover .mi { color: var(--white); }
 @media (max-width: 1020px) { .menu li a .mi { color: var(--on-dark); } }
 .mega-feature--code code { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
+
+/* ---------- People + showcase ---------- */
+.avatar-row { display: inline-flex; margin-right: 8px; vertical-align: middle; }
+.avatar-row img { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); margin-left: -8px; background: var(--ink-2); }
+.avatar-row img:first-child { margin-left: 0; }
+.status dd { display: inline-flex; align-items: center; }
+.people { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.people .lede { margin: 14px 0 28px; }
+.next-contributor { margin-top: 28px; padding: 22px 24px; border: 1.5px dashed #c5cadb; border-radius: var(--radius-l); }
+.next-contributor p { margin-bottom: 16px; color: var(--muted); }
+.next-contributor strong { color: var(--text); }
+.people-showcase { display: grid; gap: 18px; }
+.people-showcase h2 { font-size: 1.5rem; }
+@media (max-width: 900px) { .people { grid-template-columns: minmax(0, 1fr); } }
+
+.cases { display: grid; gap: 20px; }
+.case { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--card); }
+.case-shot { display: block; border-right: 1px solid var(--line); background: var(--paper); }
+.case-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.case-body { padding: clamp(22px, 3vw, 32px); }
+.case h3 { font-size: 1.6rem; font-stretch: 85%; }
+.case .where { color: var(--muted); margin-top: 4px; }
+.case-body > p:not(.where):not(.draft-note) { margin-top: 14px; }
+.case dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 18px 0 0; }
+.case dt { color: var(--muted); }
+.case dd { margin: 0; font-weight: 500; }
+.case--compact { grid-template-columns: minmax(0, 1fr); }
+.case--compact .case-shot { border-right: 0; border-bottom: 1px solid var(--line); aspect-ratio: 16 / 9; }
+.case--compact h3 { font-size: 1.35rem; }
+@media (max-width: 900px) { .case { grid-template-columns: minmax(0, 1fr); } .case-shot { border-right: 0; border-bottom: 1px solid var(--line); } }
+.status div { align-items: center; }

@@ -22,5 +22,9 @@
   "js_days_ago": "há {n} dias",
   "js_month_ago": "há um mês",
   "js_months_ago": "há {n} meses",
-  "js_theme": "Tema {name}"
+  "js_theme": "Tema {name}",
+  "showcase_sells": "Vende",
+  "showcase_runs_on": "Usa",
+  "showcase_location": "Sede",
+  "showcase_draft": "Registro em rascunho para revisão. O texto será confirmado com a empresa e a equipe do PNLCS antes da publicação."
 }

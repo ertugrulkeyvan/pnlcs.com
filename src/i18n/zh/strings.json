@@ -22,5 +22,9 @@
   "js_days_ago": "{n} 天前",
   "js_month_ago": "1 个月前",
   "js_months_ago": "{n} 个月前",
-  "js_theme": "{name} 主题"
+  "js_theme": "{name} 主题",
+  "showcase_sells": "销售",
+  "showcase_runs_on": "使用",
+  "showcase_location": "所在地",
+  "showcase_draft": "待审核的草稿条目。发布前，措辞需与该公司和 PNLCS 团队确认。"
 }

@@ -22,5 +22,9 @@
   "js_days_ago": "{n} days ago",
   "js_month_ago": "a month ago",
   "js_months_ago": "{n} months ago",
-  "js_theme": "{name} theme"
+  "js_theme": "{name} theme",
+  "showcase_sells": "Sells",
+  "showcase_runs_on": "Runs on",
+  "showcase_location": "Based in",
+  "showcase_draft": "Draft entry for review. Wording to be confirmed with the company and the PNLCS team before publishing."
 }

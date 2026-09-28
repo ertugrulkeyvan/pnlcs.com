@@ -1,0 +1,12 @@
+[
+  {
+    "name": "ikahost",
+    "url": "https://ikahost.com/",
+    "location": "Türkiye",
+    "description": "Shared hosting, one-click Docker apps and virtual servers, sold and managed entirely through PNLCS. Orders are provisioned on Panelica and Proxmox VE, and customers manage their services from the PNLCS client portal.",
+    "sells": ["Shared hosting", "Docker apps", "VPS"],
+    "runs_on": ["Panelica", "Proxmox VE"],
+    "screenshot": "assets/showcase/ikahost.webp",
+    "draft": true
+  }
+]

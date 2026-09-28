@@ -110,11 +110,17 @@
 
   // Contributors: count everywhere, full wall where #contributors exists
   var wall = document.getElementById('contributors');
-  if (wall || document.querySelector('[data-stat="contributors"]')) {
+  var avatars = document.querySelector('[data-avatars]');
+  if (wall || avatars || document.querySelector('[data-stat="contributors"]')) {
     json('https://api.github.com/repos/' + REPO + '/contributors?per_page=100').then(function (list) {
       var people = (Array.isArray(list) ? list : []).filter(function (c) { return c.type === 'User'; });
       if (!people.length) return;
       setStat('contributors', String(people.length));
+      if (avatars) {
+        avatars.innerHTML = people.slice(0, 6).map(function (c) {
+          return '<img src="' + c.avatar_url + '&s=56" alt="" width="28" height="28" loading="lazy">';
+        }).join('');
+      }
       if (!wall) return;
       var community = people.filter(function (c) { return c.login !== 'Panelica'; });
       wall.innerHTML = community.map(function (c) {

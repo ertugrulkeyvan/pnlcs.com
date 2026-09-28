@@ -49,6 +49,33 @@ Write `{{logo:stripe}}` in a page and the build puts the brand mark there. Marks
 The list of known slugs is `LOGOS` in `build.py`. App and OS logos in `assets/apps/` come from the PNLCS app catalog
 (`public/img/apps`). Flags in the language menu come from [flag-icons](https://github.com/lipis/flag-icons) (MIT).
 
+## Add your company to the showcase
+
+If you run PNLCS in production, you can list your company on the [showcase page](https://pnlcs.com/showcase.html) with a pull request.
+You can do all of it in the browser.
+
+1. Open [`data/showcase.json`](data/showcase.json) and press the pencil icon. GitHub makes a copy (fork) in your account.
+2. Add your entry at the end of the list:
+
+   ```json
+   {
+     "name": "Your Hosting Co",
+     "url": "https://example.com/",
+     "location": "Germany",
+     "description": "What you sell and how PNLCS is used. English, under 400 characters.",
+     "sells": ["Shared hosting", "VPS"],
+     "runs_on": ["cPanel", "Stripe"],
+     "screenshot": "assets/showcase/your-hosting-co.webp"
+   }
+   ```
+
+   `name`, `url`, `description`, `sells` and `runs_on` are required. `location` and `screenshot` are optional.
+   A screenshot must be a `.webp` of your public website, 1600 px wide, under 300 KB, in `assets/showcase/`.
+3. Choose **Propose changes**, then **Create pull request**. Add `?template=showcase.md` to the pull request address to get the checklist.
+
+An automatic check builds the site with your entry. It fails if a required field is missing, the URL is not `https://`, or the screenshot file does not exist.
+A maintainer then reviews and merges it. Entries stay in English on every language version of the site.
+
 ## Content rules
 
 Every number and feature on the site must be verifiable in the PNLCS repository or its documentation. Where a module has not been tested end to end, the site says so. See `PRODUCT.md`.

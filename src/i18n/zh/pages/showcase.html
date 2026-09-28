@@ -1,7 +1,7 @@
 <!--
 title: 用户案例
 cta: no
-description: 在生产环境中使用 PNLCS 的主机服务商。
+description: 在生产环境中运行 PNLCS 的主机服务商，以及如何通过 pull request 添加你的公司。
 section: 社区
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: 社区
     <div>
     {{crumbs}}
     <h1>正在使用 PNLCS 的主机服务商</h1>
-    <p class="lede">这些真实的企业正在用 PNLCS 向真实的客户收费。如果你也在生产环境中使用，欢迎把你的公司加到这个页面。</p>
+    <p class="lede">这些都是用 PNLCS 向真实客户收费的真实企业。如果你在生产环境中运行 PNLCS，请通过 pull request 添加你的公司。</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">添加你的公司</a><a class="btn btn--ghost-dark" href="#add">操作流程</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="运行在 PNLCS 上的 ikahost.com 店面"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>虚拟主机、一键 Docker 应用和云服务器，全部通过 PNLCS 销售和管理。订单在 Panelica 和 Proxmox VE 上开通，客户在 PNLCS 客户中心管理自己的服务。</p>
-        <p class="draft-note">待审核的草稿条目。正式发布前，措辞需与 ikahost 和 PNLCS 团队确认。</p>
-      </div>
-      <dl>
-        <dt>销售产品</dt><dd>虚拟主机、Docker 应用、VPS</dd>
-        <dt>开通平台</dt><dd>Panelica、Proxmox VE</dd>
-        <dt>客户中心</dt><dd>自定义主题</dd>
-        <dt>贡献内容</dt><dd>主题、插件、pull request</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>公司</h2><p class="lede">公司条目由各公司自行撰写，使用英文。</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>正在使用 PNLCS？添加你的公司。</h2>
-      <ol>
-        <li>在 GitHub 上发起一个讨论，写明公司名称和网站。</li>
-        <li>告诉我们你销售什么产品、使用了哪些模块。</li>
-        <li>维护者会把你添加到这个页面。</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">发起讨论</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>添加你的公司</h2>
+      <p class="lede">用户案例是本网站代码仓库中的一个文件。GitHub 可以在浏览器中替你提交 pull request；你不需要安装任何软件。</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">编辑用户案例文件</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">完整说明</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>在 GitHub 上打开用户案例文件</strong><span>按钮会在编辑器中打开该文件。第一次使用时，GitHub 会在你的账户中创建一份副本。</span></span></li>
+      <li><span><strong>添加你的条目</strong><span>名称、网站、你销售的服务和使用的模块。描述须少于 400 个字符。</span></span></li>
+      <li><span><strong>提交 pull request</strong><span>自动检查会用你的条目构建网站，维护者审核后合并。</span></span></li>
+    </ol>
   </div>
 </section>

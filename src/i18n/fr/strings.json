@@ -22,5 +22,9 @@
   "js_days_ago": "il y a {n} jours",
   "js_month_ago": "il y a un mois",
   "js_months_ago": "il y a {n} mois",
-  "js_theme": "Thème {name}"
+  "js_theme": "Thème {name}",
+  "showcase_sells": "Vend",
+  "showcase_runs_on": "Utilise",
+  "showcase_location": "Siège",
+  "showcase_draft": "Entrée provisoire, en cours de relecture. Le texte doit être validé avec l’entreprise et l’équipe PNLCS avant publication."
 }

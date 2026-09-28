@@ -1,7 +1,7 @@
 <!--
 title: Références
 cta: no
-description: Des hébergeurs qui utilisent PNLCS en production.
+description: Des hébergeurs qui utilisent PNLCS en production, et comment ajouter le vôtre avec une pull request.
 section: Communauté
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Communauté
     <div>
     {{crumbs}}
     <h1>Des hébergeurs qui utilisent PNLCS</h1>
-    <p class="lede">De vraies entreprises qui facturent de vrais clients avec PNLCS. Si vous l’utilisez en production, ajoutez votre entreprise à cette page.</p>
+    <p class="lede">De vraies entreprises qui facturent de vrais clients avec PNLCS. Si vous l’utilisez en production, ajoutez votre entreprise avec une pull request.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Ajouter votre entreprise</a><a class="btn btn--ghost-dark" href="#add">Comment procéder</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="La vitrine d’ikahost.com, qui fonctionne avec PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Hébergement mutualisé, applications Docker en un clic et serveurs virtuels, vendus et gérés entièrement via PNLCS. Les commandes sont provisionnées sur Panelica et Proxmox VE, et les clients gèrent leurs services depuis l’espace client PNLCS.</p>
-        <p class="draft-note">Entrée provisoire, en attente de relecture. Formulation à confirmer avec ikahost et l’équipe PNLCS avant publication.</p>
-      </div>
-      <dl>
-        <dt>Vend</dt><dd>Hébergement mutualisé, applications Docker, VPS</dd>
-        <dt>Provisionnement</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Espace client</dt><dd>Thème personnalisé</dd>
-        <dt>Contribue</dt><dd>Thèmes, modules complémentaires, pull requests</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Entreprises</h2><p class="lede">Les entrées sont rédigées par les entreprises elles-mêmes, en anglais.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>Vous utilisez PNLCS ? Ajoutez votre entreprise.</h2>
-      <ol>
-        <li>Ouvrez une discussion sur GitHub avec le nom et le site web de votre entreprise.</li>
-        <li>Dites-nous ce que vous vendez et quels modules vous utilisez.</li>
-        <li>Un mainteneur vous ajoute à cette page.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Lancer une discussion</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Ajouter votre entreprise</h2>
+      <p class="lede">Les références sont un fichier du dépôt de ce site. GitHub peut ouvrir la pull request pour vous depuis le navigateur ; vous n’avez rien à installer.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Modifier le fichier des références</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Instructions complètes</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Ouvrez le fichier des références sur GitHub</strong><span>Le bouton l’ouvre dans l’éditeur. La première fois, GitHub crée une copie dans votre compte.</span></span></li>
+      <li><span><strong>Ajoutez votre entrée</strong><span>Nom, site web, ce que vous vendez et les modules que vous utilisez. La description doit faire moins de 400 caractères.</span></span></li>
+      <li><span><strong>Ouvrez une pull request</strong><span>Une vérification automatique construit le site avec votre entrée. Un mainteneur la relit et la fusionne.</span></span></li>
+    </ol>
   </div>
 </section>

@@ -1,7 +1,7 @@
 <!--
 title: 導入事例
 cta: no
-description: PNLCSを本番環境で運用しているホスティング事業者。
+description: PNLCSを本番環境で運用しているホスティング事業者と、プルリクエストで自社を追加する方法。
 section: コミュニティ
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: コミュニティ
     <div>
     {{crumbs}}
     <h1>PNLCSを運用しているホスティング事業者</h1>
-    <p class="lede">実在の事業者が、PNLCSで実際の顧客に請求を行っています。本番環境で運用している方は、このページに御社を追加してください。</p>
+    <p class="lede">PNLCSで実際の顧客に請求している実在の事業者です。本番環境で運用している場合は、プルリクエストで自社を追加してください。</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">自社を追加する</a><a class="btn btn--ghost-dark" href="#add">追加の手順</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="PNLCSで稼働するikahost.comの販売サイト"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>共用ホスティング、ワンクリックのDockerアプリ、仮想サーバーを、すべてPNLCSで販売・管理しています。注文はPanelicaとProxmox VE上でプロビジョニングされ、顧客はPNLCSの顧客ポータルからサービスを管理します。</p>
-        <p class="draft-note">レビュー用の下書きです。公開前にikahostおよびPNLCSチームと文言を確認します。</p>
-      </div>
-      <dl>
-        <dt>販売内容</dt><dd>共用ホスティング、Dockerアプリ、VPS</dd>
-        <dt>プロビジョニング</dt><dd>Panelica、Proxmox VE</dd>
-        <dt>ポータル</dt><dd>カスタムテーマ</dd>
-        <dt>貢献</dt><dd>テーマ、アドオン、プルリクエスト</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>事業者</h2><p class="lede">各エントリーは事業者自身が英語で書いています。</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>PNLCSを運用中ですか？御社を掲載しましょう。</h2>
-      <ol>
-        <li>会社名とWebサイトを添えて、GitHubでディスカッションを作成してください。</li>
-        <li>販売しているサービスと、使用しているモジュールを教えてください。</li>
-        <li>メンテナーがこのページに追加します。</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">ディスカッションを始める</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>自社を追加する</h2>
+      <p class="lede">導入事例はこのWebサイトのリポジトリにあるファイルです。GitHubならブラウザからプルリクエストを作成できるため、何もインストールする必要はありません。</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">導入事例ファイルを編集する</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">詳しい手順</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>GitHubで導入事例ファイルを開く</strong><span>ボタンを押すとエディターで開きます。初回はGitHubがあなたのアカウントにコピーを作成します。</span></span></li>
+      <li><span><strong>エントリーを追加する</strong><span>名前、Webサイト、販売しているサービス、使っているモジュールを記入します。説明は400文字未満にしてください。</span></span></li>
+      <li><span><strong>プルリクエストを作成する</strong><span>自動チェックがエントリーを含めてサイトをビルドします。メンテナーがレビューしてマージします。</span></span></li>
+    </ol>
   </div>
 </section>

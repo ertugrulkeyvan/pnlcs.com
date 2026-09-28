@@ -22,5 +22,9 @@
   "js_days_ago": "hace {n} días",
   "js_month_ago": "hace un mes",
   "js_months_ago": "hace {n} meses",
-  "js_theme": "Tema {name}"
+  "js_theme": "Tema {name}",
+  "showcase_sells": "Vende",
+  "showcase_runs_on": "Funciona con",
+  "showcase_location": "Sede",
+  "showcase_draft": "Entrada en borrador para revisión. El texto se confirmará con la empresa y el equipo de PNLCS antes de publicarse."
 }

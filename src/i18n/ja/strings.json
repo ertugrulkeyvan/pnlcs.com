@@ -22,5 +22,9 @@
   "js_days_ago": "{n}日前",
   "js_month_ago": "1か月前",
   "js_months_ago": "{n}か月前",
-  "js_theme": "{name}テーマ"
+  "js_theme": "{name}テーマ",
+  "showcase_sells": "販売",
+  "showcase_runs_on": "利用環境",
+  "showcase_location": "所在地",
+  "showcase_draft": "レビュー用の下書きです。文面は公開前に事業者およびPNLCSチームと確認します。"
 }

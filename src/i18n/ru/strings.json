@@ -22,5 +22,9 @@
   "js_days_ago": "{n} дн. назад",
   "js_month_ago": "месяц назад",
   "js_months_ago": "{n} мес. назад",
-  "js_theme": "Тема {name}"
+  "js_theme": "Тема {name}",
+  "showcase_sells": "Продаёт",
+  "showcase_runs_on": "Работает на",
+  "showcase_location": "Расположение",
+  "showcase_draft": "Черновик записи для проверки. Формулировки будут согласованы с компанией и командой PNLCS до публикации."
 }

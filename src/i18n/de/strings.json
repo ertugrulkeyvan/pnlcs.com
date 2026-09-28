@@ -22,5 +22,9 @@
   "js_days_ago": "vor {n} Tagen",
   "js_month_ago": "vor einem Monat",
   "js_months_ago": "vor {n} Monaten",
-  "js_theme": "Theme {name}"
+  "js_theme": "Theme {name}",
+  "showcase_sells": "Angebot",
+  "showcase_runs_on": "Läuft mit",
+  "showcase_location": "Standort",
+  "showcase_draft": "Entwurf zur Prüfung. Der Wortlaut wird vor der Veröffentlichung mit dem Unternehmen und dem PNLCS-Team abgestimmt."
 }

@@ -1,7 +1,7 @@
 <!--
 title: Vitrin
 cta: no
-description: PNLCS'i canlı ortamda kullanan hosting firmaları.
+description: PNLCS'i canlı ortamda kullanan hosting firmaları ve kendi firmanızı pull request ile nasıl ekleyeceğiniz.
 section: Topluluk
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Topluluk
     <div>
     {{crumbs}}
     <h1>PNLCS kullanan hosting firmaları</h1>
-    <p class="lede">Gerçek müşterilerini PNLCS ile faturalandıran gerçek işletmeler. PNLCS'i canlı ortamda kullanıyorsanız firmanızı bu sayfaya ekleyin.</p>
+    <p class="lede">PNLCS ile gerçek müşterilerine fatura kesen gerçek firmalar. PNLCS'i canlı ortamda kullanıyorsanız firmanızı pull request ile ekleyin.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Firmanızı ekleyin</a><a class="btn btn--ghost-dark" href="#add">Nasıl işliyor</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="PNLCS ile çalışan ikahost.com mağazası"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Paylaşımlı hosting, tek tıkla Docker uygulamaları ve sanal sunucular; satışı ve yönetimi tamamen PNLCS üzerinden. Siparişler Panelica ve Proxmox VE üzerinde kurulur, müşteriler de hizmetlerini PNLCS müşteri panelinden yönetir.</p>
-        <p class="draft-note">İnceleme için taslak kayıt. Metin, yayımlanmadan önce ikahost ve PNLCS ekibiyle netleştirilecek.</p>
-      </div>
-      <dl>
-        <dt>Sattıkları</dt><dd>Paylaşımlı hosting, Docker uygulamaları, VPS</dd>
-        <dt>Hizmet kurulumu</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Müşteri paneli</dt><dd>Özel tema</dd>
-        <dt>Katkıları</dt><dd>Temalar, eklentiler, pull request'ler</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Firmalar</h2><p class="lede">Firma bilgilerini firmalar kendileri, İngilizce olarak yazar.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>PNLCS kullanıyor musunuz? Firmanızı ekleyin.</h2>
-      <ol>
-        <li>GitHub'da firma adınız ve web sitenizle bir tartışma başlatın.</li>
-        <li>Neler sattığınızı ve hangi modülleri kullandığınızı anlatın.</li>
-        <li>Bir proje sorumlusu sizi bu sayfaya ekler.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Tartışma başlatın</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Firmanızı ekleyin</h2>
+      <p class="lede">Vitrin, bu web sitesinin deposundaki bir dosyadır. GitHub pull request'i sizin için tarayıcıdan açabilir; hiçbir şey kurmanız gerekmez.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Vitrin dosyasını düzenleyin</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Ayrıntılı talimatlar</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Vitrin dosyasını GitHub'da açın</strong><span>Düğme dosyayı düzenleyicide açar. İlk seferde GitHub, hesabınızda bir kopya oluşturur.</span></span></li>
+      <li><span><strong>Bilgilerinizi ekleyin</strong><span>Firma adı, web sitesi, ne sattığınız ve kullandığınız modüller. Açıklamayı 400 karakterin altında tutun.</span></span></li>
+      <li><span><strong>Pull request açın</strong><span>Otomatik bir kontrol, siteyi eklediğiniz bilgilerle oluşturur. Bir proje sorumlusu değişikliği inceler ve birleştirir.</span></span></li>
+    </ol>
   </div>
 </section>

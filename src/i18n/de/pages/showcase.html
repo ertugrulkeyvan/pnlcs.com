@@ -1,7 +1,7 @@
 <!--
 title: Referenzen
 cta: no
-description: Hosting-Unternehmen, die PNLCS im Produktivbetrieb einsetzen.
+description: Hosting-Unternehmen, die PNLCS im Produktivbetrieb einsetzen, und wie Sie Ihres per Pull Request eintragen.
 section: Community
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Community
     <div>
     {{crumbs}}
     <h1>Hosting-Unternehmen mit PNLCS</h1>
-    <p class="lede">Echte Unternehmen, die echte Kunden mit PNLCS abrechnen. Wenn Sie PNLCS produktiv einsetzen, tragen Sie Ihre Firma auf dieser Seite ein.</p>
+    <p class="lede">Echte Unternehmen, die mit PNLCS echte Kunden abrechnen. Wenn Sie PNLCS im Produktivbetrieb einsetzen, tragen Sie Ihr Unternehmen per Pull Request ein.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Unternehmen eintragen</a><a class="btn btn--ghost-dark" href="#add">So funktioniert es</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Der Shop von ikahost.com, betrieben mit PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Shared Hosting, Docker-Apps per Klick und virtuelle Server, vollständig über PNLCS verkauft und verwaltet. Bestellungen werden auf Panelica und Proxmox VE bereitgestellt, und Kunden verwalten ihre Dienste im PNLCS-Kundenportal.</p>
-        <p class="draft-note">Entwurf zur Prüfung. Der Wortlaut wird vor der Veröffentlichung mit ikahost und dem PNLCS-Team abgestimmt.</p>
-      </div>
-      <dl>
-        <dt>Verkauft</dt><dd>Shared Hosting, Docker-Apps, VPS</dd>
-        <dt>Provisionierung</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Portal</dt><dd>Eigenes Theme</dd>
-        <dt>Trägt bei</dt><dd>Themes, Add-ons, Pull Requests</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Unternehmen</h2><p class="lede">Die Einträge schreiben die Unternehmen selbst, auf Englisch.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>Sie nutzen PNLCS? Tragen Sie Ihre Firma ein.</h2>
-      <ol>
-        <li>Eröffnen Sie auf GitHub eine Diskussion mit Firmenname und Website.</li>
-        <li>Sagen Sie uns, was Sie verkaufen und welche Module Sie nutzen.</li>
-        <li>Ein Maintainer nimmt Sie auf dieser Seite auf.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Diskussion starten</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Unternehmen eintragen</h2>
+      <p class="lede">Die Referenzen sind eine Datei im Repository dieser Website. GitHub kann den Pull Request für Sie im Browser öffnen; Sie müssen nichts installieren.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Referenzdatei bearbeiten</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Vollständige Anleitung</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Referenzdatei auf GitHub öffnen</strong><span>Die Schaltfläche öffnet sie im Editor. Beim ersten Mal legt GitHub eine Kopie in Ihrem Konto an.</span></span></li>
+      <li><span><strong>Eintrag hinzufügen</strong><span>Name, Website, was Sie verkaufen und welche Module Sie nutzen. Die Beschreibung muss unter 400 Zeichen bleiben.</span></span></li>
+      <li><span><strong>Pull Request öffnen</strong><span>Eine automatische Prüfung erstellt die Website mit Ihrem Eintrag. Ein Maintainer sieht ihn durch und führt den Merge durch.</span></span></li>
+    </ol>
   </div>
 </section>

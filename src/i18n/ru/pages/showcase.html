@@ -1,7 +1,7 @@
 <!--
 title: Кто использует
 cta: no
-description: Хостинг-компании, которые используют PNLCS в работе.
+description: Хостинг-компании, использующие PNLCS в рабочей среде, и как добавить свою через pull request.
 section: Сообщество
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Сообщество
     <div>
     {{crumbs}}
     <h1>Хостинг-компании, работающие на PNLCS</h1>
-    <p class="lede">Реальные компании выставляют счета реальным клиентам через PNLCS. Если вы используете его в работе, добавьте свою компанию на эту страницу.</p>
+    <p class="lede">Реальные компании, которые выставляют счета реальным клиентам через PNLCS. Если вы используете PNLCS в рабочей среде, добавьте свою компанию через pull request.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Добавить компанию</a><a class="btn btn--ghost-dark" href="#add">Как это работает</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Витрина ikahost.com, работающая на PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Виртуальный хостинг, Docker-приложения в один клик и виртуальные серверы: продажа и управление полностью через PNLCS. Заказы выполняются на Panelica и Proxmox VE, а клиенты управляют услугами в личном кабинете PNLCS.</p>
-        <p class="draft-note">Черновик для проверки. Формулировки нужно согласовать с ikahost и командой PNLCS до публикации.</p>
-      </div>
-      <dl>
-        <dt>Продаёт</dt><dd>Виртуальный хостинг, Docker-приложения, VPS</dd>
-        <dt>Провижининг</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Личный кабинет</dt><dd>Собственная тема</dd>
-        <dt>Вклад в проект</dt><dd>Темы, дополнения, pull request</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Компании</h2><p class="lede">Записи о компаниях пишут сами компании, на английском языке.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>Используете PNLCS? Добавьте свою компанию.</h2>
-      <ol>
-        <li>Откройте обсуждение на GitHub, указав название компании и сайт.</li>
-        <li>Расскажите, что вы продаёте и какие модули используете.</li>
-        <li>Мейнтейнер добавит вас на эту страницу.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Начать обсуждение</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Добавить компанию</h2>
+      <p class="lede">Список компаний хранится в файле в репозитории этого сайта. GitHub может открыть pull request за вас прямо в браузере; ничего устанавливать не нужно.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Редактировать файл со списком компаний</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Полная инструкция</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Откройте файл со списком компаний на GitHub</strong><span>Кнопка открывает его в редакторе. В первый раз GitHub создаёт копию в вашем аккаунте.</span></span></li>
+      <li><span><strong>Добавьте свою запись</strong><span>Название, сайт, что вы продаёте и какие модули используете. Описание должно быть короче 400 символов.</span></span></li>
+      <li><span><strong>Откройте pull request</strong><span>Автоматическая проверка собирает сайт с вашей записью. Мейнтейнер просматривает её и выполняет слияние.</span></span></li>
+    </ol>
   </div>
 </section>

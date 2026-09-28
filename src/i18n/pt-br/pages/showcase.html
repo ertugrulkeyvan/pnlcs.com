@@ -1,7 +1,7 @@
 <!--
 title: Quem usa
 cta: no
-description: Empresas de hospedagem que usam o PNLCS em produção.
+description: Empresas de hospedagem que usam o PNLCS em produção, e como adicionar a sua com um pull request.
 section: Comunidade
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Comunidade
     <div>
     {{crumbs}}
     <h1>Empresas de hospedagem que usam o PNLCS</h1>
-    <p class="lede">Empresas reais cobrando clientes reais com o PNLCS. Se você usa o PNLCS em produção, adicione sua empresa a esta página.</p>
+    <p class="lede">Empresas reais cobrando clientes reais com o PNLCS. Se você usa o PNLCS em produção, adicione sua empresa com um pull request.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Adicione sua empresa</a><a class="btn btn--ghost-dark" href="#add">Como funciona</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="A loja do ikahost.com, rodando no PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Hospedagem compartilhada, apps Docker com instalação em um clique e servidores virtuais, vendidos e gerenciados inteiramente pelo PNLCS. Os pedidos são provisionados no Panelica e no Proxmox VE, e os clientes gerenciam seus serviços pelo portal do cliente do PNLCS.</p>
-        <p class="draft-note">Rascunho em revisão. Texto a ser confirmado com a ikahost e a equipe do PNLCS antes da publicação.</p>
-      </div>
-      <dl>
-        <dt>Vende</dt><dd>Hospedagem compartilhada, apps Docker, VPS</dd>
-        <dt>Provisionamento</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Portal</dt><dd>Tema personalizado</dd>
-        <dt>Contribui com</dt><dd>Temas, complementos, pull requests</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Empresas</h2><p class="lede">Os registros são escritos pelas próprias empresas, em inglês.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>Usa o PNLCS? Adicione sua empresa.</h2>
-      <ol>
-        <li>Abra uma discussão no GitHub com o nome e o site da sua empresa.</li>
-        <li>Conte o que você vende e quais módulos usa.</li>
-        <li>Um mantenedor adiciona você a esta página.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Iniciar uma discussão</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Adicione sua empresa</h2>
+      <p class="lede">A lista de empresas é um arquivo no repositório deste site. O GitHub pode abrir o pull request para você pelo navegador; não é preciso instalar nada.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Editar o arquivo de empresas</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Instruções completas</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Abra o arquivo de empresas no GitHub</strong><span>O botão abre o arquivo no editor. Na primeira vez, o GitHub cria uma cópia na sua conta.</span></span></li>
+      <li><span><strong>Adicione seu registro</strong><span>Nome, site, o que você vende e os módulos que usa. Mantenha a descrição com menos de 400 caracteres.</span></span></li>
+      <li><span><strong>Abra um pull request</strong><span>Uma verificação automática gera o site com o seu registro. Um mantenedor faz a revisão e incorpora a alteração.</span></span></li>
+    </ol>
   </div>
 </section>

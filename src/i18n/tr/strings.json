@@ -22,5 +22,9 @@
   "js_days_ago": "{n} gün önce",
   "js_month_ago": "bir ay önce",
   "js_months_ago": "{n} ay önce",
-  "js_theme": "{name} teması"
+  "js_theme": "{name} teması",
+  "showcase_sells": "Sattıkları",
+  "showcase_runs_on": "Kullandıkları",
+  "showcase_location": "Konum",
+  "showcase_draft": "İnceleme için taslak. Metin, yayımlanmadan önce firma ve PNLCS ekibiyle netleştirilecek."
 }

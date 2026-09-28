@@ -1,7 +1,7 @@
 <!--
 title: Casos reales
 cta: no
-description: Empresas de hosting que usan PNLCS en producción.
+description: Empresas de hosting que usan PNLCS en producción, y cómo añadir la tuya con un pull request.
 section: Comunidad
 -->
 <section class="page-intro">
@@ -9,37 +9,46 @@ section: Comunidad
     <div>
     {{crumbs}}
     <h1>Empresas de hosting que usan PNLCS</h1>
-    <p class="lede">Negocios reales que facturan a clientes reales con PNLCS. Si lo usas en producción, añade tu empresa a esta página.</p>
+    <p class="lede">Empresas reales que facturan a clientes reales con PNLCS. Si lo usas en producción, añade tu empresa con un pull request.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Añade tu empresa</a><a class="btn btn--ghost-dark" href="#add">Cómo funciona</a></div>
     </div>
-    <figure class="shot"><img src="assets/img/showcase-ikahost-800.webp" srcset="assets/img/showcase-ikahost-800.webp 800w, assets/img/showcase-ikahost.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="La tienda de ikahost.com, funcionando con PNLCS"></figure>
+    <figure class="code-card">
+      <figcaption>data/showcase.json</figcaption>
+<pre>{
+  <span class="k">"name"</span>: <span class="s">"Your Hosting Co"</span>,
+  <span class="k">"url"</span>: <span class="s">"https://example.com/"</span>,
+  <span class="k">"location"</span>: <span class="s">"Germany"</span>,
+  <span class="k">"description"</span>: <span class="s">"What you sell and how."</span>,
+  <span class="k">"sells"</span>: [<span class="s">"Shared hosting"</span>, <span class="s">"VPS"</span>],
+  <span class="k">"runs_on"</span>: [<span class="s">"cPanel"</span>, <span class="s">"Stripe"</span>]
+}</pre>
+    </figure>
   </div>
 </section>
 
 <section class="band band--paper">
-  <div class="wrap cases">
-    <article class="case">
-      <div>
-        <h2>ikahost</h2>
-        <p class="where"><a href="https://ikahost.com/">ikahost.com</a></p>
-        <p>Hosting compartido, apps Docker de un clic y servidores virtuales, vendidos y gestionados íntegramente con PNLCS. Los pedidos se aprovisionan en Panelica y Proxmox VE, y los clientes gestionan sus servicios desde el portal de clientes de PNLCS.</p>
-        <p class="draft-note">Borrador pendiente de revisión. El texto se confirmará con ikahost y el equipo de PNLCS antes de publicarse.</p>
-      </div>
-      <dl>
-        <dt>Vende</dt><dd>Hosting compartido, apps Docker, VPS</dd>
-        <dt>Aprovisionamiento</dt><dd>Panelica, Proxmox VE</dd>
-        <dt>Portal</dt><dd>Tema personalizado</dd>
-        <dt>Contribuye con</dt><dd>Temas, complementos, pull requests</dd>
-      </dl>
-    </article>
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Empresas</h2><p class="lede">Las propias empresas redactan sus entradas, en inglés.</p></div></div>
+    <div class="cases">
+{{showcase}}
+    </div>
+  </div>
+</section>
 
-    <article class="case case-open">
-      <h2>¿Usas PNLCS? Añade tu empresa.</h2>
-      <ol>
-        <li>Abre una discusión en GitHub con el nombre y la web de tu empresa.</li>
-        <li>Cuéntanos qué vendes y qué módulos usas.</li>
-        <li>Un mantenedor te añade a esta página.</li>
-      </ol>
-      <a class="btn btn--navy" href="https://github.com/Panelica/pnlcs/discussions">Abrir una discusión</a>
-    </article>
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Añade tu empresa</h2>
+      <p class="lede">Los casos reales son un archivo del repositorio de este sitio web. GitHub puede abrir el pull request por ti desde el navegador; no necesitas instalar nada.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/showcase.json">Editar el archivo de casos reales</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#add-your-company-to-the-showcase">Instrucciones completas</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Abre el archivo de casos reales en GitHub</strong><span>El botón lo abre en el editor. La primera vez, GitHub crea una copia en tu cuenta.</span></span></li>
+      <li><span><strong>Añade tu entrada</strong><span>Nombre, sitio web, qué vendes y los módulos que usas. La descripción debe tener menos de 400 caracteres.</span></span></li>
+      <li><span><strong>Abre un pull request</strong><span>Una comprobación automática genera el sitio con tu entrada. Un mantenedor la revisa y la fusiona.</span></span></li>
+    </ol>
   </div>
 </section>

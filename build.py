@@ -34,6 +34,8 @@ SRC = ROOT / 'src'
 DATA = ROOT / 'data'
 OUT = ROOT / 'site'
 SITE_URL = 'https://pnlcs.com/'
+# Repository of this website: showcase entries arrive here as pull requests.
+SITE_REPO = 'ertugrulkeyvan/pnlcs.com'
 PNLCS_CHECKOUT = Path(os.environ.get('PNLCS_SRC', Path.home() / 'Desktop/pratix/pnlcs-moduller/kaynak/pnlcs'))
 
 # code (folder), hreflang, native name. English is the source and lives at the root.
@@ -207,6 +209,48 @@ def whats_new_html(entries, s, code):
     return '\n'.join(rows)
 
 
+# ---------- showcase (data/showcase.json, extended through pull requests) ----------
+
+SHOWCASE_FIELDS = {'name': str, 'url': str, 'description': str, 'sells': list, 'runs_on': list}
+
+
+def load_showcase():
+    entries = json.loads((DATA / 'showcase.json').read_text())
+    for i, e in enumerate(entries):
+        for key, kind in SHOWCASE_FIELDS.items():
+            if not isinstance(e.get(key), kind) or not e.get(key):
+                sys.exit(f'data/showcase.json entry {i + 1}: "{key}" is required ({kind.__name__})')
+        if not re.match(r'https://', e['url']):
+            sys.exit(f'data/showcase.json entry {i + 1}: "url" must start with https://')
+        if len(e['description']) > 400:
+            sys.exit(f'data/showcase.json entry {i + 1}: "description" is longer than 400 characters')
+        shot = e.get('screenshot')
+        if shot and not (ROOT / shot).exists():
+            sys.exit(f'data/showcase.json entry {i + 1}: screenshot {shot} not found')
+    return entries
+
+
+def showcase_card(e, s, compact=False):
+    esc = html.escape
+    host = re.sub(r'^https://(www\.)?|/$', '', e['url'])
+    shot = ''
+    if e.get('screenshot'):
+        src = e['screenshot']
+        small = src.replace('.webp', '-800.webp')
+        srcset = f' srcset="{small} 800w, {src} 1600w"' if (ROOT / small).exists() else ''
+        shot = (f'<a class="case-shot" href="{esc(e["url"])}"><img src="{small if srcset else src}"{srcset} '
+                f'sizes="(min-width: 900px) 45vw, 100vw" alt="" loading="lazy" width="800" height="500"></a>')
+    facts = [(s['showcase_sells'], ', '.join(e['sells'])), (s['showcase_runs_on'], ', '.join(e['runs_on']))]
+    if e.get('location'):
+        facts.append((s['showcase_location'], e['location']))
+    dl = ''.join(f'<dt>{esc(k)}</dt><dd lang="en">{esc(v)}</dd>' for k, v in facts)
+    draft = f'<p class="draft-note">{esc(s["showcase_draft"])}</p>' if e.get('draft') else ''
+    desc = '' if compact else f'<p lang="en">{esc(e["description"])}</p>'
+    return (f'<article class="case{" case--compact" if compact else ""}">{shot}<div class="case-body">'
+            f'<h3>{esc(e["name"])}</h3><p class="where"><a href="{esc(e["url"])}">{esc(host)}</a></p>{desc}'
+            f'<dl>{dl}</dl>{draft}</div></article>')
+
+
 # ---------- pages ----------
 
 def parse_page(raw):
@@ -263,6 +307,7 @@ def build():
     en_strings = json.loads((SRC / 'i18n' / 'strings.en.json').read_text())
     entries = changelog_entries()
     latest = entries[0]
+    showcase = load_showcase()
     pages = sorted(p.name for p in (SRC / 'pages').glob('*.html'))
 
     if OUT.exists():
@@ -288,6 +333,9 @@ def build():
             translated += is_translated
             meta, body = parse_page(raw)
             body = body.replace('{{whats_new}}', whats_new_html(entries, s, code))
+            body = body.replace('{{showcase}}', '\n'.join(showcase_card(e, s) for e in showcase))
+            body = body.replace('{{showcase_featured}}', showcase_card(showcase[0], s, compact=True) if showcase else '')
+            body = body.replace('{{showcase_count}}', str(len(showcase)))
             if meta.get('cta', 'yes') != 'no':
                 body += cta
             crumbs = ''
@@ -314,7 +362,8 @@ def build():
                    .replace('{{content}}', body)
                    .replace('{{latest_title}}', inline(latest['title']))
                    .replace('{{latest_slug}}', latest['slug'])
-                   .replace('{{latest_date}}', html.escape(latest['date'])))
+                   .replace('{{latest_date}}', html.escape(latest['date']))
+                   .replace('{{site_repo}}', SITE_REPO))
             doc = re.sub(r'\{\{icon:([a-z0-9-]+)\}\}', lambda m: icon_html(m.group(1)), doc)
             doc = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), doc)
             # every page links assets from the site root, so /de/… pages find them too
