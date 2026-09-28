@@ -5,39 +5,35 @@ description: Как сообщить о проблеме безопасност�
 section: Проект
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Безопасность</h1>
     <p class="lede">PNLCS работает с биллингом, учётными данными клиентов и платёжными интеграциями реальных хостинг-компаний. Уязвимость может затронуть счета, данные клиентов и платежи, и мы относимся к этому серьёзно.</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Сообщить об уязвимости</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Полная политика безопасности</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>Напишите на security@panelica.com</h3>
+        <p>Укажите описание, затронутый компонент, шаги воспроизведения, последствия, а также версии PNLCS, Laravel, PHP и MySQL. Скройте любые учётные данные и данные клиентов.</p>
+        <p>Также можно воспользоваться <a href="https://github.com/Panelica/pnlcs/security/advisories/new">закрытой отправкой отчётов об уязвимостях на GitHub</a>.</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>Как сообщить об уязвимости</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>После отправки сообщения</h2>
       <p class="lede">Пожалуйста, не создавайте публичную задачу, обсуждение или тему на форуме о проблеме безопасности.</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>Напишите на security@panelica.com</h3>
-        <p>Укажите описание, затронутый компонент, шаги воспроизведения, последствия, а также версии PNLCS, Laravel, PHP и MySQL. Скройте любые учётные данные и данные клиентов.</p>
-        <p>Также можно воспользоваться <a href="https://github.com/Panelica/pnlcs/security/advisories/new">закрытой отправкой отчётов об уязвимостях на GitHub</a>.</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">Чего ожидать</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">Подтверждение получения</th><td class="muted">В течение 48 часов</td></tr>
-            <tr><th scope="row">Разбор и оценка критичности</th><td class="muted">В течение 5 рабочих дней</td></tr>
-            <tr><th scope="row">Информация о статусе</th><td class="muted">Еженедельно, для критических проблем чаще</td></tr>
-            <tr><th scope="row">Исправление критических проблем</th><td class="muted">Обычно в течение 14 дней после подтверждения</td></tr>
-            <tr><th scope="row">Срок до раскрытия</th><td class="muted">По умолчанию 90 дней, обсуждается</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">Чего ожидать</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">В течение 48 часов</p><h3>Подтверждение получения</h3><p>Вы получаете подтверждение, что сообщение дошло.</p></li>
+      <li><p class="tl-day">В течение 5 рабочих дней</p><h3>Разбор</h3><p>Первичная оценка и уровень серьёзности.</p></li>
+      <li><p class="tl-day">Еженедельно</p><h3>Информация о статусе</h3><p>Для критических проблем чаще.</p></li>
+      <li><p class="tl-day">Обычно 14 дней</p><h3>Выпуск исправления</h3><p>Для критических проблем, считая с момента подтверждения.</p></li>
+      <li><p class="tl-day">90 дней</p><h3>Раскрытие</h3><p>Стандартный срок, обсуждается.</p></li>
+    </ol>
   </div>
 </section>
 

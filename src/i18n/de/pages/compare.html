@@ -5,11 +5,28 @@ description: Wie sich PNLCS im Vergleich zu WHMCS und anderen proprietären Abre
 section: Produkt
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Eine Open-Source-Alternative zu WHMCS</h1>
     <p class="lede">PNLCS orientiert sich bewusst an WHMCS: Kunden, Produkte, Bestellungen, Rechnungen, Dienste, Tickets und Module bedeuten dasselbe. Der Unterschied ist die Lizenz: PNLCS steht unter MIT, ohne Gebühr pro Installation.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Migrationsleitfaden</a></div>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Ein Hook im WHMCS-Stil, unverändert in PNLCS</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+      </figure>
+      <figure class="code-card">
+        <figcaption>WHMCS-API-Aktionsnamen</figcaption>
+<pre>GET  /api/v1/<span class="k">getclients</span>
+GET  /api/v1/<span class="k">getinvoices</span>
+POST /api/v1/<span class="k">addorder</span></pre>
+      </figure>
+    </div>
   </div>
 </section>
 

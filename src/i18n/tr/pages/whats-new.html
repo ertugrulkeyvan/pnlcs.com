@@ -5,11 +5,22 @@ description: PNLCS sürüm notları, en yenisi başta.
 section: Kaynaklar
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>PNLCS'te neler yeni</h1>
     <p class="lede">Sürüm notları, en yenisi başta; kaynak: <a href="https://github.com/Panelica/pnlcs/blob/main/CHANGELOG.md">GitHub'daki değişiklik günlüğü</a>.</p>
     <div class="btn-row"><a class="btn btn--light" href="https://github.com/Panelica/pnlcs/releases">Etiketlenmiş sürümler</a><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/install/updating/">Nasıl güncellenir</a></div>
+    </div>
+    <aside class="getbox getbox--light" aria-labelledby="latest-title">
+      <h2 id="latest-title">Son güncelleme</h2>
+      <table><tbody>
+        <tr><th scope="row">Tarih</th><td>{{latest_date}}</td></tr>
+        <tr><th scope="row">Değişiklik</th><td>{{latest_title}}</td></tr>
+        <tr><th scope="row">Etiketlenmiş sürüm</th><td data-stat="release">v1.2.0</td></tr>
+      </tbody></table>
+      <a class="getbox-more" href="#{{latest_slug}}">Notları okuyun</a>
+    </aside>
   </div>
 </section>
 

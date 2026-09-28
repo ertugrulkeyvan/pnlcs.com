@@ -5,11 +5,28 @@ description: PNLCS 与 WHMCS 及其他商业计费系统的对比，哪些可以
 section: 产品
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>开源的 WHMCS 替代方案</h1>
     <p class="lede">PNLCS 有意与 WHMCS 保持一致：客户、产品、订单、账单、服务、工单和模块的含义都相同。区别在于许可证：PNLCS 采用 MIT 许可证，不按安装收费。</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">迁移指南</a></div>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>WHMCS 风格的钩子，在 PNLCS 中无需修改</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+      </figure>
+      <figure class="code-card">
+        <figcaption>WHMCS API 操作名称</figcaption>
+<pre>GET  /api/v1/<span class="k">getclients</span>
+GET  /api/v1/<span class="k">getinvoices</span>
+POST /api/v1/<span class="k">addorder</span></pre>
+      </figure>
+    </div>
   </div>
 </section>
 

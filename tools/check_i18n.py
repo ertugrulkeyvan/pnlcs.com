@@ -62,8 +62,8 @@ def compare(en_file, tr_file):
     for k in FRONT_KEYS_TRANSLATED & set(en_meta):
         if not tr_meta.get(k):
             problems.append(f'front-matter "{k}" is empty')
-    ph_en = sorted(re.findall(r'\{\{\w+\}\}', en_body))
-    ph_tr = sorted(re.findall(r'\{\{\w+\}\}', tr_body))
+    ph_en = sorted(re.findall(r'\{\{[\w:-]+\}\}', en_body))
+    ph_tr = sorted(re.findall(r'\{\{[\w:-]+\}\}', tr_body))
     if ph_en != ph_tr:
         problems.append(f'placeholders differ: en={ph_en} tr={ph_tr}')
     a, b = Skeleton(), Skeleton()

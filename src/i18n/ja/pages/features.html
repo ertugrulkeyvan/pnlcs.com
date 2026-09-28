@@ -5,11 +5,17 @@ description: PNLCSに含まれるもの：顧客ポータル、管理パネル�
 section: 製品
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>機能</h1>
     <p class="lede">販売サイト、顧客ポータル、請求管理、プロビジョニング、サポートは、ひとつのLaravelアプリケーションで構成されています。このページでは各部分が何をするかを紹介し、その方法はドキュメントで説明しています。</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">ドキュメント</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: 製品
           <div><dt>ネットワークの状態</dt><dd>発生中の障害と計画メンテナンス。</dd></div>
           <div><dt>アカウントのセキュリティ</dt><dd>二要素認証、ログイン通知、セッション履歴。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="顧客ポータルのホスティングサービス画面：リアルタイムの使用状況と8つの管理ツール"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: 製品
           <div><dt>延滞料、クーポン、プロモーション</dt><dd>クレジット残高と入金機能もあります。</dd></div>
           <div><dt>定期メンテナンス処理</dt><dd>為替レートの更新、データベースのバックアップ、ログの保持期間管理をスケジュール実行します。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="VPSの注文画面：請求サイクル、構成オプション、合計金額を含む注文概要"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: 製品
           <div><dt>見積とプロジェクト</dt><dd>WHMCSと同様の販売前フロー。</dd></div>
           <div><dt>カレンダー</dt><dd>イベント、リマインダー、スケジュールされたタスク。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="管理パネルでスタッフが見る顧客の仮想サーバー画面"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -102,11 +111,27 @@ section: 製品
         <dl class="spec-grid">
           <div><dt>HTTP API</dt><dd>WHMCSと同じアクション名を持つ171のアクションと、OpenAPI 3.1定義。</dd></div>
           <div><dt>MCPサーバー</dt><dd>AIアシスタントがAPIを通じて情報を読み取り、許可すれば操作も行えます。</dd></div>
-          <div><dt>フック</dt><dd>WHMCS互換の<code>add_hook()</code>と20以上のフックポイント。フックが失敗しても請求処理は止まりません。</dd></div>
+          <div><dt>フック</dt><dd>WHMCS互換の <code>add_hook()</code> と20以上のフックポイント。フックが失敗しても請求処理は止まりません。</dd></div>
           <div><dt>Webhook</dt><dd>決済ゲートウェイからの受信コールバックと、送信イベント。</dd></div>
           <div><dt>モジュール</dt><dd>サーバー、決済ゲートウェイ、レジストラ、SSLの各モジュールと、アドオン。</dd></div>
           <div><dt>メールパイプ</dt><dd>IMAPまたはPOP3のメールボックスに届いたメールを、チケットや返信に変換します。</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>APIでクライアント一覧を取得する</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>請求書の支払い時にコードを実行する</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

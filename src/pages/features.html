@@ -5,11 +5,17 @@ description: What PNLCS includes: client portal, admin panel, recurring billing 
 section: Product
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Features</h1>
     <p class="lede">The storefront, client portal, billing, provisioning and support are one Laravel application. This page lists what each part does; the documentation explains how.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Documentation</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Product
           <div><dt>Network status</dt><dd>Active incidents and scheduled maintenance.</dd></div>
           <div><dt>Account security</dt><dd>Two-factor sign-in, login alerts and session history.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="A hosting service in the client portal: live usage and eight management tools"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Product
           <div><dt>Late fees, coupons, promotions</dt><dd>Plus credit balances and an add-funds flow.</dd></div>
           <div><dt>Scheduled housekeeping</dt><dd>Exchange rates, database backups and log retention on a schedule.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Configuring a VPS order: billing cycle, configurable options and the order summary with the total"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Product
           <div><dt>Quotes and projects</dt><dd>A WHMCS-style pre-sales flow.</dd></div>
           <div><dt>Calendar</dt><dd>Events, reminders and scheduled tasks.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="A customer's virtual server as staff see it in the admin panel"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -107,6 +116,22 @@ section: Product
           <div><dt>Modules</dt><dd>Server, gateway, registrar and SSL modules, plus add-ons.</dd></div>
           <div><dt>Email piping</dt><dd>IMAP or POP3 mailboxes turn emails into tickets and replies.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>List clients through the API</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Run code when an invoice is paid</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

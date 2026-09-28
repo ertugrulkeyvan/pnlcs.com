@@ -5,11 +5,28 @@ description: Cómo se compara PNLCS con WHMCS y otros sistemas de facturación p
 section: Producto
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Una alternativa de código abierto a WHMCS</h1>
     <p class="lede">PNLCS replica a propósito el modelo de WHMCS: clientes, productos, pedidos, facturas, servicios, tickets y módulos significan lo mismo. La diferencia está en la licencia: PNLCS es MIT, sin cuota por instalación.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Guía de migración</a></div>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Un hook al estilo de WHMCS, sin cambios en PNLCS</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+      </figure>
+      <figure class="code-card">
+        <figcaption>Nombres de acciones de la API de WHMCS</figcaption>
+<pre>GET  /api/v1/<span class="k">getclients</span>
+GET  /api/v1/<span class="k">getinvoices</span>
+POST /api/v1/<span class="k">addorder</span></pre>
+      </figure>
+    </div>
   </div>
 </section>
 

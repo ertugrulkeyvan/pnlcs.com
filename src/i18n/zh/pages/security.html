@@ -5,39 +5,35 @@ description: 如何报告 PNLCS 的安全问题、之后的处理流程，以及
 section: 项目
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>安全</h1>
     <p class="lede">PNLCS 为真实的主机业务处理计费、客户凭据和支付集成。一个安全缺陷就可能影响账单、客户数据和付款，我们会认真对待。</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">报告漏洞</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">完整安全政策</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>发送邮件至 security@panelica.com</h3>
+        <p>请附上问题描述、受影响的组件、复现步骤、影响范围，以及你使用的 PNLCS、Laravel、PHP 和 MySQL 版本。请隐去所有凭据和客户数据。</p>
+        <p>你也可以使用 <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub 的私密漏洞报告功能</a>，我们就不会追究。</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>报告漏洞</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>提交报告之后</h2>
       <p class="lede">发现安全问题时，请不要发布公开的 issue、讨论或论坛帖子。</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>发送邮件至 security@panelica.com</h3>
-        <p>请附上问题描述、受影响的组件、复现步骤、影响范围，以及你使用的 PNLCS、Laravel、PHP 和 MySQL 版本。请隐去所有凭据和客户数据。</p>
-        <p>你也可以使用 <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub 的私密漏洞报告功能</a>，我们就不会追究。</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">处理流程</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">确认收到</th><td class="muted">48 小时内</td></tr>
-            <tr><th scope="row">分类和严重程度评估</th><td class="muted">5 个工作日内</td></tr>
-            <tr><th scope="row">进展通报</th><td class="muted">每周一次，严重问题会更及时</td></tr>
-            <tr><th scope="row">严重问题的修复</th><td class="muted">通常在确认后 14 天内</td></tr>
-            <tr><th scope="row">披露期限</th><td class="muted">默认 90 天，可协商</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">处理流程</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">48 小时内</p><h3>确认收到</h3><p>我们会回复确认已收到报告。</p></li>
+      <li><p class="tl-day">5 个工作日内</p><h3>初步分级</h3><p>初步评估并确定严重等级。</p></li>
+      <li><p class="tl-day">每周</p><h3>进展通报</h3><p>严重问题会更早通报。</p></li>
+      <li><p class="tl-day">通常 14 天</p><h3>发布修复</h3><p>针对严重问题，从确认之日起计算。</p></li>
+      <li><p class="tl-day">90 天</p><h3>公开披露</h3><p>默认期限，可以协商。</p></li>
+    </ol>
   </div>
 </section>
 
@@ -78,6 +74,6 @@ section: 项目
       <div><dt>隔离的主机管理工具</dt><dd>每一次文件、DNS、计划任务和备份操作，都会与客户自己的域名进行核对。</dd></div>
       <div><dt>受保护的开通</dt><dd>在 Proxmox 上，PNLCS 只操作由它自己创建并做了标记的机器。</dd></div>
     </dl>
-    <p class="note">我们没有付费的漏洞赏金计划，但会在安全公告和更新日志中为研究人员署名。善意的安全研究只要遵守<a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">安全政策</a>，我们就不会追究。</p>
+    <p class="note">我们没有付费的漏洞赏金计划，但会在安全公告和更新日志中为研究人员署名。善意的安全研究只要遵守 <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">安全政策</a>，我们就不会追究。</p>
   </div>
 </section>

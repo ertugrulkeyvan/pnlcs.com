@@ -5,39 +5,35 @@ description: Comment signaler un problème de sécurité dans PNLCS, à quoi vou
 section: Projet
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Sécurité</h1>
     <p class="lede">PNLCS gère la facturation, les identifiants des clients et les intégrations de paiement de véritables hébergeurs. Un défaut de sécurité peut toucher les factures, les données clients et les paiements, et nous prenons cela au sérieux.</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Signaler une vulnérabilité</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Politique de sécurité complète</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>Écrivez à security@panelica.com</h3>
+        <p>Indiquez une description, le composant concerné, les étapes pour reproduire, l’impact, ainsi que vos versions de PNLCS, Laravel, PHP et MySQL. Masquez tout identifiant et toute donnée client.</p>
+        <p>Vous pouvez aussi utiliser <a href="https://github.com/Panelica/pnlcs/security/advisories/new">le signalement privé de vulnérabilités de GitHub</a>.</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>Signaler une vulnérabilité</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Après votre signalement</h2>
       <p class="lede">Merci de ne pas ouvrir d’issue, de discussion ou de fil de forum public pour un problème de sécurité.</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>Écrivez à security@panelica.com</h3>
-        <p>Indiquez une description, le composant concerné, les étapes pour reproduire, l’impact, ainsi que vos versions de PNLCS, Laravel, PHP et MySQL. Masquez tout identifiant et toute donnée client.</p>
-        <p>Vous pouvez aussi utiliser <a href="https://github.com/Panelica/pnlcs/security/advisories/new">le signalement privé de vulnérabilités de GitHub</a>.</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">À quoi vous attendre</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">Accusé de réception</th><td class="muted">Sous 48 heures</td></tr>
-            <tr><th scope="row">Tri et évaluation de la gravité</th><td class="muted">Sous 5 jours ouvrés</td></tr>
-            <tr><th scope="row">Points d’avancement</th><td class="muted">Chaque semaine, plus tôt pour les problèmes critiques</td></tr>
-            <tr><th scope="row">Correctif des problèmes critiques</th><td class="muted">En général sous 14 jours après confirmation</td></tr>
-            <tr><th scope="row">Délai de divulgation</th><td class="muted">90 jours par défaut, négociable</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">À quoi vous attendre</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">Sous 48 heures</p><h3>Accusé de réception</h3><p>Vous recevez une confirmation de réception du signalement.</p></li>
+      <li><p class="tl-day">Sous 5 jours ouvrés</p><h3>Tri</h3><p>Une première évaluation et un niveau de gravité.</p></li>
+      <li><p class="tl-day">Chaque semaine</p><h3>Points d’avancement</h3><p>Plus tôt pour les problèmes critiques.</p></li>
+      <li><p class="tl-day">14 jours en général</p><h3>Correctif publié</h3><p>Pour les problèmes critiques, à compter de la confirmation.</p></li>
+      <li><p class="tl-day">90 jours</p><h3>Divulgation</h3><p>Le délai par défaut, négociable.</p></li>
+    </ol>
   </div>
 </section>
 

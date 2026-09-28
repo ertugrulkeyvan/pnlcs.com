@@ -33,11 +33,21 @@ Deploy the `site/` folder at the domain root. Pages link assets as `/assets/...`
 
 English is the source, published at the root. Translations are published under `/<lang>/`: es, de, fr, pt-br, tr, ru, zh, ja. A page without a translation falls back to English. Release notes stay in English.
 
-After changing an English page, update the translations and run:
+After changing English pages, carry the existing translations over and translate what is new:
 
 ```bash
-python3 tools/check_i18n.py      # all languages, or e.g. `python3 tools/check_i18n.py de`
+python3 tools/sync_i18n.py                     # reuse translations from the last commit; new strings -> tools/i18n-missing.json
+# fill in tools/i18n-missing.json, save a copy as tools/i18n-missing.json.filled, then:
+python3 tools/sync_i18n.py --apply tools/i18n-missing.json.filled
+python3 tools/check_i18n.py                    # all languages, or e.g. `python3 tools/check_i18n.py de`
 ```
+
+## Logos
+
+Write `{{logo:stripe}}` in a page and the build puts the brand mark there. Marks come from
+[Simple Icons](https://simpleicons.org/) (CC0) in `assets/logos/`; brands without one get a monogram of the same size.
+The list of known slugs is `LOGOS` in `build.py`. App and OS logos in `assets/apps/` come from the PNLCS app catalog
+(`public/img/apps`). Flags in the language menu come from [flag-icons](https://github.com/lipis/flag-icons) (MIT).
 
 ## Content rules
 

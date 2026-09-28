@@ -76,12 +76,28 @@
     var months = Math.floor(days / 30);
     return months === 1 ? L('month_ago', 'a month ago') : L('months_ago', '{n} months ago', { n: months });
   };
-  var json = function (url) { return fetch(url).then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); }); };
+  // Remote JSON is cached for an hour in sessionStorage: the GitHub API allows 60 anonymous
+  // requests per hour per visitor, and every page asks for the same few numbers.
+  var TTL = 3600000;
+  var json = function (url) {
+    var remote = /^https?:/.test(url);
+    if (remote) {
+      try {
+        var hit = JSON.parse(sessionStorage.getItem('pnlcs:' + url) || 'null');
+        if (hit && Date.now() - hit.t < TTL) return Promise.resolve(hit.d);
+      } catch (e) {}
+    }
+    return fetch(url).then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); }).then(function (d) {
+      if (remote) { try { sessionStorage.setItem('pnlcs:' + url, JSON.stringify({ t: Date.now(), d: d })); } catch (e) {} }
+      return d;
+    });
+  };
 
   if (document.querySelector('[data-stat]')) {
     json('https://api.github.com/repos/' + REPO).then(function (repo) {
       setStat('stars', repo.stargazers_count.toLocaleString('en'));
       setStat('forks', repo.forks_count.toLocaleString('en'));
+      setStat('issues', repo.open_issues_count.toLocaleString('en'));
       setStat('pushed', ago(repo.pushed_at));
     }).catch(function () {});
     json('https://api.github.com/repos/' + REPO + '/releases/latest').then(function (rel) {
@@ -166,10 +182,19 @@
     };
     json(pickers.dataset.src).then(function (themes) {
       var list = pickers.dataset.themePickers === 'list';
+      var wall = pickers.dataset.themePickers === 'wall';
       pickers.innerHTML = themes.map(function (t, i) {
         var c = t.colors;
         var style = '--a:' + (c.nav_bg || c.primary) + ';--b:' + (c.welcome_accent || c.accent);
         var pressed = t.slug === 'panelica' ? 'true' : 'false';
+        if (wall) {
+          var shot = '<span class="tw-shot" aria-hidden="true">' +
+            '<i class="tw-nav" style="background:' + (c.nav_bg || c.primary) + '"></i>' +
+            '<i class="tw-hero" style="background:linear-gradient(135deg,' + c.hero_bg_start + ',' + c.hero_bg_mid + ',' + c.hero_bg_end + ')"></i>' +
+            '<i class="tw-body" style="background:' + (c.body_bg || '#f5f6fa') + '"></i>' +
+            '<i class="tw-btn" style="background:' + (c.welcome_accent || c.accent) + '"></i></span>';
+          return '<li><button type="button" aria-pressed="' + pressed + '" data-i="' + i + '">' + shot + '<span class="tw-name">' + t.name + '</span></button></li>';
+        }
         if (list) {
           return '<li><button type="button" aria-pressed="' + pressed + '" data-i="' + i + '">' +
             '<i class="dot" style="' + style + '"></i><span><strong>' + t.name + '</strong><span>' + t.description + '</span></span></button></li>';

@@ -5,11 +5,28 @@ description: PNLCS'in WHMCS ve diğer kapalı kaynaklı faturalandırma sistemle
 section: Ürün
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>WHMCS'e açık kaynaklı bir alternatif</h1>
     <p class="lede">PNLCS bilinçli olarak WHMCS'i örnek alır: müşteriler, ürünler, siparişler, faturalar, hizmetler, destek talepleri ve modüller aynı anlama gelir. Fark lisanstadır: PNLCS MIT lisanslıdır ve kurulum başına ücret yoktur.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Geçiş rehberi</a></div>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>WHMCS tarzı bir hook, PNLCS'te değişmeden çalışır</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+      </figure>
+      <figure class="code-card">
+        <figcaption>WHMCS API işlem adları</figcaption>
+<pre>GET  /api/v1/<span class="k">getclients</span>
+GET  /api/v1/<span class="k">getinvoices</span>
+POST /api/v1/<span class="k">addorder</span></pre>
+      </figure>
+    </div>
   </div>
 </section>
 

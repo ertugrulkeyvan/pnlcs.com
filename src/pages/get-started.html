@@ -5,10 +5,21 @@ description: Install PNLCS with Docker in about five minutes, on your own server
 section: Resources
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Get PNLCS running</h1>
     <p class="lede">PNLCS is a Laravel application. It runs anywhere PHP 8.4, MySQL or MariaDB and a web server are available. To look around first, the <a href="https://hosting.panelica.com/">live demo</a> is a real installation.</p>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Official image on Docker Hub</figcaption>
+<pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
+      </figure>
+      <ul class="intro-logos" aria-label="Runs on">
+        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mysql}}</li>
+      </ul>
+    </div>
   </div>
 </section>
 

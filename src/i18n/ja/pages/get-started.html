@@ -5,10 +5,21 @@ description: PNLCSは、Dockerなら約5分でインストールできます。�
 section: リソース
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>PNLCSを動かす</h1>
-    <p class="lede">PNLCSはLaravelアプリケーションです。PHP 8.4、MySQLまたはMariaDB、Webサーバーがあればどこでも動作します。まず中身を見てみたい場合は、実際のインストール環境である<a href="https://hosting.panelica.com/">ライブデモ</a>をご覧ください。</p>
+    <p class="lede">PNLCSはLaravelアプリケーションです。PHP 8.4、MySQLまたはMariaDB、Webサーバーがあればどこでも動作します。まず中身を見てみたい場合は、実際のインストール環境である <a href="https://hosting.panelica.com/">ライブデモ</a> をご覧ください。</p>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Docker Hubの公式イメージ</figcaption>
+<pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
+      </figure>
+      <ul class="intro-logos" aria-label="動作環境">
+        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mysql}}</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -34,7 +45,7 @@ section: リソース
       <h2>Dockerでクイックスタート</h2>
       <p class="lede" style="margin-top:16px">公式イメージにはPHP-FPM 8.4、nginx、Node.js 20、supervisorが含まれており、初回起動時に最新のコードを取得します。</p>
       <ol class="steps" style="margin-top:32px">
-        <li><span><strong>コンテナを起動する</strong><span>先に<code>changeme</code>を独自のパスワードに置き換えてください。</span></span></li>
+        <li><span><strong>コンテナを起動する</strong><span>先に <code>changeme</code> を独自のパスワードに置き換えてください。</span></span></li>
         <li><span><strong>3〜5分待つ</strong><span>初回起動時に依存パッケージのインストールとフロントエンドのビルドが行われます。</span></span></li>
         <li><span><strong>/installを開く</strong><span>ウィザードが要件を確認し、管理者アカウントを作成したあと、自動的にロックされます。</span></span></li>
       </ol>

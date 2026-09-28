@@ -5,10 +5,21 @@ description: PNLCS'i Docker ile yaklaşık beş dakikada, kendi sunucunuza ya da
 section: Kaynaklar
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>PNLCS'i çalıştırın</h1>
     <p class="lede">PNLCS bir Laravel uygulamasıdır. PHP 8.4, MySQL ya da MariaDB ve bir web sunucusu bulunan her yerde çalışır. Önce etrafa göz atmak isterseniz <a href="https://hosting.panelica.com/">canlı demo</a> gerçek bir kurulumdur.</p>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Docker Hub'daki resmî imaj</figcaption>
+<pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
+      </figure>
+      <ul class="intro-logos" aria-label="Çalıştığı yer">
+        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mysql}}</li>
+      </ul>
+    </div>
   </div>
 </section>
 

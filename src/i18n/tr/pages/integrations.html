@@ -4,7 +4,8 @@ description: PNLCS ile birlikte gelen sunucu modülleri, ödeme altyapıları, a
 section: Ürün
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Entegrasyonlar</h1>
     <p class="lede">Tüm modüller PNLCS ile birlikte gelir. Durum sütunu, hangilerinin canlı sistemlerde çalıştığını ve hangilerinin henüz baştan sona test edilmediğini gösterir.</p>
@@ -13,6 +14,11 @@ section: Ürün
       <span class="badge badge--help">Kodu tamam, gerçek ortamda test edilmesi gerekiyor</span>
       <span class="badge badge--plain">Dahil</span>
     </div>
+    </div>
+    <ul class="intro-logos" aria-hidden="true">
+      <li>{{logo:panelica}}</li><li>{{logo:cpanel}}</li><li>{{logo:plesk}}</li><li>{{logo:proxmox}}</li>
+      <li>{{logo:stripe}}</li><li>{{logo:paypal}}</li><li>{{logo:razorpay}}</li><li>{{logo:namecheap}}</li>
+    </ul>
   </div>
 </section>
 
@@ -24,14 +30,14 @@ section: Ürün
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Modül</th><th scope="col">Neyi kurar</th><th scope="col">Durum</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Panelica</th><td class="muted">Hosting hesapları, Docker uygulamaları ve müşteri paneli içindeki hosting araçları</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
-          <tr><th scope="row">Proxmox VE</th><td class="muted">Cloud imajlarından ve LXC şablonlarından KVM sanal sunucular</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
-          <tr><th scope="row">cPanel / WHM</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">Plesk</th><td class="muted">Hosting abonelikleri</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">DirectAdmin</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">HestiaCP</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">Vultr</th><td class="muted">Cloud sunucular</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">Özel</th><td class="muted">Otomasyon olmadan elle yönettiğiniz hizmetler</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Hosting hesapları, Docker uygulamaları ve müşteri paneli içindeki hosting araçları</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">Cloud imajlarından ve LXC şablonlarından KVM sanal sunucular</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Hosting abonelikleri</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Hosting hesapları</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Cloud sunucular</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Özel</span></th><td class="muted">Otomasyon olmadan elle yönettiğiniz hizmetler</td><td><span class="badge badge--plain">Dahil</span></td></tr>
         </tbody>
       </table></div>
     </section>
@@ -42,14 +48,14 @@ section: Ürün
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Ödeme altyapısı</th><th scope="col">Notlar</th><th scope="col">Durum</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, token'laştırılmış kartlar</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
-          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, token'laştırılmış kartlar</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">Banka havalesi</th><td class="muted">Müşteri ödeme bildirimleri ve dekont yükleme ile</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">Mollie</th><td class="muted">Avrupa ödeme yöntemleri</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">Razorpay</th><td class="muted">Hindistan</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">iyzico</th><td class="muted">Türkiye: 3D Secure, taksit, kayıtlı kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">Tpay</th><td class="muted">Polonya: BLIK, hızlı havale, kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, token'laştırılmış kartlar</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, token'laştırılmış kartlar</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Banka havalesi</span></th><td class="muted">Müşteri ödeme bildirimleri ve dekont yükleme ile</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">Avrupa ödeme yöntemleri</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">Hindistan</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Türkiye: 3D Secure, taksit, kayıtlı kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Polonya: BLIK, hızlı havale, kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
         </tbody>
       </table></div>
     </section>
@@ -60,14 +66,14 @@ section: Ürün
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Modül</th><th scope="col">Tür</th><th scope="col">Durum</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Enom</th><td class="muted">Kayıt firması</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
-          <tr><th scope="row">Namecheap</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">ResellerClub</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">OpenProvider</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">DomainNameApi</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">HRD</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">Manuel</th><td class="muted">Kayıt firması, kendi yönettiğiniz alan adları için</td><td><span class="badge badge--plain">Dahil</span></td></tr>
-          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Manuel</span></th><td class="muted">Kayıt firması, kendi yönettiğiniz alan adları için</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Dahil</span></td></tr>
         </tbody>
       </table></div>
     </section>

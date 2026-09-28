@@ -5,11 +5,17 @@ description: Что входит в PNLCS: личный кабинет клие�
 section: Продукт
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Возможности</h1>
     <p class="lede">Витрина, личный кабинет клиента, биллинг, провижининг и поддержка работают в одном Laravel-приложении. На этой странице перечислено, что делает каждая часть; как именно, объясняет документация.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Документация</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Продукт
           <div><dt>Состояние сети</dt><dd>Текущие инциденты и плановые работы.</dd></div>
           <div><dt>Безопасность аккаунта</dt><dd>Двухфакторный вход, уведомления о входе и история сеансов.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="Услуга хостинга в личном кабинете клиента: текущее потребление и восемь инструментов управления"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Продукт
           <div><dt>Пени, купоны, акции</dt><dd>А также кредитный баланс и пополнение счёта.</dd></div>
           <div><dt>Плановое обслуживание</dt><dd>Курсы валют, резервные копии базы данных и очистка журналов по расписанию.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Оформление заказа VPS: период оплаты, настраиваемые опции и сводка заказа с итоговой суммой"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Продукт
           <div><dt>Коммерческие предложения и проекты</dt><dd>Предпродажный процесс в стиле WHMCS.</dd></div>
           <div><dt>Календарь</dt><dd>События, напоминания и запланированные задачи.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Виртуальный сервер клиента в панели администратора, как его видят сотрудники"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -107,6 +116,22 @@ section: Продукт
           <div><dt>Модули</dt><dd>Серверные модули, модули платёжных шлюзов, регистраторов и SSL, а также дополнения.</dd></div>
           <div><dt>Обработка почты</dt><dd>Письма из ящиков IMAP или POP3 превращаются в тикеты и ответы.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>Список клиентов через API</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Выполнение кода при оплате счёта</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

@@ -5,11 +5,17 @@ description: O que o PNLCS inclui: portal do cliente, painel administrativo, fat
 section: Produto
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Funcionalidades</h1>
     <p class="lede">A loja, o portal do cliente, o faturamento, o provisionamento e o suporte formam uma única aplicação Laravel. Esta página lista o que cada parte faz; a documentação explica como.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Documentação</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Produto
           <div><dt>Status da rede</dt><dd>Incidentes ativos e manutenções programadas.</dd></div>
           <div><dt>Segurança da conta</dt><dd>Login com dois fatores, alertas de login e histórico de sessões.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="Um serviço de hospedagem no portal do cliente: uso em tempo real e oito ferramentas de gerenciamento"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Produto
           <div><dt>Multas por atraso, cupons, promoções</dt><dd>Além de saldos de crédito e um fluxo para adicionar fundos.</dd></div>
           <div><dt>Manutenção agendada</dt><dd>Taxas de câmbio, backups do banco de dados e retenção de logs de forma agendada.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Configuração de um pedido de VPS: ciclo de faturamento, opções configuráveis e o resumo do pedido com o total"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Produto
           <div><dt>Orçamentos e projetos</dt><dd>Um fluxo de pré-venda no estilo do WHMCS.</dd></div>
           <div><dt>Calendário</dt><dd>Eventos, lembretes e tarefas agendadas.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="O servidor virtual de um cliente como a equipe o vê no painel administrativo"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -102,11 +111,27 @@ section: Produto
         <dl class="spec-grid">
           <div><dt>API HTTP</dt><dd>171 ações com os nomes de ação do WHMCS e uma descrição OpenAPI 3.1.</dd></div>
           <div><dt>Servidor MCP</dt><dd>Permita que um assistente de IA leia dados e, se você autorizar, execute ações pela API.</dd></div>
-          <div><dt>Hooks</dt><dd><code>add_hook()</code> compatível com o WHMCS, com mais de 20 pontos de hook; um hook com falha nunca quebra o faturamento.</dd></div>
+          <div><dt>Hooks</dt><dd> <code>add_hook()</code> compatível com o WHMCS, com mais de 20 pontos de hook; um hook com falha nunca quebra o faturamento.</dd></div>
           <div><dt>Webhooks</dt><dd>Callbacks de entrada dos gateways e eventos de saída.</dd></div>
           <div><dt>Módulos</dt><dd>Módulos de servidor, gateway, registrador e SSL, além de complementos.</dd></div>
           <div><dt>Recebimento de e-mails (piping)</dt><dd>Caixas de e-mail IMAP ou POP3 transformam e-mails em tickets e respostas.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>Listar clientes pela API</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Executar código quando uma fatura é paga</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

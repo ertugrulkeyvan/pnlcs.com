@@ -5,10 +5,21 @@ description: Установите PNLCS через Docker примерно за 
 section: Ресурсы
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Запуск PNLCS</h1>
-    <p class="lede">PNLCS представляет собой Laravel-приложение. Оно работает везде, где есть PHP 8.4, MySQL или MariaDB и веб-сервер. Чтобы сначала осмотреться, откройте <a href="https://hosting.panelica.com/">демо</a>: это настоящая установка.</p>
+    <p class="lede">PNLCS представляет собой Laravel-приложение. Оно работает везде, где есть PHP 8.4, MySQL или MariaDB и веб-сервер. Чтобы сначала осмотреться, откройте <a href="https://hosting.panelica.com/">демо</a> : это настоящая установка.</p>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Официальный образ на Docker Hub</figcaption>
+<pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
+      </figure>
+      <ul class="intro-logos" aria-label="Где работает">
+        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mysql}}</li>
+      </ul>
+    </div>
   </div>
 </section>
 

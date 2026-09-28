@@ -5,11 +5,17 @@ description: Was PNLCS enthält: Kundenportal, Admin-Bereich, wiederkehrende Abr
 section: Produkt
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Funktionen</h1>
     <p class="lede">Shop, Kundenportal, Abrechnung, Provisionierung und Support bilden eine einzige Laravel-Anwendung. Diese Seite zeigt, was jeder Teil leistet; die Dokumentation erklärt, wie.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Dokumentation</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Produkt
           <div><dt>Netzwerkstatus</dt><dd>Aktuelle Störungen und geplante Wartungen.</dd></div>
           <div><dt>Kontosicherheit</dt><dd>Zwei-Faktor-Anmeldung, Login-Benachrichtigungen und Sitzungsverlauf.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="Ein Hosting-Dienst im Kundenportal: aktueller Verbrauch und acht Verwaltungswerkzeuge"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Produkt
           <div><dt>Mahngebühren, Gutscheine, Aktionen</dt><dd>Dazu Guthabenkonten und eine Funktion zum Aufladen von Guthaben.</dd></div>
           <div><dt>Geplante Wartungsaufgaben</dt><dd>Wechselkurse, Datenbank-Backups und Log-Aufbewahrung nach Zeitplan.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Konfiguration einer VPS-Bestellung: Abrechnungszeitraum, konfigurierbare Optionen und die Bestellübersicht mit dem Gesamtbetrag"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Produkt
           <div><dt>Angebote und Projekte</dt><dd>Ein Vorverkaufsablauf wie in WHMCS.</dd></div>
           <div><dt>Kalender</dt><dd>Termine, Erinnerungen und geplante Aufgaben.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Der virtuelle Server eines Kunden aus Sicht der Mitarbeiter im Admin-Bereich"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -107,6 +116,22 @@ section: Produkt
           <div><dt>Module</dt><dd>Server-, Zahlungs-, Registrar- und SSL-Module, dazu Add-ons.</dd></div>
           <div><dt>E-Mail-Piping</dt><dd>IMAP- oder POP3-Postfächer machen aus E-Mails Tickets und Antworten.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>Kunden über die API auflisten</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Code ausführen, wenn eine Rechnung bezahlt wird</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

@@ -5,10 +5,21 @@ description: 使用 Docker 约 5 分钟即可安装 PNLCS，也可以装在自�
 section: 资源
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>运行 PNLCS</h1>
-    <p class="lede">PNLCS 是一个 Laravel 应用，只要有 PHP 8.4、MySQL 或 MariaDB 和 Web 服务器就能运行。想先看看的话，<a href="https://hosting.panelica.com/">在线演示</a>就是一套真实的安装。</p>
+    <p class="lede">PNLCS 是一个 Laravel 应用，只要有 PHP 8.4、MySQL 或 MariaDB 和 Web 服务器就能运行。想先看看的话， <a href="https://hosting.panelica.com/">在线演示</a> 就是一套真实的安装。</p>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>Docker Hub 上的官方镜像</figcaption>
+<pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
+      </figure>
+      <ul class="intro-logos" aria-label="运行环境">
+        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mysql}}</li>
+      </ul>
+    </div>
   </div>
 </section>
 

@@ -5,11 +5,17 @@ description: PNLCS 包含的功能：客户中心、管理后台、周期计费�
 section: 产品
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>功能</h1>
     <p class="lede">店面、客户中心、计费、开通和技术支持都在同一个 Laravel 应用中。本页列出各部分的功能，具体用法请参阅文档。</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">文档</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: 产品
           <div><dt>网络状态</dt><dd>当前故障和计划维护。</dd></div>
           <div><dt>账户安全</dt><dd>双因素登录、登录提醒和会话记录。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="客户中心里的一项主机服务：实时用量和八个管理工具"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: 产品
           <div><dt>滞纳金、优惠券、促销</dt><dd>另有账户余额和充值流程。</dd></div>
           <div><dt>定期维护任务</dt><dd>按计划更新汇率、备份数据库和清理日志。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="配置 VPS 订单：付款周期、可配置选项以及含总金额的订单摘要"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: 产品
           <div><dt>报价单和项目</dt><dd>WHMCS 风格的售前流程。</dd></div>
           <div><dt>日历</dt><dd>事件、提醒和计划任务。</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="管理后台中员工看到的客户云服务器"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -107,6 +116,22 @@ section: 产品
           <div><dt>模块</dt><dd>服务器、支付网关、域名注册商和 SSL 模块，以及插件。</dd></div>
           <div><dt>邮件导入工单</dt><dd>从 IMAP 或 POP3 邮箱收取邮件，转为工单和回复。</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>通过 API 列出客户</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>在账单付款后运行代码</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

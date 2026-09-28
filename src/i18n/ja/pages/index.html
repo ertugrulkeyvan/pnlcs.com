@@ -7,7 +7,7 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
     <div class="hero-copy">
       <div class="hero-main">
         <h1>ホスティング事業者のためのオープンソース請求管理</h1>
-        <p class="lede"><strong>無料で使える、セルフホスト型のWHMCS代替です。</strong>請求書発行、ドメイン、SSL、サポートチケット、共用ホスティング、Dockerアプリ、Proxmox VPSをひとつのアプリケーションで扱えます。Panelicaチームとボランティアがメンテナンスしています。</p>
+        <p class="lede"><strong>無料で使える、セルフホスト型のWHMCS代替です。</strong> 請求書発行、ドメイン、SSL、サポートチケット、共用ホスティング、Dockerアプリ、Proxmox VPSをひとつのアプリケーションで扱えます。Panelicaチームとボランティアがメンテナンスしています。</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="https://hosting.panelica.com/">ライブデモを試す</a>
           <a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">ドキュメントを読む</a>
@@ -37,7 +37,7 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
 
     <div class="proof">
       <p class="proof-label">使用技術</p>
-      <p class="stack-line"><b>Laravel 13</b>、<b>PHP 8.4+</b>、<b>MySQL 8</b>またはMariaDB、Tailwind CSS 4、Alpine.js。公式Dockerイメージあり。</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>、 <b>PHP 8.4+</b>、 <b>MySQL 8</b> またはMariaDB、Tailwind CSS 4、Alpine.js。公式Dockerイメージあり。</p>
       <p class="proof-label">プロジェクトの状況</p>
       <dl class="status">
         <div><dt>ライセンス</dt><dd>MIT</dd></div>
@@ -161,13 +161,13 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">サーバーとパネル <span>7</span></h3>
-        <ul><li>Panelica</li><li>cPanel / WHM</li><li>Plesk</li><li>DirectAdmin</li><li>HestiaCP</li><li>Proxmox VE</li><li>Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">決済ゲートウェイ <span>8</span></h3>
-        <ul><li>Stripe</li><li>PayPal</li><li>Authorize.net</li><li>Mollie</li><li>Razorpay</li><li>iyzico</li><li>Tpay</li><li>銀行振込</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}銀行振込</li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">ドメインレジストラ <span>6</span></h3>
-        <ul><li>Namecheap</li><li>Enom</li><li>ResellerClub</li><li>OpenProvider</li><li>DomainNameApi</li><li>HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSLとアドオン <span>5</span></h3>
-        <ul><li>GoGetSSL</li><li>企業情報の検索</li><li>KSeF電子請求書</li><li>プロジェクト管理</li><li>スタッフ掲示板</li></ul></section>
+        <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>企業情報の検索</li><li>KSeF電子請求書</li><li>プロジェクト管理</li><li>スタッフ掲示板</li></ul></section>
     </div>
   </div>
 </section>
@@ -200,7 +200,7 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
       <h2>MITライセンス、Panelicaがメンテナンス</h2>
     </div>
     <div class="stack">
-      <p class="lede">ライセンス料も、エンコードされたファイルもありません。PNLCSのどの部分でも読み、変更し、再配布できます。<a href="https://panelica.com/">Panelica</a>チームが本業の合間に、ボランティアのコントリビューターとともにメンテナンスしています。</p>
+      <p class="lede">ライセンス料も、エンコードされたファイルもありません。PNLCSのどの部分でも読み、変更し、再配布できます。 <a href="https://panelica.com/">Panelica</a> チームが本業の合間に、ボランティアのコントリビューターとともにメンテナンスしています。</p>
       <p class="links"><a href="compare.html">WHMCSとの比較</a><a href="about.html">プロジェクトについて</a><a href="community.html">貢献する</a></p>
     </div>
   </div>

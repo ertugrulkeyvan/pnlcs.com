@@ -4,10 +4,13 @@ description: Seize thèmes intégrés pour la vitrine et l’espace client PNLCS
 section: Produit
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Des thèmes pour votre vitrine et votre espace client</h1>
     <p class="lede">PNLCS est livré avec seize thèmes. Installez-les et changez-en sous Apparence dans le panneau d’administration, puis définissez votre logo, votre favicon et votre pied de page. Choisissez un thème pour voir ses couleurs sur une vitrine d’exemple.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/admin-appearance-800.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="L’écran Apparence du panneau d’administration, avec les thèmes installés et leurs aperçus"></figure>
   </div>
 </section>
 
@@ -25,21 +28,22 @@ section: Produit
         <div class="mini-foot">Votre entreprise, votre pied de page</div>
       </div>
       <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Thème officiel de Panelica.</p></div>
-      <p class="note">L’aperçu est dessiné à partir du fichier <code>theme.json</code> de chaque thème. Les mises en page varient d’un thème à l’autre ; <a href="https://hosting.panelica.com/">la démo en ligne</a> montre le rendu réel.</p>
+      <p class="note">L’aperçu est dessiné à partir du fichier <code>theme.json</code>de chaque thème. Les mises en page varient d’un thème à l’autre ; <a href="https://hosting.panelica.com/">la démo en ligne</a> montre le rendu réel.</p>
     </div>
     <div>
       <h2 class="sr-only">Tous les thèmes</h2>
-      <ul class="theme-list" data-theme-pickers="list" data-src="assets/themes.json"></ul>
+      <ul class="theme-wall" data-theme-pickers="wall" data-src="assets/themes.json"></ul>
     </div>
   </div>
 </section>
 
-<section class="band band--paper">
-  <div class="wrap split">
-    <div class="split-copy">
+<section class="band band--paper band--tight">
+  <div class="wrap cols-2">
+    <div>
       <h2>L’écran Apparence</h2>
       <p class="lede">Chaque thème installé apparaît avec son aperçu sous Apparence. Activez-en un : la vitrine et l’espace client changent ensemble.</p>
-      <ul class="checklist">
+    </div>
+    <ul class="checklist">
         <li>Constructeur de page d’accueil</li>
         <li>Sections réorganisables</li>
         <li>Logo et favicon</li>
@@ -47,8 +51,6 @@ section: Produit
         <li>Mode sombre par thème</li>
         <li>30 langues</li>
       </ul>
-    </div>
-    <figure class="shot"><img src="assets/img/admin-appearance.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="L’écran Apparence du panneau d’administration, avec les thèmes installés et leurs aperçus"></figure>
   </div>
 </section>
 

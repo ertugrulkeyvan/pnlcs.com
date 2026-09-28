@@ -5,39 +5,35 @@ description: PNLCS'teki bir güvenlik sorununu nasıl bildireceğiniz, sizi nele
 section: Proje
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Güvenlik</h1>
     <p class="lede">PNLCS, gerçek hosting işletmeleri için faturalandırmayı, müşteri kimlik bilgilerini ve ödeme entegrasyonlarını yönetir. Bir güvenlik açığı faturaları, müşteri verilerini ve ödemeleri etkileyebilir; bunu ciddiye alıyoruz.</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Güvenlik açığı bildirin</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Güvenlik politikasının tamamı</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>security@panelica.com adresine e-posta gönderin</h3>
+        <p>Bir açıklama, etkilenen bileşen, yeniden üretme adımları, etkisi ve PNLCS, Laravel, PHP ve MySQL sürümlerinizi ekleyin. Kimlik bilgilerini ve müşteri verilerini gizleyin.</p>
+        <p> <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub'ın gizli güvenlik açığı bildirme özelliğini</a>de kullanabilirsiniz.</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>Güvenlik açığı bildirme</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Bildiriminizden sonra</h2>
       <p class="lede">Lütfen bir güvenlik bulgusu için herkese açık bir kayıt, tartışma ya da forum konusu açmayın.</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>security@panelica.com adresine e-posta gönderin</h3>
-        <p>Bir açıklama, etkilenen bileşen, yeniden üretme adımları, etkisi ve PNLCS, Laravel, PHP ve MySQL sürümlerinizi ekleyin. Kimlik bilgilerini ve müşteri verilerini gizleyin.</p>
-        <p><a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub'ın gizli güvenlik açığı bildirme özelliğini</a> de kullanabilirsiniz.</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">Sizi neler bekliyor</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">Alındı bildirimi</th><td class="muted">48 saat içinde</td></tr>
-            <tr><th scope="row">Ön değerlendirme ve önem derecesi</th><td class="muted">5 iş günü içinde</td></tr>
-            <tr><th scope="row">Durum güncellemeleri</th><td class="muted">Haftalık, kritik sorunlarda daha sık</td></tr>
-            <tr><th scope="row">Kritik sorunlar için düzeltme</th><td class="muted">Genellikle doğrulamadan sonraki 14 gün içinde</td></tr>
-            <tr><th scope="row">Kamuya açıklama süresi</th><td class="muted">Varsayılan olarak 90 gün, görüşülebilir</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">Sizi neler bekliyor</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">48 saat içinde</p><h3>Alındı bildirimi</h3><p>Bildiriminizin ulaştığına dair yanıt alırsınız.</p></li>
+      <li><p class="tl-day">5 iş günü içinde</p><h3>Ön değerlendirme</h3><p>İlk değerlendirme ve bir önem derecesi.</p></li>
+      <li><p class="tl-day">Haftalık</p><h3>Durum güncellemeleri</h3><p>Kritik sorunlarda daha sık.</p></li>
+      <li><p class="tl-day">Genellikle 14 gün</p><h3>Düzeltmenin yayımlanması</h3><p>Kritik sorunlar için, doğrulamadan itibaren sayılır.</p></li>
+      <li><p class="tl-day">90 gün</p><h3>Kamuya açıklama</h3><p>Varsayılan süre, görüşülebilir.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -78,6 +74,6 @@ section: Proje
       <div><dt>Sınırları çizilmiş hosting araçları</dt><dd>Her dosya, DNS, cron ve yedekleme işlemi, müşterinin kendi alan adlarıyla karşılaştırılarak denetlenir.</dd></div>
       <div><dt>Korumalı hizmet kurulumu</dt><dd>PNLCS, Proxmox'ta yalnızca kendi oluşturup işaretlediği makineler üzerinde işlem yapar.</dd></div>
     </dl>
-    <p class="note">Ücretli bir hata ödül programımız yok, ancak araştırmacıların adı güvenlik bülteninde ve değişiklik günlüğünde anılabilir. <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Politikaya</a> uyan, iyi niyetli araştırmalar için yasal yola başvurmayız.</p>
+    <p class="note">Ücretli bir hata ödül programımız yok, ancak araştırmacıların adı güvenlik bülteninde ve değişiklik günlüğünde anılabilir. <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Politikaya</a>de kullanabilirsiniz.</p>
   </div>
 </section>

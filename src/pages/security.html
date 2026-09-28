@@ -5,39 +5,35 @@ description: How to report a security issue in PNLCS, what to expect, and the se
 section: Project
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Security</h1>
     <p class="lede">PNLCS handles billing, customer credentials and payment integrations for real hosting businesses. A security defect can affect invoices, customer data and payments, and we take that seriously.</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Report a vulnerability</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Full security policy</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>Email security@panelica.com</h3>
+        <p>Include a description, the affected component, steps to reproduce, the impact, and your PNLCS, Laravel, PHP and MySQL versions. Redact any credentials or customer data.</p>
+        <p>You can also use <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub’s private vulnerability reporting</a>.</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>Reporting a vulnerability</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>After you report</h2>
       <p class="lede">Please do not open a public issue, discussion or forum thread for a security finding.</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>Email security@panelica.com</h3>
-        <p>Include a description, the affected component, steps to reproduce, the impact, and your PNLCS, Laravel, PHP and MySQL versions. Redact any credentials or customer data.</p>
-        <p>You can also use <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub’s private vulnerability reporting</a>.</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">What to expect</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">Acknowledgement</th><td class="muted">Within 48 hours</td></tr>
-            <tr><th scope="row">Triage and severity</th><td class="muted">Within 5 business days</td></tr>
-            <tr><th scope="row">Status updates</th><td class="muted">Weekly, sooner for critical issues</td></tr>
-            <tr><th scope="row">Fix for critical issues</th><td class="muted">Typically within 14 days of confirmation</td></tr>
-            <tr><th scope="row">Disclosure window</th><td class="muted">90 days by default, negotiable</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">What to expect</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">Within 48 hours</p><h3>Acknowledgement</h3><p>You hear back that the report arrived.</p></li>
+      <li><p class="tl-day">Within 5 business days</p><h3>Triage</h3><p>A first assessment and a severity rating.</p></li>
+      <li><p class="tl-day">Weekly</p><h3>Status updates</h3><p>Sooner for critical issues.</p></li>
+      <li><p class="tl-day">Typically 14 days</p><h3>Fix released</h3><p>For critical issues, counted from confirmation.</p></li>
+      <li><p class="tl-day">90 days</p><h3>Disclosure</h3><p>The default window, negotiable.</p></li>
+    </ol>
   </div>
 </section>
 

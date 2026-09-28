@@ -5,11 +5,17 @@ description: Ce que comprend PNLCS : espace client, panneau d’administration
 section: Produit
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Fonctionnalités</h1>
     <p class="lede">La vitrine, l’espace client, la facturation, le provisionnement et le support forment une seule application Laravel. Cette page liste ce que fait chaque partie ; la documentation explique comment.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Documentation</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Produit
           <div><dt>État du réseau</dt><dd>Incidents en cours et maintenances planifiées.</dd></div>
           <div><dt>Sécurité du compte</dt><dd>Connexion à deux facteurs, alertes de connexion et historique des sessions.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="Un service d’hébergement dans l’espace client : consommation en direct et huit outils de gestion"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Produit
           <div><dt>Pénalités de retard, codes promo, promotions</dt><dd>Ainsi que les soldes créditeurs et un parcours d’ajout de fonds.</dd></div>
           <div><dt>Maintenance planifiée</dt><dd>Taux de change, sauvegardes de la base de données et rétention des journaux, selon un planning.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Configuration d’une commande VPS : cycle de facturation, options configurables et récapitulatif de commande avec le total"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Produit
           <div><dt>Devis et projets</dt><dd>Un parcours d’avant-vente à la manière de WHMCS.</dd></div>
           <div><dt>Calendrier</dt><dd>Événements, rappels et tâches planifiées.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Le serveur virtuel d’un client tel que l’équipe le voit dans le panneau d’administration"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -102,11 +111,27 @@ section: Produit
         <dl class="spec-grid">
           <div><dt>API HTTP</dt><dd>171 actions avec les noms d’actions de WHMCS, et une description OpenAPI 3.1.</dd></div>
           <div><dt>Serveur MCP</dt><dd>Permettez à un assistant IA de lire et, si vous l’autorisez, d’agir via l’API.</dd></div>
-          <div><dt>Hooks</dt><dd><code>add_hook()</code> compatible WHMCS avec plus de 20 points d’accroche ; un hook en échec ne bloque jamais la facturation.</dd></div>
+          <div><dt>Hooks</dt><dd> <code>add_hook()</code> compatible WHMCS avec plus de 20 points d’accroche ; un hook en échec ne bloque jamais la facturation.</dd></div>
           <div><dt>Webhooks</dt><dd>Callbacks entrants des passerelles et événements sortants.</dd></div>
           <div><dt>Modules</dt><dd>Modules serveur, passerelle, bureau d’enregistrement et SSL, plus des modules complémentaires.</dd></div>
           <div><dt>Collecte des e-mails</dt><dd>Des boîtes IMAP ou POP3 transforment les e-mails en tickets et en réponses.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>Lister les clients via l’API</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Exécuter du code quand une facture est payée</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

@@ -5,39 +5,35 @@ description: Wie Sie eine Sicherheitslücke in PNLCS melden, was Sie erwarten k�
 section: Projekt
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Sicherheit</h1>
     <p class="lede">PNLCS verarbeitet Abrechnungen, Zugangsdaten von Kunden und Zahlungsintegrationen für echte Hosting-Unternehmen. Ein Sicherheitsfehler kann Rechnungen, Kundendaten und Zahlungen betreffen, und das nehmen wir ernst.</p>
     <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Sicherheitslücke melden</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Vollständige Sicherheitsrichtlinie</a></div>
+    </div>
+    <aside class="callout callout--report">
+        <h3>E-Mail an security@panelica.com</h3>
+        <p>Geben Sie eine Beschreibung, die betroffene Komponente, Schritte zur Reproduktion, die Auswirkungen sowie Ihre Versionen von PNLCS, Laravel, PHP und MySQL an. Entfernen Sie alle Zugangsdaten und Kundendaten.</p>
+        <p>Sie können auch die <a href="https://github.com/Panelica/pnlcs/security/advisories/new">private Schwachstellenmeldung von GitHub</a>nutzen.</p>
+    </aside>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>Sicherheitslücken melden</h2>
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Nach Ihrer Meldung</h2>
       <p class="lede">Bitte eröffnen Sie für einen Sicherheitsfund kein öffentliches Issue, keine Diskussion und keinen Forenbeitrag.</p>
-      <div class="callout" style="margin-top:28px">
-        <h3>E-Mail an security@panelica.com</h3>
-        <p>Geben Sie eine Beschreibung, die betroffene Komponente, Schritte zur Reproduktion, die Auswirkungen sowie Ihre Versionen von PNLCS, Laravel, PHP und MySQL an. Entfernen Sie alle Zugangsdaten und Kundendaten.</p>
-        <p>Sie können auch die <a href="https://github.com/Panelica/pnlcs/security/advisories/new">private Schwachstellenmeldung von GitHub</a> nutzen.</p>
-      </div>
     </div>
-    <div>
-      <h3 style="margin-bottom:14px">Was Sie erwarten können</h3>
-      <div class="table-wrap">
-        <table class="table">
-          <tbody>
-            <tr><th scope="row">Eingangsbestätigung</th><td class="muted">Innerhalb von 48 Stunden</td></tr>
-            <tr><th scope="row">Triage und Schweregrad</th><td class="muted">Innerhalb von 5 Werktagen</td></tr>
-            <tr><th scope="row">Statusupdates</th><td class="muted">Wöchentlich, bei kritischen Problemen früher</td></tr>
-            <tr><th scope="row">Fix für kritische Probleme</th><td class="muted">In der Regel innerhalb von 14 Tagen nach Bestätigung</td></tr>
-            <tr><th scope="row">Offenlegungsfrist</th><td class="muted">Standardmäßig 90 Tage, verhandelbar</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="sr-only">Was Sie erwarten können</h3>
+    <ol class="timeline timeline--plain">
+      <li><p class="tl-day">Innerhalb von 48 Stunden</p><h3>Eingangsbestätigung</h3><p>Sie erhalten eine Bestätigung, dass die Meldung angekommen ist.</p></li>
+      <li><p class="tl-day">Innerhalb von 5 Werktagen</p><h3>Ersteinschätzung</h3><p>Eine erste Einschätzung und eine Einstufung des Schweregrads.</p></li>
+      <li><p class="tl-day">Wöchentlich</p><h3>Statusupdates</h3><p>Bei kritischen Problemen früher.</p></li>
+      <li><p class="tl-day">In der Regel 14 Tage</p><h3>Korrektur veröffentlicht</h3><p>Bei kritischen Problemen, gerechnet ab der Bestätigung.</p></li>
+      <li><p class="tl-day">90 Tage</p><h3>Veröffentlichung</h3><p>Die Standardfrist, verhandelbar.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -78,6 +74,6 @@ section: Projekt
       <div><dt>Abgeschottete Hosting-Werkzeuge</dt><dd>Jede Datei-, DNS-, Cron- und Backup-Aktion wird gegen die eigenen Domains des Kunden geprüft.</dd></div>
       <div><dt>Abgesicherte Provisionierung</dt><dd>Auf Proxmox greift PNLCS nur auf Maschinen zu, die es selbst erstellt und markiert hat.</dd></div>
     </dl>
-    <p class="note">Wir betreiben kein bezahltes Bug-Bounty-Programm, Forschende können aber im Advisory und im Changelog genannt werden. Forschung in gutem Glauben, die der <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Richtlinie</a> folgt, verfolgen wir nicht rechtlich.</p>
+    <p class="note">Wir betreiben kein bezahltes Bug-Bounty-Programm, Forschende können aber im Advisory und im Changelog genannt werden. Forschung in gutem Glauben, die der <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Richtlinie</a>nutzen.</p>
   </div>
 </section>

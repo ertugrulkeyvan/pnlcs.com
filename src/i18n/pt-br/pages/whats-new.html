@@ -5,11 +5,22 @@ description: Notas de versão do PNLCS, das mais recentes para as mais antigas.
 section: Recursos
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Novidades do PNLCS</h1>
     <p class="lede">Notas de versão, das mais recentes para as mais antigas, extraídas do <a href="https://github.com/Panelica/pnlcs/blob/main/CHANGELOG.md">changelog no GitHub</a>.</p>
     <div class="btn-row"><a class="btn btn--light" href="https://github.com/Panelica/pnlcs/releases">Versões publicadas</a><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/install/updating/">Como atualizar</a></div>
+    </div>
+    <aside class="getbox getbox--light" aria-labelledby="latest-title">
+      <h2 id="latest-title">Última atualização</h2>
+      <table><tbody>
+        <tr><th scope="row">Data</th><td>{{latest_date}}</td></tr>
+        <tr><th scope="row">Alteração</th><td>{{latest_title}}</td></tr>
+        <tr><th scope="row">Versão publicada</th><td data-stat="release">v1.2.0</td></tr>
+      </tbody></table>
+      <a class="getbox-more" href="#{{latest_slug}}">Ler as notas da versão</a>
+    </aside>
   </div>
 </section>
 

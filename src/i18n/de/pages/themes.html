@@ -4,10 +4,13 @@ description: Sechzehn integrierte Themes für den PNLCS-Shop und das Kundenporta
 section: Produkt
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Themes für Shop und Kundenportal</h1>
     <p class="lede">PNLCS bringt sechzehn Themes mit. Installieren und wechseln Sie sie unter „Erscheinungsbild“ im Admin-Bereich und legen Sie dann Ihr eigenes Logo, Favicon und Ihre Fußzeile fest. Wählen Sie ein Theme, um seine Farben in einem Beispiel-Shop zu sehen.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/admin-appearance-800.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Die Seite „Erscheinungsbild“ im Admin-Bereich mit den installierten Themes und ihren Vorschauen"></figure>
   </div>
 </section>
 
@@ -25,21 +28,22 @@ section: Produkt
         <div class="mini-foot">Ihre Firma, Ihre Fußzeile</div>
       </div>
       <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Offizielles Panelica-Theme.</p></div>
-      <p class="note">Die Vorschau wird aus der <code>theme.json</code> des jeweiligen Themes erzeugt. Die Layouts unterscheiden sich je nach Theme; <a href="https://hosting.panelica.com/">die Live-Demo</a> zeigt das Original.</p>
+      <p class="note">Die Vorschau wird aus der <code>theme.json</code>des jeweiligen Themes erzeugt. Die Layouts unterscheiden sich je nach Theme; <a href="https://hosting.panelica.com/">die Live-Demo</a> zeigt das Original.</p>
     </div>
     <div>
       <h2 class="sr-only">Alle Themes</h2>
-      <ul class="theme-list" data-theme-pickers="list" data-src="assets/themes.json"></ul>
+      <ul class="theme-wall" data-theme-pickers="wall" data-src="assets/themes.json"></ul>
     </div>
   </div>
 </section>
 
-<section class="band band--paper">
-  <div class="wrap split">
-    <div class="split-copy">
+<section class="band band--paper band--tight">
+  <div class="wrap cols-2">
+    <div>
       <h2>Die Seite „Erscheinungsbild“</h2>
       <p class="lede">Unter „Erscheinungsbild“ erscheint jedes installierte Theme mit seiner Vorschau. Aktivieren Sie eines, und Shop und Kundenportal wechseln gemeinsam.</p>
-      <ul class="checklist">
+    </div>
+    <ul class="checklist">
         <li>Startseiten-Builder</li>
         <li>Sortierbare Abschnitte</li>
         <li>Logo und Favicon</li>
@@ -47,8 +51,6 @@ section: Produkt
         <li>Dark Mode pro Theme</li>
         <li>30 Sprachen</li>
       </ul>
-    </div>
-    <figure class="shot"><img src="assets/img/admin-appearance.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Die Seite „Erscheinungsbild“ im Admin-Bereich mit den installierten Themes und ihren Vorschauen"></figure>
   </div>
 </section>
 

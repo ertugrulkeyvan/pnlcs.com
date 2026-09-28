@@ -4,7 +4,8 @@ description: Servermodule, Zahlungsanbieter, Domain-Registrare und SSL-Anbieter,
 section: Produkt
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Integrationen</h1>
     <p class="lede">Alle Module werden mit PNLCS ausgeliefert. Die Statusspalte zeigt, welche bereits auf Live-Systemen gelaufen sind und welche noch nicht vollständig getestet wurden.</p>
@@ -13,6 +14,11 @@ section: Produkt
       <span class="badge badge--help">Code fertig, braucht Praxistests</span>
       <span class="badge badge--plain">Enthalten</span>
     </div>
+    </div>
+    <ul class="intro-logos" aria-hidden="true">
+      <li>{{logo:panelica}}</li><li>{{logo:cpanel}}</li><li>{{logo:plesk}}</li><li>{{logo:proxmox}}</li>
+      <li>{{logo:stripe}}</li><li>{{logo:paypal}}</li><li>{{logo:razorpay}}</li><li>{{logo:namecheap}}</li>
+    </ul>
   </div>
 </section>
 
@@ -24,14 +30,14 @@ section: Produkt
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Modul</th><th scope="col">Was es bereitstellt</th><th scope="col">Status</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Panelica</th><td class="muted">Hosting-Konten, Docker-Apps und die Hosting-Werkzeuge im Portal</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
-          <tr><th scope="row">Proxmox VE</th><td class="muted">Virtuelle KVM-Server aus Cloud-Images und LXC-Templates</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
-          <tr><th scope="row">cPanel / WHM</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">Plesk</th><td class="muted">Hosting-Abonnements</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">DirectAdmin</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">HestiaCP</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">Vultr</th><td class="muted">Cloud-Server</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">Individuell</th><td class="muted">Dienste, die Sie von Hand verwalten, ohne Automatisierung</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Hosting-Konten, Docker-Apps und die Hosting-Werkzeuge im Portal</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">Virtuelle KVM-Server aus Cloud-Images und LXC-Templates</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Hosting-Abonnements</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Hosting-Konten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Cloud-Server</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Individuell</span></th><td class="muted">Dienste, die Sie von Hand verwalten, ohne Automatisierung</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
         </tbody>
       </table></div>
     </section>
@@ -42,14 +48,14 @@ section: Produkt
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Anbieter</th><th scope="col">Hinweise</th><th scope="col">Status</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, tokenisierte Karten</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
-          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, tokenisierte Karten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">Banküberweisung</th><td class="muted">Mit Zahlungsmeldungen der Kunden und Beleg-Upload</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">Mollie</th><td class="muted">Europäische Zahlungsmethoden</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">Razorpay</th><td class="muted">Indien</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">iyzico</th><td class="muted">Türkei: 3D Secure, Ratenzahlung, gespeicherte Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">Tpay</th><td class="muted">Polen: BLIK, Sofortüberweisungen, Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, tokenisierte Karten</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, tokenisierte Karten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Banküberweisung</span></th><td class="muted">Mit Zahlungsmeldungen der Kunden und Beleg-Upload</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">Europäische Zahlungsmethoden</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">Indien</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Türkei: 3D Secure, Ratenzahlung, gespeicherte Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Polen: BLIK, Sofortüberweisungen, Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
         </tbody>
       </table></div>
     </section>
@@ -60,14 +66,14 @@ section: Produkt
       <div class="table-wrap"><table class="table">
         <thead><tr><th scope="col">Modul</th><th scope="col">Typ</th><th scope="col">Status</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Enom</th><td class="muted">Registrar</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
-          <tr><th scope="row">Namecheap</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">ResellerClub</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">OpenProvider</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">DomainNameApi</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">HRD</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">Manuell</th><td class="muted">Registrar für Domains, die Sie selbst verwalten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
-          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Registrar</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Manuell</span></th><td class="muted">Registrar für Domains, die Sie selbst verwalten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
         </tbody>
       </table></div>
     </section>

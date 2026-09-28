@@ -50,6 +50,38 @@ LANGS = [
 ]
 
 
+FLAGS = {'en': 'gb', 'es': 'es', 'de': 'de', 'fr': 'fr', 'pt-br': 'br', 'tr': 'tr', 'ru': 'ru', 'zh': 'cn', 'ja': 'jp'}
+
+# {{logo:slug}} in a page becomes the brand mark. Simple Icons (CC0) where one exists,
+# otherwise a monogram in the same box, so every row of logos stays even.
+LOGOS = {
+    'panelica': 'Panelica', 'cpanel': 'cPanel', 'plesk': 'Plesk', 'directadmin': 'DirectAdmin', 'hestiacp': 'HestiaCP',
+    'proxmox': 'Proxmox VE', 'vultr': 'Vultr', 'custom': 'Custom',
+    'stripe': 'Stripe', 'paypal': 'PayPal', 'authorizenet': 'Authorize.net', 'mollie': 'Mollie', 'razorpay': 'Razorpay',
+    'iyzico': 'iyzico', 'tpay': 'Tpay', 'banktransfer': 'Bank transfer',
+    'namecheap': 'Namecheap', 'enom': 'Enom', 'resellerclub': 'ResellerClub', 'openprovider': 'OpenProvider',
+    'domainnameapi': 'DomainNameApi', 'hrd': 'HRD', 'manual': 'Manual', 'gogetssl': 'GoGetSSL',
+    'docker': 'Docker', 'laravel': 'Laravel', 'php': 'PHP', 'mysql': 'MySQL', 'mariadb': 'MariaDB', 'github': 'GitHub',
+}
+
+
+def logo_html(slug):
+    name = LOGOS.get(slug)
+    if name is None:
+        sys.exit(f'unknown logo slug: {slug}')
+    svg = ROOT / 'assets' / 'logos' / f'{slug}.svg'
+    png = ROOT / 'assets' / 'logos' / f'{slug}.png'
+    if svg.exists():
+        body = re.sub(r'<title>.*?</title>', '', svg.read_text())
+        return body.replace('<svg ', '<svg class="mark" aria-hidden="true" focusable="false" fill="currentColor" ', 1)
+    if png.exists():
+        return f'<img class="mark" src="assets/logos/{slug}.png" alt="" width="24" height="24">'
+    letters = name[:3] if name.isupper() else ''.join(w[0] for w in re.findall(r'[A-Z][a-z]*|[a-z]+|\d', name))[:2].upper()
+    if len(letters) < 2:
+        letters = name[:2].upper()
+    return f'<span class="mark mark--mono" aria-hidden="true">{letters}</span>'
+
+
 # ---------- data refresh (optional) ----------
 
 def refresh():
@@ -195,11 +227,11 @@ def lang_switcher(code, name, s):
     items = []
     for c, h, n in LANGS:
         cur = ' aria-current="true"' if c == code else ''
-        items.append(f'<li><a href="{lang_base(c)}{target}" hreflang="{h}" lang="{h}"{cur}>{n}</a></li>')
-    globe = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">'
-             '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>')
+        items.append(f'<li><a href="{lang_base(c)}{target}" hreflang="{h}" lang="{h}"{cur}>'
+                     f'<img src="/assets/flags/{FLAGS[c]}.svg" alt="" width="20" height="15">{n}</a></li>')
     label = html.escape(f'{s["language"]}: {current}')
-    return (f'<details class="lang"><summary aria-label="{label}">{globe}<span>{code.split("-")[0].upper()}</span></summary>'
+    flag = f'<img src="/assets/flags/{FLAGS[code]}.svg" alt="" width="20" height="15">'
+    return (f'<details class="lang"><summary aria-label="{label}">{flag}<span>{code.split("-")[0].upper()}</span></summary>'
             f'<ul>{"".join(items)}</ul></details>')
 
 
@@ -254,6 +286,7 @@ def build():
                           f'<li>{html.escape(meta["section"])}</li>'
                           f'<li aria-current="page">{html.escape(meta.get("heading", meta["title"]))}</li></ol></nav>')
             body = body.replace('{{crumbs}}', crumbs)
+            body = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), body)
             title = meta['title'] if name == 'index.html' else f'{meta["title"]} | PNLCS'
             alternates = '\n'.join(f'<link rel="alternate" hreflang="{h}" href="{page_url(c, name)}">' for c, h, _ in LANGS)
             alternates += f'\n<link rel="alternate" hreflang="x-default" href="{page_url("en", name)}">'

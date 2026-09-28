@@ -5,11 +5,17 @@ description: PNLCS'te neler var: müşteri paneli, yönetim paneli, düzenli fat
 section: Ürün
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>Özellikler</h1>
     <p class="lede">Mağaza, müşteri paneli, faturalandırma, hizmet kurulumu ve destek tek bir Laravel uygulamasıdır. Bu sayfa her parçanın ne yaptığını listeler; nasıl yapıldığını dokümantasyon anlatır.</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Dokümantasyon</a></div>
+    </div>
+    <div class="intro-stack" aria-hidden="true">
+      <figure><img src="assets/img/client-hosting-tools-800.webp" alt="" width="800" height="500"></figure>
+      <figure><img src="assets/img/admin-vps-panel-800.webp" alt="" width="800" height="500"></figure>
+    </div>
   </div>
 </section>
 
@@ -42,6 +48,7 @@ section: Ürün
           <div><dt>Ağ durumu</dt><dd>Aktif arızalar ve planlı bakımlar.</dd></div>
           <div><dt>Hesap güvenliği</dt><dd>İki adımlı giriş, giriş uyarıları ve oturum geçmişi.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/hosting-tools-crop.webp" srcset="assets/img/hosting-tools-crop-800.webp 800w, assets/img/hosting-tools-crop.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="526" loading="lazy" alt="Müşteri panelinde bir hosting hizmeti: anlık kullanım ve sekiz yönetim aracı"></figure>
       </section>
 
       <section class="spec" id="billing">
@@ -58,6 +65,7 @@ section: Ürün
           <div><dt>Gecikme ücretleri, kuponlar, kampanyalar</dt><dd>Ayrıca kredi bakiyeleri ve bakiye yükleme akışı.</dd></div>
           <div><dt>Zamanlanmış bakım işleri</dt><dd>Döviz kurları, veritabanı yedekleri ve log saklama, belirli bir takvimle.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Bir VPS siparişini yapılandırma: faturalandırma dönemi, yapılandırılabilir seçenekler ve toplam tutarlı sipariş özeti"></figure>
       </section>
 
       <section class="spec" id="admin">
@@ -72,6 +80,7 @@ section: Ürün
           <div><dt>Teklifler ve projeler</dt><dd>WHMCS tarzı bir satış öncesi akışı.</dd></div>
           <div><dt>Takvim</dt><dd>Etkinlikler, hatırlatmalar ve zamanlanmış görevler.</dd></div>
         </dl>
+        <figure class="shot spec-figure"><img src="assets/img/admin-vps-panel.webp" srcset="assets/img/admin-vps-panel-800.webp 800w, assets/img/admin-vps-panel.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Bir müşterinin sanal sunucusu, ekibin yönetim panelinde gördüğü şekliyle"></figure>
       </section>
 
       <section class="spec" id="security">
@@ -102,11 +111,27 @@ section: Ürün
         <dl class="spec-grid">
           <div><dt>HTTP API</dt><dd>WHMCS işlem adlarıyla 171 işlem ve bir OpenAPI 3.1 tanımı.</dd></div>
           <div><dt>MCP sunucusu</dt><dd>Bir yapay zekâ asistanının API üzerinden veri okumasına ve, izin verirseniz, işlem yapmasına olanak tanır.</dd></div>
-          <div><dt>Hook'lar</dt><dd>20'den fazla hook noktasıyla WHMCS uyumlu <code>add_hook()</code>; hata veren bir hook faturalandırmayı asla bozmaz.</dd></div>
+          <div><dt>Hook'lar</dt><dd>20'den fazla hook noktasıyla WHMCS uyumlu <code>add_hook()</code> ; hata veren bir hook faturalandırmayı asla bozmaz.</dd></div>
           <div><dt>Webhook'lar</dt><dd>Ödeme altyapılarından gelen geri çağrılar ve dışarıya giden olaylar.</dd></div>
           <div><dt>Modüller</dt><dd>Sunucu, ödeme altyapısı, alan adı kayıt ve SSL modülleri, ayrıca eklentiler.</dd></div>
           <div><dt>E-posta yönlendirme (piping)</dt><dd>IMAP ya da POP3 posta kutuları, gelen e-postaları destek taleplerine ve yanıtlara dönüştürür.</dd></div>
         </dl>
+        <div class="cols-2 spec-figure">
+          <figure class="code-card">
+            <figcaption>API ile müşterileri listeleyin</figcaption>
+<pre><span class="k">curl</span> -G https://example.com/api/v1/getclients \
+  -H <span class="s">"X-API-Key: $PNLCS_IDENTIFIER"</span> \
+  -H <span class="s">"X-API-Secret: $PNLCS_SECRET"</span> \
+  --data-urlencode <span class="s">"limitnum=5"</span></pre>
+          </figure>
+          <figure class="code-card">
+            <figcaption>Bir fatura ödendiğinde kod çalıştırın</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+          </figure>
+        </div>
       </section>
     </div>
   </div>

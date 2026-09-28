@@ -5,11 +5,28 @@ description: PNLCSとWHMCSやその他のプロプライエタリな請求管理
 section: 製品
 -->
 <section class="page-intro">
-  <div class="wrap">
+  <div class="wrap page-intro-grid">
+    <div>
     {{crumbs}}
     <h1>WHMCSのオープンソース代替</h1>
     <p class="lede">PNLCSはあえてWHMCSに合わせて作られています。顧客、商品、注文、請求書、サービス、チケット、モジュールは同じ意味を持ちます。違いはライセンスです。PNLCSはMITライセンスで、インストールごとの料金はかかりません。</p>
     <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">移行ガイド</a></div>
+    </div>
+    <div class="intro-visual">
+      <figure class="code-card">
+        <figcaption>WHMCS形式のフック（PNLCSでもそのまま動作）</figcaption>
+<pre><span class="k">add_hook</span>(<span class="s">'InvoicePaid'</span>, 1, <span class="k">function</span> (array $vars) {
+    $invoice = $vars[<span class="s">'invoice'</span>];
+    <span class="c">// ...</span>
+});</pre>
+      </figure>
+      <figure class="code-card">
+        <figcaption>WHMCS APIのアクション名</figcaption>
+<pre>GET  /api/v1/<span class="k">getclients</span>
+GET  /api/v1/<span class="k">getinvoices</span>
+POST /api/v1/<span class="k">addorder</span></pre>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -38,7 +55,7 @@ section: 製品
     <dl class="spec-grid">
       <div><dt>概念</dt><dd>商品グループ、商品、構成オプション、サービス、注文、請求書、クレジット、チケット、部門は、WHMCSのスタッフが想定するとおりに動作します。</dd></div>
       <div><dt>APIのアクション名</dt><dd>HTTP APIはWHMCSのアクション名を使っているため、ほとんどの連携は接続先アドレスと認証情報を変えるだけで済みます。</dd></div>
-      <div><dt>フック</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code>は同じように動作します。失敗したフックは請求処理を止めず、ログに記録されてスキップされます。</dd></div>
+      <div><dt>フック</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> は同じように動作します。失敗したフックは請求処理を止めず、ログに記録されてスキップされます。</dd></div>
       <div><dt>モジュール</dt><dd>WHMCSと同様に、サーバー、決済ゲートウェイ、レジストラ、SSLプロバイダーはそれぞれ独立したモジュールです。</dd></div>
     </dl>
   </div>
