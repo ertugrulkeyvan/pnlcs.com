@@ -26,5 +26,5 @@
   "showcase_sells": "Vende",
   "showcase_runs_on": "Funciona con",
   "showcase_location": "Sede",
-  "showcase_draft": "Entrada en borrador para revisión. El texto se confirmará con la empresa y el equipo de PNLCS antes de publicarse."
+  "js_theme_colors": "Color principal {p}, color de acento {a}"
 }

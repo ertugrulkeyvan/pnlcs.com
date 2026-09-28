@@ -22,5 +22,5 @@ pnlcs.com is the public website of PNLCS, a free, MIT-licensed, self-hosted host
 ## Strategic principles
 1. Show the product (real screenshots), not illustrations.
 2. Every number and feature must be verifiable in the repository or docs.
-3. Say what is untested. Credibility comes from candour, not adjectives.
+3. Credibility comes from specifics (real settings, real screens, real commands), not adjectives. Do not publish per-module test status labels (maintainer decision, 2026-09-28).
 4. The demo and the install guide are the two actions that matter; everything else links to docs.

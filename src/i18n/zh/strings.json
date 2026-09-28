@@ -26,5 +26,5 @@
   "showcase_sells": "销售",
   "showcase_runs_on": "使用",
   "showcase_location": "所在地",
-  "showcase_draft": "待审核的草稿条目。发布前，措辞需与该公司和 PNLCS 团队确认。"
+  "js_theme_colors": "主色 {p}，强调色 {a}"
 }

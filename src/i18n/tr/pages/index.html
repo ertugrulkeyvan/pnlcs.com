@@ -36,41 +36,10 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
     </div>
 
 
-    <div class="product">
-      <div class="product-tabs" role="tablist" aria-label="Ürün ekranları">
-        <button class="product-tab" role="tab" aria-selected="true" aria-controls="product-panel" id="tab-hosting"
-          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
-          data-alt="Müşteri panelinde bir hosting hizmeti: anlık kaynak kullanımı ve sekiz yönetim aracı"
-          data-url="your-brand.com/client/services/42"
-          data-caption="Müşteri panelinde bir hosting hizmeti, burada Coral temasıyla. Sunucudan gelen anlık kullanım verileri ve altında sekiz araç.">Hosting<small>Müşteri paneli</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-apps"
-          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w"
-          data-alt="Uygulamalar sayfası: çalışan container'lar ve tek tıkla kurulan uygulamaların kataloğu"
-          data-url="your-brand.com/client/services/42/apps"
-          data-caption="Satılabilir bir ürün olarak Docker hosting. Müşteriler, paketlerinin limitleri dahilinde, sizin seçtiğiniz bir katalogdan uygulama kurar.">Uygulamalar<small>Tek tıkla Docker</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-vps"
-          data-src="assets/img/client-vps.webp" data-srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w"
-          data-alt="Müşteri panelinde bir sanal sunucu: güç kontrolleri, anlık durum ve kullanım grafikleri"
-          data-url="your-brand.com/client/services/57"
-          data-caption="Müşteri panelinde bir Proxmox VPS. Güç kontrolleri, anlık durum, grafikler, snapshot'lar, yedekler ve yeniden kurulum.">VPS<small>Proxmox VE</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-admin"
-          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w"
-          data-alt="Yönetim paneli, bir Proxmox sunucusuna resmî cloud imajlarını kuruyor"
-          data-url="your-brand.com/admin/servers/3/images"
-          data-caption="Yönetim paneli. Burada, bir Proxmox sunucusuna shell'ini açmadan resmî cloud imajları kuruluyor.">Yönetim<small>Personel paneli</small></button>
-      </div>
-      <div class="product-frame" role="tabpanel" id="product-panel" aria-labelledby="tab-hosting">
-        <div class="product-bar" aria-hidden="true"><span></span><span></span><span></span><output id="product-url">your-brand.com/client/services/42</output></div>
-        <div class="product-shot">
-          <img id="product-img" src="assets/img/client-hosting-tools.webp"
-               srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
-               sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000"
-               alt="Müşteri panelinde bir hosting hizmeti: anlık kaynak kullanımı ve sekiz yönetim aracı">
-        </div>
-      </div>
-      <p class="product-caption" id="product-caption" aria-live="polite">Müşteri panelinde bir hosting hizmeti, burada Coral temasıyla. Sunucudan gelen anlık kullanım verileri ve altında sekiz araç.</p>
-      <p class="product-more"><a href="shared-hosting.html">Paylaşımlı hosting</a><a href="docker-apps.html">Docker uygulamaları</a><a href="vps.html">Proxmox VE üzerinde VPS</a><a href="features.html">Tüm özellikler</a></p>
-    </div>
+    <figure class="shot hero-shot">
+      <img src="assets/img/client-hosting-tools.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000" alt="PNLCS müşteri panelinde bir hosting hizmeti: anlık kullanım ve sekiz yönetim aracı">
+      <figcaption>Müşteri panelinde bir hosting hizmeti, Coral temasıyla.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -125,7 +94,7 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
     <div class="band-head band-head--row">
       <div>
         <h2>PNLCS neler yapar, gerçek ekranlarda</h2>
-        <p class="lede">Buradaki her ekran görüntüsü bir PNLCS kurulumundan alındı. Görmek için bir özellik seçin.</p>
+        <p class="lede">Ekranını görmek için bir özellik seçin.</p>
       </div>
       <a class="more" href="features.html">Tüm özellikler</a>
     </div>
@@ -205,23 +174,6 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
         <code>AutoTerminationDays = 30</code>
       </li>
     </ol>
-
-    <div class="morning">
-      <div>
-        <h3>Her sabah, bu sırayla</h3>
-        <p>Sıralama önemlidir. Kayıtlı kartından 06:45'te ödeme alınan bir müşteri 07:00'de askıya alınmaz ve 08:00'de ödeme hatırlatması almaz.</p>
-      </div>
-      <table class="schedule">
-        <tbody>
-          <tr><th scope="row"><time>06:00</time></th><td>Günün yenileme faturalarını oluştur</td><td><code>pnlcs:generate-invoices</code></td></tr>
-          <tr><th scope="row"><time>06:30</time></th><td>Ödenmemiş faturaları gecikmiş olarak işaretle</td><td><code>pnlcs:mark-overdue</code></td></tr>
-          <tr><th scope="row"><time>06:45</time></th><td>Kayıtlı kartlardan tahsilat yap</td><td><code>pnlcs:auto-charge</code></td></tr>
-          <tr><th scope="row"><time>07:00</time></th><td>Ek süresi dolan hizmetleri askıya al</td><td><code>pnlcs:auto-suspend</code></td></tr>
-          <tr><th scope="row"><time>07:30</time></th><td>Gecikme ücretlerini uygula</td><td><code>pnlcs:apply-late-fees</code></td></tr>
-          <tr><th scope="row"><time>08:00</time></th><td>Ödeme hatırlatmalarını gönder</td><td><code>pnlcs:payment-reminders</code></td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
@@ -229,22 +181,22 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
-        <h2>Zaten kullandığınız paneller, alan adı firmaları ve ödeme altyapılarıyla çalışır</h2>
-        <p class="lede">Tüm modüller PNLCS ile birlikte, okunabilir kaynak kod olarak gelir. Bazıları canlı ortamda kendini kanıtladı; bazılarının test edilmesi gerekiyor.</p>
+        <h2>PNLCS ile birlikte gelen entegrasyonlar</h2>
+        <p class="lede">Kontrol panelleri, ödeme altyapıları, alan adı kayıt firmaları ve SSL; hepsi okunabilir kaynak kod olarak birlikte gelir.</p>
       </div>
-      <a class="more" href="integrations.html">Entegrasyon durumu</a>
+      <a class="more" href="integrations.html">Tüm entegrasyonlar</a>
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">Sunucular ve paneller <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">Ödeme altyapıları <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Banka havalesi<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Banka havalesi</li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">Alan adı kayıt firmaları <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL ve eklentiler <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>Şirket sorgulama</li><li>KSeF e-fatura</li><li>Proje yönetimi</li><li>Personel panosu</li></ul></section>
     </div>
-    <p class="legend legend--light"><span><span class="st st--ok"></span>Canlı ortamda test edildi</span><span><span class="st st--help"></span>Gerçek ortamda test edilmesi gerekiyor</span><span>Diğerleri pakete dahildir ama henüz test raporları yok.</span></p>
+    <p class="links"><a href="integrations.html">Tüm entegrasyonlar</a><a href="compare.html">PNLCS ile WHMCS karşılaştırması</a></p>
   </div>
 </section>
 
@@ -264,7 +216,7 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
       <h2>Yönetim panelinden değiştirilebilen on altı tema</h2>
       <p class="lede" style="margin-top:16px">Temaları WordPress'te yaptığınız gibi kurup etkinleştirin. Renklerini örnek bir mağazada görmek için birini seçin.</p>
       <div class="swatches" data-theme-pickers="swatches" data-src="assets/themes.json" role="group" aria-label="Temalar"></div>
-      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Resmî Panelica teması.</p></div>
+      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc"></p></div>
       <a class="btn btn--ghost" href="themes.html">Tüm temalara göz atın</a>
     </div>
   </div>
@@ -273,8 +225,8 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
 <section class="band band--ink" id="install">
   <div class="wrap quick">
     <div>
-      <h2>Yaklaşık 5 dakikada çalışır</h2>
-      <p class="lede" style="margin-top:16px">Tek bir Docker imajı ve bir veritabanı container'ı. Gerisini kurulum sihirbazı halleder.</p>
+      <h2>Docker ile kurulum</h2>
+      <p class="lede" style="margin-top:16px">Bir uygulama container'ı ve bir veritabanı container'ı. Gerisini kurulum sihirbazı halleder.</p>
       <ol class="steps" style="margin-top:28px">
         <li><span><strong>Container'ları başlatın</strong><span>Önce <code>changeme</code> değerlerini kendi şifrelerinizle değiştirin.</span></span></li>
         <li><span><strong>3 ila 5 dakika bekleyin</strong><span>İlk açılışta bağımlılıklar kurulur ve frontend derlenir.</span></span></li>
@@ -302,14 +254,3 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   </div>
 </section>
 
-<section class="band band--paper band--tight" aria-label="Açık kaynak">
-  <div class="wrap">
-    <ul class="oss">
-      <li><span class="mi">{{icon:scale}}</span><strong>MIT lisanslı</strong><span>Lisans ücreti yok. Ticari olarak kullanın ve istediğiniz kısmı değiştirin.</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">Lisans</a></li>
-      <li><span class="mi">{{icon:code}}</span><strong>Okunabilir kaynak kod</strong><span>Her modül, denetleyebileceğiniz şifrelenmemiş PHP koduyla gelir.</span><a href="https://github.com/Panelica/pnlcs">GitHub'daki kaynak kod</a></li>
-      <li><span class="mi">{{icon:users}}</span><strong>Açık geliştirme süreci</strong><span>Panelica ekibi ve gönüllü katkıcılar tarafından.</span><a href="about.html">Proje hakkında</a></li>
-      <li><span class="mi">{{icon:shield-check}}</span><strong>Güvenlik politikası</strong><span>Gizli bildirim, 48 saat içinde alındı yanıtı.</span><a href="security.html">Güvenlik</a></li>
-    </ul>
-    <p class="oss-compare"><a class="more" href="compare.html">PNLCS ile WHMCS karşılaştırması</a></p>
-  </div>
-</section>

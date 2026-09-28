@@ -17,7 +17,7 @@ section: Проект
         <tr><th scope="row">Лицензия</th><td>MIT</td></tr>
         <tr><th scope="row">Последний выпуск</th><td data-stat="release">v1.2.0</td></tr>
         <tr><th scope="row">Звёзды на GitHub</th><td data-stat="stars">59</td></tr>
-        <tr><th scope="row">Участники</th><td data-stat="contributors">5</td></tr>
+        <tr><th scope="row">Участники</th><td data-stat="contributors">6</td></tr>
         <tr><th scope="row">Загрузки из Docker Hub</th><td data-stat="pulls">3.1k</td></tr>
       </tbody></table>
     </aside>
@@ -25,16 +25,12 @@ section: Проект
 </section>
 
 <section class="band">
-  <div class="wrap maker">
+  <div class="wrap">
     <div>
       <h2>Зачем он появился</h2>
-      <p class="lede" style="margin-top:16px">Команде Panelica нужна была открытая биллинговая система на собственном сервере, которая нативно интегрируется с Panelica и хорошо работает с другими панелями управления. Такой системы не было, поэтому команда написала её сама, в свободное от основного продукта время.</p>
+      <p class="lede" style="margin-top:16px">Команде Panelica нужна была открытая биллинговая система на собственном сервере, которая нативно интегрируется с Panelica и хорошо работает с другими панелями управления. Команда разрабатывает её в свободное от основного продукта время.</p>
       <p class="lede" style="margin-top:16px">Система намеренно повторяет понятия WHMCS, чтобы команда, работавшая с WHMCS, быстро в ней освоилась. В отличие от WHMCS, она распространяется под лицензией MIT.</p>
     </div>
-    <blockquote class="quote" style="color:var(--text)">
-      Мы создали PNLCS, потому что он был нужен нам самим, и мы считаем, что программа, на которой держится хостинг-бизнес, не должна быть ежемесячной арендой. Это должен быть инструмент, которым вы владеете, который понимаете и можете улучшить. А это возможно, только если создавать его вместе.
-      <cite style="color:var(--muted)">Команда Panelica, мейнтейнеры PNLCS</cite>
-    </blockquote>
   </div>
 </section>
 
@@ -58,30 +54,3 @@ section: Проект
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap">
-    <div class="band-head"><h2>Что проверено, а что нужно протестировать</h2></div>
-    <div class="cols-2">
-      <div class="callout">
-        <h3>Проверено на рабочих системах</h3>
-        <ul class="plain-list">
-          <li>Личный кабинет клиента, панель администратора и основные сценарии биллинга</li>
-          <li>Счета, заказы, услуги, домены, тикеты, база знаний</li>
-          <li>Серверный модуль Panelica</li>
-          <li>Модуль Proxmox VE для продажи VPS</li>
-          <li>Платежи через Stripe</li>
-          <li>30 языков с редактируемыми переводами</li>
-        </ul>
-      </div>
-      <div class="callout callout--warn">
-        <h3>Нужно тестирование в реальных условиях</h3>
-        <ul class="plain-list">
-          <li>Серверные модули cPanel, Plesk и DirectAdmin</li>
-          <li>Платёжные шлюзы PayPal, Authorize.net и банковский перевод</li>
-          <li>Регистратор доменов Enom</li>
-        </ul>
-        <p style="margin-top:12px"><a href="community.html">Помогите их протестировать</a></p>
-      </div>
-    </div>
-  </div>
-</section>

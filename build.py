@@ -67,21 +67,42 @@ LOGOS = {
 }
 
 
+# Brand colours of the Simple Icons marks (from simple-icons 16.33.0 data)
+SI_COLORS = {'cpanel': '#FF6C2C', 'plesk': '#52BBE6', 'proxmox': '#E57000', 'vultr': '#007BFC', 'stripe': '#635BFF',
+             'paypal': '#002991', 'razorpay': '#0C2451', 'namecheap': '#DE3723', 'docker': '#2496ED', 'laravel': '#FF2D20',
+             'php': '#777BB4', 'mysql': '#4479A1', 'mariadb': '#003545', 'github': '#181717'}
+# Brands whose only official mark is a wordmark: shown instead of the written name
+WORDMARKS = {'iyzico', 'tpay', 'enom'}
+
+
 def logo_html(slug):
     name = LOGOS.get(slug)
     if name is None:
         sys.exit(f'unknown logo slug: {slug}')
-    svg = ROOT / 'assets' / 'logos' / f'{slug}.svg'
-    png = ROOT / 'assets' / 'logos' / f'{slug}.png'
+    d = ROOT / 'assets' / 'logos'
+    word = ' mark--word' if slug in WORDMARKS else ''
+    alt = html.escape(name) if word else ''
+    for f in (d / f'{slug}-img.svg', d / f'{slug}.png'):
+        if f.exists():
+            return f'<img class="mark{word}" src="assets/logos/{f.name}" alt="{alt}" loading="lazy">'
+    svg = d / f'{slug}.svg'
     if svg.exists():
         body = re.sub(r'<title>.*?</title>', '', svg.read_text())
-        return body.replace('<svg ', '<svg class="mark" aria-hidden="true" focusable="false" fill="currentColor" ', 1)
-    if png.exists():
-        return f'<img class="mark" src="assets/logos/{slug}.png" alt="" width="24" height="24">'
-    letters = name[:3] if name.isupper() else ''.join(w[0] for w in re.findall(r'[A-Z][a-z]*|[a-z]+|\d', name))[:2].upper()
-    if len(letters) < 2:
-        letters = name[:2].upper()
+        fill = SI_COLORS.get(slug, 'currentColor')
+        return body.replace('<svg ', f'<svg class="mark" aria-hidden="true" focusable="false" fill="{fill}" ', 1)
+    letters = name[:3] if name.isupper() else ''.join(w[0] for w in re.findall(r'[A-Z][a-z]*|[a-z]+|\\d', name))[:2].upper()
     return f'<span class="mark mark--mono" aria-hidden="true">{letters}</span>'
+
+
+def logos_in(text):
+    """{{logo:x}}Name -> mark + name; a wordmark replaces the name it stands for."""
+    def with_name(m):
+        slug, label = m.group(1), m.group(2)
+        if slug in WORDMARKS:
+            return logo_html(slug)
+        return logo_html(slug) + label
+    text = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}([^<{]*)', with_name, text)
+    return re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), text)
 
 
 def icon_html(name):
@@ -244,7 +265,7 @@ def showcase_card(e, s, compact=False):
     if e.get('location'):
         facts.append((s['showcase_location'], e['location']))
     dl = ''.join(f'<dt>{esc(k)}</dt><dd lang="en">{esc(v)}</dd>' for k, v in facts)
-    draft = f'<p class="draft-note">{esc(s["showcase_draft"])}</p>' if e.get('draft') else ''
+    draft = ''  # drafts are listed like any other entry; the flag is for maintainers
     desc = '' if compact else f'<p lang="en">{esc(e["description"])}</p>'
     return (f'<article class="case{" case--compact" if compact else ""}">{shot}<div class="case-body">'
             f'<h3>{esc(e["name"])}</h3><p class="where"><a href="{esc(e["url"])}">{esc(host)}</a></p>{desc}'
@@ -345,7 +366,6 @@ def build():
                           f'<li>{html.escape(meta["section"])}</li>'
                           f'<li aria-current="page">{html.escape(meta.get("heading", meta["title"]))}</li></ol></nav>')
             body = body.replace('{{crumbs}}', crumbs)
-            body = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), body)
             title = meta['title'] if name == 'index.html' else f'{meta["title"]} | PNLCS'
             alternates = '\n'.join(f'<link rel="alternate" hreflang="{h}" href="{page_url(c, name)}">' for c, h, _ in LANGS)
             alternates += f'\n<link rel="alternate" hreflang="x-default" href="{page_url("en", name)}">'
@@ -365,7 +385,7 @@ def build():
                    .replace('{{latest_date}}', html.escape(latest['date']))
                    .replace('{{site_repo}}', SITE_REPO))
             doc = re.sub(r'\{\{icon:([a-z0-9-]+)\}\}', lambda m: icon_html(m.group(1)), doc)
-            doc = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), doc)
+            doc = logos_in(doc)
             # every page links assets from the site root, so /de/… pages find them too
             doc = re.sub(r'(?<=["\s,(])assets/', '/assets/', doc)
             leftover = re.findall(r'\{\{\w+\}\}', doc)

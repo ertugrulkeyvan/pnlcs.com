@@ -1,6 +1,6 @@
 <!--
 title: Интеграции
-description: Серверные модули, платёжные шлюзы, регистраторы доменов и SSL-провайдеры, которые поставляются с PNLCS, с честным статусом для каждого.
+description: Серверные модули, платёжные шлюзы, регистраторы доменов и SSL-провайдеры, которые поставляются с PNLCS.
 section: Продукт
 -->
 <section class="page-intro">
@@ -8,12 +8,7 @@ section: Продукт
     <div>
     {{crumbs}}
     <h1>Интеграции</h1>
-    <p class="lede">Все модули поставляются вместе с PNLCS. В столбце статуса указано, какие из них уже работали на рабочих системах, а какие ещё не протестированы от начала до конца.</p>
-    <div class="legend">
-      <span class="badge badge--ok">Проверено в эксплуатации</span>
-      <span class="badge badge--help">Код готов, нужно тестирование в реальных условиях</span>
-      <span class="badge badge--plain">В комплекте</span>
-    </div>
+    <p class="lede">Каждый модуль ниже поставляется вместе с PNLCS в виде читаемого исходного кода. Ничего не нужно покупать в маркетплейсе.</p>
     </div>
     <ul class="intro-logos" aria-hidden="true">
       <li>{{logo:panelica}}</li><li>{{logo:cpanel}}</li><li>{{logo:plesk}}</li><li>{{logo:proxmox}}</li>
@@ -28,16 +23,16 @@ section: Продукт
       <h2 id="g-servers">Серверы и панели управления</h2>
       <p>Создание, приостановка, возобновление и удаление аккаунтов или машин, когда заказ оплачен или счёт остался неоплаченным.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Модуль</th><th scope="col">Что создаёт</th><th scope="col">Статус</th></tr></thead>
+        <thead><tr><th scope="col">Модуль</th><th scope="col">Что создаёт</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Хостинг-аккаунты, Docker-приложения и инструменты хостинга в личном кабинете</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">Виртуальные серверы KVM из облачных образов и шаблонов LXC</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Подписки хостинга</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Облачные серверы</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Произвольный</span></th><td class="muted">Услуги, которыми вы управляете вручную, без автоматизации</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Хостинг-аккаунты, Docker-приложения и инструменты хостинга в личном кабинете</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">Виртуальные серверы KVM из облачных образов и шаблонов LXC</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Хостинг-аккаунты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Подписки хостинга</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Хостинг-аккаунты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Хостинг-аккаунты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Облачные серверы</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Произвольный</span></th><td class="muted">Услуги, которыми вы управляете вручную, без автоматизации</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -46,16 +41,16 @@ section: Продукт
       <h2 id="g-gateways">Платёжные шлюзы</h2>
       <p>Все шлюзы используют один платёжный движок, поэтому частичная оплата, кредит и возвраты везде работают одинаково.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Шлюз</th><th scope="col">Примечания</th><th scope="col">Статус</th></tr></thead>
+        <thead><tr><th scope="col">Шлюз</th><th scope="col">Примечания</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, токенизированные карты</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, токенизированные карты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Банковский перевод</span></th><td class="muted">С уведомлениями клиентов о платеже и загрузкой квитанции</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">Европейские способы оплаты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">Индия</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Турция: 3D Secure, рассрочка, сохранённые карты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Польша: BLIK, быстрые переводы, карты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, токенизированные карты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, токенизированные карты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Банковский перевод</span></th><td class="muted">С уведомлениями клиентов о платеже и загрузкой квитанции</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">Европейские способы оплаты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">Индия</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Турция: 3D Secure, рассрочка, сохранённые карты</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Польша: BLIK, быстрые переводы, карты</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -64,16 +59,16 @@ section: Продукт
       <h2 id="g-registrars">Регистраторы доменов и SSL</h2>
       <p>Регистрация, перенос и продление доменов, а также выпуск сертификатов в той же корзине, что и хостинг.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Модуль</th><th scope="col">Тип</th><th scope="col">Статус</th></tr></thead>
+        <thead><tr><th scope="col">Модуль</th><th scope="col">Тип</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Регистратор</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Ручной</span></th><td class="muted">Регистратор для доменов, которые вы обслуживаете сами</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Регистратор</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Ручной</span></th><td class="muted">Регистратор для доменов, которые вы обслуживаете сами</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -96,11 +91,6 @@ section: Продукт
 
 <section class="band band--paper">
   <div class="wrap cols-2">
-    <div class="callout">
-      <h3>Используете один из непротестированных модулей?</h3>
-      <p>Если у вас cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, банковский перевод или Enom, час тестирования на вашей инфраструктуре переведёт модуль в статус «проверено в эксплуатации» для всех.</p>
-      <p><a href="https://github.com/Panelica/pnlcs/issues">Сообщите о результатах</a></p>
-    </div>
     <div class="callout">
       <h3>Не хватает интеграции?</h3>
       <p>Серверный модуль представляет собой один класс; платёжные шлюзы и регистраторы устроены так же. В руководстве разработчика разобран полный пример модуля.</p>

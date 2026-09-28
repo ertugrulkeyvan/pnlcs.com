@@ -779,3 +779,16 @@ a.mega-feature:hover { background: var(--navy-tint); color: var(--text); }
 .band--ink .term { box-shadow: 0 0 0 1px var(--line-dark); }
 .band--ink .links a { color: var(--on-dark); }
 .band--ink code { background: rgba(255,255,255,.1); color: var(--white); }
+
+/* ---------- Colour brand marks ---------- */
+img.mark { object-fit: contain; border-radius: 4px; }
+.mark--word { width: auto !important; height: 16px !important; border-radius: 0; }
+.roster .mark--word, .table .mark--word { height: 15px !important; }
+.intro-logos .mark--word { height: 20px !important; max-width: 70%; }
+.logo-wall .mark--word { height: 18px !important; }
+.roster li.with-logo { min-height: 36px; }
+
+/* Hero: one plain screenshot */
+.hero-shot { margin-top: clamp(40px, 5vw, 64px); border-color: rgba(255,255,255,.12); box-shadow: 0 30px 80px -24px rgba(0,0,0,.6); border-radius: var(--radius-l) var(--radius-l) 0 0; border-bottom: 0; }
+.hero-shot img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top center; }
+.hero-shot figcaption { background: var(--ink); color: var(--on-dark-muted); padding: 14px 0 22px; }

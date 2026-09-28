@@ -26,5 +26,5 @@
   "showcase_sells": "Vend",
   "showcase_runs_on": "Utilise",
   "showcase_location": "Siège",
-  "showcase_draft": "Entrée provisoire, en cours de relecture. Le texte doit être validé avec l’entreprise et l’équipe PNLCS avant publication."
+  "js_theme_colors": "Couleur principale {p}, couleur d’accent {a}"
 }

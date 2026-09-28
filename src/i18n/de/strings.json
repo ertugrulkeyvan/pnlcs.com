@@ -26,5 +26,5 @@
   "showcase_sells": "Angebot",
   "showcase_runs_on": "Läuft mit",
   "showcase_location": "Standort",
-  "showcase_draft": "Entwurf zur Prüfung. Der Wortlaut wird vor der Veröffentlichung mit dem Unternehmen und dem PNLCS-Team abgestimmt."
+  "js_theme_colors": "Primärfarbe {p}, Akzentfarbe {a}"
 }

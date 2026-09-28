@@ -36,41 +36,10 @@ description: PNLCS: бесплатная самостоятельно разме
     </div>
 
 
-    <div class="product">
-      <div class="product-tabs" role="tablist" aria-label="Экраны продукта">
-        <button class="product-tab" role="tab" aria-selected="true" aria-controls="product-panel" id="tab-hosting"
-          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
-          data-alt="Услуга хостинга в личном кабинете клиента: текущее потребление ресурсов и восемь инструментов управления"
-          data-url="your-brand.com/client/services/42"
-          data-caption="Услуга хостинга в личном кабинете клиента, здесь с темой Coral. Текущее потребление ресурсов на сервере, а под ним восемь инструментов.">Хостинг<small>Личный кабинет клиента</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-apps"
-          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w"
-          data-alt="Страница «Приложения»: запущенные контейнеры и каталог приложений, устанавливаемых в один клик"
-          data-url="your-brand.com/client/services/42/apps"
-          data-caption="Docker-хостинг как продукт. Клиенты устанавливают приложения из подобранного вами каталога в пределах своего тарифа.">Приложения<small>Docker в один клик</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-vps"
-          data-src="assets/img/client-vps.webp" data-srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w"
-          data-alt="Виртуальный сервер в личном кабинете клиента: управление питанием, текущее состояние и графики нагрузки"
-          data-url="your-brand.com/client/services/57"
-          data-caption="VPS на Proxmox в личном кабинете клиента. Питание, текущее состояние, графики, снапшоты, резервные копии и переустановка.">VPS<small>Proxmox VE</small></button>
-        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-admin"
-          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w"
-          data-alt="Панель администратора устанавливает официальные облачные образы на сервер Proxmox"
-          data-url="your-brand.com/admin/servers/3/images"
-          data-caption="Панель администратора. Здесь официальные облачные образы устанавливаются на сервер Proxmox без входа в его консоль.">Админка<small>Панель сотрудников</small></button>
-      </div>
-      <div class="product-frame" role="tabpanel" id="product-panel" aria-labelledby="tab-hosting">
-        <div class="product-bar" aria-hidden="true"><span></span><span></span><span></span><output id="product-url">your-brand.com/client/services/42</output></div>
-        <div class="product-shot">
-          <img id="product-img" src="assets/img/client-hosting-tools.webp"
-               srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
-               sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000"
-               alt="Услуга хостинга в личном кабинете клиента: текущее потребление ресурсов и восемь инструментов управления">
-        </div>
-      </div>
-      <p class="product-caption" id="product-caption" aria-live="polite">Услуга хостинга в личном кабинете клиента, здесь с темой Coral. Текущее потребление ресурсов на сервере, а под ним восемь инструментов.</p>
-      <p class="product-more"><a href="shared-hosting.html">Виртуальный хостинг</a><a href="docker-apps.html">Docker-приложения</a><a href="vps.html">VPS на Proxmox VE</a><a href="features.html">Все возможности</a></p>
-    </div>
+    <figure class="shot hero-shot">
+      <img src="assets/img/client-hosting-tools.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000" alt="Услуга хостинга в личном кабинете клиента PNLCS с текущим потреблением ресурсов и восемью инструментами управления">
+      <figcaption>Услуга хостинга в личном кабинете клиента с темой Coral.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -125,7 +94,7 @@ description: PNLCS: бесплатная самостоятельно разме
     <div class="band-head band-head--row">
       <div>
         <h2>Что умеет PNLCS, на реальных экранах</h2>
-        <p class="lede">Все скриншоты здесь сделаны в установке PNLCS. Выберите функцию, чтобы её увидеть.</p>
+        <p class="lede">Выберите функцию, чтобы увидеть её экран.</p>
       </div>
       <a class="more" href="features.html">Все возможности</a>
     </div>
@@ -205,23 +174,6 @@ description: PNLCS: бесплатная самостоятельно разме
         <code>AutoTerminationDays = 30</code>
       </li>
     </ol>
-
-    <div class="morning">
-      <div>
-        <h3>Каждое утро, в таком порядке</h3>
-        <p>Порядок важен. Клиент, чья сохранённая карта оплатила счёт в 06:45, не будет приостановлен в 07:00 и не получит напоминание об оплате в 08:00.</p>
-      </div>
-      <table class="schedule">
-        <tbody>
-          <tr><th scope="row"><time>06:00</time></th><td>Создать счета на продление за этот день</td><td><code>pnlcs:generate-invoices</code></td></tr>
-          <tr><th scope="row"><time>06:30</time></th><td>Пометить неоплаченные счета как просроченные</td><td><code>pnlcs:mark-overdue</code></td></tr>
-          <tr><th scope="row"><time>06:45</time></th><td>Списать оплату с сохранённых карт</td><td><code>pnlcs:auto-charge</code></td></tr>
-          <tr><th scope="row"><time>07:00</time></th><td>Приостановить услуги после льготного периода</td><td><code>pnlcs:auto-suspend</code></td></tr>
-          <tr><th scope="row"><time>07:30</time></th><td>Начислить пени</td><td><code>pnlcs:apply-late-fees</code></td></tr>
-          <tr><th scope="row"><time>08:00</time></th><td>Отправить напоминания об оплате</td><td><code>pnlcs:payment-reminders</code></td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
@@ -229,22 +181,22 @@ description: PNLCS: бесплатная самостоятельно разме
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
-        <h2>Работает с панелями, регистраторами и платёжными шлюзами, которыми вы уже пользуетесь</h2>
-        <p class="lede">Все модули поставляются вместе с PNLCS в виде читаемого исходного кода. Часть из них проверена в эксплуатации; другим нужны тестировщики.</p>
+        <h2>Интеграции, которые поставляются с PNLCS</h2>
+        <p class="lede">Панели управления, платёжные шлюзы, регистраторы доменов и SSL, всё в виде читаемого исходного кода.</p>
       </div>
-      <a class="more" href="integrations.html">Статус интеграций</a>
+      <a class="more" href="integrations.html">Все интеграции</a>
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">Серверы и панели <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="Проверено в эксплуатации"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="Проверено в эксплуатации"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">Платёжные шлюзы <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="Проверено в эксплуатации"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Банковский перевод<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Банковский перевод</li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">Регистраторы доменов <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="Нужно тестирование в реальных условиях"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL и дополнения <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>Поиск компаний</li><li>Электронные счета KSeF</li><li>Управление проектами</li><li>Доска для сотрудников</li></ul></section>
     </div>
-    <p class="legend legend--light"><span><span class="st st--ok"></span>Проверено в эксплуатации</span><span><span class="st st--help"></span>Нужно тестирование в реальных условиях</span><span>Остальные входят в комплект, но отчётов о тестировании по ним пока нет.</span></p>
+    <p class="links"><a href="integrations.html">Все интеграции</a><a href="compare.html">Сравнение PNLCS с WHMCS</a></p>
   </div>
 </section>
 
@@ -264,7 +216,7 @@ description: PNLCS: бесплатная самостоятельно разме
       <h2>Шестнадцать тем, переключаемых из панели администратора</h2>
       <p class="lede" style="margin-top:16px">Устанавливайте и активируйте темы так же, как в WordPress. Выберите тему, чтобы увидеть её цвета на примере витрины.</p>
       <div class="swatches" data-theme-pickers="swatches" data-src="assets/themes.json" role="group" aria-label="Темы"></div>
-      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Официальная тема Panelica.</p></div>
+      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc"></p></div>
       <a class="btn btn--ghost" href="themes.html">Все темы</a>
     </div>
   </div>
@@ -273,8 +225,8 @@ description: PNLCS: бесплатная самостоятельно разме
 <section class="band band--ink" id="install">
   <div class="wrap quick">
     <div>
-      <h2>Работает примерно через 5 минут</h2>
-      <p class="lede" style="margin-top:16px">Один Docker-образ и контейнер базы данных. Остальное сделает мастер установки.</p>
+      <h2>Установка через Docker</h2>
+      <p class="lede" style="margin-top:16px">Один контейнер приложения и один контейнер базы данных. Остальное сделает мастер установки.</p>
       <ol class="steps" style="margin-top:28px">
         <li><span><strong>Запустите контейнеры</strong><span>Сначала замените <code>changeme</code> на собственные пароли.</span></span></li>
         <li><span><strong>Подождите от 3 до 5 минут</strong><span>При первом запуске устанавливаются зависимости и собирается фронтенд.</span></span></li>
@@ -302,14 +254,3 @@ description: PNLCS: бесплатная самостоятельно разме
   </div>
 </section>
 
-<section class="band band--paper band--tight" aria-label="Открытый исходный код">
-  <div class="wrap">
-    <ul class="oss">
-      <li><span class="mi">{{icon:scale}}</span><strong>Лицензия MIT</strong><span>Без платы за лицензию. Используйте в коммерческих целях и меняйте любую часть.</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">Лицензия</a></li>
-      <li><span class="mi">{{icon:code}}</span><strong>Читаемый код</strong><span>Каждый модуль поставляется в виде обычного PHP-кода без шифрования, который можно проверить.</span><a href="https://github.com/Panelica/pnlcs">Исходный код на GitHub</a></li>
-      <li><span class="mi">{{icon:users}}</span><strong>Открытая разработка</strong><span>Команда Panelica и участники-добровольцы.</span><a href="about.html">О проекте</a></li>
-      <li><span class="mi">{{icon:shield-check}}</span><strong>Политика безопасности</strong><span>Закрытые сообщения, подтверждение получения в течение 48 часов.</span><a href="security.html">Безопасность</a></li>
-    </ul>
-    <p class="oss-compare"><a class="more" href="compare.html">Сравнение PNLCS с WHMCS</a></p>
-  </div>
-</section>

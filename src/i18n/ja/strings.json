@@ -26,5 +26,5 @@
   "showcase_sells": "販売",
   "showcase_runs_on": "利用環境",
   "showcase_location": "所在地",
-  "showcase_draft": "レビュー用の下書きです。文面は公開前に事業者およびPNLCSチームと確認します。"
+  "js_theme_colors": "メインカラー{p}、アクセントカラー{a}"
 }

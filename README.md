@@ -78,7 +78,7 @@ A maintainer then reviews and merges it. Entries stay in English on every langua
 
 ## Content rules
 
-Every number and feature on the site must be verifiable in the PNLCS repository or its documentation. Where a module has not been tested end to end, the site says so. See `PRODUCT.md`.
+Every number and feature on the site must be verifiable in the PNLCS repository or its documentation. The site does not publish per-module test status. See `PRODUCT.md`.
 
 Live figures (stars, contributors, latest release, Docker pulls) are fetched in the browser from the GitHub API and shields.io; the HTML carries fallback values.
 

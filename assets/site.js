@@ -206,7 +206,7 @@
       };
       Object.keys(vars).forEach(function (k) { if (vars[k]) mini.style.setProperty(k, vars[k]); });
       name.textContent = t.name;
-      desc.textContent = t.description;
+      desc.textContent = L('theme_colors', 'Primary {p}, accent {a}', { p: (c.primary || '').toUpperCase(), a: (c.welcome_accent || c.accent || '').toUpperCase() });
     };
     json(pickers.dataset.src).then(function (themes) {
       var list = pickers.dataset.themePickers === 'list';

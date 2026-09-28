@@ -26,5 +26,5 @@
   "showcase_sells": "Sattıkları",
   "showcase_runs_on": "Kullandıkları",
   "showcase_location": "Konum",
-  "showcase_draft": "İnceleme için taslak. Metin, yayımlanmadan önce firma ve PNLCS ekibiyle netleştirilecek."
+  "js_theme_colors": "Ana renk {p}, vurgu rengi {a}"
 }

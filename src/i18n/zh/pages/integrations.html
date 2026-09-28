@@ -1,6 +1,6 @@
 <!--
 title: 集成
-description: PNLCS 自带的服务器模块、支付网关、域名注册商和 SSL 提供商，并如实标注每一项的状态。
+description: PNLCS 自带的服务器模块、支付网关、域名注册商和 SSL 提供商。
 section: 产品
 -->
 <section class="page-intro">
@@ -8,12 +8,7 @@ section: 产品
     <div>
     {{crumbs}}
     <h1>集成</h1>
-    <p class="lede">所有模块都随 PNLCS 一起提供。“状态”一栏说明了哪些已在生产系统上运行过，哪些还没有经过完整测试。</p>
-    <div class="legend">
-      <span class="badge badge--ok">已在生产环境测试</span>
-      <span class="badge badge--help">代码已完成，需要实际环境测试</span>
-      <span class="badge badge--plain">已包含</span>
-    </div>
+    <p class="lede">下列每个模块都随 PNLCS 一起提供，源码可读。无需在插件市场购买任何东西。</p>
     </div>
     <ul class="intro-logos" aria-hidden="true">
       <li>{{logo:panelica}}</li><li>{{logo:cpanel}}</li><li>{{logo:plesk}}</li><li>{{logo:proxmox}}</li>
@@ -28,16 +23,16 @@ section: 产品
       <h2 id="g-servers">服务器和控制面板</h2>
       <p>在订单付款或账单逾期时，自动创建、暂停、解除暂停和终止账户或机器。</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">模块</th><th scope="col">开通内容</th><th scope="col">状态</th></tr></thead>
+        <thead><tr><th scope="col">模块</th><th scope="col">开通内容</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">主机账户、Docker 应用，以及客户中心内的主机管理工具</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">基于云镜像的 KVM 云服务器和基于模板的 LXC 容器</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">主机账户</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">主机订阅</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">主机账户</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">主机账户</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">云服务器</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:custom}}自定义</span></th><td class="muted">手动管理的服务，不做自动化处理</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">主机账户、Docker 应用，以及客户中心内的主机管理工具</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">基于云镜像的 KVM 云服务器和基于模板的 LXC 容器</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">主机账户</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">主机订阅</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">主机账户</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">主机账户</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">云服务器</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:custom}}自定义</span></th><td class="muted">手动管理的服务，不做自动化处理</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -46,16 +41,16 @@ section: 产品
       <h2 id="g-gateways">支付网关</h2>
       <p>所有支付网关共用一个支付引擎，因此部分付款、余额和退款在各处的行为都一致。</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">支付网关</th><th scope="col">说明</th><th scope="col">状态</th></tr></thead>
+        <thead><tr><th scope="col">支付网关</th><th scope="col">说明</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents，银行卡令牌化</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout，REST API v2</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js，银行卡令牌化</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}银行转账</span></th><td class="muted">支持客户提交付款通知和上传凭证</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">欧洲本地支付方式</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">印度</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">土耳其：3D Secure、分期付款、保存银行卡</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">波兰：BLIK、快速转账、银行卡</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents，银行卡令牌化</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout，REST API v2</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js，银行卡令牌化</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}银行转账</span></th><td class="muted">支持客户提交付款通知和上传凭证</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">欧洲本地支付方式</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">印度</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">土耳其：3D Secure、分期付款、保存银行卡</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">波兰：BLIK、快速转账、银行卡</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -64,16 +59,16 @@ section: 产品
       <h2 id="g-registrars">域名注册商和 SSL</h2>
       <p>注册、转入和续费域名以及签发证书，与主机使用同一个结账流程。</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">模块</th><th scope="col">类型</th><th scope="col">状态</th></tr></thead>
+        <thead><tr><th scope="col">模块</th><th scope="col">类型</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">域名注册商</td><td><span class="badge badge--help">需要测试</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:manual}}手动</span></th><td class="muted">域名注册商，用于你自己手动处理的域名</td><td><span class="badge badge--plain">已包含</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL：Sectigo、DigiCert、RapidSSL、GeoTrust、Thawte</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">域名注册商</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:manual}}手动</span></th><td class="muted">域名注册商，用于你自己手动处理的域名</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL：Sectigo、DigiCert、RapidSSL、GeoTrust、Thawte</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -96,11 +91,6 @@ section: 产品
 
 <section class="band band--paper">
   <div class="wrap cols-2">
-    <div class="callout">
-      <h3>正在使用尚未测试的模块？</h3>
-      <p>如果你在使用 cPanel、Plesk、DirectAdmin、PayPal、Authorize.net、银行转账或 Enom，在你的环境中花一小时测试，就能让它变成“已在生产环境测试”，所有人都能受益。</p>
-      <p><a href="https://github.com/Panelica/pnlcs/issues">反馈测试结果</a></p>
-    </div>
     <div class="callout">
       <h3>缺少某个集成？</h3>
       <p>一个服务器模块就是一个类，支付网关和域名注册商模块也采用同样的模式。开发者指南会带你完整实现一个模块。</p>

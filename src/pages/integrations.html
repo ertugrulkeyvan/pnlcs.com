@@ -1,6 +1,6 @@
 <!--
 title: Integrations
-description: Server modules, payment gateways, domain registrars and SSL providers that ship with PNLCS, with an honest status for each.
+description: Server modules, payment gateways, domain registrars and SSL providers that ship with PNLCS.
 section: Product
 -->
 <section class="page-intro">
@@ -8,12 +8,7 @@ section: Product
     <div>
     {{crumbs}}
     <h1>Integrations</h1>
-    <p class="lede">All modules ship with PNLCS. The status column says which ones have run on live systems and which have not been tested end to end yet.</p>
-    <div class="legend">
-      <span class="badge badge--ok">Tested in production</span>
-      <span class="badge badge--help">Code complete, needs real-world testing</span>
-      <span class="badge badge--plain">Included</span>
-    </div>
+    <p class="lede">Every module below ships with PNLCS as readable source. Nothing to buy from a marketplace.</p>
     </div>
     <ul class="intro-logos" aria-hidden="true">
       <li>{{logo:panelica}}</li><li>{{logo:cpanel}}</li><li>{{logo:plesk}}</li><li>{{logo:proxmox}}</li>
@@ -28,16 +23,16 @@ section: Product
       <h2 id="g-servers">Servers and control panels</h2>
       <p>Create, suspend, unsuspend and terminate accounts or machines when orders are paid and invoices go unpaid.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Module</th><th scope="col">What it provisions</th><th scope="col">Status</th></tr></thead>
+        <thead><tr><th scope="col">Module</th><th scope="col">What it provisions</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Hosting accounts, Docker apps, and the in-portal hosting tools</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">KVM virtual servers from cloud images and LXC templates</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Hosting accounts</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Hosting subscriptions</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Hosting accounts</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Hosting accounts</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Cloud servers</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Custom</span></th><td class="muted">Services you manage by hand, without automation</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:panelica}}Panelica</span></th><td class="muted">Hosting accounts, Docker apps, and the in-portal hosting tools</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:proxmox}}Proxmox VE</span></th><td class="muted">KVM virtual servers from cloud images and LXC templates</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:cpanel}}cPanel / WHM</span></th><td class="muted">Hosting accounts</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:plesk}}Plesk</span></th><td class="muted">Hosting subscriptions</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:directadmin}}DirectAdmin</span></th><td class="muted">Hosting accounts</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hestiacp}}HestiaCP</span></th><td class="muted">Hosting accounts</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:vultr}}Vultr</span></th><td class="muted">Cloud servers</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:custom}}Custom</span></th><td class="muted">Services you manage by hand, without automation</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -46,16 +41,16 @@ section: Product
       <h2 id="g-gateways">Payment gateways</h2>
       <p>All gateways share one payment engine, so partial payments, credit and refunds behave the same everywhere.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Gateway</th><th scope="col">Notes</th><th scope="col">Status</th></tr></thead>
+        <thead><tr><th scope="col">Gateway</th><th scope="col">Notes</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, tokenised cards</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, tokenised cards</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Bank transfer</span></th><td class="muted">With customer payment notices and receipt upload</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">European payment methods</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">India</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Türkiye: 3D Secure, instalments, stored cards</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Poland: BLIK, quick transfers, cards</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:stripe}}Stripe</span></th><td class="muted">Payment Intents, tokenised cards</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:paypal}}PayPal</span></th><td class="muted">PayPal Checkout, REST API v2</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:authorizenet}}Authorize.net</span></th><td class="muted">Accept.js, tokenised cards</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:banktransfer}}Bank transfer</span></th><td class="muted">With customer payment notices and receipt upload</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:mollie}}Mollie</span></th><td class="muted">European payment methods</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:razorpay}}Razorpay</span></th><td class="muted">India</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:iyzico}}iyzico</span></th><td class="muted">Türkiye: 3D Secure, instalments, stored cards</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:tpay}}Tpay</span></th><td class="muted">Poland: BLIK, quick transfers, cards</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -64,16 +59,16 @@ section: Product
       <h2 id="g-registrars">Domain registrars and SSL</h2>
       <p>Register, transfer and renew domains, and issue certificates, from the same checkout as hosting.</p>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Module</th><th scope="col">Type</th><th scope="col">Status</th></tr></thead>
+        <thead><tr><th scope="col">Module</th><th scope="col">Type</th></tr></thead>
         <tbody>
-          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Registrar</td><td><span class="badge badge--help">Needs testing</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Manual</span></th><td class="muted">Registrar, for domains you handle yourself</td><td><span class="badge badge--plain">Included</span></td></tr>
-          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:enom}}Enom</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:namecheap}}Namecheap</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:resellerclub}}ResellerClub</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:openprovider}}OpenProvider</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:domainnameapi}}DomainNameApi</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:hrd}}HRD</span></th><td class="muted">Registrar</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:manual}}Manual</span></th><td class="muted">Registrar, for domains you handle yourself</td></tr>
+          <tr><th scope="row"><span class="with-logo">{{logo:gogetssl}}GoGetSSL</span></th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td></tr>
         </tbody>
       </table></div>
     </section>
@@ -96,11 +91,6 @@ section: Product
 
 <section class="band band--paper">
   <div class="wrap cols-2">
-    <div class="callout">
-      <h3>Run one of the untested modules?</h3>
-      <p>If you use cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, bank transfer or Enom, an hour of testing on your stack moves it to “tested in production” for everyone.</p>
-      <p><a href="https://github.com/Panelica/pnlcs/issues">Report what you found</a></p>
-    </div>
     <div class="callout">
       <h3>Missing an integration?</h3>
       <p>A server module is a single class; gateways and registrars follow the same pattern. The developer guide walks through a full module.</p>
