@@ -792,3 +792,14 @@ img.mark { object-fit: contain; border-radius: 4px; }
 .hero-shot { margin-top: clamp(40px, 5vw, 64px); border-color: rgba(255,255,255,.12); box-shadow: 0 30px 80px -24px rgba(0,0,0,.6); border-radius: var(--radius-l) var(--radius-l) 0 0; border-bottom: 0; }
 .hero-shot img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top center; }
 .hero-shot figcaption { background: var(--ink); color: var(--on-dark-muted); padding: 14px 0 22px; }
+
+/* ---------- One tile for every mark in lists ---------- */
+.lt { display: inline-grid; place-items: center; width: 30px; height: 30px; flex: none; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.lt .mark, .lt img.mark { width: 18px !important; height: 18px !important; border-radius: 3px; }
+.lt .ico { width: 17px; height: 17px; color: var(--muted); stroke-width: 1.75; }
+.lt .mark--mono { width: 20px !important; height: 20px !important; font-size: .55rem; }
+.roster li.with-logo, .roster li { display: flex; align-items: center; gap: 12px; padding: 7px 0; }
+.with-logo { gap: 12px; }
+.table th .with-logo { display: inline-flex; align-items: center; }
+.intro-logos .mark, .intro-logos img.mark { width: 40px !important; height: 40px !important; }
+.intro-logos li { aspect-ratio: 4 / 3; }

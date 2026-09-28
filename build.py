@@ -72,7 +72,7 @@ SI_COLORS = {'cpanel': '#FF6C2C', 'plesk': '#52BBE6', 'proxmox': '#E57000', 'vul
              'paypal': '#002991', 'razorpay': '#0C2451', 'namecheap': '#DE3723', 'docker': '#2496ED', 'laravel': '#FF2D20',
              'php': '#777BB4', 'mysql': '#4479A1', 'mariadb': '#003545', 'github': '#181717'}
 # Brands whose only official mark is a wordmark: shown instead of the written name
-WORDMARKS = {'iyzico', 'tpay', 'enom'}
+WORDMARKS = set()
 
 
 def logo_html(slug):
@@ -84,7 +84,8 @@ def logo_html(slug):
     alt = html.escape(name) if word else ''
     for f in (d / f'{slug}-img.svg', d / f'{slug}.png'):
         if f.exists():
-            return f'<img class="mark{word}" src="assets/logos/{f.name}" alt="{alt}" loading="lazy">'
+            v = hashlib.sha256(f.read_bytes()).hexdigest()[:8]
+            return f'<img class="mark{word}" src="assets/logos/{f.name}?v={v}" alt="{alt}" loading="lazy">'
     svg = d / f'{slug}.svg'
     if svg.exists():
         body = re.sub(r'<title>.*?</title>', '', svg.read_text())
@@ -97,10 +98,11 @@ def logo_html(slug):
 def logos_in(text):
     """{{logo:x}}Name -> mark + name; a wordmark replaces the name it stands for."""
     def with_name(m):
+        # in lists every mark sits in the same white tile, followed by the plain name
         slug, label = m.group(1), m.group(2)
-        if slug in WORDMARKS:
-            return logo_html(slug)
-        return logo_html(slug) + label
+        if not label.strip():  # a mark on its own (logo clusters) stays large and untiled
+            return logo_html(slug) + label
+        return f'<span class="lt">{logo_html(slug)}</span>' + label
     text = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}([^<{]*)', with_name, text)
     return re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), text)
 
