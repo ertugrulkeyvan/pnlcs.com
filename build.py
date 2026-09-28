@@ -82,6 +82,17 @@ def logo_html(slug):
     return f'<span class="mark mark--mono" aria-hidden="true">{letters}</span>'
 
 
+def icon_html(name):
+    """{{icon:name}} -> inline Lucide icon (ISC), stroke follows currentColor."""
+    f = ROOT / 'assets' / 'icons' / f'{name}.svg'
+    if not f.exists():
+        sys.exit(f'unknown icon: {name}')
+    svg = re.sub(r'<!--.*?-->', '', f.read_text(), flags=re.S).strip()
+    svg = re.sub(r'\s+', ' ', svg).replace('> <', '><')
+    svg = re.sub(r'class="[^"]*"', 'class="ico" aria-hidden="true" focusable="false"', svg, count=1)
+    return svg.replace('width="24" height="24"', 'width="20" height="20"')
+
+
 # ---------- data refresh (optional) ----------
 
 def refresh():
@@ -304,6 +315,8 @@ def build():
                    .replace('{{latest_title}}', inline(latest['title']))
                    .replace('{{latest_slug}}', latest['slug'])
                    .replace('{{latest_date}}', html.escape(latest['date'])))
+            doc = re.sub(r'\{\{icon:([a-z0-9-]+)\}\}', lambda m: icon_html(m.group(1)), doc)
+            doc = re.sub(r'\{\{logo:([a-z0-9-]+)\}\}', lambda m: logo_html(m.group(1)), doc)
             # every page links assets from the site root, so /de/… pages find them too
             doc = re.sub(r'(?<=["\s,(])assets/', '/assets/', doc)
             leftover = re.findall(r'\{\{\w+\}\}', doc)

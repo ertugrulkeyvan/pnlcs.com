@@ -62,6 +62,13 @@ def learn(en_raw, tr_raw, table):
                     table.setdefault(v, ta[k])
         elif e.strip():
             table.setdefault(e.strip(), t.strip())
+            # also learn the words around {{placeholders}}, piece by piece
+            ep = re.split(r'(\{\{[\w:-]+\}\})', e.strip())
+            tp = re.split(r'(\{\{[\w:-]+\}\})', t.strip())
+            if len(ep) == len(tp) > 1:
+                for x, y in zip(ep, tp):
+                    if x.strip() and not x.startswith('{{'):
+                        table.setdefault(x.strip(), y.strip())
     return True
 
 
