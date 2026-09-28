@@ -718,3 +718,64 @@ a.mega-feature:hover { background: var(--navy-tint); color: var(--text); }
 .case--compact h3 { font-size: 1.35rem; }
 @media (max-width: 900px) { .case { grid-template-columns: minmax(0, 1fr); } .case-shot { border-right: 0; border-bottom: 1px solid var(--line); } }
 .status div { align-items: center; }
+
+/* ---------- Home: tidier hero ---------- */
+.hero .getbox { padding: 20px 22px 18px; }
+.hero .getbox th, .hero .getbox td { padding: 8px 0; font-size: .92rem; }
+.hero .getbox h2 { margin-bottom: 4px; }
+
+/* Trust bar under the hero (light) */
+.trust { background: var(--paper); border-bottom: 1px solid var(--line); }
+.trust .proof { margin: 0; padding: 22px 0; border-top: 0; }
+.trust .proof-label { color: var(--muted); }
+.trust .stack-line { color: var(--muted); }
+.trust .stack-line b { color: var(--text); }
+.trust .stack-logos .mark { color: var(--text); opacity: .75; }
+.trust .status dt { color: var(--muted); }
+.trust .status dd { color: var(--text); }
+.trust .avatar-row img { border-color: var(--paper); background: var(--line); }
+
+/* Feature tour */
+.tour { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+.tour-list { display: grid; gap: 6px; }
+.tour-tab { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 14px; align-items: start; width: 100%; padding: 14px 16px; border: 1px solid transparent; border-radius: var(--radius-m); background: none; cursor: pointer; text-align: left; font: inherit; color: var(--text); }
+.tour-tab strong { display: block; font-size: 1.02rem; }
+.tour-tab span span { display: none; color: var(--muted); font-size: .95rem; line-height: 1.45; margin-top: 4px; }
+.tour-tab:hover { background: var(--card); }
+.tour-tab[aria-selected="true"] { background: var(--card); border-color: var(--line); box-shadow: 0 12px 30px -20px rgba(20,26,49,.35); }
+.tour-tab[aria-selected="true"] span span { display: block; }
+.tour-tab[aria-selected="true"] .mi { background: var(--navy); color: var(--white); }
+.tour-panel { position: sticky; top: calc(var(--header-h) + 24px); }
+.tour-panel img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+@media (max-width: 900px) {
+  .tour { grid-template-columns: minmax(0, 1fr); }
+  .tour-list { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; scrollbar-width: none; }
+  .tour-tab { grid-template-columns: 30px auto; padding: 10px 12px; }
+  .tour-tab[aria-selected="true"] span span { display: none; }
+  .tour-panel { position: static; order: 2; }
+}
+
+/* Integration status dots */
+.st { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: auto; flex: none; }
+.st--ok { background: var(--teal); }
+.st--help { background: #d9a13b; }
+.roster li.with-logo { align-items: center; gap: 10px; }
+.roster .mark { width: 22px; height: 22px; }
+.legend--light { color: var(--muted); margin-top: 18px; }
+.legend--light > span { display: inline-flex; align-items: center; gap: 8px; }
+.legend--light .st { margin-left: 0; }
+
+/* Open-source strip */
+.oss { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--card); }
+.oss li { display: grid; align-content: start; gap: 6px; padding: 24px; }
+.oss li + li { border-left: 1px solid var(--line); }
+.oss .mi { margin-bottom: 6px; }
+.oss strong { font-size: 1.05rem; }
+.oss span:not(.mi) { color: var(--muted); font-size: .95rem; }
+.oss a { font-weight: 600; font-size: .95rem; margin-top: 4px; }
+.oss-compare { margin-top: 18px; }
+@media (max-width: 900px) { .oss { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .oss li:nth-child(3) { border-left: 0; } .oss li:nth-child(n+3) { border-top: 1px solid var(--line); } }
+@media (max-width: 520px) { .oss { grid-template-columns: minmax(0, 1fr); } .oss li + li { border-left: 0; border-top: 1px solid var(--line); } }
+.band--ink .term { box-shadow: 0 0 0 1px var(--line-dark); }
+.band--ink .links a { color: var(--on-dark); }
+.band--ink code { background: rgba(255,255,255,.1); color: var(--white); }

@@ -35,18 +35,6 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
       </aside>
     </div>
 
-    <div class="proof">
-      <p class="proof-label">技术栈</p>
-      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>、 <b>PHP 8.4+</b>、 <b>MySQL 8</b> 或 MariaDB，Tailwind CSS 4 和 Alpine.js。提供官方 Docker 镜像。</p>
-      <p class="proof-label">项目状态</p>
-      <dl class="status">
-        <div><dt>许可证</dt><dd>MIT</dd></div>
-        <div><dt>GitHub 星标</dt><dd data-stat="stars">59</dd></div>
-        <div><dt>贡献者</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHub 上的贡献者"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
-        <div><dt>最近更新</dt><dd>{{latest_date}}</dd></div>
-        <div><dt>Docker 拉取次数</dt><dd data-stat="pulls">3.1k</dd></div>
-      </dl>
-    </div>
 
     <div class="product">
       <div class="product-tabs" role="tablist" aria-label="产品界面">
@@ -86,6 +74,23 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
   </div>
 </section>
 
+<section class="trust" aria-label="项目概况">
+  <div class="wrap">
+    <div class="proof">
+      <p class="proof-label">技术栈</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>、 <b>PHP 8.4+</b>、 <b>MySQL 8</b> 或 MariaDB，Tailwind CSS 4 和 Alpine.js。提供官方 Docker 镜像。</p>
+      <p class="proof-label">项目状态</p>
+      <dl class="status">
+        <div><dt>许可证</dt><dd>MIT</dd></div>
+        <div><dt>GitHub 星标</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>贡献者</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHub 上的贡献者"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
+        <div><dt>最近更新</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Docker 拉取次数</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="band" id="people">
@@ -115,7 +120,50 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
   </div>
 </section>
 
-<section class="band band--paper" id="renewals">
+<section class="band band--paper" id="tour">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>PNLCS 能做什么，看真实界面</h2>
+        <p class="lede">这里的每张截图都来自一套 PNLCS 安装。选择一个功能即可查看。</p>
+      </div>
+      <a class="more" href="features.html">全部功能</a>
+    </div>
+    <div class="tour">
+      <div class="tour-list" role="tablist" aria-label="功能" aria-orientation="vertical">
+        <button class="tour-tab" role="tab" type="button" id="tour-client-vps-order" aria-selected="true" aria-controls="tour-panel"
+          data-src="assets/img/client-vps-order.webp" data-srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" data-alt="配置 VPS 订单：付款周期、选项和订单摘要">
+          <span class="mi">{{icon:shopping-cart}}</span><span><strong>销售</strong><span>产品支持可配置选项和付款周期，订单摘要在结账前就会算好总额。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-proxmox-images" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w" data-alt="在管理后台中为 Proxmox 服务器安装官方云镜像">
+          <span class="mi">{{icon:hard-drive}}</span><span><strong>开通云服务器</strong><span>在管理后台中为 Proxmox VE 安装官方云镜像，再将其作为 VPS 产品销售。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-hosting-tools" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" data-alt="客户中心里的一项主机服务，显示实时用量和八个工具">
+          <span class="mi">{{icon:server}}</span><span><strong>主机自助管理</strong><span>在客户中心管理文件、邮箱、数据库、DNS、计划任务和备份，并显示来自服务器的实时用量。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-apps" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" data-alt="“应用”页面，显示运行中的容器和应用目录">
+          <span class="mi">{{icon:container}}</span><span><strong>Docker 应用</strong><span>客户在套餐限额内，从你精选的目录中安装应用。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-languages" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-languages.webp" data-srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" data-alt="语言管理器，列出 30 种语言及其进度">
+          <span class="mi">{{icon:languages}}</span><span><strong>30 种语言</strong><span>启用所需语言，并在浏览器中编辑 2,232 条界面文本中的任意一条。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-appearance" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-appearance.webp" data-srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" data-alt="“外观”页面，显示已安装的主题">
+          <span class="mi">{{icon:palette}}</span><span><strong>你的品牌</strong><span>16 款主题、首页编辑器，以及你自己的 logo、favicon 和页脚。</span></span>
+        </button>
+      </div>
+      <figure class="shot tour-panel" role="tabpanel" id="tour-panel" aria-labelledby="tour-client-vps-order">
+        <img id="tour-img" src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 60vw, 100vw" width="1600" height="1000" alt="配置 VPS 订单：付款周期、选项和订单摘要">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="renewals">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -177,7 +225,7 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper" id="integrations">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -188,18 +236,19 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">服务器和面板 <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="已在生产环境测试"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="已在生产环境测试"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">支付网关 <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}银行转账</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="已在生产环境测试"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}银行转账<span class="st st--help" title="需要实际环境测试"></span></li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">域名注册商 <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="需要实际环境测试"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL 和插件 <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>企业信息查询</li><li>KSeF 电子发票</li><li>项目管理</li><li>员工留言板</li></ul></section>
     </div>
+    <p class="legend legend--light"><span><span class="st st--ok"></span>已在生产环境测试</span><span><span class="st st--help"></span>需要实际环境测试</span><span>其余的已随附提供，但尚无测试报告。</span></p>
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap theme-lab">
     <div class="mini" aria-hidden="true">
       <div class="mini-nav"><b>PNLCS<i></i></b><span>主机</span><span>域名</span><span>VPS</span><span>客户中心</span></div>
@@ -221,14 +270,46 @@ description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的�
   </div>
 </section>
 
-<section class="band band--paper band--tight">
-  <div class="wrap cols-2">
+<section class="band band--ink" id="install">
+  <div class="wrap quick">
     <div>
-      <h2>MIT 许可证，由 Panelica 维护</h2>
+      <h2>约 5 分钟即可运行</h2>
+      <p class="lede" style="margin-top:16px">一个 Docker 镜像加一个数据库容器，其余交给安装向导。</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>启动容器</strong><span>先将 <code>changeme</code> 替换为你自己的密码。</span></span></li>
+        <li><span><strong>等待 3 到 5 分钟</strong><span>首次启动会安装依赖并构建前端。</span></span></li>
+        <li><span><strong>打开 /install</strong><span>安装向导会检查环境要求、创建管理员账户，然后自动锁定。</span></span></li>
+      </ol>
+      <p class="links"><a href="get-started.html">其他安装方式</a><a href="https://hosting.panelica.com/">或者先试用在线演示</a></p>
     </div>
-    <div class="stack">
-      <p class="lede">没有授权费，也没有加密文件：PNLCS 的任何部分你都可以阅读、修改和再分发。项目由 <a href="https://panelica.com/">Panelica</a> 团队利用业余时间维护，并有志愿贡献者参与。</p>
-      <p class="links"><a href="compare.html">与 WHMCS 的对比</a><a href="about.html">关于项目</a><a href="community.html">参与贡献</a></p>
+    <div class="term">
+      <div class="term-head"><span>终端</span><button type="button" data-copy="cmd">复制</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
     </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight" aria-label="开源">
+  <div class="wrap">
+    <ul class="oss">
+      <li><span class="mi">{{icon:scale}}</span><strong>MIT 许可证</strong><span>无需授权费用。可商用，任何部分都可修改。</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">许可证</a></li>
+      <li><span class="mi">{{icon:code}}</span><strong>源代码可读</strong><span>每个模块都以未加密的 PHP 代码发布，你可以自行审查。</span><a href="https://github.com/Panelica/pnlcs">GitHub 上的源代码</a></li>
+      <li><span class="mi">{{icon:users}}</span><strong>公开维护</strong><span>由 Panelica 团队和志愿贡献者共同维护。</span><a href="about.html">关于项目</a></li>
+      <li><span class="mi">{{icon:shield-check}}</span><strong>安全政策</strong><span>私下报告，48 小时内确认收到。</span><a href="security.html">安全</a></li>
+    </ul>
+    <p class="oss-compare"><a class="more" href="compare.html">PNLCS 与 WHMCS 的对比</a></p>
   </div>
 </section>

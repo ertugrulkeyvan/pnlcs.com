@@ -35,18 +35,6 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
       </aside>
     </div>
 
-    <div class="proof">
-      <p class="proof-label">使用技術</p>
-      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>、 <b>PHP 8.4+</b>、 <b>MySQL 8</b> またはMariaDB、Tailwind CSS 4、Alpine.js。公式Dockerイメージあり。</p>
-      <p class="proof-label">プロジェクトの状況</p>
-      <dl class="status">
-        <div><dt>ライセンス</dt><dd>MIT</dd></div>
-        <div><dt>GitHubスター</dt><dd data-stat="stars">59</dd></div>
-        <div><dt>コントリビューター</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHubのコントリビューター"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
-        <div><dt>最終更新</dt><dd>{{latest_date}}</dd></div>
-        <div><dt>Dockerプル数</dt><dd data-stat="pulls">3.1k</dd></div>
-      </dl>
-    </div>
 
     <div class="product">
       <div class="product-tabs" role="tablist" aria-label="製品画面">
@@ -86,6 +74,23 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
   </div>
 </section>
 
+<section class="trust" aria-label="プロジェクトの概要">
+  <div class="wrap">
+    <div class="proof">
+      <p class="proof-label">使用技術</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>、 <b>PHP 8.4+</b>、 <b>MySQL 8</b> またはMariaDB、Tailwind CSS 4、Alpine.js。公式Dockerイメージあり。</p>
+      <p class="proof-label">プロジェクトの状況</p>
+      <dl class="status">
+        <div><dt>ライセンス</dt><dd>MIT</dd></div>
+        <div><dt>GitHubスター</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>コントリビューター</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHubのコントリビューター"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
+        <div><dt>最終更新</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Dockerプル数</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="band" id="people">
@@ -115,7 +120,50 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
   </div>
 </section>
 
-<section class="band band--paper" id="renewals">
+<section class="band band--paper" id="tour">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>PNLCSでできること、実際の画面で</h2>
+        <p class="lede">ここにあるスクリーンショットは、すべてPNLCSのインストール環境で撮影したものです。機能を選ぶと表示されます。</p>
+      </div>
+      <a class="more" href="features.html">すべての機能</a>
+    </div>
+    <div class="tour">
+      <div class="tour-list" role="tablist" aria-label="機能" aria-orientation="vertical">
+        <button class="tour-tab" role="tab" type="button" id="tour-client-vps-order" aria-selected="true" aria-controls="tour-panel"
+          data-src="assets/img/client-vps-order.webp" data-srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" data-alt="VPSの注文画面：請求サイクル、オプション、注文概要">
+          <span class="mi">{{icon:shopping-cart}}</span><span><strong>販売</strong><span>構成オプションと請求サイクルを設定した商品を販売でき、注文概要では決済前に合計金額が正しく計算されます。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-proxmox-images" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w" data-alt="管理パネルからProxmoxサーバーに公式クラウドイメージをインストールしている画面">
+          <span class="mi">{{icon:hard-drive}}</span><span><strong>仮想サーバーのプロビジョニング</strong><span>管理パネルからProxmox VEに公式クラウドイメージをインストールし、VPS商品として販売できます。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-hosting-tools" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" data-alt="顧客ポータルのホスティングサービス画面。リアルタイムの使用状況と8つのツールが表示されている">
+          <span class="mi">{{icon:server}}</span><span><strong>ホスティングのセルフサービス</strong><span>ファイル、メール、データベース、DNS、cron、バックアップを顧客ポータルで管理でき、サーバーから取得したリアルタイムの使用状況も表示されます。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-apps" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" data-alt="アプリ画面。稼働中のコンテナとアプリカタログが表示されている">
+          <span class="mi">{{icon:container}}</span><span><strong>Dockerアプリ</strong><span>顧客は厳選されたカタログから、プランの上限内でアプリをインストールします。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-languages" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-languages.webp" data-srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" data-alt="言語マネージャー。30のロケールとその進捗が一覧表示されている">
+          <span class="mi">{{icon:languages}}</span><span><strong>30言語</strong><span>ロケールを有効にし、2,232のインターフェース文字列をブラウザで編集できます。</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-appearance" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-appearance.webp" data-srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" data-alt="外観画面。インストール済みのテーマが表示されている">
+          <span class="mi">{{icon:palette}}</span><span><strong>自社ブランド</strong><span>16種類のテーマとホームページビルダーがあり、ロゴ、ファビコン、フッターも自社のものに設定できます。</span></span>
+        </button>
+      </div>
+      <figure class="shot tour-panel" role="tabpanel" id="tour-panel" aria-labelledby="tour-client-vps-order">
+        <img id="tour-img" src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 60vw, 100vw" width="1600" height="1000" alt="VPSの注文画面：請求サイクル、オプション、注文概要">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="renewals">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -177,7 +225,7 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper" id="integrations">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -188,18 +236,19 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">サーバーとパネル <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="本番環境で検証済み"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="本番環境で検証済み"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">決済ゲートウェイ <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}銀行振込</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="本番環境で検証済み"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}銀行振込<span class="st st--help" title="実環境での検証が必要"></span></li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">ドメインレジストラ <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="実環境での検証が必要"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSLとアドオン <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>企業情報の検索</li><li>KSeF電子請求書</li><li>プロジェクト管理</li><li>スタッフ掲示板</li></ul></section>
     </div>
+    <p class="legend legend--light"><span><span class="st st--ok"></span>本番環境で検証済み</span><span><span class="st st--help"></span>実環境での検証が必要</span><span>その他は同梱されていますが、まだテスト報告がありません。</span></p>
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap theme-lab">
     <div class="mini" aria-hidden="true">
       <div class="mini-nav"><b>PNLCS<i></i></b><span>ホスティング</span><span>ドメイン</span><span>VPS</span><span>マイページ</span></div>
@@ -221,14 +270,46 @@ description: PNLCSは、MITライセンスで無料のセルフホスト型ホ�
   </div>
 </section>
 
-<section class="band band--paper band--tight">
-  <div class="wrap cols-2">
+<section class="band band--ink" id="install">
+  <div class="wrap quick">
     <div>
-      <h2>MITライセンス、Panelicaがメンテナンス</h2>
+      <h2>約5分で稼働</h2>
+      <p class="lede" style="margin-top:16px">Dockerイメージが1つと、データベースのコンテナが1つ。あとはインストールウィザードが行います。</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>コンテナを起動する</strong><span>先に <code>changeme</code> を独自のパスワードに置き換えてください。</span></span></li>
+        <li><span><strong>3〜5分待つ</strong><span>初回起動時に依存パッケージのインストールとフロントエンドのビルドが行われます。</span></span></li>
+        <li><span><strong>/installを開く</strong><span>ウィザードが要件を確認し、管理者アカウントを作成したあと、自動的にロックされます。</span></span></li>
+      </ol>
+      <p class="links"><a href="get-started.html">その他のインストール方法</a><a href="https://hosting.panelica.com/">または、先にライブデモを試す</a></p>
     </div>
-    <div class="stack">
-      <p class="lede">ライセンス料も、エンコードされたファイルもありません。PNLCSのどの部分でも読み、変更し、再配布できます。 <a href="https://panelica.com/">Panelica</a> チームが本業の合間に、ボランティアのコントリビューターとともにメンテナンスしています。</p>
-      <p class="links"><a href="compare.html">WHMCSとの比較</a><a href="about.html">プロジェクトについて</a><a href="community.html">貢献する</a></p>
+    <div class="term">
+      <div class="term-head"><span>ターミナル</span><button type="button" data-copy="cmd">コピー</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
     </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight" aria-label="オープンソース">
+  <div class="wrap">
+    <ul class="oss">
+      <li><span class="mi">{{icon:scale}}</span><strong>MITライセンス</strong><span>ライセンス料はかかりません。商用利用も、どの部分の改変も可能です。</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">ライセンス</a></li>
+      <li><span class="mi">{{icon:code}}</span><strong>読めるソースコード</strong><span>すべてのモジュールは暗号化されていないPHPで提供され、中身を監査できます。</span><a href="https://github.com/Panelica/pnlcs">GitHubのソースコード</a></li>
+      <li><span class="mi">{{icon:users}}</span><strong>オープンにメンテナンス</strong><span>Panelicaチームとボランティアのコントリビューターが開発しています。</span><a href="about.html">プロジェクトについて</a></li>
+      <li><span class="mi">{{icon:shield-check}}</span><strong>セキュリティポリシー</strong><span>非公開で報告でき、48時間以内に受領をお知らせします。</span><a href="security.html">セキュリティ</a></li>
+    </ul>
+    <p class="oss-compare"><a class="more" href="compare.html">PNLCSとWHMCSの比較</a></p>
   </div>
 </section>

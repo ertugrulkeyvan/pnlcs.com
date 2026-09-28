@@ -35,18 +35,6 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
       </aside>
     </div>
 
-    <div class="proof">
-      <p class="proof-label">Construido con</p>
-      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> o MariaDB, Tailwind CSS 4 y Alpine.js. Imagen Docker oficial.</p>
-      <p class="proof-label">Estado del proyecto</p>
-      <dl class="status">
-        <div><dt>Licencia</dt><dd>MIT</dd></div>
-        <div><dt>Estrellas en GitHub</dt><dd data-stat="stars">59</dd></div>
-        <div><dt>Colaboradores</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="Colaboradores en GitHub"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
-        <div><dt>Última actualización</dt><dd>{{latest_date}}</dd></div>
-        <div><dt>Descargas de Docker</dt><dd data-stat="pulls">3.1k</dd></div>
-      </dl>
-    </div>
 
     <div class="product">
       <div class="product-tabs" role="tablist" aria-label="Pantallas del producto">
@@ -86,6 +74,23 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
   </div>
 </section>
 
+<section class="trust" aria-label="Datos del proyecto">
+  <div class="wrap">
+    <div class="proof">
+      <p class="proof-label">Construido con</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> o MariaDB, Tailwind CSS 4 y Alpine.js. Imagen Docker oficial.</p>
+      <p class="proof-label">Estado del proyecto</p>
+      <dl class="status">
+        <div><dt>Licencia</dt><dd>MIT</dd></div>
+        <div><dt>Estrellas en GitHub</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>Colaboradores</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="Colaboradores en GitHub"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
+        <div><dt>Última actualización</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Descargas de Docker</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="band" id="people">
@@ -115,7 +120,50 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
   </div>
 </section>
 
-<section class="band band--paper" id="renewals">
+<section class="band band--paper" id="tour">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>Lo que hace PNLCS, en pantallas reales</h2>
+        <p class="lede">Todas las capturas de esta sección salen de una instalación de PNLCS. Elige una función para verla.</p>
+      </div>
+      <a class="more" href="features.html">Todas las funciones</a>
+    </div>
+    <div class="tour">
+      <div class="tour-list" role="tablist" aria-label="Funciones" aria-orientation="vertical">
+        <button class="tour-tab" role="tab" type="button" id="tour-client-vps-order" aria-selected="true" aria-controls="tour-panel"
+          data-src="assets/img/client-vps-order.webp" data-srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" data-alt="Configuración de un pedido de VPS: ciclo de facturación, opciones y el resumen del pedido">
+          <span class="mi">{{icon:shopping-cart}}</span><span><strong>Vender</strong><span>Productos con opciones configurables y ciclos de facturación, y un resumen del pedido que cuadra antes del pago.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-proxmox-images" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w" data-alt="El panel de administración instalando imágenes cloud oficiales en un servidor Proxmox">
+          <span class="mi">{{icon:hard-drive}}</span><span><strong>Aprovisionar servidores virtuales</strong><span>Instala imágenes cloud oficiales en Proxmox VE desde el panel de administración y luego véndelas como productos VPS.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-hosting-tools" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" data-alt="Un servicio de hosting en el portal de clientes con uso en tiempo real y ocho herramientas">
+          <span class="mi">{{icon:server}}</span><span><strong>Autogestión del hosting</strong><span>Archivos, correo, bases de datos, DNS, cron y copias de seguridad en el portal de clientes, con el uso en tiempo real del servidor.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-apps" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" data-alt="La página de apps con contenedores en ejecución y el catálogo de apps">
+          <span class="mi">{{icon:container}}</span><span><strong>Apps Docker</strong><span>Los clientes instalan apps desde un catálogo seleccionado, dentro de los límites de su plan.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-languages" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-languages.webp" data-srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" data-alt="El gestor de idiomas con 30 idiomas y su progreso">
+          <span class="mi">{{icon:languages}}</span><span><strong>30 idiomas</strong><span>Activa idiomas y edita cualquiera de los 2,232 textos de la interfaz en el navegador.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-appearance" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-appearance.webp" data-srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" data-alt="La pantalla Apariencia con los temas instalados">
+          <span class="mi">{{icon:palette}}</span><span><strong>Tu marca</strong><span>Dieciséis temas, un constructor de la página de inicio y tu propio logo, favicon y pie de página.</span></span>
+        </button>
+      </div>
+      <figure class="shot tour-panel" role="tabpanel" id="tour-panel" aria-labelledby="tour-client-vps-order">
+        <img id="tour-img" src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 60vw, 100vw" width="1600" height="1000" alt="Configuración de un pedido de VPS: ciclo de facturación, opciones y el resumen del pedido">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="renewals">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -177,7 +225,7 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper" id="integrations">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -188,18 +236,19 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">Servidores y paneles <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="Probado en producción"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="Probado en producción"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">Pasarelas de pago <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Transferencia bancaria</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="Probado en producción"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Transferencia bancaria<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">Registradores de dominios <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="Necesita pruebas en entornos reales"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL y complementos <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>Búsqueda de empresas</li><li>Facturación electrónica KSeF</li><li>Gestión de proyectos</li><li>Tablero del personal</li></ul></section>
     </div>
+    <p class="legend legend--light"><span><span class="st st--ok"></span>Probado en producción</span><span><span class="st st--help"></span>Necesita pruebas en entornos reales</span><span>Los demás vienen incluidos y aún no tienen informe de pruebas.</span></p>
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap theme-lab">
     <div class="mini" aria-hidden="true">
       <div class="mini-nav"><b>PNLCS<i></i></b><span>Hosting</span><span>Dominios</span><span>VPS</span><span>Área de clientes</span></div>
@@ -221,14 +270,46 @@ description: PNLCS es una plataforma de facturación para hosting y portal de cl
   </div>
 </section>
 
-<section class="band band--paper band--tight">
-  <div class="wrap cols-2">
+<section class="band band--ink" id="install">
+  <div class="wrap quick">
     <div>
-      <h2>Licencia MIT, mantenido por Panelica</h2>
+      <h2>Funcionando en unos 5 minutos</h2>
+      <p class="lede" style="margin-top:16px">Una imagen Docker y un contenedor de base de datos. El asistente de instalación hace el resto.</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>Inicia los contenedores</strong><span>Antes, sustituye <code>changeme</code> por tus propias contraseñas.</span></span></li>
+        <li><span><strong>Espera de 3 a 5 minutos</strong><span>El primer arranque instala las dependencias y compila el frontend.</span></span></li>
+        <li><span><strong>Abre /install</strong><span>El asistente comprueba los requisitos, crea tu cuenta de administrador y después se bloquea.</span></span></li>
+      </ol>
+      <p class="links"><a href="get-started.html">Otras formas de instalar</a><a href="https://hosting.panelica.com/">O prueba antes la demo en vivo</a></p>
     </div>
-    <div class="stack">
-      <p class="lede">Sin cuota de licencia y sin archivos codificados: puedes leer, modificar y redistribuir cualquier parte de PNLCS. Lo mantiene el equipo de <a href="https://panelica.com/">Panelica</a> en su tiempo libre, junto con colaboradores voluntarios.</p>
-      <p class="links"><a href="compare.html">Cómo se compara con WHMCS</a><a href="about.html">Sobre el proyecto</a><a href="community.html">Contribuir</a></p>
+    <div class="term">
+      <div class="term-head"><span>Terminal</span><button type="button" data-copy="cmd">Copiar</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
     </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight" aria-label="Código abierto">
+  <div class="wrap">
+    <ul class="oss">
+      <li><span class="mi">{{icon:scale}}</span><strong>Licencia MIT</strong><span>Sin coste de licencia. Úsalo comercialmente y cambia cualquier parte.</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">Licencia</a></li>
+      <li><span class="mi">{{icon:code}}</span><strong>Código legible</strong><span>Cada módulo se entrega en PHP sin cifrar que puedes auditar.</span><a href="https://github.com/Panelica/pnlcs">Código fuente en GitHub</a></li>
+      <li><span class="mi">{{icon:users}}</span><strong>Mantenido en abierto</strong><span>Por el equipo de Panelica y colaboradores voluntarios.</span><a href="about.html">Sobre el proyecto</a></li>
+      <li><span class="mi">{{icon:shield-check}}</span><strong>Política de seguridad</strong><span>Avisos privados, con acuse de recibo en 48 horas.</span><a href="security.html">Seguridad</a></li>
+    </ul>
+    <p class="oss-compare"><a class="more" href="compare.html">Cómo se compara PNLCS con WHMCS</a></p>
   </div>
 </section>

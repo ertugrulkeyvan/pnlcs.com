@@ -166,6 +166,28 @@
     });
   }
 
+  // ---------- Feature tour (vertical tabs, arrow keys move) ----------
+  var tourTabs = $$('.tour-tab');
+  if (tourTabs.length) {
+    var tImg = document.getElementById('tour-img');
+    var tPanel = document.getElementById('tour-panel');
+    var pick = function (tab, focus) {
+      tourTabs.forEach(function (x) { var on = x === tab; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; });
+      tImg.src = tab.dataset.src; tImg.srcset = tab.dataset.srcset; tImg.alt = tab.dataset.alt;
+      tPanel.setAttribute('aria-labelledby', tab.id);
+      if (focus) tab.focus();
+    };
+    tourTabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { pick(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var n = null;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = tourTabs[(i + 1) % tourTabs.length];
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = tourTabs[(i - 1 + tourTabs.length) % tourTabs.length];
+        if (n) { e.preventDefault(); pick(n, true); }
+      });
+    });
+  }
+
   // ---------- Theme preview: repaints the mini portal with each theme's real colours ----------
   var mini = document.querySelector('.mini');
   var pickers = document.querySelector('[data-theme-pickers]');

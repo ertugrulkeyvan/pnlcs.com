@@ -35,18 +35,6 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
       </aside>
     </div>
 
-    <div class="proof">
-      <p class="proof-label">Kullanılan teknolojiler</p>
-      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> ya da MariaDB, Tailwind CSS 4 ve Alpine.js. Resmî Docker imajı.</p>
-      <p class="proof-label">Proje durumu</p>
-      <dl class="status">
-        <div><dt>Lisans</dt><dd>MIT</dd></div>
-        <div><dt>GitHub yıldızı</dt><dd data-stat="stars">59</dd></div>
-        <div><dt>Katkıda bulunan</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHub'da katkıda bulunanlar"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
-        <div><dt>Son güncelleme</dt><dd>{{latest_date}}</dd></div>
-        <div><dt>Docker indirmesi</dt><dd data-stat="pulls">3.1k</dd></div>
-      </dl>
-    </div>
 
     <div class="product">
       <div class="product-tabs" role="tablist" aria-label="Ürün ekranları">
@@ -86,6 +74,23 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   </div>
 </section>
 
+<section class="trust" aria-label="Proje bilgileri">
+  <div class="wrap">
+    <div class="proof">
+      <p class="proof-label">Kullanılan teknolojiler</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> ya da MariaDB, Tailwind CSS 4 ve Alpine.js. Resmî Docker imajı.</p>
+      <p class="proof-label">Proje durumu</p>
+      <dl class="status">
+        <div><dt>Lisans</dt><dd>MIT</dd></div>
+        <div><dt>GitHub yıldızı</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>Katkıda bulunan</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="GitHub'da katkıda bulunanlar"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
+        <div><dt>Son güncelleme</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Docker indirmesi</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="band" id="people">
@@ -115,7 +120,50 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   </div>
 </section>
 
-<section class="band band--paper" id="renewals">
+<section class="band band--paper" id="tour">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>PNLCS neler yapar, gerçek ekranlarda</h2>
+        <p class="lede">Buradaki her ekran görüntüsü bir PNLCS kurulumundan alındı. Görmek için bir özellik seçin.</p>
+      </div>
+      <a class="more" href="features.html">Tüm özellikler</a>
+    </div>
+    <div class="tour">
+      <div class="tour-list" role="tablist" aria-label="Özellikler" aria-orientation="vertical">
+        <button class="tour-tab" role="tab" type="button" id="tour-client-vps-order" aria-selected="true" aria-controls="tour-panel"
+          data-src="assets/img/client-vps-order.webp" data-srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" data-alt="Bir VPS siparişini yapılandırma: faturalandırma dönemi, seçenekler ve sipariş özeti">
+          <span class="mi">{{icon:shopping-cart}}</span><span><strong>Satış</strong><span>Yapılandırılabilir seçenekleri ve faturalandırma dönemleri olan ürünler; ödemeden önce toplamı doğru hesaplanan bir sipariş özeti.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-proxmox-images" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w" data-alt="Yönetim paneli, bir Proxmox sunucusuna resmî cloud imajlarını kuruyor">
+          <span class="mi">{{icon:hard-drive}}</span><span><strong>Sanal sunucu kurulumu</strong><span>Resmî cloud imajlarını yönetim panelinden Proxmox VE'ye kurun, ardından bunları VPS ürünü olarak satın.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-hosting-tools" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" data-alt="Müşteri panelinde anlık kullanım ve sekiz araçla bir hosting hizmeti">
+          <span class="mi">{{icon:server}}</span><span><strong>Self servis hosting</strong><span>Müşteri panelinde dosyalar, e-posta, veritabanları, DNS, cron ve yedekler; sunucudan gelen anlık kullanımla birlikte.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-apps" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" data-alt="Uygulamalar sayfası: çalışan container'lar ve uygulama kataloğu">
+          <span class="mi">{{icon:container}}</span><span><strong>Docker uygulamaları</strong><span>Müşteriler, paketlerinin limitleri dahilinde, sizin seçtiğiniz bir katalogdan uygulama kurar.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-languages" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-languages.webp" data-srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" data-alt="Dil yöneticisi: 30 dil ve ilerlemeleri">
+          <span class="mi">{{icon:languages}}</span><span><strong>30 dil</strong><span>Dilleri açın ve 2.232 arayüz metninden herhangi birini tarayıcıda düzenleyin.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-appearance" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-appearance.webp" data-srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" data-alt="Görünüm ekranı ve kurulu temalar">
+          <span class="mi">{{icon:palette}}</span><span><strong>Markanız</strong><span>On altı tema, bir ana sayfa oluşturucu ve kendi logonuz, favicon'unuz ve alt bilginiz.</span></span>
+        </button>
+      </div>
+      <figure class="shot tour-panel" role="tabpanel" id="tour-panel" aria-labelledby="tour-client-vps-order">
+        <img id="tour-img" src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 60vw, 100vw" width="1600" height="1000" alt="Bir VPS siparişini yapılandırma: faturalandırma dönemi, seçenekler ve sipariş özeti">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="renewals">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -177,7 +225,7 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper" id="integrations">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -188,18 +236,19 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">Sunucular ve paneller <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">Ödeme altyapıları <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Banka havalesi</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="Canlı ortamda test edildi"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Banka havalesi<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">Alan adı kayıt firmaları <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="Gerçek ortamda test edilmesi gerekiyor"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL ve eklentiler <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>Şirket sorgulama</li><li>KSeF e-fatura</li><li>Proje yönetimi</li><li>Personel panosu</li></ul></section>
     </div>
+    <p class="legend legend--light"><span><span class="st st--ok"></span>Canlı ortamda test edildi</span><span><span class="st st--help"></span>Gerçek ortamda test edilmesi gerekiyor</span><span>Diğerleri pakete dahildir ama henüz test raporları yok.</span></p>
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap theme-lab">
     <div class="mini" aria-hidden="true">
       <div class="mini-nav"><b>PNLCS<i></i></b><span>Hosting</span><span>Alan adları</span><span>VPS</span><span>Müşteri paneli</span></div>
@@ -221,14 +270,46 @@ description: PNLCS; ücretsiz, MIT lisanslı ve kendi sunucunuzda çalışan bir
   </div>
 </section>
 
-<section class="band band--paper band--tight">
-  <div class="wrap cols-2">
+<section class="band band--ink" id="install">
+  <div class="wrap quick">
     <div>
-      <h2>MIT lisanslı, bakımı Panelica'da</h2>
+      <h2>Yaklaşık 5 dakikada çalışır</h2>
+      <p class="lede" style="margin-top:16px">Tek bir Docker imajı ve bir veritabanı container'ı. Gerisini kurulum sihirbazı halleder.</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>Container'ları başlatın</strong><span>Önce <code>changeme</code> değerlerini kendi şifrelerinizle değiştirin.</span></span></li>
+        <li><span><strong>3 ila 5 dakika bekleyin</strong><span>İlk açılışta bağımlılıklar kurulur ve frontend derlenir.</span></span></li>
+        <li><span><strong>/install adresini açın</strong><span>Sihirbaz gereksinimleri kontrol eder, yönetici hesabınızı oluşturur ve ardından kendini kilitler.</span></span></li>
+      </ol>
+      <p class="links"><a href="get-started.html">Diğer kurulum yolları</a><a href="https://hosting.panelica.com/">Ya da önce canlı demoyu deneyin</a></p>
     </div>
-    <div class="stack">
-      <p class="lede">Lisans ücreti yok, şifrelenmiş dosya yok: PNLCS'in her parçasını okuyabilir, değiştirebilir ve yeniden dağıtabilirsiniz. Bakımını <a href="https://panelica.com/">Panelica</a> ekibi, gönüllü katkıcılarla birlikte boş zamanlarında üstleniyor.</p>
-      <p class="links"><a href="compare.html">WHMCS ile karşılaştırması</a><a href="about.html">Proje hakkında</a><a href="community.html">Katkıda bulunun</a></p>
+    <div class="term">
+      <div class="term-head"><span>Terminal</span><button type="button" data-copy="cmd">Kopyala</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
     </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight" aria-label="Açık kaynak">
+  <div class="wrap">
+    <ul class="oss">
+      <li><span class="mi">{{icon:scale}}</span><strong>MIT lisanslı</strong><span>Lisans ücreti yok. Ticari olarak kullanın ve istediğiniz kısmı değiştirin.</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">Lisans</a></li>
+      <li><span class="mi">{{icon:code}}</span><strong>Okunabilir kaynak kod</strong><span>Her modül, denetleyebileceğiniz şifrelenmemiş PHP koduyla gelir.</span><a href="https://github.com/Panelica/pnlcs">GitHub'daki kaynak kod</a></li>
+      <li><span class="mi">{{icon:users}}</span><strong>Açık geliştirme süreci</strong><span>Panelica ekibi ve gönüllü katkıcılar tarafından.</span><a href="about.html">Proje hakkında</a></li>
+      <li><span class="mi">{{icon:shield-check}}</span><strong>Güvenlik politikası</strong><span>Gizli bildirim, 48 saat içinde alındı yanıtı.</span><a href="security.html">Güvenlik</a></li>
+    </ul>
+    <p class="oss-compare"><a class="more" href="compare.html">PNLCS ile WHMCS karşılaştırması</a></p>
   </div>
 </section>

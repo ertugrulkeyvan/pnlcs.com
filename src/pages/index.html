@@ -35,18 +35,6 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
       </aside>
     </div>
 
-    <div class="proof">
-      <p class="proof-label">Built with</p>
-      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> or MariaDB, Tailwind CSS 4 and Alpine.js. Official Docker image.</p>
-      <p class="proof-label">Project status</p>
-      <dl class="status">
-        <div><dt>License</dt><dd>MIT</dd></div>
-        <div><dt>GitHub stars</dt><dd data-stat="stars">59</dd></div>
-        <div><dt>Contributors</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="Contributors on GitHub"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
-        <div><dt>Last update</dt><dd>{{latest_date}}</dd></div>
-        <div><dt>Docker pulls</dt><dd data-stat="pulls">3.1k</dd></div>
-      </dl>
-    </div>
 
     <div class="product">
       <div class="product-tabs" role="tablist" aria-label="Product screens">
@@ -86,6 +74,23 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
   </div>
 </section>
 
+<section class="trust" aria-label="Project facts">
+  <div class="wrap">
+    <div class="proof">
+      <p class="proof-label">Built with</p>
+      <p class="stack-line"><span class="stack-logos" aria-hidden="true">{{logo:laravel}}{{logo:php}}{{logo:mysql}}{{logo:mariadb}}{{logo:docker}}</span><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> or MariaDB, Tailwind CSS 4 and Alpine.js. Official Docker image.</p>
+      <p class="proof-label">Project status</p>
+      <dl class="status">
+        <div><dt>License</dt><dd>MIT</dd></div>
+        <div><dt>GitHub stars</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>Contributors</dt><dd><a class="avatar-row" href="community.html" data-avatars aria-label="Contributors on GitHub"><img src="https://github.com/hedon77.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/Harry326485.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/terbora-core.png?size=56" alt="" width="28" height="28" loading="lazy"><img src="https://github.com/anderson-rbtf.png?size=56" alt="" width="28" height="28" loading="lazy"></a><span data-stat="contributors">6</span></dd></div>
+        <div><dt>Last update</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Docker pulls</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="band" id="people">
@@ -115,7 +120,50 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
   </div>
 </section>
 
-<section class="band band--paper" id="renewals">
+<section class="band band--paper" id="tour">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>What PNLCS does, on real screens</h2>
+        <p class="lede">Every screenshot here comes from a PNLCS installation. Pick a feature to see it.</p>
+      </div>
+      <a class="more" href="features.html">All features</a>
+    </div>
+    <div class="tour">
+      <div class="tour-list" role="tablist" aria-label="Features" aria-orientation="vertical">
+        <button class="tour-tab" role="tab" type="button" id="tour-client-vps-order" aria-selected="true" aria-controls="tour-panel"
+          data-src="assets/img/client-vps-order.webp" data-srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" data-alt="Configuring a VPS order: billing cycle, options and the order summary">
+          <span class="mi">{{icon:shopping-cart}}</span><span><strong>Sell</strong><span>Products with configurable options and billing cycles, and an order summary that adds up before checkout.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-proxmox-images" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w" data-alt="The admin panel installing official cloud images on a Proxmox server">
+          <span class="mi">{{icon:hard-drive}}</span><span><strong>Provision virtual servers</strong><span>Install official cloud images on Proxmox VE from the admin panel, then sell them as VPS products.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-hosting-tools" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" data-alt="A hosting service in the client portal with live usage and eight tools">
+          <span class="mi">{{icon:server}}</span><span><strong>Hosting self-service</strong><span>Files, mail, databases, DNS, cron and backups in the client portal, with live usage from the server.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-client-apps" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" data-alt="The Apps page with running containers and the app catalog">
+          <span class="mi">{{icon:container}}</span><span><strong>Docker apps</strong><span>Customers install apps from a curated catalog, inside the limits of their plan.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-languages" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-languages.webp" data-srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" data-alt="The language manager listing 30 locales and their progress">
+          <span class="mi">{{icon:languages}}</span><span><strong>30 languages</strong><span>Switch locales on and edit any of the 2,232 interface strings in the browser.</span></span>
+        </button>
+        <button class="tour-tab" role="tab" type="button" id="tour-admin-appearance" aria-selected="false" tabindex="-1" aria-controls="tour-panel"
+          data-src="assets/img/admin-appearance.webp" data-srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" data-alt="The Appearance screen with the installed themes">
+          <span class="mi">{{icon:palette}}</span><span><strong>Your brand</strong><span>Sixteen themes, a homepage builder, and your own logo, favicon and footer.</span></span>
+        </button>
+      </div>
+      <figure class="shot tour-panel" role="tabpanel" id="tour-panel" aria-labelledby="tour-client-vps-order">
+        <img id="tour-img" src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 60vw, 100vw" width="1600" height="1000" alt="Configuring a VPS order: billing cycle, options and the order summary">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="renewals">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -177,7 +225,7 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
   </div>
 </section>
 
-<section class="band">
+<section class="band band--paper" id="integrations">
   <div class="wrap">
     <div class="band-head band-head--row">
       <div>
@@ -188,18 +236,19 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
     </div>
     <div class="roster">
       <section aria-labelledby="r-servers"><h3 id="r-servers">Servers and panels <span>7</span></h3>
-        <ul><li class="with-logo">{{logo:panelica}}Panelica</li><li class="with-logo">{{logo:cpanel}}cPanel / WHM</li><li class="with-logo">{{logo:plesk}}Plesk</li><li class="with-logo">{{logo:directadmin}}DirectAdmin</li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE</li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
+        <ul><li class="with-logo">{{logo:panelica}}Panelica<span class="st st--ok" title="Tested in production"></span></li><li class="with-logo">{{logo:cpanel}}cPanel / WHM<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:plesk}}Plesk<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:directadmin}}DirectAdmin<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:hestiacp}}HestiaCP</li><li class="with-logo">{{logo:proxmox}}Proxmox VE<span class="st st--ok" title="Tested in production"></span></li><li class="with-logo">{{logo:vultr}}Vultr</li></ul></section>
       <section aria-labelledby="r-gateways"><h3 id="r-gateways">Payment gateways <span>8</span></h3>
-        <ul><li class="with-logo">{{logo:stripe}}Stripe</li><li class="with-logo">{{logo:paypal}}PayPal</li><li class="with-logo">{{logo:authorizenet}}Authorize.net</li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Bank transfer</li></ul></section>
+        <ul><li class="with-logo">{{logo:stripe}}Stripe<span class="st st--ok" title="Tested in production"></span></li><li class="with-logo">{{logo:paypal}}PayPal<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:authorizenet}}Authorize.net<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:mollie}}Mollie</li><li class="with-logo">{{logo:razorpay}}Razorpay</li><li class="with-logo">{{logo:iyzico}}iyzico</li><li class="with-logo">{{logo:tpay}}Tpay</li><li class="with-logo">{{logo:banktransfer}}Bank transfer<span class="st st--help" title="Needs real-world testing"></span></li></ul></section>
       <section aria-labelledby="r-registrars"><h3 id="r-registrars">Domain registrars <span>6</span></h3>
-        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom</li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
+        <ul><li class="with-logo">{{logo:namecheap}}Namecheap</li><li class="with-logo">{{logo:enom}}Enom<span class="st st--help" title="Needs real-world testing"></span></li><li class="with-logo">{{logo:resellerclub}}ResellerClub</li><li class="with-logo">{{logo:openprovider}}OpenProvider</li><li class="with-logo">{{logo:domainnameapi}}DomainNameApi</li><li class="with-logo">{{logo:hrd}}HRD</li></ul></section>
       <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL and add-ons <span>5</span></h3>
         <ul><li class="with-logo">{{logo:gogetssl}}GoGetSSL</li><li>Company lookup</li><li>KSeF e-invoicing</li><li>Project management</li><li>Staff board</li></ul></section>
     </div>
+    <p class="legend legend--light"><span><span class="st st--ok"></span>Tested in production</span><span><span class="st st--help"></span>Needs real-world testing</span><span>Others ship in the box and have no test report yet.</span></p>
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap theme-lab">
     <div class="mini" aria-hidden="true">
       <div class="mini-nav"><b>PNLCS<i></i></b><span>Hosting</span><span>Domains</span><span>VPS</span><span>Client area</span></div>
@@ -221,14 +270,46 @@ description: PNLCS is a free, MIT-licensed, self-hosted hosting billing platform
   </div>
 </section>
 
-<section class="band band--paper band--tight">
-  <div class="wrap cols-2">
+<section class="band band--ink" id="install">
+  <div class="wrap quick">
     <div>
-      <h2>MIT licensed, maintained by Panelica</h2>
+      <h2>Running in about 5 minutes</h2>
+      <p class="lede" style="margin-top:16px">One Docker image and a database container. The install wizard does the rest.</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>Start the containers</strong><span>Replace <code>changeme</code> with your own passwords first.</span></span></li>
+        <li><span><strong>Wait 3 to 5 minutes</strong><span>The first start installs dependencies and builds the frontend.</span></span></li>
+        <li><span><strong>Open /install</strong><span>The wizard checks requirements, creates your admin account, then locks itself.</span></span></li>
+      </ol>
+      <p class="links"><a href="get-started.html">Other ways to install</a><a href="https://hosting.panelica.com/">Or try the live demo first</a></p>
     </div>
-    <div class="stack">
-      <p class="lede">No license fee and no encoded files: you can read, change and redistribute any part of PNLCS. It is maintained by the <a href="https://panelica.com/">Panelica</a> team in their spare time, with volunteer contributors.</p>
-      <p class="links"><a href="compare.html">How it compares with WHMCS</a><a href="about.html">About the project</a><a href="community.html">Contribute</a></p>
+    <div class="term">
+      <div class="term-head"><span>Terminal</span><button type="button" data-copy="cmd">Copy</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
     </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight" aria-label="Open source">
+  <div class="wrap">
+    <ul class="oss">
+      <li><span class="mi">{{icon:scale}}</span><strong>MIT licensed</strong><span>No license fee. Use it commercially and change any part.</span><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">License</a></li>
+      <li><span class="mi">{{icon:code}}</span><strong>Readable source</strong><span>Every module ships as plain PHP you can audit.</span><a href="https://github.com/Panelica/pnlcs">Source on GitHub</a></li>
+      <li><span class="mi">{{icon:users}}</span><strong>Maintained in the open</strong><span>By the Panelica team and volunteer contributors.</span><a href="about.html">About the project</a></li>
+      <li><span class="mi">{{icon:shield-check}}</span><strong>Security policy</strong><span>Private reporting, acknowledged within 48 hours.</span><a href="security.html">Security</a></li>
+    </ul>
+    <p class="oss-compare"><a class="more" href="compare.html">How PNLCS compares with WHMCS</a></p>
   </div>
 </section>
