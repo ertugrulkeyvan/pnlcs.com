@@ -1,0 +1,63 @@
+<!--
+title: Hébergement mutualisé
+description: Vendez de l’hébergement mutualisé avec PNLCS. Les clients gèrent fichiers, e-mails, bases de données, DNS, tâches cron et sauvegardes depuis le portail de facturation, cloisonnés à leur propre compte.
+section: Solutions
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Hébergement mutualisé</h1>
+      <p class="lede">La plupart des systèmes de facturation s’arrêtent à « voici le mot de passe de votre panneau de contrôle ». Avec PNLCS et le module serveur Panelica, la gestion quotidienne de l’hébergement se fait directement dans le portail de facturation.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Connecter un serveur</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Un service d’hébergement dans l’espace client, avec la consommation en direct et huit outils de gestion"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Huit outils, sans seconde connexion</h2><p class="lede">Chaque service d’hébergement affiche en direct le CPU, la mémoire, le disque et la bande passante remontés par le serveur, ainsi que ces outils.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Outil</th><th scope="col">Ce que le client peut faire</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Gestionnaire de fichiers</th><td class="muted">Parcourir, envoyer, télécharger, modifier, renommer, créer des dossiers et supprimer</td></tr>
+          <tr><th scope="row">Comptes e-mail</th><td class="muted">Créer et supprimer des boîtes mail, changer les mots de passe, ouvrir le webmail</td></tr>
+          <tr><th scope="row">Bases de données</th><td class="muted">Créer des bases et des utilisateurs MySQL, réinitialiser les mots de passe, ouvrir phpMyAdmin</td></tr>
+          <tr><th scope="row">Comptes FTP</th><td class="muted">Créer des comptes, changer les mots de passe, supprimer, avec l’hôte et le port affichés</td></tr>
+          <tr><th scope="row">Sous-domaines</th><td class="muted">Créer et supprimer ; le panneau configure le vhost, la racine du site, le pool PHP, le SSL et le DNS</td></tr>
+          <tr><th scope="row">Zone DNS</th><td class="muted">Ajouter, modifier et supprimer des enregistrements A, AAAA, CNAME, MX, TXT, SRV et CAA</td></tr>
+          <tr><th scope="row">Tâches cron</th><td class="muted">Planifier des commandes, en exécuter une immédiatement et lire sa sortie, mettre en pause, reprendre, supprimer</td></tr>
+          <tr><th scope="row">Sauvegardes</th><td class="muted">Créer des points de restauration, voir leur taille et leur contenu, supprimer les anciens</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Les outils intégrés à l’espace client nécessitent le module serveur Panelica. Avec cPanel, Plesk, DirectAdmin et HestiaCP, PNLCS provisionne et suspend les comptes, et les clients les gèrent dans leur panneau de contrôle.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Cloisonné au compte du client</h2>
+      <p class="lede">La clé serveur détenue par un système de facturation voit tous les comptes de la machine. PNLCS filtre chaque liste selon les domaines du service consulté, et vérifie chaque modification de la même façon avant de l’envoyer.</p>
+      <ul class="checklist checklist--one">
+        <li>Une sauvegarde qui couvre aussi le domaine d’un autre client n’est pas affichée et ne peut pas être supprimée</li>
+        <li>Une tâche cron, un sous-domaine ou un enregistrement DNS sur un domaine tiers est refusé avant qu’une requête ne quitte le serveur de facturation</li>
+        <li>Les limites sont lues depuis l’offre d’hébergement, et le panneau les applique à nouveau de son côté</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="L’éditeur de zone DNS de l’espace client"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Sauvegardes et tâches cron</h2>
+      <p class="lede">Les clients créent et restaurent leurs sauvegardes et gèrent leurs tâches cron eux-mêmes, dans les limites de leur offre.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="La page des sauvegardes de l’espace client, avec une liste de points de restauration"></figure>
+  </div>
+</section>

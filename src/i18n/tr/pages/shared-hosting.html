@@ -1,0 +1,63 @@
+<!--
+title: Paylaşımlı hosting
+description: PNLCS ile paylaşımlı hosting satın. Müşteriler dosyalarını, e-postalarını, veritabanlarını, DNS kayıtlarını, cron görevlerini ve yedeklerini faturalandırma panelinden, yalnızca kendi hesaplarıyla sınırlı olarak yönetir.
+section: Çözümler
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Paylaşımlı hosting</h1>
+      <p class="lede">Çoğu faturalandırma sistemi “kontrol paneli şifreniz budur” noktasında durur. PNLCS ve Panelica sunucu modülüyle, günlük hosting işleri doğrudan faturalandırma panelinin içinde yapılır.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Bir sunucu bağlayın</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Müşteri panelinde bir hosting hizmeti: anlık kullanım ve sekiz yönetim aracı"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>İkinci bir giriş gerektirmeyen sekiz araç</h2><p class="lede">Her hosting hizmeti, sunucudan gelen anlık CPU, bellek, disk ve bant genişliği kullanımını ve şu araçları gösterir.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Araç</th><th scope="col">Müşterinin yapabilecekleri</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Dosya yöneticisi</th><td class="muted">Göz atma, yükleme, indirme, düzenleme, yeniden adlandırma, klasör oluşturma ve silme</td></tr>
+          <tr><th scope="row">E-posta hesapları</th><td class="muted">Posta kutusu oluşturma ve silme, şifre değiştirme, webmail'i açma</td></tr>
+          <tr><th scope="row">Veritabanları</th><td class="muted">MySQL veritabanı ve kullanıcısı oluşturma, şifre sıfırlama, phpMyAdmin'i açma</td></tr>
+          <tr><th scope="row">FTP hesapları</th><td class="muted">Hesap oluşturma, şifre değiştirme, silme; sunucu adresi ve port bilgisi gösterilir</td></tr>
+          <tr><th scope="row">Alt alan adları</th><td class="muted">Oluşturma ve kaldırma; vhost, belge kök dizini, PHP havuzu, SSL ve DNS'i panel ayarlar</td></tr>
+          <tr><th scope="row">DNS bölgesi</th><td class="muted">A, AAAA, CNAME, MX, TXT, SRV ve CAA kayıtlarını ekleme, düzenleme ve silme</td></tr>
+          <tr><th scope="row">Cron görevleri</th><td class="muted">Komut zamanlama, bir görevi hemen çalıştırıp çıktısını okuma, duraklatma, sürdürme, silme</td></tr>
+          <tr><th scope="row">Yedekler</th><td class="muted">Geri yükleme noktası alma, boyutunu ve içeriğini görme, eskileri silme</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Panel içi araçlar Panelica sunucu modülünü gerektirir. cPanel, Plesk, DirectAdmin ve HestiaCP ile PNLCS hesapları oluşturur ve askıya alır; müşteriler hesaplarını kendi kontrol panellerinden yönetir.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Yalnızca müşterinin kendi hesabıyla sınırlı</h2>
+      <p class="lede">Bir faturalandırma sisteminin elindeki sunucu anahtarı, makinedeki tüm hesapları görebilir. PNLCS her listeyi görüntülenen hizmetin alan adlarına göre filtreler ve her değişikliği gönderilmeden önce aynı şekilde denetler.</p>
+      <ul class="checklist checklist--one">
+        <li>Başka birinin alan adını da kapsayan bir yedek gösterilmez ve silinemez</li>
+        <li>Yabancı bir alan adındaki cron görevi, alt alan adı ya da DNS kaydı, faturalandırma sunucusundan herhangi bir istek çıkmadan reddedilir</li>
+        <li>Paket limitleri hosting paketinden okunur ve panel bunları ayrıca kendisi de uygular</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Müşteri panelindeki DNS bölgesi düzenleyicisi"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Yedekler ve cron görevleri</h2>
+      <p class="lede">Müşteriler, paketlerinin limitleri dahilinde yedeklerini kendileri alır, geri yükler ve cron görevlerini kendileri yönetir.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Müşteri panelindeki yedekler sayfası ve geri yükleme noktaları listesi"></figure>
+  </div>
+</section>

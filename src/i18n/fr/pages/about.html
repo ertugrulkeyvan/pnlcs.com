@@ -1,0 +1,75 @@
+<!--
+title: À propos
+cta: no
+description: PNLCS est une plateforme de facturation open source pour hébergeurs, maintenue par l’équipe Panelica et des bénévoles, publiée sous licence MIT.
+section: Projet
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>À propos de PNLCS</h1>
+    <p class="lede">PNLCS est une plateforme de facturation et un espace client gratuits et auto-hébergés, destinés aux hébergeurs web, aux revendeurs et aux fournisseurs d’infrastructure. Il est développé de façon ouverte et publié sous licence MIT.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap maker">
+    <div>
+      <h2>Pourquoi ce projet existe</h2>
+      <p class="lede" style="margin-top:16px">L’équipe Panelica voulait un système de facturation ouvert et auto-hébergé, intégré nativement à Panelica et qui fonctionne bien avec les autres panneaux de contrôle. Rien de tel n’existait : elle l’a donc construit, sur son temps libre, en parallèle de son produit principal.</p>
+      <p class="lede" style="margin-top:16px">Il reprend volontairement les concepts de WHMCS, pour qu’une équipe habituée à WHMCS s’y retrouve. Contrairement à WHMCS, il est sous licence MIT.</p>
+    </div>
+    <blockquote class="quote" style="color:var(--text)">
+      Nous avons créé PNLCS parce que nous en avions besoin nous-mêmes, et nous pensons que le logiciel sur lequel repose une activité d’hébergement ne devrait pas être un loyer mensuel. Ce devrait être un outil que vous possédez, que vous comprenez et que vous pouvez améliorer. Cela ne fonctionne que s’il est construit ensemble.
+      <cite style="color:var(--muted)">L’équipe Panelica, mainteneurs de PNLCS</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Le projet en bref</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">Mainteneur</th><td class="muted"><a href="https://panelica.com/">Panelica</a>, avec des contributeurs bénévoles</td></tr>
+          <tr><th scope="row">Licence</th><td class="muted"><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">MIT</a> : usage commercial, modification libre, modules distribuables sous n’importe quelle licence</td></tr>
+          <tr><th scope="row">Première version</th><td class="muted">v1.0.0, avril 2026</td></tr>
+          <tr><th scope="row">Dernière version</th><td class="muted"><span data-stat="release">v1.2.0</span>, avec des mises à jour continues sur la branche main</td></tr>
+          <tr><th scope="row">Technologies</th><td class="muted">Laravel 13, PHP 8.4+, MySQL 8 ou MariaDB, Tailwind CSS 4, Alpine.js</td></tr>
+          <tr><th scope="row">Code source</th><td class="muted"><a href="https://github.com/Panelica/pnlcs">github.com/Panelica/pnlcs</a> (<span data-stat="stars">59</span> étoiles, <span data-stat="forks">22</span> forks)</td></tr>
+          <tr><th scope="row">Documentation</th><td class="muted"><a href="https://docs.pnlcs.com/">docs.pnlcs.com</a></td></tr>
+          <tr><th scope="row">Contact sécurité</th><td class="muted"><a href="mailto:security@panelica.com">security@panelica.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Ce qui est éprouvé, et ce qui reste à tester</h2></div>
+    <div class="cols-2">
+      <div class="callout">
+        <h3>Éprouvé sur des systèmes en production</h3>
+        <ul class="plain-list">
+          <li>Espace client, panneau d’administration et flux de facturation principaux</li>
+          <li>Facturation, commandes, services, domaines, tickets, base de connaissances</li>
+          <li>Le module serveur Panelica</li>
+          <li>Le module Proxmox VE pour vendre des VPS</li>
+          <li>Paiements Stripe</li>
+          <li>30 langues avec des traductions modifiables</li>
+        </ul>
+      </div>
+      <div class="callout callout--warn">
+        <h3>À tester en conditions réelles</h3>
+        <ul class="plain-list">
+          <li>Modules serveur cPanel, Plesk et DirectAdmin</li>
+          <li>Passerelles PayPal, Authorize.net et virement bancaire</li>
+          <li>Le bureau d’enregistrement Enom</li>
+        </ul>
+        <p style="margin-top:12px"><a href="community.html">Aidez à les tester</a></p>
+      </div>
+    </div>
+  </div>
+</section>

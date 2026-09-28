@@ -1,0 +1,80 @@
+<!--
+title: VPS con Proxmox VE
+description: Vende servidores virtuales en tu propio Proxmox VE con PNLCS. Aprovisionamiento automático y, en el portal de clientes, encendido, gráficas, snapshots, copias de seguridad y reinstalación.
+section: Soluciones
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>VPS con Proxmox VE</h1>
+      <p class="lede">Conecta un servidor Proxmox VE, instala imágenes cloud oficiales desde el panel de administración y vende productos VPS. Cuando se paga la factura, PNLCS clona, configura y arranca el servidor; el cliente lo gestiona desde el portal de clientes.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">Guía de configuración</a><a class="btn btn--ghost-dark" href="#lifecycle">Qué pasa en cada evento</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Un servidor virtual en el portal de clientes con control de encendido, estado en tiempo real y gráficas de uso"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Qué puede hacer el cliente</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Área</th><th scope="col">Qué ocurre</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Encendido</th><td class="muted">Arrancar, reiniciar, apagar (forzado al cabo de un minuto si no responde), forzar apagado, reset</td></tr>
+          <tr><th scope="row">Estado en tiempo real</th><td class="muted">CPU, memoria, tiempo de actividad, direcciones y ocupación del disco</td></tr>
+          <tr><th scope="row">Gráficas</th><td class="muted">CPU, memoria, red y disco, a partir de las estadísticas del propio Proxmox</td></tr>
+          <tr><th scope="row">Contraseña de root</th><td class="muted">Se aplica al instante mediante el guest agent o, si no, en el siguiente arranque</td></tr>
+          <tr><th scope="row">Reinstalación</th><td class="muted">Cualquier sistema que ofrezca el producto; la VM, la MAC y la dirección IP se mantienen</td></tr>
+          <tr><th scope="row">Snapshots</th><td class="muted">Crear, revertir y eliminar, hasta el número que permita el plan</td></tr>
+          <tr><th scope="row">Copias de seguridad</th><td class="muted">En almacenamiento local o en Proxmox Backup Server; restaurar y eliminar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Las acciones destructivas piden confirmación</h2>
+      <p class="lede">Todo lo que borra datos pide escribir el nombre del servidor. Las tareas largas, como una reinstalación o una restauración, se ejecutan en segundo plano y terminan aunque se cierre la página.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="Controles de snapshots, copias de seguridad, contraseña de root y reinstalación de un servidor virtual"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>Qué hace PNLCS en cada evento de facturación</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Evento</th><th scope="col">En Proxmox</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pedido pagado</th><td class="muted">Se clona en el pool con el siguiente ID de VM, se aplica cloud-init, se amplía el disco, se activa la protección y se arranca</td></tr>
+          <tr><th scope="row">Suspendido</th><td class="muted">Se desactiva el arranque automático y luego se apaga, para que un reinicio del host no lo vuelva a levantar</td></tr>
+          <tr><th scope="row">Reactivado</th><td class="muted">Se activa el arranque automático y se arranca</td></tr>
+          <tr><th scope="row">Cancelado</th><td class="muted">Se detiene, se quita la protección y se elimina con sus discos; la dirección vuelve al pool</td></tr>
+          <tr><th scope="row">Mejorado</th><td class="muted">Nuevos núcleos y memoria; el disco crece y nunca se reduce</td></tr>
+          <tr><th scope="row">Cada hora</th><td class="muted">Uso de disco y tráfico del mes, a partir de las estadísticas de Proxmox</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>PNLCS no toca las máquinas que no ha creado</h2>
+      <p class="lede">Un hipervisor suele ejecutar algo más que servidores de clientes. Estas reglas hacen que PNLCS se limite a las suyas.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Cada servidor que crea PNLCS lleva una etiqueta y una nota con el nombre de su servicio; solo actúa sobre las máquinas con esa marca</li>
+      <li>El token de API recomendado solo llega a su propio pool, y la prueba de conexión avisa de permisos que la facturación nunca necesita</li>
+      <li>Los servidores se crean con protección contra borrado, que solo se quita en el momento de la cancelación</li>
+      <li>Los clientes nunca ven la dirección del hipervisor</li>
+    </ul>
+  </div>
+</section>

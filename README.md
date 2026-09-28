@@ -1,0 +1,50 @@
+# pnlcs.com
+
+A proposed redesign of [pnlcs.com](https://pnlcs.com/), the website of [PNLCS](https://github.com/Panelica/pnlcs), the open-source hosting billing platform maintained by the Panelica team.
+
+Static site, no framework. A small Python script (standard library only) assembles the pages, and the output is plain HTML, CSS and JavaScript that any static host can serve.
+
+## Build and preview
+
+```bash
+python3 build.py                 # src/ -> site/
+python3 -m http.server 8093 --directory site
+# open http://127.0.0.1:8093/
+```
+
+`python3 build.py --refresh` first copies `CHANGELOG.md` and the theme colours from a PNLCS checkout (set `PNLCS_SRC` to its path).
+
+Deploy the `site/` folder at the domain root. Pages link assets as `/assets/...`.
+
+## Layout
+
+| Path | What it is |
+|---|---|
+| `src/pages/*.html` | English pages. Each starts with a front-matter comment (`title`, `description`, `section`, optional `heading`, `cta: no`) |
+| `src/partials/` | Header, footer and closing call-to-action, shared by every page |
+| `src/layout.html` | The document shell: meta tags, JSON-LD, stylesheet and script |
+| `src/i18n/<lang>/` | Translations: same file names as `src/pages` and `src/partials`, plus `strings.json` |
+| `data/CHANGELOG.md` | Copy of the PNLCS changelog; builds the What's new page and the announcement bar |
+| `assets/` | `site.css`, `site.js`, `themes.json` (from `themes/*/theme.json`) and screenshots (from `docs/screenshots`, MIT) |
+| `tools/check_i18n.py` | Verifies that translations keep the markup, links, code and placeholders of the English source |
+| `PRODUCT.md` | Audience, voice and principles for anyone editing the copy |
+
+## Languages
+
+English is the source, published at the root. Translations are published under `/<lang>/`: es, de, fr, pt-br, tr, ru, zh, ja. A page without a translation falls back to English. Release notes stay in English.
+
+After changing an English page, update the translations and run:
+
+```bash
+python3 tools/check_i18n.py      # all languages, or e.g. `python3 tools/check_i18n.py de`
+```
+
+## Content rules
+
+Every number and feature on the site must be verifiable in the PNLCS repository or its documentation. Where a module has not been tested end to end, the site says so. See `PRODUCT.md`.
+
+Live figures (stars, contributors, latest release, Docker pulls) are fetched in the browser from the GitHub API and shields.io; the HTML carries fallback values.
+
+## License
+
+MIT. Screenshots and theme data come from the PNLCS repository, which is also MIT licensed.

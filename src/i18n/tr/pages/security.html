@@ -1,0 +1,83 @@
+<!--
+title: Güvenlik
+cta: no
+description: PNLCS'teki bir güvenlik sorununu nasıl bildireceğiniz, sizi nelerin beklediği ve platformda yerleşik güvenlik özellikleri.
+section: Proje
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Güvenlik</h1>
+    <p class="lede">PNLCS, gerçek hosting işletmeleri için faturalandırmayı, müşteri kimlik bilgilerini ve ödeme entegrasyonlarını yönetir. Bir güvenlik açığı faturaları, müşteri verilerini ve ödemeleri etkileyebilir; bunu ciddiye alıyoruz.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Güvenlik açığı bildirin</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Güvenlik politikasının tamamı</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Güvenlik açığı bildirme</h2>
+      <p class="lede">Lütfen bir güvenlik bulgusu için herkese açık bir kayıt, tartışma ya da forum konusu açmayın.</p>
+      <div class="callout" style="margin-top:28px">
+        <h3>security@panelica.com adresine e-posta gönderin</h3>
+        <p>Bir açıklama, etkilenen bileşen, yeniden üretme adımları, etkisi ve PNLCS, Laravel, PHP ve MySQL sürümlerinizi ekleyin. Kimlik bilgilerini ve müşteri verilerini gizleyin.</p>
+        <p><a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub'ın gizli güvenlik açığı bildirme özelliğini</a> de kullanabilirsiniz.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">Sizi neler bekliyor</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <tbody>
+            <tr><th scope="row">Alındı bildirimi</th><td class="muted">48 saat içinde</td></tr>
+            <tr><th scope="row">Ön değerlendirme ve önem derecesi</th><td class="muted">5 iş günü içinde</td></tr>
+            <tr><th scope="row">Durum güncellemeleri</th><td class="muted">Haftalık, kritik sorunlarda daha sık</td></tr>
+            <tr><th scope="row">Kritik sorunlar için düzeltme</th><td class="muted">Genellikle doğrulamadan sonraki 14 gün içinde</td></tr>
+            <tr><th scope="row">Kamuya açıklama süresi</th><td class="muted">Varsayılan olarak 90 gün, görüşülebilir</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div>
+      <h2 style="font-size:1.6rem">Kapsam dahilinde</h2>
+      <ul class="plain-list">
+        <li>Uygulama: yönetim alanı, müşteri paneli, API, kuyruk işçileri, zamanlanmış görevler</li>
+        <li>Kimlik doğrulama, roller, oturumlar ve token'lar</li>
+        <li>Ödeme altyapısı, alan adı kayıt firması ve sunucu entegrasyonları</li>
+        <li>Varsayılan temalardaki şablonlar ve görünümler</li>
+        <li>Depodan yayımlanan kurulum ve yükseltme betikleri</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="font-size:1.6rem">Kapsam dışında</h2>
+      <ul class="plain-list">
+        <li>Fiziksel ya da root eşdeğeri erişim gerektiren saldırılar</li>
+        <li>Üçüncü taraf paketlerdeki hatalar (bunları paketin kendi geliştiricilerine bildirin)</li>
+        <li>Self-XSS ya da gerçek bir saldırı yolu olmayan eksik başlıklar</li>
+        <li>Somut bir etkisi gösterilmemiş otomatik tarayıcı çıktıları</li>
+        <li>Panelica'nın çalıştırdığı demo ve sandbox kurulumları</li>
+        <li>Fork'lar ve değiştirilmiş kopyalar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Yerleşik korumalar</h2><p class="lede">PNLCS'in bir kurulumu güvende tutmak için yaptıkları ve kurulumdan sonra sizin kontrol etmeniz gerekenler.</p></div><a class="more" href="https://docs.pnlcs.com/install/security/">Güvenlik kontrol listesi</a></div>
+    <dl class="spec-grid">
+      <div><dt>Rol tabanlı erişim</dt><dd>Personel için 45'ten fazla ayrıntılı yetki.</dd></div>
+      <div><dt>İki adımlı doğrulama</dt><dd>Personel ve müşteriler için; personele kurtarma kodlarıyla birlikte.</dd></div>
+      <div><dt>İstek sınırlama</dt><dd>Giriş, 2FA, şifre sıfırlama ve e-posta yeniden gönderimi.</dd></div>
+      <div><dt>İşlem kaydı</dt><dd>Her yönetici işlemi kaydedilir.</dd></div>
+      <div><dt>Sınırları çizilmiş hosting araçları</dt><dd>Her dosya, DNS, cron ve yedekleme işlemi, müşterinin kendi alan adlarıyla karşılaştırılarak denetlenir.</dd></div>
+      <div><dt>Korumalı hizmet kurulumu</dt><dd>PNLCS, Proxmox'ta yalnızca kendi oluşturup işaretlediği makineler üzerinde işlem yapar.</dd></div>
+    </dl>
+    <p class="note">Ücretli bir hata ödül programımız yok, ancak araştırmacıların adı güvenlik bülteninde ve değişiklik günlüğünde anılabilir. <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Politikaya</a> uyan, iyi niyetli araştırmalar için yasal yola başvurmayız.</p>
+  </div>
+</section>

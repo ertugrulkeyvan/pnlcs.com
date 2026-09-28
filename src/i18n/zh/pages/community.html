@@ -1,0 +1,77 @@
+<!--
+title: 参与贡献
+cta: no
+description: PNLCS 是一个志愿者项目。欢迎在代码、翻译、测试、设计或文档方面提供帮助。
+section: 社区
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>为 PNLCS 做贡献</h1>
+    <p class="lede">PNLCS 由志愿者维护。欢迎提交代码，同样欢迎翻译、在真实系统上测试、设计工作以及清晰的 bug 报告。</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://github.com/Panelica/pnlcs/issues">浏览未解决的 issue</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/CONTRIBUTING.md">贡献指南</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>参与方式</h2></div>
+    <dl class="roles">
+      <div><dt>开发者</dt><dd>新功能、支付网关、域名注册商和服务器模块、测试。</dd></div>
+      <div><dt>主机服务商</dt><dd>真实的业务流程、边界情况、迁移经验。缺什么，你最清楚。</dd></div>
+      <div><dt>译者</dt><dd>目前已有 30 种语言，还在增加。帮助完善你的语言版本。</dd></div>
+      <div><dt>设计师</dt><dd>主题、客户中心的用户体验、无障碍访问、文档截图。</dd></div>
+      <div><dt>文档作者</dt><dd>文档、指南和教程。</dd></div>
+      <div><dt>测试人员</dt><dd>复现问题、验证修复、试用候选发布版本。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>当前最需要的帮助</h2><p class="lede">代码已经写好，但还没有在真实系统上运行过。</p></div><a class="more" href="integrations.html">集成状态</a></div>
+    <ul class="help-list">
+      <li><strong>cPanel、Plesk 和 DirectAdmin</strong><span>在你的面板上运行服务器模块，把结果告诉我们。</span></li>
+      <li><strong>PayPal、Authorize.net、银行转账</strong><span>完整走一遍测试付款流程。</span></li>
+      <li><strong>Enom</strong><span>通过真实 API 注册并续费一个域名。</span></li>
+      <li><strong>WHMCS 导入工具</strong><span>目前还没有。可以从迁移指南入手。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>你的第一个 pull request</h2></div>
+    <ol class="steps">
+      <li><span><strong>从小事做起</strong><span>一个未解决的 issue，或者你在演示中觉得别扭的地方。</span></span></li>
+      <li><span><strong>Fork 并创建分支</strong><span>按照文档，用 Docker 在本地运行项目。</span></span></li>
+      <li><span><strong>提交 pull request</strong><span>说明你改了什么、为什么改。改动越小，审核越快。</span></span></li>
+      <li><span><strong>合并</strong><span>维护者会进行审核。合并后的改动会进入下一个版本，提交历史中会保留你的署名。</span></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--paper" id="thanks">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>贡献者</h2><p class="lede">感谢每一位提交过 pull request、翻译或 bug 报告的人。</p></div><a class="more" href="https://github.com/Panelica/pnlcs/graphs/contributors">贡献者统计</a></div>
+    <ul class="wall" id="contributors">
+      <li><a href="https://github.com/hedon77"><img src="https://github.com/hedon77.png?size=68" alt="" width="34" height="34" loading="lazy"><span><b>hedon77</b><small>153 次贡献</small></span></a></li>
+      <li><a href="https://github.com/Harry326485"><img src="https://github.com/Harry326485.png?size=68" alt="" width="34" height="34" loading="lazy"><span><b>Harry326485</b><small>8 次贡献</small></span></a></li>
+      <li><a href="https://github.com/terbora-core"><img src="https://github.com/terbora-core.png?size=68" alt="" width="34" height="34" loading="lazy"><span><b>terbora-core</b><small>2 次贡献</small></span></a></li>
+      <li><a href="https://github.com/anderson-rbtf"><img src="https://github.com/anderson-rbtf.png?size=68" alt="" width="34" height="34" loading="lazy"><span><b>anderson-rbtf</b><small>1 次贡献</small></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>联系我们</h2></div>
+    <ul class="link-list">
+      <li><a href="https://github.com/Panelica/pnlcs/issues">Issues</a><span>bug 和具体的功能需求，请附上复现步骤。</span></li>
+      <li><a href="https://github.com/Panelica/pnlcs/discussions">Discussions</a><span>提问、想法和作品分享。</span></li>
+      <li><a href="https://forum.panelica.com/">论坛</a><span>Panelica 社区论坛。</span></li>
+      <li><a href="security.html">安全报告</a><span>通过邮件私下报告，切勿发在公开 issue 中。</span></li>
+    </ul>
+    <p class="note">这是维护者的业余项目，回复不一定当天就有。附上复现步骤或补丁会有很大帮助。请遵守<a href="https://github.com/Panelica/pnlcs/blob/main/CODE_OF_CONDUCT.md">行为准则</a>。</p>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+<!--
+title: VPS на Proxmox VE
+description: Продавайте виртуальные серверы на своём Proxmox VE с PNLCS. Автоматическое создание серверов, а в личном кабинете клиента управление питанием, графики, снапшоты, резервные копии и переустановка.
+section: Решения
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>VPS на Proxmox VE</h1>
+      <p class="lede">Подключите сервер Proxmox VE, установите официальные облачные образы из панели администратора и продавайте VPS. После оплаты счёта PNLCS клонирует, настраивает и запускает сервер, а клиент управляет им в личном кабинете.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">Руководство по настройке</a><a class="btn btn--ghost-dark" href="#lifecycle">Что происходит при каждом событии</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Виртуальный сервер в личном кабинете клиента с управлением питанием, текущим состоянием и графиками нагрузки"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Что может клиент</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Раздел</th><th scope="col">Что происходит</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Питание</th><td class="muted">Запуск, перезагрузка, выключение (принудительное, если сервер не отреагировал за минуту), жёсткое выключение, сброс</td></tr>
+          <tr><th scope="row">Текущее состояние</th><td class="muted">CPU, память, время работы, адреса и заполненность диска</td></tr>
+          <tr><th scope="row">Графики</th><td class="muted">CPU, память, сеть и диск по собственной статистике Proxmox</td></tr>
+          <tr><th scope="row">Пароль root</th><td class="muted">Меняется сразу через гостевой агент, иначе при следующей загрузке</td></tr>
+          <tr><th scope="row">Переустановка</th><td class="muted">Любая система из предложенных в продукте; VM, MAC и IP-адрес сохраняются</td></tr>
+          <tr><th scope="row">Снапшоты</th><td class="muted">Создание, откат и удаление, в пределах количества по тарифу</td></tr>
+          <tr><th scope="row">Резервные копии</th><td class="muted">В локальное хранилище или Proxmox Backup Server; восстановление и удаление</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Опасные действия требуют подтверждения</h2>
+      <p class="lede">Для любого действия, которое стирает данные, нужно ввести имя сервера. Долгие операции, например переустановка или восстановление, выполняются в фоне и завершаются, даже если страницу закрыли.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="Снапшоты, резервные копии, пароль root и переустановка виртуального сервера"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>Что делает PNLCS при каждом событии биллинга</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Событие</th><th scope="col">На Proxmox</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Заказ оплачен</th><td class="muted">Клонируется в пул со следующим ID виртуальной машины, применяется cloud-init, диск расширяется, включается защита, сервер запускается</td></tr>
+          <tr><th scope="row">Приостановка</th><td class="muted">Автозапуск при загрузке отключается, затем сервер выключается, чтобы перезагрузка хоста не вернула его к работе</td></tr>
+          <tr><th scope="row">Возобновление</th><td class="muted">Автозапуск при загрузке включается, сервер запускается</td></tr>
+          <tr><th scope="row">Удаление</th><td class="muted">Сервер останавливается, защита снимается, он удаляется вместе с дисками; адрес возвращается в пул</td></tr>
+          <tr><th scope="row">Повышение тарифа</th><td class="muted">Новые ядра и память; диск расширяется и никогда не уменьшается</td></tr>
+          <tr><th scope="row">Каждый час</th><td class="muted">Использование диска и трафик за текущий месяц по статистике Proxmox</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Чужие машины PNLCS не трогает</h2>
+      <p class="lede">На гипервизоре обычно работают не только клиентские серверы. Эти правила ограничивают PNLCS его собственными машинами.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Каждый сервер, созданный PNLCS, получает тег и заметку с названием услуги; PNLCS работает только с машинами с такой пометкой</li>
+      <li>Рекомендуемый API-токен имеет доступ только к своему пулу, а проверка подключения предупреждает о правах, которые биллингу никогда не нужны</li>
+      <li>Серверы создаются с защитой от удаления, которая снимается только в момент удаления услуги</li>
+      <li>Клиенты никогда не видят адрес гипервизора</li>
+    </ul>
+  </div>
+</section>

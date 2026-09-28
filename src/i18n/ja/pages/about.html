@@ -1,0 +1,75 @@
+<!--
+title: 概要
+cta: no
+description: PNLCSは、Panelicaチームとボランティアがメンテナンスする、MITライセンスで公開されたオープンソースのホスティング請求管理プラットフォームです。
+section: プロジェクト
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>PNLCSについて</h1>
+    <p class="lede">PNLCSは、Webホスティング事業者、リセラー、インフラ事業者向けの、無料でセルフホスト型の請求管理プラットフォーム兼顧客ポータルです。オープンな場で開発され、MITライセンスで公開されています。</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap maker">
+    <div>
+      <h2>開発のきっかけ</h2>
+      <p class="lede" style="margin-top:16px">Panelicaチームは、Panelicaとネイティブに連携し、ほかのコントロールパネルともうまく動く、オープンでセルフホスト型の請求管理システムを求めていました。そうしたものが存在しなかったため、本業の製品と並行して、空き時間に自分たちで作りました。</p>
+      <p class="lede" style="margin-top:16px">WHMCSの概念にあえて合わせているので、WHMCSを使ってきたチームでも迷わず操作できます。WHMCSと違うのは、MITライセンスであることです。</p>
+    </div>
+    <blockquote class="quote" style="color:var(--text)">
+      PNLCSを作ったのは、私たち自身が必要としていたからです。そして、ホスティング事業を支えるソフトウェアは毎月の賃料であるべきではないと考えています。自分で所有し、理解し、改善できる道具であるべきです。それは、みんなで一緒に作ってこそ実現できます。
+      <cite style="color:var(--muted)">Panelicaチーム（PNLCSのメンテナー）</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>プロジェクトの概要</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">メンテナー</th><td class="muted"><a href="https://panelica.com/">Panelica</a>とボランティアのコントリビューター</td></tr>
+          <tr><th scope="row">ライセンス</th><td class="muted"><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">MIT</a>：商用利用、改変、任意のライセンスでのモジュール配布が可能</td></tr>
+          <tr><th scope="row">初回リリース</th><td class="muted">v1.0.0、2026年4月</td></tr>
+          <tr><th scope="row">最新リリース</th><td class="muted"><span data-stat="release">v1.2.0</span>、mainブランチで継続的に更新</td></tr>
+          <tr><th scope="row">使用技術</th><td class="muted">Laravel 13、PHP 8.4+、MySQL 8またはMariaDB、Tailwind CSS 4、Alpine.js</td></tr>
+          <tr><th scope="row">ソースコード</th><td class="muted"><a href="https://github.com/Panelica/pnlcs">github.com/Panelica/pnlcs</a>（スター<span data-stat="stars">59</span>、フォーク<span data-stat="forks">22</span>）</td></tr>
+          <tr><th scope="row">ドキュメント</th><td class="muted"><a href="https://docs.pnlcs.com/">docs.pnlcs.com</a></td></tr>
+          <tr><th scope="row">セキュリティ窓口</th><td class="muted"><a href="mailto:security@panelica.com">security@panelica.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>実績のある部分と、検証が必要な部分</h2></div>
+    <div class="cols-2">
+      <div class="callout">
+        <h3>実運用のシステムで実績あり</h3>
+        <ul class="plain-list">
+          <li>顧客ポータル、管理パネル、主要な請求フロー</li>
+          <li>請求書発行、注文、サービス、ドメイン、チケット、ナレッジベース</li>
+          <li>Panelicaサーバーモジュール</li>
+          <li>VPS販売用のProxmox VEモジュール</li>
+          <li>Stripeによる決済</li>
+          <li>翻訳を編集できる30言語</li>
+        </ul>
+      </div>
+      <div class="callout callout--warn">
+        <h3>実環境での検証が必要</h3>
+        <ul class="plain-list">
+          <li>cPanel、Plesk、DirectAdminのサーバーモジュール</li>
+          <li>PayPal、Authorize.net、銀行振込の決済ゲートウェイ</li>
+          <li>Enomドメインレジストラ</li>
+        </ul>
+        <p style="margin-top:12px"><a href="community.html">検証に協力する</a></p>
+      </div>
+    </div>
+  </div>
+</section>

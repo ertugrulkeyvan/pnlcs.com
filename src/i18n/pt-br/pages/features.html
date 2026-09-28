@@ -1,0 +1,113 @@
+<!--
+title: Funcionalidades
+heading: Funcionalidades
+description: O que o PNLCS inclui: portal do cliente, painel administrativo, faturamento recorrente e automação, segurança, 30 idiomas e uma API compatível com o WHMCS.
+section: Produto
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Funcionalidades</h1>
+    <p class="lede">A loja, o portal do cliente, o faturamento, o provisionamento e o suporte formam uma única aplicação Laravel. Esta página lista o que cada parte faz; a documentação explica como.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Documentação</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap spec-layout">
+    <nav class="toc" aria-label="Nesta página">
+      <p>Nesta página</p>
+      <ul>
+        <li><a href="#portal">Portal do cliente</a></li>
+        <li><a href="#billing">Faturamento e automação</a></li>
+        <li><a href="#admin">Painel administrativo</a></li>
+        <li><a href="#security">Segurança e acesso</a></li>
+        <li><a href="#languages">Idiomas</a></li>
+        <li><a href="#developers">Para desenvolvedores</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <section class="spec" id="portal">
+        <div class="spec-head"><h2>Portal do cliente</h2><p>O que os clientes veem depois de fazer login.</p><a class="more" href="shared-hosting.html">Ferramentas de hospedagem</a></div>
+        <dl class="spec-grid">
+          <div><dt>Loja e checkout</dt><dd>Navegar pelos planos, configurar um serviço, aplicar cupons, pagar.</dd></div>
+          <div><dt>Gerenciamento de serviços</dt><dd>Upgrade, downgrade, cancelamento e ativação ou desativação da renovação automática.</dd></div>
+          <div><dt>Domínios</dt><dd>Registro, transferência e renovação; códigos EPP e WHOIS.</dd></div>
+          <div><dt>Faturas</dt><dd>Pagamento on-line, download em PDF, adição de fundos, uso do saldo de crédito.</dd></div>
+          <div><dt>Orçamentos</dt><dd>Revisar e aceitar orçamentos de pré-venda; um orçamento aceito vira fatura.</dd></div>
+          <div><dt>Avisos de transferência bancária</dt><dd>Informar um pagamento off-line com envio do comprovante.</dd></div>
+          <div><dt>Certificados SSL</dt><dd>Geração de CSR, e-mails de aprovação e instalação automática.</dd></div>
+          <div><dt>Suporte e base de conhecimento</dt><dd>Tickets com anexos, uma base de conhecimento pesquisável e comunicados.</dd></div>
+          <div><dt>Status da rede</dt><dd>Incidentes ativos e manutenções programadas.</dd></div>
+          <div><dt>Segurança da conta</dt><dd>Login com dois fatores, alertas de login e histórico de sessões.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="billing">
+        <div class="spec-head"><h2>Faturamento e automação</h2><p>Um serviço só é ativado depois que o módulo de servidor informa sucesso.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Faturamento recorrente</dt><dd>Ciclos mensal, trimestral, semestral, anual e bienal.</dd></div>
+          <div><dt>Suspensão automática</dt><dd>Serviços não pagos são suspensos após o período de carência que você definir.</dd></div>
+          <div><dt>Lembretes</dt><dd>E-mails de fatura, pagamento, vencimento do cartão e renovação de domínio.</dd></div>
+          <div><dt>Regras de impostos</dt><dd>Por país e estado, com relatórios de impostos devidos.</dd></div>
+          <div><dt>Um único mecanismo de pagamento</dt><dd>Gateways, pagamentos manuais e créditos seguem o mesmo caminho, com pagamentos parciais e excedentes convertidos em crédito.</dd></div>
+          <div><dt>Reembolsos</dt><dd>Totais ou parciais, pela API do gateway ou registrados off-line.</dd></div>
+          <div><dt>Provisionamento confiável</dt><dd>Falhas entram em fila e são reprocessadas automaticamente, com alerta para a equipe.</dd></div>
+          <div><dt>Cobrança por uso</dt><dd>Excedente de disco e de tráfego, opcional por produto.</dd></div>
+          <div><dt>Multas por atraso, cupons, promoções</dt><dd>Além de saldos de crédito e um fluxo para adicionar fundos.</dd></div>
+          <div><dt>Manutenção agendada</dt><dd>Taxas de câmbio, backups do banco de dados e retenção de logs de forma agendada.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="admin">
+        <div class="spec-head"><h2>Painel administrativo</h2><p>O que a equipe usa no dia a dia.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Dashboard</dt><dd>Receita, cadastros, pedidos pendentes e tickets abertos em um relance.</dd></div>
+          <div><dt>Clientes</dt><dd>Perfis, anotações, resumo financeiro e acesso como cliente.</dd></div>
+          <div><dt>Pedidos e faturas</dt><dd>Criação manual, ações em massa, envio de e-mails em massa, exportação em PDF.</dd></div>
+          <div><dt>Produtos e pacotes</dt><dd>Opções configuráveis, complementos e matrizes de preços.</dd></div>
+          <div><dt>Central de atendimento</dt><dd>Notas internas, regras de escalonamento, filtro de spam, respostas predefinidas.</dd></div>
+          <div><dt>Relatórios</dt><dd>27 inclusos: receita, previsões, retenção, tickets, domínios, impostos.</dd></div>
+          <div><dt>Orçamentos e projetos</dt><dd>Um fluxo de pré-venda no estilo do WHMCS.</dd></div>
+          <div><dt>Calendário</dt><dd>Eventos, lembretes e tarefas agendadas.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="security">
+        <div class="spec-head"><h2>Segurança e acesso</h2><p>A equipe vê o que a sua função permite; toda ação administrativa é registrada.</p><a class="more" href="security.html">Política de segurança</a></div>
+        <dl class="spec-grid">
+          <div><dt>Funções e permissões</dt><dd>Controle de acesso baseado em funções, com mais de 45 permissões granulares.</dd></div>
+          <div><dt>Autenticação de dois fatores</dt><dd>Para a equipe e os clientes, com códigos de recuperação para a equipe.</dd></div>
+          <div><dt>Limite de requisições</dt><dd>No login, nas verificações de 2FA, na redefinição de senha e no reenvio de e-mails.</dd></div>
+          <div><dt>Lista de IPs permitidos para o admin</dt><dd>Opcional, para a área administrativa.</dd></div>
+          <div><dt>Sessões</dt><dd>Tempo limite e logout forçado.</dd></div>
+          <div><dt>Log de atividades</dt><dd>Toda ação administrativa registrada; IPs e e-mails bloqueados.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="languages">
+        <div class="spec-head"><h2>Idiomas</h2><p>30 idiomas; as traduções podem ser editadas no navegador.</p></div>
+        <dl class="spec-grid">
+          <div><dt>30 idiomas</dt><dd>Inglês ativo por padrão; ative os outros conforme precisar.</dd></div>
+          <div><dt>Editor no navegador</dt><dd>Altere qualquer uma das 2.232 strings da interface sem mexer em arquivos.</dd></div>
+          <div><dt>Tradução assistida por IA</dt><dd>Preencha chaves faltantes em lote e depois revise.</dd></div>
+          <div><dt>Importação e exportação</dt><dd>JSON por idioma, para tradutores que preferem as próprias ferramentas.</dd></div>
+        </dl>
+        <figure class="shot"><img src="assets/img/admin-languages.webp" srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="O gerenciador de idiomas no painel administrativo, listando 30 idiomas e o progresso de tradução de cada um"></figure>
+      </section>
+
+      <section class="spec" id="developers">
+        <div class="spec-head"><h2>Para desenvolvedores</h2><p>Tudo o que existe na área administrativa pode ser automatizado pela API.</p><a class="more" href="https://docs.pnlcs.com/developer/">Guia do desenvolvedor</a></div>
+        <dl class="spec-grid">
+          <div><dt>API HTTP</dt><dd>171 ações com os nomes de ação do WHMCS e uma descrição OpenAPI 3.1.</dd></div>
+          <div><dt>Servidor MCP</dt><dd>Permita que um assistente de IA leia dados e, se você autorizar, execute ações pela API.</dd></div>
+          <div><dt>Hooks</dt><dd><code>add_hook()</code> compatível com o WHMCS, com mais de 20 pontos de hook; um hook com falha nunca quebra o faturamento.</dd></div>
+          <div><dt>Webhooks</dt><dd>Callbacks de entrada dos gateways e eventos de saída.</dd></div>
+          <div><dt>Módulos</dt><dd>Módulos de servidor, gateway, registrador e SSL, além de complementos.</dd></div>
+          <div><dt>Recebimento de e-mails (piping)</dt><dd>Caixas de e-mail IMAP ou POP3 transformam e-mails em tickets e respostas.</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

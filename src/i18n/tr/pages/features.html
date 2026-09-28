@@ -1,0 +1,113 @@
+<!--
+title: Özellikler
+heading: Özellikler
+description: PNLCS'te neler var: müşteri paneli, yönetim paneli, düzenli faturalandırma ve otomasyon, güvenlik, 30 dil ve WHMCS uyumlu bir API.
+section: Ürün
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Özellikler</h1>
+    <p class="lede">Mağaza, müşteri paneli, faturalandırma, hizmet kurulumu ve destek tek bir Laravel uygulamasıdır. Bu sayfa her parçanın ne yaptığını listeler; nasıl yapıldığını dokümantasyon anlatır.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Dokümantasyon</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap spec-layout">
+    <nav class="toc" aria-label="Bu sayfada">
+      <p>Bu sayfada</p>
+      <ul>
+        <li><a href="#portal">Müşteri paneli</a></li>
+        <li><a href="#billing">Faturalandırma ve otomasyon</a></li>
+        <li><a href="#admin">Yönetim paneli</a></li>
+        <li><a href="#security">Güvenlik ve erişim</a></li>
+        <li><a href="#languages">Diller</a></li>
+        <li><a href="#developers">Geliştiriciler için</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <section class="spec" id="portal">
+        <div class="spec-head"><h2>Müşteri paneli</h2><p>Müşterilerin giriş yaptıktan sonra gördükleri.</p><a class="more" href="shared-hosting.html">Hosting araçları</a></div>
+        <dl class="spec-grid">
+          <div><dt>Mağaza ve ödeme</dt><dd>Paketlere göz atma, hizmet yapılandırma, kupon kullanma, ödeme.</dd></div>
+          <div><dt>Hizmet yönetimi</dt><dd>Paket yükseltme, düşürme, iptal ve otomatik yenilemeyi açıp kapatma.</dd></div>
+          <div><dt>Alan adları</dt><dd>Kayıt, transfer ve yenileme; EPP kodları ve WHOIS.</dd></div>
+          <div><dt>Faturalar</dt><dd>Online ödeme, PDF indirme, bakiye yükleme, kredi bakiyesini kullanma.</dd></div>
+          <div><dt>Teklifler</dt><dd>Satış öncesi teklifleri inceleme ve onaylama; onaylanan teklif faturaya dönüşür.</dd></div>
+          <div><dt>Havale bildirimleri</dt><dd>Dekont yükleyerek çevrim dışı bir ödemeyi bildirme.</dd></div>
+          <div><dt>SSL sertifikaları</dt><dd>CSR oluşturma, onay e-postaları ve otomatik kurulum.</dd></div>
+          <div><dt>Destek ve bilgi bankası</dt><dd>Dosya eklenebilen destek talepleri, aranabilir bilgi bankası ve duyurular.</dd></div>
+          <div><dt>Ağ durumu</dt><dd>Aktif arızalar ve planlı bakımlar.</dd></div>
+          <div><dt>Hesap güvenliği</dt><dd>İki adımlı giriş, giriş uyarıları ve oturum geçmişi.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="billing">
+        <div class="spec-head"><h2>Faturalandırma ve otomasyon</h2><p>Bir hizmet, ancak sunucu modülü başarılı olduğunu bildirdikten sonra etkinleştirilir.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Düzenli faturalandırma</dt><dd>Aylık, üç aylık, altı aylık, yıllık ve iki yıllık dönemler.</dd></div>
+          <div><dt>Otomatik askıya alma</dt><dd>Ödenmemiş hizmetler, belirlediğiniz ek sürenin ardından askıya alınır.</dd></div>
+          <div><dt>Hatırlatmalar</dt><dd>Fatura, ödeme, kart son kullanma tarihi ve alan adı yenileme e-postaları.</dd></div>
+          <div><dt>Vergi kuralları</dt><dd>Ülke ve eyalet bazında, vergi yükümlülüğü raporlarıyla.</dd></div>
+          <div><dt>Tek ödeme motoru</dt><dd>Ödeme altyapıları, manuel ödemeler ve kredi aynı yoldan geçer; kısmi ödemeler desteklenir, fazla ödeme krediye aktarılır.</dd></div>
+          <div><dt>İadeler</dt><dd>Tam ya da kısmi; ödeme altyapısının API'si üzerinden ya da çevrim dışı kaydedilerek.</dd></div>
+          <div><dt>Güvenilir hizmet kurulumu</dt><dd>Hatalar kuyruğa alınır ve otomatik olarak yeniden denenir; personele de uyarı gider.</dd></div>
+          <div><dt>Kullanıma göre faturalandırma</dt><dd>Disk ve bant genişliği aşımı, ürün bazında isteğe bağlı.</dd></div>
+          <div><dt>Gecikme ücretleri, kuponlar, kampanyalar</dt><dd>Ayrıca kredi bakiyeleri ve bakiye yükleme akışı.</dd></div>
+          <div><dt>Zamanlanmış bakım işleri</dt><dd>Döviz kurları, veritabanı yedekleri ve log saklama, belirli bir takvimle.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="admin">
+        <div class="spec-head"><h2>Yönetim paneli</h2><p>Personelin her gün kullandıkları.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Gösterge paneli</dt><dd>Gelir, yeni kayıtlar, bekleyen siparişler ve açık destek talepleri tek bakışta.</dd></div>
+          <div><dt>Müşteriler</dt><dd>Profiller, notlar, fatura özeti ve müşteri olarak giriş yapma.</dd></div>
+          <div><dt>Siparişler ve faturalar</dt><dd>Manuel oluşturma, toplu işlemler, toplu e-posta, PDF dışa aktarma.</dd></div>
+          <div><dt>Ürünler ve paketler</dt><dd>Yapılandırılabilir seçenekler, eklentiler ve fiyat matrisleri.</dd></div>
+          <div><dt>Destek masası</dt><dd>Dahili notlar, yükseltme kuralları, spam filtresi, hazır yanıtlar.</dd></div>
+          <div><dt>Raporlar</dt><dd>27 hazır rapor: gelir, tahminler, müşteri tutma, destek talepleri, alan adları, vergi.</dd></div>
+          <div><dt>Teklifler ve projeler</dt><dd>WHMCS tarzı bir satış öncesi akışı.</dd></div>
+          <div><dt>Takvim</dt><dd>Etkinlikler, hatırlatmalar ve zamanlanmış görevler.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="security">
+        <div class="spec-head"><h2>Güvenlik ve erişim</h2><p>Personel yalnızca rolünün izin verdiklerini görür; her yönetici işlemi kayda geçer.</p><a class="more" href="security.html">Güvenlik politikası</a></div>
+        <dl class="spec-grid">
+          <div><dt>Roller ve yetkiler</dt><dd>45'ten fazla ayrıntılı yetkiyle rol tabanlı erişim.</dd></div>
+          <div><dt>İki adımlı doğrulama</dt><dd>Personel ve müşteriler için; personele kurtarma kodlarıyla birlikte.</dd></div>
+          <div><dt>İstek sınırlama</dt><dd>Girişte, 2FA kontrollerinde, şifre sıfırlamada ve e-posta yeniden gönderiminde.</dd></div>
+          <div><dt>Yönetici IP izin listesi</dt><dd>İsteğe bağlı, yönetim alanı için.</dd></div>
+          <div><dt>Oturumlar</dt><dd>Zaman aşımları ve zorunlu çıkış.</dd></div>
+          <div><dt>İşlem kaydı</dt><dd>Her yönetici işlemi kaydedilir; IP ve e-posta adresleri yasaklanabilir.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="languages">
+        <div class="spec-head"><h2>Diller</h2><p>30 dil; çeviriler tarayıcıdan düzenlenebilir.</p></div>
+        <dl class="spec-grid">
+          <div><dt>30 dil</dt><dd>Varsayılan olarak İngilizce etkindir; diğerlerini ihtiyaç duydukça açarsınız.</dd></div>
+          <div><dt>Tarayıcı içi düzenleyici</dt><dd>2.232 arayüz metninden herhangi birini dosyalara dokunmadan değiştirin.</dd></div>
+          <div><dt>Yapay zekâ destekli çeviri</dt><dd>Eksik anahtarları toplu olarak doldurun, sonra gözden geçirin.</dd></div>
+          <div><dt>İçe ve dışa aktarma</dt><dd>Kendi araçlarını tercih eden çevirmenler için dil başına JSON.</dd></div>
+        </dl>
+        <figure class="shot"><img src="assets/img/admin-languages.webp" srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="Yönetim panelindeki dil yöneticisi: 30 dil ve çeviri ilerlemeleri listeleniyor"></figure>
+      </section>
+
+      <section class="spec" id="developers">
+        <div class="spec-head"><h2>Geliştiriciler için</h2><p>Yönetim alanındaki her şey API üzerinden betiklenebilir.</p><a class="more" href="https://docs.pnlcs.com/developer/">Geliştirici rehberi</a></div>
+        <dl class="spec-grid">
+          <div><dt>HTTP API</dt><dd>WHMCS işlem adlarıyla 171 işlem ve bir OpenAPI 3.1 tanımı.</dd></div>
+          <div><dt>MCP sunucusu</dt><dd>Bir yapay zekâ asistanının API üzerinden veri okumasına ve, izin verirseniz, işlem yapmasına olanak tanır.</dd></div>
+          <div><dt>Hook'lar</dt><dd>20'den fazla hook noktasıyla WHMCS uyumlu <code>add_hook()</code>; hata veren bir hook faturalandırmayı asla bozmaz.</dd></div>
+          <div><dt>Webhook'lar</dt><dd>Ödeme altyapılarından gelen geri çağrılar ve dışarıya giden olaylar.</dd></div>
+          <div><dt>Modüller</dt><dd>Sunucu, ödeme altyapısı, alan adı kayıt ve SSL modülleri, ayrıca eklentiler.</dd></div>
+          <div><dt>E-posta yönlendirme (piping)</dt><dd>IMAP ya da POP3 posta kutuları, gelen e-postaları destek taleplerine ve yanıtlara dönüştürür.</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

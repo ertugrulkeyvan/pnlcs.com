@@ -1,0 +1,65 @@
+<!--
+title: PNLCS face à WHMCS
+heading: Comparer avec WHMCS
+description: Comment PNLCS se compare à WHMCS et aux autres systèmes de facturation propriétaires, ce qui se transpose, et comment migrer sans interruption de service.
+section: Produit
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Une alternative open source à WHMCS</h1>
+    <p class="lede">PNLCS reprend volontairement le modèle de WHMCS : clients, produits, commandes, factures, services, tickets et modules ont le même sens. La différence, c’est la licence : PNLCS est sous MIT, sans frais par installation.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Guide de migration</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Côte à côte</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">Sujet</span></th><th scope="col">PNLCS</th><th scope="col">Facturation propriétaire classique</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Coût de la licence</th><td>Gratuit (MIT)</td><td>Frais mensuels par installation</td></tr>
+          <tr><th scope="row">Code source</th><td>Entièrement ouvert, auditable</td><td>Encodé ou fermé</td></tr>
+          <tr><th scope="row">Auto-hébergement</th><td>Partout : Docker, VPS, dans un panneau d’hébergement</td><td>Oui, avec vérification de licence</td></tr>
+          <tr><th scope="row">Extensibilité</th><td>Écrivez un module, distribuez-le, gardez-le</td><td>Marketplace et conditions de l’éditeur</td></tr>
+          <tr><th scope="row">Vos données</th><td>Votre base de données ; interrogez-la ou exportez-la directement</td><td>À vous, mais liées à la licence</td></tr>
+          <tr><th scope="row">Feuille de route</th><td>Décidée avec la communauté</td><td>Décidée par l’éditeur</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Ce qui se transpose depuis WHMCS</h2></div>
+    <dl class="spec-grid">
+      <div><dt>Concepts</dt><dd>Groupes de produits, produits, options configurables, services, commandes, factures, crédit, tickets et départements se comportent comme l’attendent les équipes habituées à WHMCS.</dd></div>
+      <div><dt>Noms d’actions de l’API</dt><dd>L’API HTTP utilise les noms d’actions de WHMCS : la plupart des intégrations n’ont besoin que d’une nouvelle adresse et d’un nouvel identifiant.</dd></div>
+      <div><dt>Hooks</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> fonctionne de la même façon ; un hook en échec est journalisé et ignoré au lieu de bloquer la facturation.</dd></div>
+      <div><dt>Modules</dt><dd>Serveurs, passerelles, bureaux d’enregistrement et fournisseurs SSL sont des modules distincts, comme dans WHMCS.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Migrer sans interruption de service</h2>
+      <p class="lede">Faites tourner PNLCS à côté de WHMCS et transférez les clients au fil des renouvellements. Les comptes restent sur les mêmes serveurs du début à la fin.</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>Pas encore d’importateur en un clic</h3>
+        <p>PNLCS ne fournit pas d’importateur automatique de base de données WHMCS. Les étapes présentées ici sont la méthode pratique et peu risquée pour migrer. Un importateur serait une contribution bienvenue.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Reconstruisez votre catalogue</strong><span>Recréez les groupes de produits et les produits avec les mêmes noms et les mêmes prix.</span></span></li>
+      <li><span><strong>Connectez les mêmes serveurs</strong><span>Les comptes y existent déjà ; PNLCS les gère désormais.</span></span></li>
+      <li><span><strong>Recréez vos réglages</strong><span>Passerelles de paiement (mêmes comptes), règles de taxes, modèles d’e-mails, personnel et rôles.</span></span></li>
+      <li><span><strong>Transférez les clients</strong><span>Ajoutez chaque client et ses services existants avec la bonne prochaine date d’échéance. Sur Panelica, associez le compte déjà présent sur le serveur.</span></span></li>
+      <li><span><strong>Basculez</strong><span>Au renouvellement, un client à la fois, ou tout le monde pendant une fenêtre de maintenance.</span></span></li>
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,83 @@
+<!--
+title: 安全
+cta: no
+description: 如何报告 PNLCS 的安全问题、之后的处理流程，以及平台内置的安全功能。
+section: 项目
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>安全</h1>
+    <p class="lede">PNLCS 为真实的主机业务处理计费、客户凭据和支付集成。一个安全缺陷就可能影响账单、客户数据和付款，我们会认真对待。</p>
+    <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">报告漏洞</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">完整安全政策</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>报告漏洞</h2>
+      <p class="lede">发现安全问题时，请不要发布公开的 issue、讨论或论坛帖子。</p>
+      <div class="callout" style="margin-top:28px">
+        <h3>发送邮件至 security@panelica.com</h3>
+        <p>请附上问题描述、受影响的组件、复现步骤、影响范围，以及你使用的 PNLCS、Laravel、PHP 和 MySQL 版本。请隐去所有凭据和客户数据。</p>
+        <p>你也可以使用 <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub 的私密漏洞报告功能</a>，我们就不会追究。</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">处理流程</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <tbody>
+            <tr><th scope="row">确认收到</th><td class="muted">48 小时内</td></tr>
+            <tr><th scope="row">分类和严重程度评估</th><td class="muted">5 个工作日内</td></tr>
+            <tr><th scope="row">进展通报</th><td class="muted">每周一次，严重问题会更及时</td></tr>
+            <tr><th scope="row">严重问题的修复</th><td class="muted">通常在确认后 14 天内</td></tr>
+            <tr><th scope="row">披露期限</th><td class="muted">默认 90 天，可协商</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div>
+      <h2 style="font-size:1.6rem">范围之内</h2>
+      <ul class="plain-list">
+        <li>应用本身：管理后台、客户中心、API、队列任务、计划任务</li>
+        <li>身份认证、角色、会话和令牌</li>
+        <li>支付网关、域名注册商和服务器集成</li>
+        <li>默认主题中的模板和视图</li>
+        <li>从代码仓库发布的安装和升级脚本</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="font-size:1.6rem">范围之外</h2>
+      <ul class="plain-list">
+        <li>需要物理访问或 root 级别权限的攻击</li>
+        <li>第三方软件包中的缺陷（请向上游报告）</li>
+        <li>Self-XSS，或没有实际攻击路径的响应头缺失</li>
+        <li>未证明实际影响的自动扫描结果</li>
+        <li>Panelica 运营的演示和沙箱实例</li>
+        <li>fork 和修改过的副本</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>内置防护</h2><p class="lede">PNLCS 为保障安装安全做了哪些工作，以及安装后你应该检查什么。</p></div><a class="more" href="https://docs.pnlcs.com/install/security/">安全检查清单</a></div>
+    <dl class="spec-grid">
+      <div><dt>基于角色的访问控制</dt><dd>为员工提供 45 项以上的细粒度权限。</dd></div>
+      <div><dt>双因素认证</dt><dd>员工和客户均可使用，员工另有恢复码。</dd></div>
+      <div><dt>频率限制</dt><dd>登录、2FA、密码重置和邮件重发。</dd></div>
+      <div><dt>操作日志</dt><dd>每一项管理操作都有记录。</dd></div>
+      <div><dt>隔离的主机管理工具</dt><dd>每一次文件、DNS、计划任务和备份操作，都会与客户自己的域名进行核对。</dd></div>
+      <div><dt>受保护的开通</dt><dd>在 Proxmox 上，PNLCS 只操作由它自己创建并做了标记的机器。</dd></div>
+    </dl>
+    <p class="note">我们没有付费的漏洞赏金计划，但会在安全公告和更新日志中为研究人员署名。善意的安全研究只要遵守<a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">安全政策</a>，我们就不会追究。</p>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+<!--
+title: 快速开始
+cta: no
+description: 使用 Docker 约 5 分钟即可安装 PNLCS，也可以装在自己的服务器上或主机面板账户中。包含系统要求和上手步骤。
+section: 资源
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>运行 PNLCS</h1>
+    <p class="lede">PNLCS 是一个 Laravel 应用，只要有 PHP 8.4、MySQL 或 MariaDB 和 Web 服务器就能运行。想先看看的话，<a href="https://hosting.panelica.com/">在线演示</a>就是一套真实的安装。</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>三种安装方式</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">方式</th><th scope="col">适用场景</th><th scope="col">耗时</th><th scope="col"><span class="sr-only">指南</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Docker</th><td class="muted">试用 PNLCS，或以单个容器运行</td><td class="muted">约 5 分钟</td><td><a href="#docker">命令</a></td></tr>
+          <tr><th scope="row">自己的服务器</th><td class="muted">VPS 或独立服务器：Ubuntu、Debian、AlmaLinux 或 Rocky</td><td class="muted">约 30 分钟</td><td><a href="https://docs.pnlcs.com/install/native/">指南</a></td></tr>
+          <tr><th scope="row">装在主机面板中</th><td class="muted">已经运行 Panelica、cPanel 或类似面板的服务器</td><td class="muted">约 20 分钟</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">指南</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper" id="docker">
+  <div class="wrap quick">
+    <div>
+      <h2>使用 Docker 快速开始</h2>
+      <p class="lede" style="margin-top:16px">官方镜像内置 PHP-FPM 8.4、nginx、Node.js 20 和 supervisor，首次启动时会拉取最新代码。</p>
+      <ol class="steps" style="margin-top:32px">
+        <li><span><strong>启动容器</strong><span>先将 <code>changeme</code> 替换为你自己的密码。</span></span></li>
+        <li><span><strong>等待 3 到 5 分钟</strong><span>首次启动会安装依赖并构建前端。</span></span></li>
+        <li><span><strong>打开 /install</strong><span>安装向导会检查环境要求、创建管理员账户，然后自动锁定。</span></span></li>
+      </ol>
+      <p class="links"><a href="https://docs.pnlcs.com/install/docker/">Docker 指南</a><a href="https://hub.docker.com/r/panelica/pnlcs-runtime">Docker Hub 上的镜像</a></p>
+    </div>
+    <div class="term">
+      <div class="term-head"><span>终端</span><button type="button" data-copy="cmd">复制</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>系统要求</h2>
+      <p class="lede">小规模安装时，数据库和应用在同一台机器上，2 GB 内存就很宽裕。</p>
+      <p class="note"><a href="https://docs.pnlcs.com/install/requirements/">完整系统要求</a></p>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">PHP</th><td class="muted">8.4 或更高版本</td></tr>
+          <tr><th scope="row">数据库</th><td class="muted">MySQL 8.0 或 MariaDB 10.6+</td></tr>
+          <tr><th scope="row">Web 服务器</th><td class="muted">Nginx 或 Apache，搭配 PHP-FPM</td></tr>
+          <tr><th scope="row">Node.js</th><td class="muted">18+（推荐 20 LTS），仅用于构建前端</td></tr>
+          <tr><th scope="row">Composer</th><td class="muted">2.x</td></tr>
+          <tr><th scope="row">内存</th><td class="muted">小规模安装 1 GB 即可运行；2 GB 更宽裕</td></tr>
+          <tr><th scope="row">磁盘</th><td class="muted">应用本身约 130 MB；考虑到数据增长，至少预留 2 GB 空闲空间</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>安装之后</h2></div>
+    <ul class="link-list">
+      <li><a href="https://docs.pnlcs.com/getting-started/setup-checklist/">配置清单</a><span>公司信息、邮件、支付网关、服务器和第一个产品。</span></li>
+      <li><a href="https://docs.pnlcs.com/getting-started/your-first-sale/">第一笔销售</a><span>从空的产品目录，到一笔已付款、已开通的订单。</span></li>
+      <li><a href="https://docs.pnlcs.com/install/security/">安全检查清单</a><span>HTTPS、关闭调试模式、员工启用双因素认证、备份存放到服务器之外。</span></li>
+      <li><a href="https://docs.pnlcs.com/install/updating/">更新</a><span>拉取最新版本，数据不会丢失。</span></li>
+      <li><a href="https://docs.pnlcs.com/install/backups/">备份</a><span>需要备份哪些内容，包括应用密钥。</span></li>
+      <li><a href="https://docs.pnlcs.com/troubleshooting/faq/">常见问题</a><span>常见问题解答。</span></li>
+    </ul>
+  </div>
+</section>

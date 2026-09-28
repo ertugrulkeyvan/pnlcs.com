@@ -1,0 +1,63 @@
+<!--
+title: Виртуальный хостинг
+description: Продавайте виртуальный хостинг с PNLCS. Клиенты управляют файлами, почтой, базами данных, DNS, cron и резервными копиями прямо в биллинг-портале, только в пределах своего аккаунта.
+section: Решения
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Виртуальный хостинг</h1>
+      <p class="lede">Большинство биллинговых систем ограничиваются фразой «вот ваш пароль от панели управления». С PNLCS и серверным модулем Panelica повседневная работа с хостингом происходит прямо в биллинг-портале.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Подключить сервер</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Услуга хостинга в личном кабинете клиента с текущим потреблением ресурсов и восемью инструментами управления"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Восемь инструментов без повторного входа</h2><p class="lede">Для каждой услуги хостинга показываются текущие CPU, память, диск и трафик с сервера, а также эти инструменты.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Инструмент</th><th scope="col">Что может клиент</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Файловый менеджер</th><td class="muted">Просматривать, загружать, скачивать, редактировать, переименовывать, создавать папки и удалять</td></tr>
+          <tr><th scope="row">Почтовые ящики</th><td class="muted">Создавать и удалять ящики, менять пароли, открывать веб-почту</td></tr>
+          <tr><th scope="row">Базы данных</th><td class="muted">Создавать базы данных MySQL и пользователей, сбрасывать пароли, открывать phpMyAdmin</td></tr>
+          <tr><th scope="row">FTP-аккаунты</th><td class="muted">Создавать аккаунты, менять пароли, удалять; хост и порт показываются</td></tr>
+          <tr><th scope="row">Поддомены</th><td class="muted">Создавать и удалять; панель сама настраивает vhost, корневой каталог, пул PHP, SSL и DNS</td></tr>
+          <tr><th scope="row">DNS-зона</th><td class="muted">Добавлять, редактировать и удалять записи A, AAAA, CNAME, MX, TXT, SRV и CAA</td></tr>
+          <tr><th scope="row">Задания cron</th><td class="muted">Планировать команды, запускать задание сразу и смотреть его вывод, приостанавливать, возобновлять, удалять</td></tr>
+          <tr><th scope="row">Резервные копии</th><td class="muted">Создавать точки восстановления, смотреть их размер и содержимое, удалять старые</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Инструменты в личном кабинете требуют серверного модуля Panelica. С cPanel, Plesk, DirectAdmin и HestiaCP PNLCS создаёт и приостанавливает аккаунты, а клиенты управляют ими в своей панели управления.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Только в пределах аккаунта клиента</h2>
+      <p class="lede">Серверный ключ, который хранит биллинговая система, видит все аккаунты на сервере. PNLCS фильтрует каждый список по доменам просматриваемой услуги и точно так же проверяет каждое изменение перед отправкой.</p>
+      <ul class="checklist checklist--one">
+        <li>Резервная копия, которая включает и чужой домен, не показывается и не может быть удалена</li>
+        <li>Задание cron, поддомен или DNS-запись для чужого домена отклоняются ещё до того, как запрос покинет биллинговый сервер</li>
+        <li>Лимиты берутся из тарифа хостинга, а панель дополнительно применяет их сама</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Редактор DNS-зоны в личном кабинете клиента"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Резервные копии и задания cron</h2>
+      <p class="lede">Клиенты сами создают и восстанавливают резервные копии и управляют заданиями cron в пределах своего тарифа.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Страница резервных копий в личном кабинете клиента со списком точек восстановления"></figure>
+  </div>
+</section>

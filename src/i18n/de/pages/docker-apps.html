@@ -1,0 +1,57 @@
+<!--
+title: Docker-Apps
+description: Verkaufen Sie Docker-Anwendungen per Klick mit PNLCS und Panelica. WordPress, n8n, Datenbanken und mehr, innerhalb der Ressourcen, die jeder Kunde gebucht hat.
+section: Lösungen
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Docker-Apps</h1>
+      <p class="lede">Kunden installieren WordPress, n8n, Datenbanken oder Remote-Desktops aus einem Katalog. Jede App läuft als Docker-Container im Hosting-Konto des Kunden, innerhalb von Arbeitsspeicher und CPU seines Tarifs. Setzt einen Panelica-Server voraus.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Anleitung: Docker-Apps verkaufen</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Die Apps-Seite im Kundenportal mit laufenden Apps und dem App-Katalog"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Drei Wege, Apps zu verkaufen</h2><p class="lede">Sie lassen sich kombinieren.</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>Hosting mit Apps inklusive</dt><dd>Ein normaler Hosting-Tarif mit Container-Kontingent. Kunden bekommen eine Website und können jederzeit Apps im Tab „Apps“ hinzufügen.</dd></div>
+      <div><dt>App-Hosting</dt><dd>Die Bestellung installiert eine App auf der Domain des Kunden. Legen Sie die App fest („Managed WordPress“) oder lassen Sie den Kunden aus Ihrem Katalog wählen, dann deckt ein Produkt jede App ab.</dd></div>
+      <div><dt>Container-Tarif</dt><dd>Ressourcen ohne Website: keine Domain, und die Dienstseite zeigt nur den Tab „Apps“.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Alle Apps eines Kontos teilen ein cgroup-Limit</h2>
+      <p class="lede">Jeder Container, den ein Kunde startet, wird im cgroup-Slice seines Kontos angelegt. Ein Kunde mit einem 2-GB-Tarif hat 2 GB für alle seine Apps zusammen und kann keinen Arbeitsspeicher anderer Kunden nutzen.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Keine privilegierten Container, zusätzlichen Capabilities oder Host-Path-Mounts, auch nicht für den Abrechnungsschlüssel</li>
+      <li>Tarife legen die Anzahl der Apps, den gesamten Arbeitsspeicher und die gesamte CPU fest</li>
+      <li>Kunden sehen den Speicherbedarf einer App vor der Bestellung</li>
+      <li>Eine Bestellung, deren App sich nicht installieren lässt, wird zurückgerollt und nie halb fertig zurückgelassen</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Sie kuratieren den Katalog</h2>
+      <p class="lede">Der Panelica-Server bestimmt, welche Apps es gibt. PNLCS bestimmt, wie Sie sie verkaufen: welche Apps Sie anbieten, welche hervorgehoben werden, ihre Reihenfolge, Tagline und Logo.</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>Panelica-Server anbinden</strong><span>Mit einem API-Schlüssel, der die Docker-Scopes enthält.</span></span></li>
+      <li><span><strong>Verkaufsweg wählen</strong><span>Inklusive, App-Hosting oder Container-Tarif.</span></span></li>
+      <li><span><strong>Produkt anlegen</strong><span>Container-Kontingent, Arbeitsspeicher und CPU festlegen, dann den Preis.</span></span></li>
+      <li><span><strong>Katalog kuratieren</strong><span>Apps anbieten, hervorheben und sortieren; 95 von 98 haben ab Werk ein Logo.</span></span></li>
+    </ol>
+  </div>
+</section>

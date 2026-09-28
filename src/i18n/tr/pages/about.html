@@ -1,0 +1,75 @@
+<!--
+title: Hakkında
+cta: no
+description: PNLCS, bakımını Panelica ekibi ve gönüllülerin üstlendiği, MIT Lisansı ile yayımlanan açık kaynaklı bir hosting faturalandırma platformudur.
+section: Proje
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>PNLCS hakkında</h1>
+    <p class="lede">PNLCS; web hosting firmaları, bayiler ve altyapı sağlayıcıları için ücretsiz, kendi sunucunuzda çalışan bir faturalandırma platformu ve müşteri panelidir. Açık olarak geliştirilir ve MIT Lisansı ile yayımlanır.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap maker">
+    <div>
+      <h2>Neden var</h2>
+      <p class="lede" style="margin-top:16px">Panelica ekibi, Panelica ile yerel olarak entegre çalışan ve diğer kontrol panelleriyle de sorunsuz anlaşan, açık ve kendi sunucunuzda barındırılan bir faturalandırma sistemi istiyordu. Böyle bir şey yoktu; bu yüzden ana ürünlerinin yanında, boş zamanlarında bir tane geliştirdiler.</p>
+      <p class="lede" style="margin-top:16px">Bilinçli olarak WHMCS kavramlarını izler; böylece WHMCS kullanan bir ekip kolayca yolunu bulur. WHMCS'ten farklı olarak MIT lisanslıdır.</p>
+    </div>
+    <blockquote class="quote" style="color:var(--text)">
+      PNLCS'i kendimiz ihtiyaç duyduğumuz için geliştirdik. Bir hosting işletmesinin üzerinde çalıştığı yazılımın aylık bir kira olmaması gerektiğine inanıyoruz. Sahip olduğunuz, anladığınız ve geliştirebildiğiniz bir araç olmalı. Bu da ancak birlikte geliştirilirse mümkün.
+      <cite style="color:var(--muted)">PNLCS'in bakımını üstlenen Panelica ekibi</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Bir bakışta proje</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">Bakım</th><td class="muted"><a href="https://panelica.com/">Panelica</a>, gönüllü katkıcılarla birlikte</td></tr>
+          <tr><th scope="row">Lisans</th><td class="muted"><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">MIT</a>: ticari olarak kullanın, değiştirin, modülleri istediğiniz lisansla dağıtın</td></tr>
+          <tr><th scope="row">İlk sürüm</th><td class="muted">v1.0.0, Nisan 2026</td></tr>
+          <tr><th scope="row">Son sürüm</th><td class="muted"><span data-stat="release">v1.2.0</span>, main dalında sürekli güncellemelerle</td></tr>
+          <tr><th scope="row">Kullanılan teknolojiler</th><td class="muted">Laravel 13, PHP 8.4+, MySQL 8 ya da MariaDB, Tailwind CSS 4, Alpine.js</td></tr>
+          <tr><th scope="row">Kaynak kod</th><td class="muted"><a href="https://github.com/Panelica/pnlcs">github.com/Panelica/pnlcs</a> (<span data-stat="stars">59</span> yıldız, <span data-stat="forks">22</span> fork)</td></tr>
+          <tr><th scope="row">Dokümantasyon</th><td class="muted"><a href="https://docs.pnlcs.com/">docs.pnlcs.com</a></td></tr>
+          <tr><th scope="row">Güvenlik iletişimi</th><td class="muted"><a href="mailto:security@panelica.com">security@panelica.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Neler kanıtlandı, neler test bekliyor</h2></div>
+    <div class="cols-2">
+      <div class="callout">
+        <h3>Canlı sistemlerde kanıtlandı</h3>
+        <ul class="plain-list">
+          <li>Müşteri paneli, yönetim paneli ve temel faturalandırma akışları</li>
+          <li>Faturalar, siparişler, hizmetler, alan adları, destek talepleri, bilgi bankası</li>
+          <li>Panelica sunucu modülü</li>
+          <li>VPS satışı için Proxmox VE modülü</li>
+          <li>Stripe ödemeleri</li>
+          <li>Çevirileri düzenlenebilen 30 dil</li>
+        </ul>
+      </div>
+      <div class="callout callout--warn">
+        <h3>Gerçek ortamda test edilmesi gerekiyor</h3>
+        <ul class="plain-list">
+          <li>cPanel, Plesk ve DirectAdmin sunucu modülleri</li>
+          <li>PayPal, Authorize.net ve banka havalesi ödeme altyapıları</li>
+          <li>Enom alan adı kayıt firması</li>
+        </ul>
+        <p style="margin-top:12px"><a href="community.html">Test etmeye yardım edin</a></p>
+      </div>
+    </div>
+  </div>
+</section>

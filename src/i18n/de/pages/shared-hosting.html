@@ -1,0 +1,63 @@
+<!--
+title: Shared Hosting
+description: Verkaufen Sie Shared Hosting mit PNLCS. Kunden verwalten Dateien, E-Mail, Datenbanken, DNS, Cronjobs und Backups im Abrechnungsportal, beschränkt auf ihr eigenes Konto.
+section: Lösungen
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Shared Hosting</h1>
+      <p class="lede">Die meisten Abrechnungssysteme hören bei „Hier ist Ihr Control-Panel-Passwort“ auf. Mit PNLCS und dem Panelica-Servermodul findet die tägliche Hosting-Arbeit direkt im Abrechnungsportal statt.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Server anbinden</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Ein Hosting-Dienst im Kundenportal mit aktuellem Verbrauch und acht Verwaltungswerkzeugen"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Acht Werkzeuge, ohne zweiten Login</h2><p class="lede">Jeder Hosting-Dienst zeigt CPU, Arbeitsspeicher, Speicherplatz und Bandbreite live vom Server, dazu diese Werkzeuge.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Werkzeug</th><th scope="col">Was der Kunde tun kann</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Dateimanager</th><td class="muted">Durchsuchen, hochladen, herunterladen, bearbeiten, umbenennen, Ordner anlegen und löschen</td></tr>
+          <tr><th scope="row">E-Mail-Konten</th><td class="muted">Postfächer anlegen und löschen, Passwörter ändern, Webmail öffnen</td></tr>
+          <tr><th scope="row">Datenbanken</th><td class="muted">MySQL-Datenbanken und -Benutzer anlegen, Passwörter zurücksetzen, phpMyAdmin öffnen</td></tr>
+          <tr><th scope="row">FTP-Konten</th><td class="muted">Konten anlegen, Passwörter ändern, löschen, mit Anzeige von Host und Port</td></tr>
+          <tr><th scope="row">Subdomains</th><td class="muted">Anlegen und entfernen; das Panel richtet VHost, Document Root, PHP-Pool, SSL und DNS ein</td></tr>
+          <tr><th scope="row">DNS-Zone</th><td class="muted">A-, AAAA-, CNAME-, MX-, TXT-, SRV- und CAA-Einträge hinzufügen, bearbeiten und löschen</td></tr>
+          <tr><th scope="row">Cronjobs</th><td class="muted">Befehle planen, einen sofort ausführen und die Ausgabe lesen, pausieren, fortsetzen, löschen</td></tr>
+          <tr><th scope="row">Backups</th><td class="muted">Wiederherstellungspunkte anlegen, Größe und Inhalt einsehen, alte löschen</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Die Werkzeuge im Portal setzen das Panelica-Servermodul voraus. Bei cPanel, Plesk, DirectAdmin und HestiaCP legt PNLCS die Konten an und sperrt sie, und Kunden verwalten sie in ihrem Control Panel.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Auf das eigene Konto des Kunden beschränkt</h2>
+      <p class="lede">Der Serverschlüssel eines Abrechnungssystems sieht jedes Konto auf der Maschine. PNLCS filtert jede Liste nach den Domains des angezeigten Dienstes und prüft jede Änderung auf dieselbe Weise, bevor sie gesendet wird.</p>
+      <ul class="checklist checklist--one">
+        <li>Ein Backup, das auch die Domain eines anderen Kunden umfasst, wird nicht angezeigt und kann nicht gelöscht werden</li>
+        <li>Ein Cronjob, eine Subdomain oder ein DNS-Eintrag auf einer fremden Domain wird abgelehnt, bevor eine Anfrage den Abrechnungsserver verlässt</li>
+        <li>Tariflimits werden aus dem Hosting-Tarif gelesen, und das Panel setzt sie zusätzlich selbst durch</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Der DNS-Zoneneditor im Kundenportal"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Backups und Cronjobs</h2>
+      <p class="lede">Kunden erstellen Backups, stellen sie wieder her und verwalten Cronjobs selbst, innerhalb der Grenzen ihres Tarifs.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Die Backup-Seite im Kundenportal mit einer Liste von Wiederherstellungspunkten"></figure>
+  </div>
+</section>

@@ -1,0 +1,104 @@
+<!--
+title: Интеграции
+description: Серверные модули, платёжные шлюзы, регистраторы доменов и SSL-провайдеры, которые поставляются с PNLCS, с честным статусом для каждого.
+section: Продукт
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Интеграции</h1>
+    <p class="lede">Все модули поставляются вместе с PNLCS. В столбце статуса указано, какие из них уже работали на рабочих системах, а какие ещё не протестированы от начала до конца.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Проверено в эксплуатации</span>
+      <span class="badge badge--help">Код готов, нужно тестирование в реальных условиях</span>
+      <span class="badge badge--plain">В комплекте</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Серверы и панели управления</h2>
+      <p>Создание, приостановка, возобновление и удаление аккаунтов или машин, когда заказ оплачен или счёт остался неоплаченным.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Модуль</th><th scope="col">Что создаёт</th><th scope="col">Статус</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Хостинг-аккаунты, Docker-приложения и инструменты хостинга в личном кабинете</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">Виртуальные серверы KVM из облачных образов и шаблонов LXC</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Подписки хостинга</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Хостинг-аккаунты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Облачные серверы</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">Произвольный</th><td class="muted">Услуги, которыми вы управляете вручную, без автоматизации</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Платёжные шлюзы</h2>
+      <p>Все шлюзы используют один платёжный движок, поэтому частичная оплата, кредит и возвраты везде работают одинаково.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Шлюз</th><th scope="col">Примечания</th><th scope="col">Статус</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, токенизированные карты</td><td><span class="badge badge--ok">Проверено в эксплуатации</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, токенизированные карты</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">Банковский перевод</th><td class="muted">С уведомлениями клиентов о платеже и загрузкой квитанции</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">Европейские способы оплаты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">Индия</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Турция: 3D Secure, рассрочка, сохранённые карты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Польша: BLIK, быстрые переводы, карты</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Регистраторы доменов и SSL</h2>
+      <p>Регистрация, перенос и продление доменов, а также выпуск сертификатов в той же корзине, что и хостинг.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Модуль</th><th scope="col">Тип</th><th scope="col">Статус</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Регистратор</td><td><span class="badge badge--help">Нужно тестирование</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Регистратор</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">Ручной</th><td class="muted">Регистратор для доменов, которые вы обслуживаете сами</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">В комплекте</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Дополнения</h2>
+      <p>Дополнения обнаруживаются автоматически: поместите дополнение в <code>modules/Addons/</code> и включите его в панели администратора.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Дополнение</th><th scope="col">Что делает</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Поиск компаний</th><td class="muted">Заполняет реквизиты компании из открытых реестров при регистрации</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Польская национальная система электронных счетов</td></tr>
+          <tr><th scope="row">Управление проектами</th><td class="muted">Проекты, задачи, этапы и учёт времени, со счетами по часам проекта</td></tr>
+          <tr><th scope="row">Доска для сотрудников</th><td class="muted">Внутренняя доска сообщений, видимая только сотрудникам</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>Используете один из непротестированных модулей?</h3>
+      <p>Если у вас cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, банковский перевод или Enom, час тестирования на вашей инфраструктуре переведёт модуль в статус «проверено в эксплуатации» для всех.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Сообщите о результатах</a></p>
+    </div>
+    <div class="callout">
+      <h3>Не хватает интеграции?</h3>
+      <p>Серверный модуль представляет собой один класс; платёжные шлюзы и регистраторы устроены так же. В руководстве разработчика разобран полный пример модуля.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Как написать модуль</a></p>
+    </div>
+  </div>
+</section>

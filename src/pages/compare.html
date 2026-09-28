@@ -1,0 +1,65 @@
+<!--
+title: PNLCS vs WHMCS
+heading: Compare with WHMCS
+description: How PNLCS compares with WHMCS and other proprietary billing systems, what carries over, and how to switch without downtime.
+section: Product
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>An open-source alternative to WHMCS</h1>
+    <p class="lede">PNLCS deliberately mirrors WHMCS: clients, products, orders, invoices, services, tickets and modules mean the same thing. The difference is the license: PNLCS is MIT, with no per-install fee.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Migration guide</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Side by side</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">PNLCS</th><th scope="col">Typical proprietary billing</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">License cost</th><td>Free (MIT)</td><td>Monthly per-install fee</td></tr>
+          <tr><th scope="row">Source code</th><td>Fully open, auditable</td><td>Encoded or closed</td></tr>
+          <tr><th scope="row">Self-hosting</th><td>Anywhere: Docker, VPS, inside a hosting panel</td><td>Yes, license-checked</td></tr>
+          <tr><th scope="row">Extending</th><td>Write a module, ship it, keep it</td><td>Marketplace and vendor terms</td></tr>
+          <tr><th scope="row">Your data</th><td>Your database; query or export it directly</td><td>Yours, tied to the license</td></tr>
+          <tr><th scope="row">Roadmap</th><td>Decided with the community</td><td>Decided by the vendor</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>What carries over from WHMCS</h2></div>
+    <dl class="spec-grid">
+      <div><dt>Concepts</dt><dd>Product groups, products, configurable options, services, orders, invoices, credit, tickets and departments behave the way WHMCS staff expect.</dd></div>
+      <div><dt>API action names</dt><dd>The HTTP API uses WHMCS action names, so most integrations need a new address and credential.</dd></div>
+      <div><dt>Hooks</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> works the same way; a failing hook is logged and skipped instead of breaking billing.</dd></div>
+      <div><dt>Modules</dt><dd>Servers, gateways, registrars and SSL providers are separate modules, as in WHMCS.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Switching without downtime</h2>
+      <p class="lede">Run PNLCS next to WHMCS and move customers across as they renew. The accounts stay on the same servers throughout.</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>There is no one-click importer yet</h3>
+        <p>PNLCS does not ship an automated WHMCS database importer. The steps here are the practical, low-risk way to move. An importer is a welcome contribution.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Rebuild your catalog</strong><span>Recreate product groups and products with the same names and prices.</span></span></li>
+      <li><span><strong>Connect the same servers</strong><span>The accounts already exist on them; PNLCS manages them from now on.</span></span></li>
+      <li><span><strong>Recreate your settings</strong><span>Payment gateways (same accounts), tax rules, email templates, staff and roles.</span></span></li>
+      <li><span><strong>Bring customers over</strong><span>Add each client and their existing services with the right next due date. On Panelica, link the account that is already on the server.</span></span></li>
+      <li><span><strong>Cut over</strong><span>On renewal, one customer at a time, or everyone in a maintenance window.</span></span></li>
+    </ol>
+  </div>
+</section>

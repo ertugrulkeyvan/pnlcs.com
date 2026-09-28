@@ -1,0 +1,113 @@
+<!--
+title: 功能
+heading: 功能
+description: PNLCS 包含的功能：客户中心、管理后台、周期计费与自动化、安全、30 种语言以及兼容 WHMCS 的 API。
+section: 产品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>功能</h1>
+    <p class="lede">店面、客户中心、计费、开通和技术支持都在同一个 Laravel 应用中。本页列出各部分的功能，具体用法请参阅文档。</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">文档</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap spec-layout">
+    <nav class="toc" aria-label="本页内容">
+      <p>本页内容</p>
+      <ul>
+        <li><a href="#portal">客户中心</a></li>
+        <li><a href="#billing">计费与自动化</a></li>
+        <li><a href="#admin">管理后台</a></li>
+        <li><a href="#security">安全与访问控制</a></li>
+        <li><a href="#languages">语言</a></li>
+        <li><a href="#developers">开发者</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <section class="spec" id="portal">
+        <div class="spec-head"><h2>客户中心</h2><p>客户登录后看到的内容。</p><a class="more" href="shared-hosting.html">主机管理工具</a></div>
+        <dl class="spec-grid">
+          <div><dt>购物与结账</dt><dd>浏览套餐、配置服务、使用优惠券、付款。</dd></div>
+          <div><dt>服务管理</dt><dd>升级、降级、取消以及开关自动续费。</dd></div>
+          <div><dt>域名</dt><dd>注册、转入和续费；EPP 转移码和 WHOIS。</dd></div>
+          <div><dt>账单</dt><dd>在线支付、下载 PDF、充值、使用账户余额。</dd></div>
+          <div><dt>报价单</dt><dd>查看并接受售前报价单；接受后的报价单会转为账单。</dd></div>
+          <div><dt>银行转账通知</dt><dd>上传付款凭证，报告线下付款。</dd></div>
+          <div><dt>SSL 证书</dt><dd>生成 CSR、选择验证邮箱、自动安装。</dd></div>
+          <div><dt>技术支持与知识库</dt><dd>支持附件的工单、可搜索的知识库和公告。</dd></div>
+          <div><dt>网络状态</dt><dd>当前故障和计划维护。</dd></div>
+          <div><dt>账户安全</dt><dd>双因素登录、登录提醒和会话记录。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="billing">
+        <div class="spec-head"><h2>计费与自动化</h2><p>只有在服务器模块报告成功后，服务才会激活。</p></div>
+        <dl class="spec-grid">
+          <div><dt>周期计费</dt><dd>月付、季付、半年付、年付和两年付。</dd></div>
+          <div><dt>自动暂停</dt><dd>未付款的服务在你设定的宽限期后被暂停。</dd></div>
+          <div><dt>提醒</dt><dd>账单、付款、银行卡到期和域名续费邮件。</dd></div>
+          <div><dt>税务规则</dt><dd>按国家和州/省设置，并提供应缴税额报表。</dd></div>
+          <div><dt>统一的支付引擎</dt><dd>支付网关、手动付款和余额支付走同一套流程，支持部分付款，多付金额转入余额。</dd></div>
+          <div><dt>退款</dt><dd>全额或部分退款，可通过支付网关 API 退款，也可记录线下退款。</dd></div>
+          <div><dt>可靠的开通</dt><dd>失败的操作会进入队列并自动重试，同时通知员工。</dd></div>
+          <div><dt>用量计费</dt><dd>磁盘和带宽超额计费，可按产品单独开启。</dd></div>
+          <div><dt>滞纳金、优惠券、促销</dt><dd>另有账户余额和充值流程。</dd></div>
+          <div><dt>定期维护任务</dt><dd>按计划更新汇率、备份数据库和清理日志。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="admin">
+        <div class="spec-head"><h2>管理后台</h2><p>员工每天使用的功能。</p></div>
+        <dl class="spec-grid">
+          <div><dt>仪表盘</dt><dd>收入、注册、待处理订单和未关闭工单一目了然。</dd></div>
+          <div><dt>客户</dt><dd>客户资料、备注、账务摘要，以及以客户身份登录。</dd></div>
+          <div><dt>订单和账单</dt><dd>手动创建、批量操作、群发邮件、导出 PDF。</dd></div>
+          <div><dt>产品和组合套餐</dt><dd>可配置选项、附加项和价格矩阵。</dd></div>
+          <div><dt>工单系统</dt><dd>内部备注、升级规则、垃圾邮件过滤、预设回复。</dd></div>
+          <div><dt>报表</dt><dd>内置 27 种：收入、预测、客户留存、工单、域名、税务。</dd></div>
+          <div><dt>报价单和项目</dt><dd>WHMCS 风格的售前流程。</dd></div>
+          <div><dt>日历</dt><dd>事件、提醒和计划任务。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="security">
+        <div class="spec-head"><h2>安全与访问控制</h2><p>员工只能看到角色允许的内容；每一项管理操作都有记录。</p><a class="more" href="security.html">安全政策</a></div>
+        <dl class="spec-grid">
+          <div><dt>角色和权限</dt><dd>基于角色的访问控制，提供 45 项以上的细粒度权限。</dd></div>
+          <div><dt>双因素认证</dt><dd>员工和客户均可使用，员工另有恢复码。</dd></div>
+          <div><dt>频率限制</dt><dd>适用于登录、2FA 验证、密码重置和邮件重发。</dd></div>
+          <div><dt>管理后台 IP 白名单</dt><dd>可选，用于管理后台。</dd></div>
+          <div><dt>会话</dt><dd>超时和强制退出。</dd></div>
+          <div><dt>操作日志</dt><dd>记录每一项管理操作；可封禁 IP 和邮箱。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="languages">
+        <div class="spec-head"><h2>语言</h2><p>30 种语言；可在浏览器中编辑翻译。</p></div>
+        <dl class="spec-grid">
+          <div><dt>30 种语言</dt><dd>默认启用英语，其他语言按需开启。</dd></div>
+          <div><dt>浏览器内编辑器</dt><dd>无需改动文件，即可修改 2,232 条界面文本中的任意一条。</dd></div>
+          <div><dt>AI 辅助翻译</dt><dd>批量补全缺失的翻译，再进行审核。</dd></div>
+          <div><dt>导入和导出</dt><dd>每种语言一个 JSON 文件，方便习惯用自己工具的译者。</dd></div>
+        </dl>
+        <figure class="shot"><img src="assets/img/admin-languages.webp" srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="管理后台中的语言管理器，列出 30 种语言及其翻译进度"></figure>
+      </section>
+
+      <section class="spec" id="developers">
+        <div class="spec-head"><h2>开发者</h2><p>管理后台中的所有操作都可以通过 API 脚本化。</p><a class="more" href="https://docs.pnlcs.com/developer/">开发者指南</a></div>
+        <dl class="spec-grid">
+          <div><dt>HTTP API</dt><dd>171 个操作，沿用 WHMCS 的操作名称，并提供 OpenAPI 3.1 描述文件。</dd></div>
+          <div><dt>MCP 服务器</dt><dd>让 AI 助手通过 API 读取数据，经你允许后还可以执行操作。</dd></div>
+          <div><dt>钩子</dt><dd>兼容 WHMCS 的 <code>add_hook()</code> 函数，提供 20 多个钩子点；钩子出错不会影响计费。</dd></div>
+          <div><dt>Webhook</dt><dd>接收支付网关回调，并向外发送事件。</dd></div>
+          <div><dt>模块</dt><dd>服务器、支付网关、域名注册商和 SSL 模块，以及插件。</dd></div>
+          <div><dt>邮件导入工单</dt><dd>从 IMAP 或 POP3 邮箱收取邮件，转为工单和回复。</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

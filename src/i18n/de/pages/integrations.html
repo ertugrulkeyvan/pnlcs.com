@@ -1,0 +1,104 @@
+<!--
+title: Integrationen
+description: Servermodule, Zahlungsanbieter, Domain-Registrare und SSL-Anbieter, die mit PNLCS ausgeliefert werden, jeweils mit ehrlicher Statusangabe.
+section: Produkt
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Integrationen</h1>
+    <p class="lede">Alle Module werden mit PNLCS ausgeliefert. Die Statusspalte zeigt, welche bereits auf Live-Systemen gelaufen sind und welche noch nicht vollständig getestet wurden.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Im Produktivbetrieb getestet</span>
+      <span class="badge badge--help">Code fertig, braucht Praxistests</span>
+      <span class="badge badge--plain">Enthalten</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Server und Control Panels</h2>
+      <p>Konten oder Maschinen anlegen, sperren, entsperren und kündigen, wenn Bestellungen bezahlt werden und Rechnungen offen bleiben.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Modul</th><th scope="col">Was es bereitstellt</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Hosting-Konten, Docker-Apps und die Hosting-Werkzeuge im Portal</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">Virtuelle KVM-Server aus Cloud-Images und LXC-Templates</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Hosting-Abonnements</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Hosting-Konten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Cloud-Server</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">Individuell</th><td class="muted">Dienste, die Sie von Hand verwalten, ohne Automatisierung</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Zahlungsanbieter</h2>
+      <p>Alle Zahlungsanbieter nutzen dieselbe Zahlungs-Engine, daher verhalten sich Teilzahlungen, Guthaben und Erstattungen überall gleich.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Anbieter</th><th scope="col">Hinweise</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, tokenisierte Karten</td><td><span class="badge badge--ok">Im Produktivbetrieb getestet</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, tokenisierte Karten</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">Banküberweisung</th><td class="muted">Mit Zahlungsmeldungen der Kunden und Beleg-Upload</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">Europäische Zahlungsmethoden</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">Indien</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Türkei: 3D Secure, Ratenzahlung, gespeicherte Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Polen: BLIK, Sofortüberweisungen, Karten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Domain-Registrare und SSL</h2>
+      <p>Domains registrieren, transferieren und verlängern sowie Zertifikate ausstellen, im selben Checkout wie Hosting.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Modul</th><th scope="col">Typ</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Registrar</td><td><span class="badge badge--help">Braucht Tests</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">Manuell</th><td class="muted">Registrar für Domains, die Sie selbst verwalten</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Enthalten</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Add-ons</h2>
+      <p>Add-ons werden automatisch erkannt: Legen Sie eines in <code>modules/Addons/</code> ab und aktivieren Sie es im Admin-Bereich.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Add-on</th><th scope="col">Funktion</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Firmenabfrage</th><td class="muted">Übernimmt bei der Registrierung Firmendaten aus öffentlichen Registern</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Polnisches nationales E-Rechnungssystem</td></tr>
+          <tr><th scope="row">Projektmanagement</th><td class="muted">Projekte, Aufgaben, Meilensteine und Zeiterfassung, abgerechnet nach Projektstunden</td></tr>
+          <tr><th scope="row">Mitarbeiter-Pinnwand</th><td class="muted">Ein internes Board, nur für Mitarbeiter sichtbar</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>Sie nutzen ein ungetestetes Modul?</h3>
+      <p>Wenn Sie cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, Banküberweisung oder Enom einsetzen, bringt eine Stunde Testen auf Ihrem Stack das Modul für alle auf „im Produktivbetrieb getestet“.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Ergebnisse melden</a></p>
+    </div>
+    <div class="callout">
+      <h3>Fehlt eine Integration?</h3>
+      <p>Ein Servermodul ist eine einzelne Klasse; Zahlungsanbieter und Registrare folgen demselben Muster. Das Entwicklerhandbuch geht ein komplettes Modul Schritt für Schritt durch.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Ein Modul schreiben</a></p>
+    </div>
+  </div>
+</section>

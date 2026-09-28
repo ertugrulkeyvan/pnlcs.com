@@ -1,0 +1,75 @@
+<!--
+title: О проекте
+cta: no
+description: PNLCS представляет собой платформу биллинга для хостинга с открытым исходным кодом, которую поддерживают команда Panelica и добровольцы. Распространяется под лицензией MIT.
+section: Проект
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>О PNLCS</h1>
+    <p class="lede">PNLCS представляет собой бесплатную платформу биллинга и личный кабинет клиента для хостинг-компаний, реселлеров и инфраструктурных провайдеров, которую вы размещаете на своём сервере. Проект разрабатывается открыто и распространяется под лицензией MIT.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap maker">
+    <div>
+      <h2>Зачем он появился</h2>
+      <p class="lede" style="margin-top:16px">Команде Panelica нужна была открытая биллинговая система на собственном сервере, которая нативно интегрируется с Panelica и хорошо работает с другими панелями управления. Такой системы не было, поэтому команда написала её сама, в свободное от основного продукта время.</p>
+      <p class="lede" style="margin-top:16px">Система намеренно повторяет понятия WHMCS, чтобы команда, работавшая с WHMCS, быстро в ней освоилась. В отличие от WHMCS, она распространяется под лицензией MIT.</p>
+    </div>
+    <blockquote class="quote" style="color:var(--text)">
+      Мы создали PNLCS, потому что он был нужен нам самим, и мы считаем, что программа, на которой держится хостинг-бизнес, не должна быть ежемесячной арендой. Это должен быть инструмент, которым вы владеете, который понимаете и можете улучшить. А это возможно, только если создавать его вместе.
+      <cite style="color:var(--muted)">Команда Panelica, мейнтейнеры PNLCS</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Проект вкратце</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">Мейнтейнер</th><td class="muted"><a href="https://panelica.com/">Panelica</a> вместе с добровольцами</td></tr>
+          <tr><th scope="row">Лицензия</th><td class="muted"><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">MIT</a>: коммерческое использование, изменения, выпуск модулей под любой лицензией</td></tr>
+          <tr><th scope="row">Первый выпуск</th><td class="muted">v1.0.0, апрель 2026</td></tr>
+          <tr><th scope="row">Последний выпуск</th><td class="muted"><span data-stat="release">v1.2.0</span>, с постоянными обновлениями в основной ветке</td></tr>
+          <tr><th scope="row">Технологии</th><td class="muted">Laravel 13, PHP 8.4+, MySQL 8 или MariaDB, Tailwind CSS 4, Alpine.js</td></tr>
+          <tr><th scope="row">Исходный код</th><td class="muted"><a href="https://github.com/Panelica/pnlcs">github.com/Panelica/pnlcs</a> (звёзд: <span data-stat="stars">59</span>, форков: <span data-stat="forks">22</span>)</td></tr>
+          <tr><th scope="row">Документация</th><td class="muted"><a href="https://docs.pnlcs.com/">docs.pnlcs.com</a></td></tr>
+          <tr><th scope="row">Контакт по безопасности</th><td class="muted"><a href="mailto:security@panelica.com">security@panelica.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Что проверено, а что нужно протестировать</h2></div>
+    <div class="cols-2">
+      <div class="callout">
+        <h3>Проверено на рабочих системах</h3>
+        <ul class="plain-list">
+          <li>Личный кабинет клиента, панель администратора и основные сценарии биллинга</li>
+          <li>Счета, заказы, услуги, домены, тикеты, база знаний</li>
+          <li>Серверный модуль Panelica</li>
+          <li>Модуль Proxmox VE для продажи VPS</li>
+          <li>Платежи через Stripe</li>
+          <li>30 языков с редактируемыми переводами</li>
+        </ul>
+      </div>
+      <div class="callout callout--warn">
+        <h3>Нужно тестирование в реальных условиях</h3>
+        <ul class="plain-list">
+          <li>Серверные модули cPanel, Plesk и DirectAdmin</li>
+          <li>Платёжные шлюзы PayPal, Authorize.net и банковский перевод</li>
+          <li>Регистратор доменов Enom</li>
+        </ul>
+        <p style="margin-top:12px"><a href="community.html">Помогите их протестировать</a></p>
+      </div>
+    </div>
+  </div>
+</section>

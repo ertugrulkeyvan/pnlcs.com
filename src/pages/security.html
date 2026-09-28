@@ -1,0 +1,83 @@
+<!--
+title: Security
+cta: no
+description: How to report a security issue in PNLCS, what to expect, and the security features built into the platform.
+section: Project
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Security</h1>
+    <p class="lede">PNLCS handles billing, customer credentials and payment integrations for real hosting businesses. A security defect can affect invoices, customer data and payments, and we take that seriously.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="mailto:security@panelica.com">Report a vulnerability</a><a class="btn btn--ghost-dark" href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">Full security policy</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Reporting a vulnerability</h2>
+      <p class="lede">Please do not open a public issue, discussion or forum thread for a security finding.</p>
+      <div class="callout" style="margin-top:28px">
+        <h3>Email security@panelica.com</h3>
+        <p>Include a description, the affected component, steps to reproduce, the impact, and your PNLCS, Laravel, PHP and MySQL versions. Redact any credentials or customer data.</p>
+        <p>You can also use <a href="https://github.com/Panelica/pnlcs/security/advisories/new">GitHub’s private vulnerability reporting</a>.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">What to expect</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <tbody>
+            <tr><th scope="row">Acknowledgement</th><td class="muted">Within 48 hours</td></tr>
+            <tr><th scope="row">Triage and severity</th><td class="muted">Within 5 business days</td></tr>
+            <tr><th scope="row">Status updates</th><td class="muted">Weekly, sooner for critical issues</td></tr>
+            <tr><th scope="row">Fix for critical issues</th><td class="muted">Typically within 14 days of confirmation</td></tr>
+            <tr><th scope="row">Disclosure window</th><td class="muted">90 days by default, negotiable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div>
+      <h2 style="font-size:1.6rem">In scope</h2>
+      <ul class="plain-list">
+        <li>The application: admin area, client portal, API, queue workers, scheduled jobs</li>
+        <li>Authentication, roles, sessions and tokens</li>
+        <li>Payment gateway, registrar and server integrations</li>
+        <li>Templates and views in the default themes</li>
+        <li>Install and upgrade scripts published from the repository</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="font-size:1.6rem">Out of scope</h2>
+      <ul class="plain-list">
+        <li>Attacks needing physical or root-equivalent access</li>
+        <li>Defects in third-party packages (report them upstream)</li>
+        <li>Self-XSS, or missing headers without a real attack path</li>
+        <li>Automated scanner output with no demonstrated impact</li>
+        <li>The demo and sandbox instances run by Panelica</li>
+        <li>Forks and modified copies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Built-in protections</h2><p class="lede">What PNLCS does to keep an installation safe, and what you should check after installing.</p></div><a class="more" href="https://docs.pnlcs.com/install/security/">Security checklist</a></div>
+    <dl class="spec-grid">
+      <div><dt>Role-based access</dt><dd>More than 45 fine-grained permissions for staff.</dd></div>
+      <div><dt>Two-factor authentication</dt><dd>For staff and clients, with recovery codes for staff.</dd></div>
+      <div><dt>Rate limiting</dt><dd>Login, 2FA, password reset and email resend.</dd></div>
+      <div><dt>Activity log</dt><dd>Every admin action is recorded.</dd></div>
+      <div><dt>Fenced hosting tools</dt><dd>Every file, DNS, cron and backup action is checked against the customer’s own domains.</dd></div>
+      <div><dt>Guarded provisioning</dt><dd>On Proxmox, PNLCS acts only on machines it created and marked.</dd></div>
+    </dl>
+    <p class="note">We do not run a paid bug bounty, but researchers can be credited in the advisory and changelog. We will not pursue good-faith research that follows the <a href="https://github.com/Panelica/pnlcs/blob/main/SECURITY.md">policy</a>.</p>
+  </div>
+</section>

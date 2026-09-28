@@ -1,0 +1,80 @@
+<!--
+title: Proxmox VE üzerinde VPS
+description: PNLCS ile kendi Proxmox VE altyapınızda sanal sunucu satın. Otomatik kurulum; müşteri panelinde güç kontrolleri, grafikler, snapshot'lar, yedekler ve yeniden kurulum.
+section: Çözümler
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Proxmox VE üzerinde VPS</h1>
+      <p class="lede">Bir Proxmox VE sunucusu bağlayın, yönetim panelinden resmî cloud imajlarını kurun ve VPS ürünleri satın. Fatura ödendiğinde PNLCS sunucuyu klonlar, yapılandırır ve başlatır; müşteri de onu müşteri panelinden yönetir.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">Kurulum rehberi</a><a class="btn btn--ghost-dark" href="#lifecycle">Her olayda neler olur</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Müşteri panelinde bir sanal sunucu: güç kontrolleri, anlık durum ve kullanım grafikleri"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Müşterinin yapabilecekleri</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Alan</th><th scope="col">Ne olur</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Güç</th><td class="muted">Başlatma, yeniden başlatma, kapatma (yanıt vermezse bir dakika sonra zorla), zorla kapatma, sıfırlama</td></tr>
+          <tr><th scope="row">Anlık durum</th><td class="muted">CPU, bellek, çalışma süresi, IP adresleri ve diskin doluluk oranı</td></tr>
+          <tr><th scope="row">Grafikler</th><td class="muted">Proxmox'un kendi istatistiklerinden CPU, bellek, ağ ve disk</td></tr>
+          <tr><th scope="row">Root şifresi</th><td class="muted">Guest agent üzerinden anında, aksi hâlde bir sonraki açılışta ayarlanır</td></tr>
+          <tr><th scope="row">Yeniden kurulum</th><td class="muted">Ürünün sunduğu herhangi bir işletim sistemi; VM, MAC ve IP adresi aynı kalır</td></tr>
+          <tr><th scope="row">Snapshot'lar</th><td class="muted">Alma, geri dönme ve silme; paketteki sayıya kadar</td></tr>
+          <tr><th scope="row">Yedekler</th><td class="muted">Yerel depolamaya ya da Proxmox Backup Server'a; geri yükleme ve silme</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Geri alınamaz işlemler önce onay ister</h2>
+      <p class="lede">Veriyi silen her işlem, sunucunun adının yazılmasını ister. Yeniden kurulum ya da geri yükleme gibi uzun işler arka planda çalışır ve sayfa kapatılsa bile tamamlanır.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="Bir sanal sunucu için snapshot, yedek, root şifresi ve yeniden kurulum kontrolleri"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>PNLCS her faturalandırma olayında ne yapar</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Olay</th><th scope="col">Proxmox tarafında</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sipariş ödendi</th><td class="muted">Sıradaki VM kimliğiyle havuza klonlanır, cloud-init uygulanır, disk büyütülür, koruma açılır, başlatılır</td></tr>
+          <tr><th scope="row">Askıya alındı</th><td class="muted">Açılışta başlatma kapatılır, ardından sunucu kapatılır; böylece host yeniden başlasa bile geri açılmaz</td></tr>
+          <tr><th scope="row">Askıdan çıkarıldı</th><td class="muted">Açılışta başlatma açılır, sunucu başlatılır</td></tr>
+          <tr><th scope="row">Sonlandırıldı</th><td class="muted">Durdurulur, koruma kaldırılır, diskleriyle birlikte silinir; IP adresi havuza geri döner</td></tr>
+          <tr><th scope="row">Yükseltildi</th><td class="muted">Yeni çekirdek sayısı ve bellek; disk büyütülür, asla küçültülmez</td></tr>
+          <tr><th scope="row">Her saat</th><td class="muted">Proxmox'un istatistiklerinden disk kullanımı ve bu ayki trafik</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>PNLCS'in oluşturmadığı makinelere dokunulmaz</h2>
+      <p class="lede">Bir hypervisor genellikle müşteri sunucularından fazlasını çalıştırır. Bu kurallar PNLCS'i yalnızca kendi makineleriyle sınırlar.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>PNLCS'in oluşturduğu her sunucu, ait olduğu hizmeti belirten bir etiket ve not taşır; PNLCS yalnızca bu işareti taşıyan makineler üzerinde işlem yapar</li>
+      <li>Önerilen API token'ı yalnızca kendi havuzuna erişir; bağlantı testi, faturalandırmanın hiç ihtiyaç duymadığı yetkiler konusunda uyarır</li>
+      <li>Sunucular silme korumasıyla oluşturulur; bu koruma yalnızca sonlandırma anında kaldırılır</li>
+      <li>Müşteriler hypervisor'ın adresini hiçbir zaman görmez</li>
+    </ul>
+  </div>
+</section>

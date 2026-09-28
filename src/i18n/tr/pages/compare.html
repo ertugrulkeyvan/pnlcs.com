@@ -1,0 +1,65 @@
+<!--
+title: PNLCS ve WHMCS
+heading: WHMCS ile karşılaştırma
+description: PNLCS'in WHMCS ve diğer kapalı kaynaklı faturalandırma sistemleriyle karşılaştırması, neyin aynen taşındığı ve kesinti yaşamadan nasıl geçiş yapılacağı.
+section: Ürün
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>WHMCS'e açık kaynaklı bir alternatif</h1>
+    <p class="lede">PNLCS bilinçli olarak WHMCS'i örnek alır: müşteriler, ürünler, siparişler, faturalar, hizmetler, destek talepleri ve modüller aynı anlama gelir. Fark lisanstadır: PNLCS MIT lisanslıdır ve kurulum başına ücret yoktur.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Geçiş rehberi</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Yan yana</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">Konu</span></th><th scope="col">PNLCS</th><th scope="col">Tipik kapalı kaynaklı faturalandırma</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Lisans maliyeti</th><td>Ücretsiz (MIT)</td><td>Kurulum başına aylık ücret</td></tr>
+          <tr><th scope="row">Kaynak kod</th><td>Tamamen açık, denetlenebilir</td><td>Şifrelenmiş ya da kapalı</td></tr>
+          <tr><th scope="row">Kendi sunucunuzda çalıştırma</th><td>Her yerde: Docker, VPS, bir hosting paneli içinde</td><td>Evet, lisans denetimiyle</td></tr>
+          <tr><th scope="row">Genişletme</th><td>Bir modül yazın, dağıtın, sahibi siz olun</td><td>Marketplace ve üretici koşulları</td></tr>
+          <tr><th scope="row">Verileriniz</th><td>Sizin veritabanınız; doğrudan sorgulayın ya da dışa aktarın</td><td>Sizin, ama lisansa bağlı</td></tr>
+          <tr><th scope="row">Yol haritası</th><td>Toplulukla birlikte belirlenir</td><td>Üretici tarafından belirlenir</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>WHMCS'ten neler aynen taşınır</h2></div>
+    <dl class="spec-grid">
+      <div><dt>Kavramlar</dt><dd>Ürün grupları, ürünler, yapılandırılabilir seçenekler, hizmetler, siparişler, faturalar, kredi, destek talepleri ve departmanlar, WHMCS personelinin beklediği şekilde çalışır.</dd></div>
+      <div><dt>API işlem adları</dt><dd>HTTP API, WHMCS işlem adlarını kullanır; bu yüzden entegrasyonların çoğu yalnızca yeni bir adres ve kimlik bilgisi ister.</dd></div>
+      <div><dt>Hook'lar</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> aynı şekilde çalışır; hata veren bir hook faturalandırmayı bozmak yerine loglanır ve atlanır.</dd></div>
+      <div><dt>Modüller</dt><dd>WHMCS'te olduğu gibi sunucular, ödeme altyapıları, alan adı kayıt firmaları ve SSL sağlayıcıları ayrı modüllerdir.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Kesinti yaşamadan geçiş</h2>
+      <p class="lede">PNLCS'i WHMCS'in yanında çalıştırın ve müşterileri yenileme tarihleri geldikçe taşıyın. Hesaplar süreç boyunca aynı sunucularda kalır.</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>Henüz tek tıkla içe aktarma aracı yok</h3>
+        <p>PNLCS, otomatik bir WHMCS veritabanı içe aktarıcısıyla gelmez. Buradaki adımlar, geçiş için pratik ve düşük riskli yoldur. Bir içe aktarıcı katkısı memnuniyetle karşılanır.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Kataloğunuzu yeniden oluşturun</strong><span>Ürün gruplarını ve ürünleri aynı ad ve fiyatlarla yeniden tanımlayın.</span></span></li>
+      <li><span><strong>Aynı sunucuları bağlayın</strong><span>Hesaplar zaten bu sunucularda; bundan sonra onları PNLCS yönetir.</span></span></li>
+      <li><span><strong>Ayarlarınızı yeniden yapın</strong><span>Ödeme altyapıları (aynı hesaplar), vergi kuralları, e-posta şablonları, personel ve roller.</span></span></li>
+      <li><span><strong>Müşterileri taşıyın</strong><span>Her müşteriyi ve mevcut hizmetlerini doğru bir sonraki ödeme tarihiyle ekleyin. Panelica'da, sunucuda zaten bulunan hesabı bağlayın.</span></span></li>
+      <li><span><strong>Geçişi tamamlayın</strong><span>Yenileme sırasında tek tek müşteri bazında ya da bir bakım penceresinde herkesi birden.</span></span></li>
+    </ol>
+  </div>
+</section>

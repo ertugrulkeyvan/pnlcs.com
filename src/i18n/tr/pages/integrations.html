@@ -1,0 +1,104 @@
+<!--
+title: Entegrasyonlar
+description: PNLCS ile birlikte gelen sunucu modülleri, ödeme altyapıları, alan adı kayıt firmaları ve SSL sağlayıcıları, her birinin durumu açıkça belirtilerek.
+section: Ürün
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Entegrasyonlar</h1>
+    <p class="lede">Tüm modüller PNLCS ile birlikte gelir. Durum sütunu, hangilerinin canlı sistemlerde çalıştığını ve hangilerinin henüz baştan sona test edilmediğini gösterir.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Canlı ortamda test edildi</span>
+      <span class="badge badge--help">Kodu tamam, gerçek ortamda test edilmesi gerekiyor</span>
+      <span class="badge badge--plain">Dahil</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Sunucular ve kontrol panelleri</h2>
+      <p>Siparişler ödendiğinde ve faturalar ödenmediğinde hesapları ya da makineleri oluşturur, askıya alır, askıdan çıkarır ve sonlandırır.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Modül</th><th scope="col">Neyi kurar</th><th scope="col">Durum</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Hosting hesapları, Docker uygulamaları ve müşteri paneli içindeki hosting araçları</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">Cloud imajlarından ve LXC şablonlarından KVM sanal sunucular</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Hosting abonelikleri</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Hosting hesapları</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Cloud sunucular</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">Özel</th><td class="muted">Otomasyon olmadan elle yönettiğiniz hizmetler</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Ödeme altyapıları</h2>
+      <p>Tüm ödeme altyapıları aynı ödeme motorunu paylaşır; bu sayede kısmi ödemeler, kredi ve iadeler her yerde aynı şekilde çalışır.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Ödeme altyapısı</th><th scope="col">Notlar</th><th scope="col">Durum</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, token'laştırılmış kartlar</td><td><span class="badge badge--ok">Canlı ortamda test edildi</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, token'laştırılmış kartlar</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">Banka havalesi</th><td class="muted">Müşteri ödeme bildirimleri ve dekont yükleme ile</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">Avrupa ödeme yöntemleri</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">Hindistan</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Türkiye: 3D Secure, taksit, kayıtlı kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Polonya: BLIK, hızlı havale, kartlar</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Alan adı kayıt firmaları ve SSL</h2>
+      <p>Alan adlarını kaydedin, transfer edin ve yenileyin; sertifikaları da hostingle aynı ödeme sayfasından düzenleyin.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Modül</th><th scope="col">Tür</th><th scope="col">Durum</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Kayıt firması</td><td><span class="badge badge--help">Test bekliyor</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Kayıt firması</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">Manuel</th><td class="muted">Kayıt firması, kendi yönettiğiniz alan adları için</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Dahil</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Eklentiler</h2>
+      <p>Eklentiler otomatik olarak algılanır: birini <code>modules/Addons/</code> dizinine bırakın ve yönetim panelinden etkinleştirin.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Eklenti</th><th scope="col">Ne yapar</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Şirket sorgulama</th><td class="muted">Kayıt sırasında şirket bilgilerini herkese açık sicillerden doldurur</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Polonya'nın ulusal e-fatura sistemi</td></tr>
+          <tr><th scope="row">Proje yönetimi</th><td class="muted">Projeler, görevler, kilometre taşları ve süre takibi; proje saatleri üzerinden faturalandırma</td></tr>
+          <tr><th scope="row">Personel panosu</th><td class="muted">Yalnızca personelin görebildiği dahili bir mesaj panosu</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>Test edilmemiş modüllerden birini mi kullanıyorsunuz?</h3>
+      <p>cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, banka havalesi ya da Enom kullanıyorsanız, kendi altyapınızda bir saatlik test o modülü herkes için “canlı ortamda test edildi” durumuna taşır.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Bulgularınızı bildirin</a></p>
+    </div>
+    <div class="callout">
+      <h3>Aradığınız entegrasyon yok mu?</h3>
+      <p>Bir sunucu modülü tek bir sınıftan oluşur; ödeme altyapıları ve alan adı kayıt firmaları da aynı yapıyı izler. Geliştirici rehberi, eksiksiz bir modülü adım adım anlatır.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Modül yazma</a></p>
+    </div>
+  </div>
+</section>

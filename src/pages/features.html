@@ -1,0 +1,113 @@
+<!--
+title: Features
+heading: Features
+description: What PNLCS includes: client portal, admin panel, recurring billing and automation, security, 30 languages and a WHMCS-compatible API.
+section: Product
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Features</h1>
+    <p class="lede">The storefront, client portal, billing, provisioning and support are one Laravel application. This page lists what each part does; the documentation explains how.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Documentation</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap spec-layout">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#portal">Client portal</a></li>
+        <li><a href="#billing">Billing and automation</a></li>
+        <li><a href="#admin">Admin panel</a></li>
+        <li><a href="#security">Security and access</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#developers">For developers</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <section class="spec" id="portal">
+        <div class="spec-head"><h2>Client portal</h2><p>What customers see after they sign in.</p><a class="more" href="shared-hosting.html">Hosting tools</a></div>
+        <dl class="spec-grid">
+          <div><dt>Shop and checkout</dt><dd>Browse plans, configure a service, apply coupons, pay.</dd></div>
+          <div><dt>Service management</dt><dd>Upgrade, downgrade, cancel and toggle auto-renew.</dd></div>
+          <div><dt>Domains</dt><dd>Register, transfer and renew; EPP codes and WHOIS.</dd></div>
+          <div><dt>Invoices</dt><dd>Pay online, download PDFs, add funds, use credit balance.</dd></div>
+          <div><dt>Quotes</dt><dd>Review and accept pre-sales quotes; an accepted quote becomes an invoice.</dd></div>
+          <div><dt>Bank-transfer notices</dt><dd>Report an offline payment with a receipt upload.</dd></div>
+          <div><dt>SSL certificates</dt><dd>CSR generation, approver emails and automatic install.</dd></div>
+          <div><dt>Support and knowledge base</dt><dd>Tickets with attachments, a searchable knowledge base and announcements.</dd></div>
+          <div><dt>Network status</dt><dd>Active incidents and scheduled maintenance.</dd></div>
+          <div><dt>Account security</dt><dd>Two-factor sign-in, login alerts and session history.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="billing">
+        <div class="spec-head"><h2>Billing and automation</h2><p>A service is activated only after the server module reports success.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Recurring billing</dt><dd>Monthly, quarterly, semi-annual, annual and biennial cycles.</dd></div>
+          <div><dt>Automatic suspension</dt><dd>Unpaid services are suspended after a grace period you set.</dd></div>
+          <div><dt>Reminders</dt><dd>Invoice, payment, card expiry and domain renewal emails.</dd></div>
+          <div><dt>Tax rules</dt><dd>By country and state, with liability reports.</dd></div>
+          <div><dt>One payment engine</dt><dd>Gateways, manual payments and credit take the same path, with partial payments and overpayment to credit.</dd></div>
+          <div><dt>Refunds</dt><dd>Full or partial, through the gateway API or recorded offline.</dd></div>
+          <div><dt>Reliable provisioning</dt><dd>Failures are queued and retried automatically, with an alert to staff.</dd></div>
+          <div><dt>Usage billing</dt><dd>Disk and bandwidth overage, opt-in per product.</dd></div>
+          <div><dt>Late fees, coupons, promotions</dt><dd>Plus credit balances and an add-funds flow.</dd></div>
+          <div><dt>Scheduled housekeeping</dt><dd>Exchange rates, database backups and log retention on a schedule.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="admin">
+        <div class="spec-head"><h2>Admin panel</h2><p>What staff use every day.</p></div>
+        <dl class="spec-grid">
+          <div><dt>Dashboard</dt><dd>Revenue, signups, pending orders and open tickets at a glance.</dd></div>
+          <div><dt>Clients</dt><dd>Profiles, notes, billing summary and login-as-client.</dd></div>
+          <div><dt>Orders and invoices</dt><dd>Manual creation, bulk actions, mass mail, PDF export.</dd></div>
+          <div><dt>Products and bundles</dt><dd>Configurable options, add-ons and pricing matrices.</dd></div>
+          <div><dt>Help desk</dt><dd>Internal notes, escalation rules, spam filter, predefined replies.</dd></div>
+          <div><dt>Reports</dt><dd>27 built in: income, forecasts, retention, tickets, domains, tax.</dd></div>
+          <div><dt>Quotes and projects</dt><dd>A WHMCS-style pre-sales flow.</dd></div>
+          <div><dt>Calendar</dt><dd>Events, reminders and scheduled tasks.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="security">
+        <div class="spec-head"><h2>Security and access</h2><p>Staff see what their role allows; every admin action is logged.</p><a class="more" href="security.html">Security policy</a></div>
+        <dl class="spec-grid">
+          <div><dt>Roles and permissions</dt><dd>Role-based access with more than 45 fine-grained permissions.</dd></div>
+          <div><dt>Two-factor authentication</dt><dd>For staff and clients, with recovery codes for staff.</dd></div>
+          <div><dt>Rate limiting</dt><dd>On login, 2FA checks, password resets and email resends.</dd></div>
+          <div><dt>Admin IP allow-list</dt><dd>Optional, for the admin area.</dd></div>
+          <div><dt>Sessions</dt><dd>Timeouts and force-logout.</dd></div>
+          <div><dt>Activity log</dt><dd>Every admin action recorded; banned IPs and emails.</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="languages">
+        <div class="spec-head"><h2>Languages</h2><p>30 locales; translations are editable in the browser.</p></div>
+        <dl class="spec-grid">
+          <div><dt>30 locales</dt><dd>English active by default; switch others on as you need them.</dd></div>
+          <div><dt>In-browser editor</dt><dd>Change any of the 2,232 interface strings without touching files.</dd></div>
+          <div><dt>AI-assisted translation</dt><dd>Fill missing keys in bulk, then review.</dd></div>
+          <div><dt>Import and export</dt><dd>JSON per locale, for translators who prefer their own tools.</dd></div>
+        </dl>
+        <figure class="shot"><img src="assets/img/admin-languages.webp" srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="The language manager in the admin panel, listing 30 locales and their translation progress"></figure>
+      </section>
+
+      <section class="spec" id="developers">
+        <div class="spec-head"><h2>For developers</h2><p>Anything in the admin area can be scripted through the API.</p><a class="more" href="https://docs.pnlcs.com/developer/">Developer guide</a></div>
+        <dl class="spec-grid">
+          <div><dt>HTTP API</dt><dd>171 actions with WHMCS action names, and an OpenAPI 3.1 description.</dd></div>
+          <div><dt>MCP server</dt><dd>Let an AI assistant read and, if you allow it, act through the API.</dd></div>
+          <div><dt>Hooks</dt><dd>WHMCS-compatible <code>add_hook()</code> with 20+ hook points; a failing hook never breaks billing.</dd></div>
+          <div><dt>Webhooks</dt><dd>Inbound gateway callbacks and outbound events.</dd></div>
+          <div><dt>Modules</dt><dd>Server, gateway, registrar and SSL modules, plus add-ons.</dd></div>
+          <div><dt>Email piping</dt><dd>IMAP or POP3 mailboxes turn emails into tickets and replies.</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

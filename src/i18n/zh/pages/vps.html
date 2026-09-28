@@ -1,0 +1,80 @@
+<!--
+title: 基于 Proxmox VE 的 VPS
+description: 使用 PNLCS 在你自己的 Proxmox VE 上销售云服务器。自动开通，客户中心提供电源控制、图表、快照、备份和重装系统。
+section: 解决方案
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>基于 Proxmox VE 的 VPS</h1>
+      <p class="lede">接入一台 Proxmox VE 服务器，在管理后台中安装官方云镜像，即可销售 VPS 产品。账单付款后，PNLCS 会克隆、配置并启动服务器，客户在客户中心进行管理。</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">配置指南</a><a class="btn btn--ghost-dark" href="#lifecycle">各事件触发的操作</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="客户中心里的一台云服务器，包含电源控制、实时状态和用量图表"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>客户可以做什么</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">功能</th><th scope="col">说明</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">电源</th><td class="muted">开机、重启、关机（一分钟内无响应则强制关机）、强制断电、重置</td></tr>
+          <tr><th scope="row">实时状态</th><td class="muted">CPU、内存、运行时间、IP 地址和磁盘使用率</td></tr>
+          <tr><th scope="row">图表</th><td class="muted">CPU、内存、网络和磁盘数据，来自 Proxmox 自身的统计</td></tr>
+          <tr><th scope="row">Root 密码</th><td class="muted">通过 guest agent 立即设置，否则在下次启动时生效</td></tr>
+          <tr><th scope="row">重装系统</th><td class="muted">可选择产品提供的任意系统；虚拟机、MAC 和 IP 地址保持不变</td></tr>
+          <tr><th scope="row">快照</th><td class="muted">创建、回滚和删除，数量以套餐规定为上限</td></tr>
+          <tr><th scope="row">备份</th><td class="muted">备份到本地存储或 Proxmox Backup Server；支持还原和删除</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>破坏性操作会先确认</h2>
+      <p class="lede">任何会清除数据的操作，都需要输入服务器名称确认。重装、还原等耗时任务在后台运行，即使关闭页面也会执行完毕。</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="云服务器的快照、备份、root 密码和重装系统功能"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>每个计费事件触发时 PNLCS 执行的操作</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">事件</th><th scope="col">在 Proxmox 上</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">订单已付款</th><td class="muted">使用下一个可用的 VM ID 克隆到资源池，应用 cloud-init 配置，扩容磁盘，开启保护，然后启动</td></tr>
+          <tr><th scope="row">暂停</th><td class="muted">先关闭开机自启，再关机，这样宿主机重启后也不会重新启动</td></tr>
+          <tr><th scope="row">解除暂停</th><td class="muted">开启开机自启，然后启动</td></tr>
+          <tr><th scope="row">终止</th><td class="muted">停止，解除保护，连同磁盘一起删除；IP 地址回收到地址池</td></tr>
+          <tr><th scope="row">升级</th><td class="muted">调整 CPU 核心数和内存；磁盘只扩容，从不缩小</td></tr>
+          <tr><th scope="row">每小时</th><td class="muted">从 Proxmox 的统计中读取磁盘用量和本月流量</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>不是 PNLCS 创建的机器，它不会碰</h2>
+      <p class="lede">一台虚拟化主机上通常不只有客户的服务器。以下规则确保 PNLCS 只管理自己创建的机器。</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>PNLCS 创建的每台服务器都带有一个标签和一条注明所属服务的备注；它只操作带有该标记的机器</li>
+      <li>推荐使用的 API 令牌只能访问自己的资源池，连接测试会对计费系统用不到的权限发出警告</li>
+      <li>服务器创建时即开启删除保护，只在终止的那一刻才解除</li>
+      <li>客户永远看不到虚拟化主机的地址</li>
+    </ul>
+  </div>
+</section>

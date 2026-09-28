@@ -1,0 +1,80 @@
+<!--
+title: VPS on Proxmox VE
+description: Sell virtual servers on your own Proxmox VE with PNLCS. Automatic provisioning, and power, graphs, snapshots, backups and reinstall in the client portal.
+section: Solutions
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>VPS on Proxmox VE</h1>
+      <p class="lede">Connect a Proxmox VE server, install official cloud images from the admin panel and sell VPS products. When the invoice is paid, PNLCS clones, configures and starts the server; the customer manages it from the client portal.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">Setup guide</a><a class="btn btn--ghost-dark" href="#lifecycle">What happens on each event</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="A virtual server in the client portal with power controls, live status and usage graphs"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>What the customer can do</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Area</th><th scope="col">What happens</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Power</th><td class="muted">Start, reboot, shut down (forced after a minute if ignored), force off, reset</td></tr>
+          <tr><th scope="row">Live status</th><td class="muted">CPU, memory, uptime, addresses and how full the disk is</td></tr>
+          <tr><th scope="row">Graphs</th><td class="muted">CPU, memory, network and disk from Proxmox’s own statistics</td></tr>
+          <tr><th scope="row">Root password</th><td class="muted">Set at once through the guest agent, otherwise at next boot</td></tr>
+          <tr><th scope="row">Reinstall</th><td class="muted">Any system the product offers; the VM, MAC and IP address stay</td></tr>
+          <tr><th scope="row">Snapshots</th><td class="muted">Take, roll back and delete, up to the plan’s number</td></tr>
+          <tr><th scope="row">Backups</th><td class="muted">To local storage or Proxmox Backup Server; restore and delete</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Destructive actions ask first</h2>
+      <p class="lede">Anything that wipes data asks for the server’s name. Long jobs, like a reinstall or a restore, run in the background and finish even if the page is closed.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="Snapshots, backups, root password and reinstall controls for a virtual server"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>What PNLCS does on each billing event</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Event</th><th scope="col">On Proxmox</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Order paid</th><td class="muted">Cloned into the pool with the next VM id, cloud-init applied, disk grown, protection on, started</td></tr>
+          <tr><th scope="row">Suspended</th><td class="muted">Start at boot switched off, then shut down, so a host reboot does not bring it back</td></tr>
+          <tr><th scope="row">Unsuspended</th><td class="muted">Start at boot on, started</td></tr>
+          <tr><th scope="row">Terminated</th><td class="muted">Stopped, protection lifted, deleted with its disks; the address returns to the pool</td></tr>
+          <tr><th scope="row">Upgraded</th><td class="muted">New cores and memory; the disk grows and is never shrunk</td></tr>
+          <tr><th scope="row">Every hour</th><td class="muted">Disk usage and this month’s traffic, from Proxmox’s statistics</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Machines PNLCS did not create are left alone</h2>
+      <p class="lede">A hypervisor usually runs more than customer servers. These rules keep PNLCS to its own.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Every server PNLCS creates carries a tag and a note naming its service; it acts only on machines with that mark</li>
+      <li>The recommended API token reaches only its own pool, and the connection test warns about rights billing never needs</li>
+      <li>Servers are created with deletion protection, lifted only at the moment of termination</li>
+      <li>Customers never see the hypervisor’s address</li>
+    </ul>
+  </div>
+</section>

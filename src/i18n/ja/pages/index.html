@@ -1,0 +1,207 @@
+<!--
+title: PNLCS: オープンソースのホスティング請求管理プラットフォーム、無料のWHMCS代替
+description: PNLCSは、MITライセンスで無料のセルフホスト型ホスティング請求管理プラットフォーム兼顧客ポータルです。WHMCSのオープンソース代替として、請求書発行、ドメイン、SSL、サポートチケット、Dockerアプリ、Proxmox VPSの販売に対応します。
+-->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-main">
+        <h1>ホスティング事業者のためのオープンソース請求管理</h1>
+        <p class="lede"><strong>無料で使える、セルフホスト型のWHMCS代替です。</strong>請求書発行、ドメイン、SSL、サポートチケット、共用ホスティング、Dockerアプリ、Proxmox VPSをひとつのアプリケーションで扱えます。Panelicaチームとボランティアがメンテナンスしています。</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://hosting.panelica.com/">ライブデモを試す</a>
+          <a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">ドキュメントを読む</a>
+        </div>
+        <p class="hero-links"><a href="https://github.com/Panelica/pnlcs">GitHubでスターを付ける</a><a href="community.html">コントリビューターになる</a></p>
+      </div>
+
+      <aside class="getbox" aria-labelledby="getbox-title">
+        <h2 id="getbox-title">含まれるもの</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">ライセンス</th><td>MIT、無料</td></tr>
+            <tr><th scope="row">動作環境</th><td>自社サーバー：Docker、VPS、またはホスティングパネルのアカウント</td></tr>
+            <tr><th scope="row">顧客ポータル</th><td>標準搭載、30言語対応</td></tr>
+            <tr><th scope="row">サーバーモジュール</th><td>Panelica、cPanel、Plesk、DirectAdmin、HestiaCP、Proxmox VE、Vultr</td></tr>
+            <tr><th scope="row">決済</th><td>Stripe、PayPal、Mollie、iyzicoほか4種類</td></tr>
+            <tr><th scope="row">Dockerアプリのホスティング</th><td>標準搭載（Panelicaサーバーが必要）</td></tr>
+          </tbody>
+        </table>
+        <div class="getbox-cmd">
+          <code id="pull-cmd"><span aria-hidden="true">$ </span>docker pull panelica/pnlcs-runtime</code>
+          <button type="button" data-copy="pull-cmd">コピー</button>
+        </div>
+        <a class="getbox-more" href="get-started.html">インストール手順の全体</a>
+      </aside>
+    </div>
+
+    <div class="proof">
+      <p class="proof-label">使用技術</p>
+      <p class="stack-line"><b>Laravel 13</b>、<b>PHP 8.4+</b>、<b>MySQL 8</b>またはMariaDB、Tailwind CSS 4、Alpine.js。公式Dockerイメージあり。</p>
+      <p class="proof-label">プロジェクトの状況</p>
+      <dl class="status">
+        <div><dt>ライセンス</dt><dd>MIT</dd></div>
+        <div><dt>GitHubスター</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>コントリビューター</dt><dd data-stat="contributors">5</dd></div>
+        <div><dt>最終更新</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Dockerプル数</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+
+    <div class="product">
+      <div class="product-tabs" role="tablist" aria-label="製品画面">
+        <button class="product-tab" role="tab" aria-selected="true" aria-controls="product-panel" id="tab-hosting"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+          data-alt="顧客ポータルのホスティングサービス画面：リアルタイムのリソース使用状況と8つの管理ツール"
+          data-url="your-brand.com/client/services/42"
+          data-caption="顧客ポータルのホスティングサービス画面（Coralテーマで表示）。サーバーから取得したリアルタイムの使用状況と、その下に8つのツールが並びます。">ホスティング<small>顧客ポータル</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-apps"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w"
+          data-alt="アプリ画面：稼働中のコンテナとワンクリックアプリのカタログ"
+          data-url="your-brand.com/client/services/42/apps"
+          data-caption="Dockerホスティングを商品として販売できます。顧客は厳選されたカタログから、プランの上限内でアプリをインストールします。">アプリ<small>ワンクリックDocker</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-vps"
+          data-src="assets/img/client-vps.webp" data-srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w"
+          data-alt="顧客ポータルの仮想サーバー画面：電源操作、リアルタイムの状態、使用状況グラフ"
+          data-url="your-brand.com/client/services/57"
+          data-caption="顧客ポータルのProxmox VPS画面。電源操作、リアルタイムの状態、グラフ、スナップショット、バックアップ、再インストールに対応します。">VPS<small>Proxmox VE</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-admin"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w"
+          data-alt="管理パネルからProxmoxサーバーに公式クラウドイメージをインストールしている画面"
+          data-url="your-brand.com/admin/servers/3/images"
+          data-caption="管理パネルの画面。ここでは、シェルを開かずにProxmoxサーバーへ公式クラウドイメージをインストールしています。">管理<small>スタッフ用パネル</small></button>
+      </div>
+      <div class="product-frame" role="tabpanel" id="product-panel" aria-labelledby="tab-hosting">
+        <div class="product-bar" aria-hidden="true"><span></span><span></span><span></span><output id="product-url">your-brand.com/client/services/42</output></div>
+        <div class="product-shot">
+          <img id="product-img" src="assets/img/client-hosting-tools.webp"
+               srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+               sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000"
+               alt="顧客ポータルのホスティングサービス画面：リアルタイムのリソース使用状況と8つの管理ツール">
+        </div>
+      </div>
+      <p class="product-caption" id="product-caption" aria-live="polite">顧客ポータルのホスティングサービス画面（Coralテーマで表示）。サーバーから取得したリアルタイムの使用状況と、その下に8つのツールが並びます。</p>
+      <p class="product-more"><a href="shared-hosting.html">共用ホスティング</a><a href="docker-apps.html">Dockerアプリ</a><a href="vps.html">Proxmox VEでのVPS</a><a href="features.html">すべての機能</a></p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="band band--paper" id="renewals">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>更新時に起きること</h2>
+        <p class="lede">PNLCSは請求処理をスケジュールに沿って実行するため、請求書の送付や未払いアカウントの停止を誰かが覚えておく必要はありません。以下はデフォルト値で、数値はすべて設定で変更できます。</p>
+      </div>
+      <a class="more" href="https://docs.pnlcs.com/concepts/billing-lifecycle/">ドキュメントの請求ライフサイクル</a>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <p class="tl-day">14日前</p>
+        <h3>更新請求書</h3>
+        <p>作成され、顧客にメールで送信されます。</p>
+        <code>invoice_days_before_due = 14</code>
+      </li>
+      <li>
+        <p class="tl-day">3日前</p>
+        <h3>登録済みカードへの課金</h3>
+        <p>自動課金を有効にした場合に行います。3日間隔で最大3回試行します。</p>
+        <code>AutoChargeDaysBefore = 3</code>
+      </li>
+      <li class="tl-due">
+        <p class="tl-day">支払期日</p>
+        <h3>督促</h3>
+        <p>未払いの請求書は期限切れとなり、督促メールが送信されます。3日経過後に任意の延滞料が加算されます。</p>
+        <code>LateFeeMinDays = 3</code>
+      </li>
+      <li>
+        <p class="tl-day">3日後</p>
+        <h3>利用停止</h3>
+        <p>サーバー上のサービスが停止されます。支払いが行われると30分以内に停止が解除されます。</p>
+        <code>AutoSuspensionDays = 3</code>
+      </li>
+      <li class="tl-off">
+        <p class="tl-day">30日後</p>
+        <h3>解約</h3>
+        <p>有効にした場合のみ実行されます。デフォルトではオフです。</p>
+        <code>AutoTerminationDays = 30</code>
+      </li>
+    </ol>
+
+    <div class="morning">
+      <div>
+        <h3>毎朝、この順番で実行</h3>
+        <p>順番には意味があります。登録済みカードで06:45に支払いが完了した顧客が07:00に停止されることはなく、08:00に督促を受けることもありません。</p>
+      </div>
+      <table class="schedule">
+        <tbody>
+          <tr><th scope="row"><time>06:00</time></th><td>当日分の更新請求書を作成</td><td><code>pnlcs:generate-invoices</code></td></tr>
+          <tr><th scope="row"><time>06:30</time></th><td>未払いの請求書を期限切れにする</td><td><code>pnlcs:mark-overdue</code></td></tr>
+          <tr><th scope="row"><time>06:45</time></th><td>登録済みカードに課金</td><td><code>pnlcs:auto-charge</code></td></tr>
+          <tr><th scope="row"><time>07:00</time></th><td>猶予期間を過ぎたサービスを停止</td><td><code>pnlcs:auto-suspend</code></td></tr>
+          <tr><th scope="row"><time>07:30</time></th><td>延滞料を適用</td><td><code>pnlcs:apply-late-fees</code></td></tr>
+          <tr><th scope="row"><time>08:00</time></th><td>支払いの督促を送信</td><td><code>pnlcs:payment-reminders</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>今お使いのパネル、レジストラ、決済ゲートウェイと連携</h2>
+        <p class="lede">すべてのモジュールは読めるソースコードとしてPNLCSに同梱されています。本番環境で実績のあるものもあれば、テスターを必要としているものもあります。</p>
+      </div>
+      <a class="more" href="integrations.html">連携の状況</a>
+    </div>
+    <div class="roster">
+      <section aria-labelledby="r-servers"><h3 id="r-servers">サーバーとパネル <span>7</span></h3>
+        <ul><li>Panelica</li><li>cPanel / WHM</li><li>Plesk</li><li>DirectAdmin</li><li>HestiaCP</li><li>Proxmox VE</li><li>Vultr</li></ul></section>
+      <section aria-labelledby="r-gateways"><h3 id="r-gateways">決済ゲートウェイ <span>8</span></h3>
+        <ul><li>Stripe</li><li>PayPal</li><li>Authorize.net</li><li>Mollie</li><li>Razorpay</li><li>iyzico</li><li>Tpay</li><li>銀行振込</li></ul></section>
+      <section aria-labelledby="r-registrars"><h3 id="r-registrars">ドメインレジストラ <span>6</span></h3>
+        <ul><li>Namecheap</li><li>Enom</li><li>ResellerClub</li><li>OpenProvider</li><li>DomainNameApi</li><li>HRD</li></ul></section>
+      <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSLとアドオン <span>5</span></h3>
+        <ul><li>GoGetSSL</li><li>企業情報の検索</li><li>KSeF電子請求書</li><li>プロジェクト管理</li><li>スタッフ掲示板</li></ul></section>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap theme-lab">
+    <div class="mini" aria-hidden="true">
+      <div class="mini-nav"><b>PNLCS<i></i></b><span>ホスティング</span><span>ドメイン</span><span>VPS</span><span>マイページ</span></div>
+      <div class="mini-hero"><strong>Webホスティング、ドメイン、VPS</strong><p>販売サイトの例です。プランと文章は管理パネルから設定します。</p><div class="mini-search"><span>find-your-name.com</span><em>検索</em></div></div>
+      <div class="mini-plans">
+        <div class="mini-plan"><b>スターター</b><strong>$3<small>/月</small></strong><span>申し込む</span></div>
+        <div class="mini-plan"><b>ビジネス</b><strong>$8<small>/月</small></strong><span>申し込む</span></div>
+        <div class="mini-plan"><b>VPS 2</b><strong>$14<small>/月</small></strong><span>申し込む</span></div>
+      </div>
+      <div class="mini-foot">御社の名前、御社のフッター</div>
+    </div>
+    <div>
+      <h2>16種類のテーマを管理パネルから切り替え</h2>
+      <p class="lede" style="margin-top:16px">WordPressと同じ感覚でテーマをインストールし、有効化できます。テーマを選ぶと、販売サイトの例でその配色を確認できます。</p>
+      <div class="swatches" data-theme-pickers="swatches" data-src="assets/themes.json" role="group" aria-label="テーマ"></div>
+      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Panelica公式テーマ。</p></div>
+      <a class="btn btn--ghost" href="themes.html">すべてのテーマを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight">
+  <div class="wrap cols-2">
+    <div>
+      <h2>MITライセンス、Panelicaがメンテナンス</h2>
+    </div>
+    <div class="stack">
+      <p class="lede">ライセンス料も、エンコードされたファイルもありません。PNLCSのどの部分でも読み、変更し、再配布できます。<a href="https://panelica.com/">Panelica</a>チームが本業の合間に、ボランティアのコントリビューターとともにメンテナンスしています。</p>
+      <p class="links"><a href="compare.html">WHMCSとの比較</a><a href="about.html">プロジェクトについて</a><a href="community.html">貢献する</a></p>
+    </div>
+  </div>
+</section>

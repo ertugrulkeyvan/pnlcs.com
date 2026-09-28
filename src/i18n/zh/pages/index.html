@@ -1,0 +1,207 @@
+<!--
+title: PNLCS：开源主机计费平台，免费的 WHMCS 替代方案
+description: PNLCS 是一个免费、采用 MIT 许可证、可自行部署的主机计费平台和客户中心，是 WHMCS 的开源替代方案。支持账单、域名、SSL、工单、Docker 应用和 Proxmox VPS 销售。
+-->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-main">
+        <h1>面向主机服务商的开源计费系统</h1>
+        <p class="lede"><strong>免费、可自行部署的 WHMCS 替代方案。</strong>账单、域名、SSL、工单、虚拟主机、Docker 应用和 Proxmox VPS 集中在一个应用中，由 Panelica 团队和志愿者维护。</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://hosting.panelica.com/">试用在线演示</a>
+          <a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">阅读文档</a>
+        </div>
+        <p class="hero-links"><a href="https://github.com/Panelica/pnlcs">在 GitHub 上加星标</a><a href="community.html">成为贡献者</a></p>
+      </div>
+
+      <aside class="getbox" aria-labelledby="getbox-title">
+        <h2 id="getbox-title">你能得到什么</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">许可证</th><td>MIT，免费</td></tr>
+            <tr><th scope="row">运行环境</th><td>你自己的服务器：Docker、VPS 或主机面板账户</td></tr>
+            <tr><th scope="row">客户中心</th><td>已包含，支持 30 种语言</td></tr>
+            <tr><th scope="row">服务器模块</th><td>Panelica、cPanel、Plesk、DirectAdmin、HestiaCP、Proxmox VE、Vultr</td></tr>
+            <tr><th scope="row">支付</th><td>Stripe、PayPal、Mollie、iyzico，另有 4 种</td></tr>
+            <tr><th scope="row">Docker 应用托管</th><td>内置，需配合 Panelica 服务器</td></tr>
+          </tbody>
+        </table>
+        <div class="getbox-cmd">
+          <code id="pull-cmd"><span aria-hidden="true">$ </span>docker pull panelica/pnlcs-runtime</code>
+          <button type="button" data-copy="pull-cmd">复制</button>
+        </div>
+        <a class="getbox-more" href="get-started.html">完整安装步骤</a>
+      </aside>
+    </div>
+
+    <div class="proof">
+      <p class="proof-label">技术栈</p>
+      <p class="stack-line"><b>Laravel 13</b>、<b>PHP 8.4+</b>、<b>MySQL 8</b> 或 MariaDB，Tailwind CSS 4 和 Alpine.js。提供官方 Docker 镜像。</p>
+      <p class="proof-label">项目状态</p>
+      <dl class="status">
+        <div><dt>许可证</dt><dd>MIT</dd></div>
+        <div><dt>GitHub 星标</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>贡献者</dt><dd data-stat="contributors">5</dd></div>
+        <div><dt>最近更新</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Docker 拉取次数</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+
+    <div class="product">
+      <div class="product-tabs" role="tablist" aria-label="产品界面">
+        <button class="product-tab" role="tab" aria-selected="true" aria-controls="product-panel" id="tab-hosting"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+          data-alt="客户中心里的一项主机服务：实时资源用量和八个管理工具"
+          data-url="your-brand.com/client/services/42"
+          data-caption="客户中心里的一项主机服务，此处使用 Coral 主题。上方是来自服务器的实时用量，下方是八个管理工具。">主机<small>客户中心</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-apps"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w"
+          data-alt="“应用”页面：运行中的容器和一键安装应用目录"
+          data-url="your-brand.com/client/services/42/apps"
+          data-caption="把 Docker 托管作为产品销售。客户在套餐限额内，从你精选的目录中安装应用。">应用<small>一键 Docker</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-vps"
+          data-src="assets/img/client-vps.webp" data-srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w"
+          data-alt="客户中心里的一台云服务器：电源控制、实时状态和用量图表"
+          data-url="your-brand.com/client/services/57"
+          data-caption="客户中心里的一台 Proxmox VPS。电源控制、实时状态、图表、快照、备份和重装系统。">VPS<small>Proxmox VE</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-admin"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w"
+          data-alt="在管理后台中为 Proxmox 服务器安装官方云镜像"
+          data-url="your-brand.com/admin/servers/3/images"
+          data-caption="管理后台。图中无需登录服务器 shell，即可为 Proxmox 服务器安装官方云镜像。">后台<small>员工面板</small></button>
+      </div>
+      <div class="product-frame" role="tabpanel" id="product-panel" aria-labelledby="tab-hosting">
+        <div class="product-bar" aria-hidden="true"><span></span><span></span><span></span><output id="product-url">your-brand.com/client/services/42</output></div>
+        <div class="product-shot">
+          <img id="product-img" src="assets/img/client-hosting-tools.webp"
+               srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+               sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000"
+               alt="客户中心里的一项主机服务：实时资源用量和八个管理工具">
+        </div>
+      </div>
+      <p class="product-caption" id="product-caption" aria-live="polite">客户中心里的一项主机服务，此处使用 Coral 主题。上方是来自服务器的实时用量，下方是八个管理工具。</p>
+      <p class="product-more"><a href="shared-hosting.html">虚拟主机</a><a href="docker-apps.html">Docker 应用</a><a href="vps.html">基于 Proxmox VE 的 VPS</a><a href="features.html">全部功能</a></p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="band band--paper" id="renewals">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>续费流程</h2>
+        <p class="lede">PNLCS 按计划自动执行计费任务，没人需要记着去发账单或关停欠费账户。以下是默认值，每个数字都可以在设置中修改。</p>
+      </div>
+      <a class="more" href="https://docs.pnlcs.com/concepts/billing-lifecycle/">文档：计费生命周期</a>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <p class="tl-day">到期前 14 天</p>
+        <h3>生成续费账单</h3>
+        <p>创建账单并通过邮件发送给客户。</p>
+        <code>invoice_days_before_due = 14</code>
+      </li>
+      <li>
+        <p class="tl-day">到期前 3 天</p>
+        <h3>从已保存的银行卡扣款</h3>
+        <p>需开启自动扣款。最多尝试 3 次，每次间隔 3 天。</p>
+        <code>AutoChargeDaysBefore = 3</code>
+      </li>
+      <li class="tl-due">
+        <p class="tl-day">到期日</p>
+        <h3>提醒</h3>
+        <p>未付款的账单转为逾期，并发送提醒邮件。3 天后可选择收取滞纳金。</p>
+        <code>LateFeeMinDays = 3</code>
+      </li>
+      <li>
+        <p class="tl-day">到期后 3 天</p>
+        <h3>暂停</h3>
+        <p>服务在服务器上被暂停。付款后 30 分钟内自动解除暂停。</p>
+        <code>AutoSuspensionDays = 3</code>
+      </li>
+      <li class="tl-off">
+        <p class="tl-day">到期后 30 天</p>
+        <h3>终止</h3>
+        <p>仅在你启用时执行，默认关闭。</p>
+        <code>AutoTerminationDays = 30</code>
+      </li>
+    </ol>
+
+    <div class="morning">
+      <div>
+        <h3>每天早上，按以下顺序执行</h3>
+        <p>顺序很重要。已保存的银行卡在 06:45 扣款成功的客户，不会在 07:00 被暂停，也不会在 08:00 收到付款提醒。</p>
+      </div>
+      <table class="schedule">
+        <tbody>
+          <tr><th scope="row"><time>06:00</time></th><td>生成当天的续费账单</td><td><code>pnlcs:generate-invoices</code></td></tr>
+          <tr><th scope="row"><time>06:30</time></th><td>将未付款账单标记为逾期</td><td><code>pnlcs:mark-overdue</code></td></tr>
+          <tr><th scope="row"><time>06:45</time></th><td>从已保存的银行卡扣款</td><td><code>pnlcs:auto-charge</code></td></tr>
+          <tr><th scope="row"><time>07:00</time></th><td>暂停超过宽限期的服务</td><td><code>pnlcs:auto-suspend</code></td></tr>
+          <tr><th scope="row"><time>07:30</time></th><td>收取滞纳金</td><td><code>pnlcs:apply-late-fees</code></td></tr>
+          <tr><th scope="row"><time>08:00</time></th><td>发送付款提醒</td><td><code>pnlcs:payment-reminders</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>支持你正在使用的面板、域名注册商和支付网关</h2>
+        <p class="lede">所有模块都随 PNLCS 一起提供，源码可读。部分模块已在生产环境验证，其余还需要测试者。</p>
+      </div>
+      <a class="more" href="integrations.html">集成状态</a>
+    </div>
+    <div class="roster">
+      <section aria-labelledby="r-servers"><h3 id="r-servers">服务器和面板 <span>7</span></h3>
+        <ul><li>Panelica</li><li>cPanel / WHM</li><li>Plesk</li><li>DirectAdmin</li><li>HestiaCP</li><li>Proxmox VE</li><li>Vultr</li></ul></section>
+      <section aria-labelledby="r-gateways"><h3 id="r-gateways">支付网关 <span>8</span></h3>
+        <ul><li>Stripe</li><li>PayPal</li><li>Authorize.net</li><li>Mollie</li><li>Razorpay</li><li>iyzico</li><li>Tpay</li><li>银行转账</li></ul></section>
+      <section aria-labelledby="r-registrars"><h3 id="r-registrars">域名注册商 <span>6</span></h3>
+        <ul><li>Namecheap</li><li>Enom</li><li>ResellerClub</li><li>OpenProvider</li><li>DomainNameApi</li><li>HRD</li></ul></section>
+      <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL 和插件 <span>5</span></h3>
+        <ul><li>GoGetSSL</li><li>企业信息查询</li><li>KSeF 电子发票</li><li>项目管理</li><li>员工留言板</li></ul></section>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap theme-lab">
+    <div class="mini" aria-hidden="true">
+      <div class="mini-nav"><b>PNLCS<i></i></b><span>主机</span><span>域名</span><span>VPS</span><span>客户中心</span></div>
+      <div class="mini-hero"><strong>虚拟主机、域名和 VPS</strong><p>示例店面。套餐和文字内容来自你的管理后台。</p><div class="mini-search"><span>find-your-name.com</span><em>搜索</em></div></div>
+      <div class="mini-plans">
+        <div class="mini-plan"><b>入门版</b><strong>$3<small>/月</small></strong><span>订购</span></div>
+        <div class="mini-plan"><b>商务版</b><strong>$8<small>/月</small></strong><span>订购</span></div>
+        <div class="mini-plan"><b>VPS 2</b><strong>$14<small>/月</small></strong><span>订购</span></div>
+      </div>
+      <div class="mini-foot">你的公司，你的页脚</div>
+    </div>
+    <div>
+      <h2>16 款主题，可在管理后台中切换</h2>
+      <p class="lede" style="margin-top:16px">像在 WordPress 中一样安装和启用主题。选择一个主题，即可在示例店面上查看它的配色。</p>
+      <div class="swatches" data-theme-pickers="swatches" data-src="assets/themes.json" role="group" aria-label="主题"></div>
+      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Panelica 官方主题。</p></div>
+      <a class="btn btn--ghost" href="themes.html">浏览全部主题</a>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight">
+  <div class="wrap cols-2">
+    <div>
+      <h2>MIT 许可证，由 Panelica 维护</h2>
+    </div>
+    <div class="stack">
+      <p class="lede">没有授权费，也没有加密文件：PNLCS 的任何部分你都可以阅读、修改和再分发。项目由 <a href="https://panelica.com/">Panelica</a> 团队利用业余时间维护，并有志愿贡献者参与。</p>
+      <p class="links"><a href="compare.html">与 WHMCS 的对比</a><a href="about.html">关于项目</a><a href="community.html">参与贡献</a></p>
+    </div>
+  </div>
+</section>

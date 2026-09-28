@@ -1,0 +1,63 @@
+<!--
+title: Hosting compartido
+description: Vende hosting compartido con PNLCS. Los clientes gestionan archivos, correo, bases de datos, DNS, cron y copias de seguridad desde el portal de facturación, limitados a su propia cuenta.
+section: Soluciones
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Hosting compartido</h1>
+      <p class="lede">La mayoría de los sistemas de facturación se quedan en «esta es la contraseña de tu panel de control». Con PNLCS y el módulo de servidor de Panelica, el trabajo diario del hosting se hace en el propio portal de facturación.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Conectar un servidor</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Un servicio de hosting en el portal de clientes con el uso en tiempo real y ocho herramientas de gestión"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Ocho herramientas, sin un segundo inicio de sesión</h2><p class="lede">Cada servicio de hosting muestra en tiempo real la CPU, la memoria, el disco y el ancho de banda del servidor, además de estas herramientas.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Herramienta</th><th scope="col">Qué puede hacer el cliente</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Administrador de archivos</th><td class="muted">Explorar, subir, descargar, editar, renombrar, crear carpetas y eliminar</td></tr>
+          <tr><th scope="row">Cuentas de correo</th><td class="muted">Crear y eliminar buzones, cambiar contraseñas, abrir el webmail</td></tr>
+          <tr><th scope="row">Bases de datos</th><td class="muted">Crear bases de datos y usuarios MySQL, restablecer contraseñas, abrir phpMyAdmin</td></tr>
+          <tr><th scope="row">Cuentas FTP</th><td class="muted">Crear cuentas, cambiar contraseñas, eliminar, con el host y el puerto a la vista</td></tr>
+          <tr><th scope="row">Subdominios</th><td class="muted">Crear y eliminar; el panel configura el vhost, el directorio raíz, el pool de PHP, el SSL y el DNS</td></tr>
+          <tr><th scope="row">Zona DNS</th><td class="muted">Añadir, editar y eliminar registros A, AAAA, CNAME, MX, TXT, SRV y CAA</td></tr>
+          <tr><th scope="row">Tareas cron</th><td class="muted">Programar comandos, ejecutar uno al momento y ver su salida, pausar, reanudar, eliminar</td></tr>
+          <tr><th scope="row">Copias de seguridad</th><td class="muted">Crear puntos de restauración, ver su tamaño y su contenido, eliminar los antiguos</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Las herramientas del portal necesitan el módulo de servidor de Panelica. Con cPanel, Plesk, DirectAdmin y HestiaCP, PNLCS aprovisiona y suspende las cuentas, y los clientes las gestionan en su panel de control.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Limitado a la propia cuenta del cliente</h2>
+      <p class="lede">La clave de servidor que guarda un sistema de facturación puede ver todas las cuentas de la máquina. PNLCS filtra cada lista por los dominios del servicio que se está viendo, y comprueba igual cada cambio antes de enviarlo.</p>
+      <ul class="checklist checklist--one">
+        <li>Una copia de seguridad que también incluye el dominio de otra persona no se muestra y no se puede eliminar</li>
+        <li>Una tarea cron, un subdominio o un registro DNS en un dominio ajeno se rechaza antes de que salga ninguna petición del servidor de facturación</li>
+        <li>Los límites se leen del plan de hosting, y el panel los vuelve a aplicar por su cuenta</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="El editor de zona DNS del portal de clientes"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Copias de seguridad y tareas cron</h2>
+      <p class="lede">Los clientes crean y restauran copias de seguridad y gestionan sus tareas cron ellos mismos, dentro de los límites de su plan.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="La página de copias de seguridad del portal de clientes con una lista de puntos de restauración"></figure>
+  </div>
+</section>

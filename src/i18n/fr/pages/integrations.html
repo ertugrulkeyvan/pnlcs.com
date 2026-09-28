@@ -1,0 +1,104 @@
+<!--
+title: Intégrations
+description: Modules serveur, passerelles de paiement, bureaux d’enregistrement et fournisseurs SSL livrés avec PNLCS, avec un état honnête pour chacun.
+section: Produit
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Intégrations</h1>
+    <p class="lede">Tous les modules sont livrés avec PNLCS. La colonne État indique lesquels ont tourné sur des systèmes en production et lesquels n’ont pas encore été testés de bout en bout.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Testé en production</span>
+      <span class="badge badge--help">Code terminé, à tester en conditions réelles</span>
+      <span class="badge badge--plain">Inclus</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Serveurs et panneaux de contrôle</h2>
+      <p>Créer, suspendre, réactiver et résilier des comptes ou des machines quand les commandes sont payées et que les factures restent impayées.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Module</th><th scope="col">Ce qu’il provisionne</th><th scope="col">État</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Comptes d’hébergement, applications Docker et outils d’hébergement intégrés à l’espace client</td><td><span class="badge badge--ok">Testé en production</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">Serveurs virtuels KVM à partir d’images cloud et de modèles LXC</td><td><span class="badge badge--ok">Testé en production</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Comptes d’hébergement</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Abonnements d’hébergement</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Comptes d’hébergement</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Comptes d’hébergement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Serveurs cloud</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">Personnalisé</th><td class="muted">Services que vous gérez à la main, sans automatisation</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Passerelles de paiement</h2>
+      <p>Toutes les passerelles partagent un même moteur de paiement : paiements partiels, crédit et remboursements se comportent partout de la même façon.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Passerelle</th><th scope="col">Remarques</th><th scope="col">État</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, cartes tokenisées</td><td><span class="badge badge--ok">Testé en production</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, API REST v2</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, cartes tokenisées</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">Virement bancaire</th><td class="muted">Avec avis de paiement des clients et envoi de justificatif</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">Moyens de paiement européens</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">Inde</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Türkiye : 3D Secure, paiement en plusieurs fois, cartes enregistrées</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Pologne : BLIK, virements rapides, cartes</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Bureaux d’enregistrement et SSL</h2>
+      <p>Enregistrer, transférer et renouveler des domaines, et émettre des certificats, dans le même tunnel de commande que l’hébergement.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Module</th><th scope="col">Type</th><th scope="col">État</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--help">À tester</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Bureau d’enregistrement</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">Manuel</th><td class="muted">Bureau d’enregistrement, pour les domaines que vous gérez vous-même</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL : Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Inclus</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Modules complémentaires</h2>
+      <p>Les modules complémentaires sont détectés automatiquement : déposez-en un dans <code>modules/Addons/</code> et activez-le dans le panneau d’administration.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Module complémentaire</th><th scope="col">Ce qu’il fait</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Recherche d’entreprise</th><td class="muted">Remplit les informations de l’entreprise à partir des registres publics lors de l’inscription</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Facturation électronique nationale polonaise</td></tr>
+          <tr><th scope="row">Gestion de projets</th><td class="muted">Projets, tâches, jalons et temps passé, facturés à partir des heures du projet</td></tr>
+          <tr><th scope="row">Tableau du personnel</th><td class="muted">Un tableau de messages interne, visible uniquement par le personnel</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>Vous utilisez l’un des modules non testés ?</h3>
+      <p>Si vous utilisez cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, le virement bancaire ou Enom, une heure de test sur votre infrastructure le fait passer à « testé en production » pour tout le monde.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Signaler ce que vous avez constaté</a></p>
+    </div>
+    <div class="callout">
+      <h3>Une intégration vous manque ?</h3>
+      <p>Un module serveur tient en une seule classe ; les passerelles et les bureaux d’enregistrement suivent le même modèle. Le guide du développeur détaille un module complet.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Écrire un module</a></p>
+    </div>
+  </div>
+</section>

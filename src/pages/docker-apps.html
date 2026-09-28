@@ -1,0 +1,57 @@
+<!--
+title: Docker apps
+description: Sell one-click Docker applications with PNLCS and Panelica. WordPress, n8n, databases and more, inside the resources each customer bought.
+section: Solutions
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Docker apps</h1>
+      <p class="lede">Customers install WordPress, n8n, databases or remote desktops from a catalog. Each app runs as Docker containers inside the customer’s hosting account, within the memory and CPU of their plan. Requires a Panelica server.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Sell Docker apps guide</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="The Apps page in the client portal with running apps and the app catalog"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Three ways to sell apps</h2><p class="lede">They can be combined.</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>Hosting with apps included</dt><dd>A normal hosting plan with a container allowance. Customers get a website and can add apps from the Apps tab at any time.</dd></div>
+      <div><dt>App hosting</dt><dd>The order installs one app on the customer’s domain. Fix the app (“Managed WordPress”) or let the customer pick from your catalog, so one product covers every app.</dd></div>
+      <div><dt>Container plan</dt><dd>Resources without a website: no domain, and the service page shows only the Apps tab.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Each account’s apps share one cgroup limit</h2>
+      <p class="lede">Every container a customer starts is created inside their account’s cgroup slice. A customer on a 2 GB plan has 2 GB across all their apps and cannot use another customer’s memory.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>No privileged containers, extra capabilities or host-path mounts, even for the billing key</li>
+      <li>Plans set the number of apps, total memory and total CPU</li>
+      <li>Customers see an app’s memory needs before they order</li>
+      <li>An order that cannot install its app is rolled back, never left half-built</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>You curate the catalog</h2>
+      <p class="lede">The Panelica server decides which apps exist. PNLCS decides how you sell them: which apps you offer, which are featured, their order, tagline and logo.</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>Connect a Panelica server</strong><span>With an API key that carries the Docker scopes.</span></span></li>
+      <li><span><strong>Choose how to sell</strong><span>Included, app hosting, or container plan.</span></span></li>
+      <li><span><strong>Build the product</strong><span>Set the container allowance, memory and CPU, then the price.</span></span></li>
+      <li><span><strong>Curate the catalog</strong><span>Offer, feature and order apps; 95 of 98 have a logo out of the box.</span></span></li>
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,113 @@
+<!--
+title: 機能
+heading: 機能
+description: PNLCSに含まれるもの：顧客ポータル、管理パネル、定期請求と自動化、セキュリティ、30言語、WHMCS互換のAPI。
+section: 製品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>機能</h1>
+    <p class="lede">販売サイト、顧客ポータル、請求管理、プロビジョニング、サポートは、ひとつのLaravelアプリケーションで構成されています。このページでは各部分が何をするかを紹介し、その方法はドキュメントで説明しています。</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">ドキュメント</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap spec-layout">
+    <nav class="toc" aria-label="このページの内容">
+      <p>このページの内容</p>
+      <ul>
+        <li><a href="#portal">顧客ポータル</a></li>
+        <li><a href="#billing">請求管理と自動化</a></li>
+        <li><a href="#admin">管理パネル</a></li>
+        <li><a href="#security">セキュリティとアクセス制御</a></li>
+        <li><a href="#languages">言語</a></li>
+        <li><a href="#developers">開発者向け</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <section class="spec" id="portal">
+        <div class="spec-head"><h2>顧客ポータル</h2><p>顧客がログイン後に目にする画面です。</p><a class="more" href="shared-hosting.html">ホスティングツール</a></div>
+        <dl class="spec-grid">
+          <div><dt>ショップと購入手続き</dt><dd>プランの閲覧、サービスの構成、クーポンの適用、支払い。</dd></div>
+          <div><dt>サービス管理</dt><dd>アップグレード、ダウングレード、解約、自動更新の切り替え。</dd></div>
+          <div><dt>ドメイン</dt><dd>登録、移管、更新。EPPコードとWHOIS。</dd></div>
+          <div><dt>請求書</dt><dd>オンライン支払い、PDFのダウンロード、入金、クレジット残高の利用。</dd></div>
+          <div><dt>見積書</dt><dd>販売前の見積書を確認して承認できます。承認された見積書は請求書になります。</dd></div>
+          <div><dt>銀行振込の通知</dt><dd>オフラインでの支払いを、領収書をアップロードして報告できます。</dd></div>
+          <div><dt>SSL証明書</dt><dd>CSRの生成、承認者メール、自動インストール。</dd></div>
+          <div><dt>サポートとナレッジベース</dt><dd>添付ファイル付きのチケット、検索可能なナレッジベース、お知らせ。</dd></div>
+          <div><dt>ネットワークの状態</dt><dd>発生中の障害と計画メンテナンス。</dd></div>
+          <div><dt>アカウントのセキュリティ</dt><dd>二要素認証、ログイン通知、セッション履歴。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="billing">
+        <div class="spec-head"><h2>請求管理と自動化</h2><p>サービスは、サーバーモジュールが成功を報告してから有効化されます。</p></div>
+        <dl class="spec-grid">
+          <div><dt>定期請求</dt><dd>月払い、四半期払い、半年払い、年払い、2年払いのサイクル。</dd></div>
+          <div><dt>自動利用停止</dt><dd>未払いのサービスは、設定した猶予期間の後に停止されます。</dd></div>
+          <div><dt>通知メール</dt><dd>請求書、支払い、カードの有効期限、ドメイン更新のメール。</dd></div>
+          <div><dt>税ルール</dt><dd>国や州ごとに設定でき、納税額レポートも出力できます。</dd></div>
+          <div><dt>ひとつの決済エンジン</dt><dd>決済ゲートウェイ、手動の支払い、クレジットはすべて同じ処理を通ります。一部支払いや、過払い分のクレジット化にも対応します。</dd></div>
+          <div><dt>返金</dt><dd>全額または一部。ゲートウェイのAPI経由で処理するか、オフラインの返金として記録します。</dd></div>
+          <div><dt>確実なプロビジョニング</dt><dd>失敗した処理はキューに入り自動で再試行され、スタッフに通知されます。</dd></div>
+          <div><dt>従量課金</dt><dd>ディスクと帯域幅の超過分。商品ごとに有効化します。</dd></div>
+          <div><dt>延滞料、クーポン、プロモーション</dt><dd>クレジット残高と入金機能もあります。</dd></div>
+          <div><dt>定期メンテナンス処理</dt><dd>為替レートの更新、データベースのバックアップ、ログの保持期間管理をスケジュール実行します。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="admin">
+        <div class="spec-head"><h2>管理パネル</h2><p>スタッフが毎日使う画面です。</p></div>
+        <dl class="spec-grid">
+          <div><dt>ダッシュボード</dt><dd>売上、新規登録、保留中の注文、未対応のチケットをひと目で確認できます。</dd></div>
+          <div><dt>顧客</dt><dd>プロフィール、メモ、請求の概要、顧客としてのログイン。</dd></div>
+          <div><dt>注文と請求書</dt><dd>手動作成、一括操作、一斉メール、PDFエクスポート。</dd></div>
+          <div><dt>商品とバンドル</dt><dd>構成オプション、アドオン、価格表。</dd></div>
+          <div><dt>ヘルプデスク</dt><dd>社内メモ、エスカレーションルール、スパムフィルター、定型返信。</dd></div>
+          <div><dt>レポート</dt><dd>27種類を標準搭載：収益、予測、継続率、チケット、ドメイン、税。</dd></div>
+          <div><dt>見積とプロジェクト</dt><dd>WHMCSと同様の販売前フロー。</dd></div>
+          <div><dt>カレンダー</dt><dd>イベント、リマインダー、スケジュールされたタスク。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="security">
+        <div class="spec-head"><h2>セキュリティとアクセス制御</h2><p>スタッフには役割で許可された範囲だけが表示され、管理操作はすべて記録されます。</p><a class="more" href="security.html">セキュリティポリシー</a></div>
+        <dl class="spec-grid">
+          <div><dt>役割と権限</dt><dd>45を超える細かな権限による、役割ベースのアクセス制御。</dd></div>
+          <div><dt>二要素認証</dt><dd>スタッフと顧客の両方に対応し、スタッフにはリカバリーコードがあります。</dd></div>
+          <div><dt>レート制限</dt><dd>ログイン、2FAの確認、パスワードリセット、メールの再送信に適用されます。</dd></div>
+          <div><dt>管理画面のIP許可リスト</dt><dd>管理エリア向けのオプション機能です。</dd></div>
+          <div><dt>セッション</dt><dd>タイムアウトと強制ログアウト。</dd></div>
+          <div><dt>操作ログ</dt><dd>すべての管理操作を記録します。IPアドレスとメールアドレスのブロックにも対応します。</dd></div>
+        </dl>
+      </section>
+
+      <section class="spec" id="languages">
+        <div class="spec-head"><h2>言語</h2><p>30のロケールに対応し、翻訳はブラウザ上で編集できます。</p></div>
+        <dl class="spec-grid">
+          <div><dt>30のロケール</dt><dd>デフォルトでは英語が有効です。その他の言語は必要に応じて有効にできます。</dd></div>
+          <div><dt>ブラウザ上のエディター</dt><dd>2,232のインターフェース文字列を、ファイルに触れずに変更できます。</dd></div>
+          <div><dt>AIによる翻訳支援</dt><dd>未翻訳のキーを一括で埋めてから、内容を確認できます。</dd></div>
+          <div><dt>インポートとエクスポート</dt><dd>ロケールごとのJSON形式で、使い慣れたツールで作業したい翻訳者に対応します。</dd></div>
+        </dl>
+        <figure class="shot"><img src="assets/img/admin-languages.webp" srcset="assets/img/admin-languages-800.webp 800w, assets/img/admin-languages.webp 1600w" sizes="(min-width: 1020px) 900px, 100vw" width="1600" height="1000" loading="lazy" alt="管理パネルの言語マネージャー。30のロケールと各翻訳の進捗が一覧表示されている"></figure>
+      </section>
+
+      <section class="spec" id="developers">
+        <div class="spec-head"><h2>開発者向け</h2><p>管理エリアでできることは、すべてAPIでスクリプト化できます。</p><a class="more" href="https://docs.pnlcs.com/developer/">開発者ガイド</a></div>
+        <dl class="spec-grid">
+          <div><dt>HTTP API</dt><dd>WHMCSと同じアクション名を持つ171のアクションと、OpenAPI 3.1定義。</dd></div>
+          <div><dt>MCPサーバー</dt><dd>AIアシスタントがAPIを通じて情報を読み取り、許可すれば操作も行えます。</dd></div>
+          <div><dt>フック</dt><dd>WHMCS互換の<code>add_hook()</code>と20以上のフックポイント。フックが失敗しても請求処理は止まりません。</dd></div>
+          <div><dt>Webhook</dt><dd>決済ゲートウェイからの受信コールバックと、送信イベント。</dd></div>
+          <div><dt>モジュール</dt><dd>サーバー、決済ゲートウェイ、レジストラ、SSLの各モジュールと、アドオン。</dd></div>
+          <div><dt>メールパイプ</dt><dd>IMAPまたはPOP3のメールボックスに届いたメールを、チケットや返信に変換します。</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,207 @@
+<!--
+title: PNLCS : plateforme de facturation open source pour hébergeurs, une alternative gratuite à WHMCS
+description: PNLCS est une plateforme de facturation et un espace client pour hébergeurs, gratuits, sous licence MIT et auto-hébergés : une alternative open source à WHMCS. Facturation, domaines, SSL, tickets, applications Docker et vente de VPS Proxmox.
+-->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-main">
+        <h1>La facturation open source pour les hébergeurs</h1>
+        <p class="lede"><strong>Une alternative à WHMCS, gratuite et auto-hébergée.</strong> Facturation, domaines, SSL, tickets de support, hébergement mutualisé, applications Docker et VPS Proxmox dans une seule application, maintenue par l’équipe Panelica et des bénévoles.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://hosting.panelica.com/">Essayer la démo en ligne</a>
+          <a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/">Lire la documentation</a>
+        </div>
+        <p class="hero-links"><a href="https://github.com/Panelica/pnlcs">Ajouter une étoile sur GitHub</a><a href="community.html">Devenir contributeur</a></p>
+      </div>
+
+      <aside class="getbox" aria-labelledby="getbox-title">
+        <h2 id="getbox-title">Ce que vous obtenez</h2>
+        <table>
+          <tbody>
+            <tr><th scope="row">Licence</th><td>MIT, gratuite</td></tr>
+            <tr><th scope="row">Fonctionne sur</th><td>Votre propre serveur : Docker, un VPS ou un compte de panneau d’hébergement</td></tr>
+            <tr><th scope="row">Espace client</th><td>Inclus, en 30 langues</td></tr>
+            <tr><th scope="row">Modules serveur</th><td>Panelica, cPanel, Plesk, DirectAdmin, HestiaCP, Proxmox VE, Vultr</td></tr>
+            <tr><th scope="row">Paiements</th><td>Stripe, PayPal, Mollie, iyzico et 4 autres</td></tr>
+            <tr><th scope="row">Hébergement d’applications Docker</th><td>Intégré, avec un serveur Panelica</td></tr>
+          </tbody>
+        </table>
+        <div class="getbox-cmd">
+          <code id="pull-cmd"><span aria-hidden="true">$ </span>docker pull panelica/pnlcs-runtime</code>
+          <button type="button" data-copy="pull-cmd">Copier</button>
+        </div>
+        <a class="getbox-more" href="get-started.html">Étapes d’installation complètes</a>
+      </aside>
+    </div>
+
+    <div class="proof">
+      <p class="proof-label">Technologies</p>
+      <p class="stack-line"><b>Laravel 13</b>, <b>PHP 8.4+</b>, <b>MySQL 8</b> ou MariaDB, Tailwind CSS 4 et Alpine.js. Image Docker officielle.</p>
+      <p class="proof-label">État du projet</p>
+      <dl class="status">
+        <div><dt>Licence</dt><dd>MIT</dd></div>
+        <div><dt>Étoiles GitHub</dt><dd data-stat="stars">59</dd></div>
+        <div><dt>Contributeurs</dt><dd data-stat="contributors">5</dd></div>
+        <div><dt>Dernière mise à jour</dt><dd>{{latest_date}}</dd></div>
+        <div><dt>Pulls Docker</dt><dd data-stat="pulls">3.1k</dd></div>
+      </dl>
+    </div>
+
+    <div class="product">
+      <div class="product-tabs" role="tablist" aria-label="Écrans du produit">
+        <button class="product-tab" role="tab" aria-selected="true" aria-controls="product-panel" id="tab-hosting"
+          data-src="assets/img/client-hosting-tools.webp" data-srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+          data-alt="Un service d’hébergement dans l’espace client : consommation des ressources en direct et huit outils de gestion"
+          data-url="your-brand.com/client/services/42"
+          data-caption="Un service d’hébergement dans l’espace client, ici avec le thème Coral. La consommation en direct remonte du serveur, avec huit outils en dessous.">Hébergement<small>Espace client</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-apps"
+          data-src="assets/img/client-apps.webp" data-srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w"
+          data-alt="La page Applications : conteneurs en cours d’exécution et catalogue d’applications en un clic"
+          data-url="your-brand.com/client/services/42/apps"
+          data-caption="L’hébergement Docker comme produit. Les clients installent des applications depuis un catalogue sélectionné par vos soins, dans les limites de leur offre.">Applications<small>Docker en un clic</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-vps"
+          data-src="assets/img/client-vps.webp" data-srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w"
+          data-alt="Un serveur virtuel dans l’espace client : gestion de l’alimentation, état en direct et graphiques d’utilisation"
+          data-url="your-brand.com/client/services/57"
+          data-caption="Un VPS Proxmox dans l’espace client. Alimentation, état en direct, graphiques, instantanés, sauvegardes et réinstallation.">VPS<small>Proxmox VE</small></button>
+        <button class="product-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="product-panel" id="tab-admin"
+          data-src="assets/img/admin-proxmox-images.webp" data-srcset="assets/img/admin-proxmox-images-800.webp 800w, assets/img/admin-proxmox-images.webp 1600w"
+          data-alt="Le panneau d’administration en train d’installer des images cloud officielles sur un serveur Proxmox"
+          data-url="your-brand.com/admin/servers/3/images"
+          data-caption="Le panneau d’administration. Ici, l’installation d’images cloud officielles sur un serveur Proxmox, sans ouvrir son shell.">Admin<small>Panneau du personnel</small></button>
+      </div>
+      <div class="product-frame" role="tabpanel" id="product-panel" aria-labelledby="tab-hosting">
+        <div class="product-bar" aria-hidden="true"><span></span><span></span><span></span><output id="product-url">your-brand.com/client/services/42</output></div>
+        <div class="product-shot">
+          <img id="product-img" src="assets/img/client-hosting-tools.webp"
+               srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w"
+               sizes="(min-width: 1260px) 1180px, 100vw" width="1600" height="1000"
+               alt="Un service d’hébergement dans l’espace client : consommation des ressources en direct et huit outils de gestion">
+        </div>
+      </div>
+      <p class="product-caption" id="product-caption" aria-live="polite">Un service d’hébergement dans l’espace client, ici avec le thème Coral. La consommation en direct remonte du serveur, avec huit outils en dessous.</p>
+      <p class="product-more"><a href="shared-hosting.html">Hébergement mutualisé</a><a href="docker-apps.html">Applications Docker</a><a href="vps.html">VPS sur Proxmox VE</a><a href="features.html">Toutes les fonctionnalités</a></p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="band band--paper" id="renewals">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>Le déroulement d’un renouvellement</h2>
+        <p class="lede">PNLCS exécute la facturation selon un planning : personne n’a à penser à envoyer une facture ou à couper un compte impayé. Voici les valeurs par défaut ; chaque chiffre est un réglage.</p>
+      </div>
+      <a class="more" href="https://docs.pnlcs.com/concepts/billing-lifecycle/">Le cycle de facturation dans la documentation</a>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <p class="tl-day">14 jours avant</p>
+        <h3>Facture de renouvellement</h3>
+        <p>Créée et envoyée par e-mail au client.</p>
+        <code>invoice_days_before_due = 14</code>
+      </li>
+      <li>
+        <p class="tl-day">3 jours avant</p>
+        <h3>Carte enregistrée débitée</h3>
+        <p>Si vous activez le prélèvement automatique. Jusqu’à 3 tentatives, à 3 jours d’intervalle.</p>
+        <code>AutoChargeDaysBefore = 3</code>
+      </li>
+      <li class="tl-due">
+        <p class="tl-day">Date d’échéance</p>
+        <h3>Relances</h3>
+        <p>Les factures impayées passent en retard et les e-mails de relance partent. Une pénalité de retard facultative s’applique après 3 jours.</p>
+        <code>LateFeeMinDays = 3</code>
+      </li>
+      <li>
+        <p class="tl-day">3 jours après</p>
+        <h3>Suspendu</h3>
+        <p>Le service est suspendu sur le serveur. Un paiement le réactive dans les 30 minutes.</p>
+        <code>AutoSuspensionDays = 3</code>
+      </li>
+      <li class="tl-off">
+        <p class="tl-day">30 jours après</p>
+        <h3>Résilié</h3>
+        <p>Seulement si vous l’activez. Désactivé par défaut.</p>
+        <code>AutoTerminationDays = 30</code>
+      </li>
+    </ol>
+
+    <div class="morning">
+      <div>
+        <h3>Chaque matin, dans cet ordre</h3>
+        <p>L’ordre compte. Un client dont la carte enregistrée est débitée à 06:45 n’est jamais suspendu à 07:00, et ne reçoit pas de relance à 08:00.</p>
+      </div>
+      <table class="schedule">
+        <tbody>
+          <tr><th scope="row"><time>06:00</time></th><td>Créer les factures de renouvellement du jour</td><td><code>pnlcs:generate-invoices</code></td></tr>
+          <tr><th scope="row"><time>06:30</time></th><td>Marquer les factures impayées comme en retard</td><td><code>pnlcs:mark-overdue</code></td></tr>
+          <tr><th scope="row"><time>06:45</time></th><td>Débiter les cartes enregistrées</td><td><code>pnlcs:auto-charge</code></td></tr>
+          <tr><th scope="row"><time>07:00</time></th><td>Suspendre les services au-delà du délai de grâce</td><td><code>pnlcs:auto-suspend</code></td></tr>
+          <tr><th scope="row"><time>07:30</time></th><td>Appliquer les pénalités de retard</td><td><code>pnlcs:apply-late-fees</code></td></tr>
+          <tr><th scope="row"><time>08:00</time></th><td>Envoyer les relances de paiement</td><td><code>pnlcs:payment-reminders</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head band-head--row">
+      <div>
+        <h2>Compatible avec les panneaux, bureaux d’enregistrement et passerelles que vous utilisez déjà</h2>
+        <p class="lede">Tous les modules sont livrés avec PNLCS, sous forme de code source lisible. Certains ont fait leurs preuves en production ; d’autres ont besoin de testeurs.</p>
+      </div>
+      <a class="more" href="integrations.html">État des intégrations</a>
+    </div>
+    <div class="roster">
+      <section aria-labelledby="r-servers"><h3 id="r-servers">Serveurs et panneaux <span>7</span></h3>
+        <ul><li>Panelica</li><li>cPanel / WHM</li><li>Plesk</li><li>DirectAdmin</li><li>HestiaCP</li><li>Proxmox VE</li><li>Vultr</li></ul></section>
+      <section aria-labelledby="r-gateways"><h3 id="r-gateways">Passerelles de paiement <span>8</span></h3>
+        <ul><li>Stripe</li><li>PayPal</li><li>Authorize.net</li><li>Mollie</li><li>Razorpay</li><li>iyzico</li><li>Tpay</li><li>Virement bancaire</li></ul></section>
+      <section aria-labelledby="r-registrars"><h3 id="r-registrars">Bureaux d’enregistrement <span>6</span></h3>
+        <ul><li>Namecheap</li><li>Enom</li><li>ResellerClub</li><li>OpenProvider</li><li>DomainNameApi</li><li>HRD</li></ul></section>
+      <section aria-labelledby="r-ssl"><h3 id="r-ssl">SSL et modules complémentaires <span>5</span></h3>
+        <ul><li>GoGetSSL</li><li>Recherche d’entreprise</li><li>Facturation électronique KSeF</li><li>Gestion de projets</li><li>Tableau du personnel</li></ul></section>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap theme-lab">
+    <div class="mini" aria-hidden="true">
+      <div class="mini-nav"><b>PNLCS<i></i></b><span>Hébergement</span><span>Domaines</span><span>VPS</span><span>Espace client</span></div>
+      <div class="mini-hero"><strong>Hébergement web, domaines et VPS</strong><p>Vitrine d’exemple. Les offres et les textes viennent de votre panneau d’administration.</p><div class="mini-search"><span>trouvez-votre-nom.com</span><em>Rechercher</em></div></div>
+      <div class="mini-plans">
+        <div class="mini-plan"><b>Essentiel</b><strong>$3<small>/mois</small></strong><span>Commander</span></div>
+        <div class="mini-plan"><b>Pro</b><strong>$8<small>/mois</small></strong><span>Commander</span></div>
+        <div class="mini-plan"><b>VPS 2</b><strong>$14<small>/mois</small></strong><span>Commander</span></div>
+      </div>
+      <div class="mini-foot">Votre entreprise, votre pied de page</div>
+    </div>
+    <div>
+      <h2>Seize thèmes, à changer depuis le panneau d’administration</h2>
+      <p class="lede" style="margin-top:16px">Installez et activez des thèmes comme dans WordPress. Choisissez-en un pour voir ses couleurs sur une vitrine d’exemple.</p>
+      <div class="swatches" data-theme-pickers="swatches" data-src="assets/themes.json" role="group" aria-label="Thèmes"></div>
+      <div class="theme-meta" aria-live="polite"><strong id="theme-name">Panelica</strong><p id="theme-desc">Thème officiel de Panelica.</p></div>
+      <a class="btn btn--ghost" href="themes.html">Parcourir tous les thèmes</a>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper band--tight">
+  <div class="wrap cols-2">
+    <div>
+      <h2>Sous licence MIT, maintenu par Panelica</h2>
+    </div>
+    <div class="stack">
+      <p class="lede">Pas de frais de licence ni de fichiers encodés : vous pouvez lire, modifier et redistribuer n’importe quelle partie de PNLCS. Le projet est maintenu par l’équipe <a href="https://panelica.com/">Panelica</a> sur son temps libre, avec des contributeurs bénévoles.</p>
+      <p class="links"><a href="compare.html">Comparaison avec WHMCS</a><a href="about.html">À propos du projet</a><a href="community.html">Contribuer</a></p>
+    </div>
+  </div>
+</section>

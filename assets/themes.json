@@ -1,0 +1,304 @@
+[
+ {
+  "slug": "arctic",
+  "name": "Arctic",
+  "description": "Ice blue theme \u2014 crisp arctic design, clean lines, and a refreshingly minimal interface.",
+  "colors": {
+   "primary": "#0c4a6e",
+   "accent": "#38bdf8",
+   "nav_bg": "#082f49",
+   "hero_bg_start": "#020e1a",
+   "hero_bg_mid": "#071e34",
+   "hero_bg_end": "#051524",
+   "welcome_accent": "#38bdf8",
+   "footer_bg": "#082f49"
+  }
+ },
+ {
+  "slug": "aurora",
+  "name": "Aurora",
+  "description": "Northern lights inspired theme \u2014 purple-green gradients, neon accents, and a futuristic glassmorphism design.",
+  "colors": {
+   "primary": "#7c3aed",
+   "primary_light": "#ede9fe",
+   "primary_dark": "#6d28d9",
+   "accent": "#8b5cf6",
+   "accent_dark": "#7c3aed",
+   "nav_bg": "#0f0a1e",
+   "sidebar_bg": "#0f0a1e",
+   "sidebar_text": "#c4b5fd",
+   "body_bg": "#faf5ff",
+   "card_bg": "#ffffff",
+   "border_color": "#e9d5ff",
+   "text_color": "#1e1033",
+   "muted_color": "#7c6f93",
+   "footer_bg": "#0f0a1e",
+   "hero_bg_start": "#0f0a1e",
+   "hero_bg_mid": "#1e1046",
+   "hero_bg_end": "#0d1a2d",
+   "welcome_accent": "#34d399",
+   "welcome_primary": "#8b5cf6",
+   "welcome_secondary": "#06b6d4",
+   "table_header_bg": "#1e1046",
+   "success": "#34d399",
+   "danger": "#f43f5e",
+   "warning": "#fbbf24",
+   "info": "#06b6d4",
+   "link_color": "#7c3aed",
+   "link_hover_color": "#6d28d9",
+   "heading_color": "#1e1033",
+   "input_focus_border": "#7c3aed",
+   "card_shadow": "rgba(124,58,237,0.08)"
+  }
+ },
+ {
+  "slug": "coral",
+  "name": "Coral",
+  "description": "Coral pink theme \u2014 soft, warm hues with a modern feminine touch and playful energy.",
+  "colors": {
+   "primary": "#e11d48",
+   "accent": "#fb7185",
+   "nav_bg": "#881337",
+   "hero_bg_start": "#1a0410",
+   "hero_bg_mid": "#2d0720",
+   "hero_bg_end": "#1f0515",
+   "welcome_accent": "#fb7185",
+   "footer_bg": "#881337"
+  }
+ },
+ {
+  "slug": "ember",
+  "name": "Ember",
+  "description": "Bold fire-red theme \u2014 energetic gradients, strong typography, and a fierce visual identity.",
+  "colors": {
+   "primary": "#dc2626",
+   "accent": "#f97316",
+   "nav_bg": "#7f1d1d",
+   "hero_bg_start": "#1a0505",
+   "hero_bg_mid": "#2d0a0a",
+   "hero_bg_end": "#1f0707",
+   "welcome_accent": "#f97316",
+   "footer_bg": "#7f1d1d"
+  }
+ },
+ {
+  "slug": "flavor",
+  "name": "Flavor",
+  "description": "Bold orange gradient theme with glassmorphism cards, particle hero, and transparent navigation.",
+  "colors": {
+   "primary": "#ea580c",
+   "primary_light": "#fff7ed",
+   "primary_dark": "#c2410c",
+   "accent": "#f97316",
+   "accent_dark": "#ea580c",
+   "nav_bg": "#18181b",
+   "sidebar_bg": "#18181b",
+   "sidebar_text": "#a1a1aa",
+   "body_bg": "#fafaf9",
+   "card_bg": "#ffffff",
+   "border_color": "#e4e4e7",
+   "text_color": "#18181b",
+   "muted_color": "#71717a",
+   "footer_bg": "#18181b",
+   "hero_bg_start": "#18181b",
+   "hero_bg_mid": "#27272a",
+   "hero_bg_end": "#1c1917",
+   "welcome_accent": "#f97316",
+   "welcome_primary": "#ea580c",
+   "welcome_secondary": "#fb923c",
+   "table_header_bg": "#27272a",
+   "success": "#22c55e",
+   "link_color": "#ea580c",
+   "link_hover_color": "#c2410c",
+   "heading_color": "#18181b",
+   "input_focus_border": "#ea580c"
+  }
+ },
+ {
+  "slug": "forest",
+  "name": "Forest",
+  "description": "Natural green theme \u2014 earthy tones, organic feel, and warm, inviting design.",
+  "colors": {
+   "primary": "#15803d",
+   "accent": "#84cc16",
+   "nav_bg": "#14532d",
+   "hero_bg_start": "#031a09",
+   "hero_bg_mid": "#052e10",
+   "hero_bg_end": "#041408",
+   "welcome_accent": "#84cc16",
+   "footer_bg": "#14532d"
+  }
+ },
+ {
+  "slug": "midnight",
+  "name": "Midnight",
+  "description": "Deep night blue theme \u2014 minimal dark design, subtle indigo accents, and sophisticated elegance.",
+  "colors": {
+   "primary": "#1e1b4b",
+   "accent": "#6366f1",
+   "nav_bg": "#0f0d2e",
+   "hero_bg_start": "#050414",
+   "hero_bg_mid": "#0c0a2a",
+   "hero_bg_end": "#080624",
+   "welcome_accent": "#6366f1",
+   "footer_bg": "#0f0d2e"
+  }
+ },
+ {
+  "slug": "mint",
+  "name": "Mint",
+  "description": "Fresh mint green theme \u2014 airy, clean, and uplifting design with a light, modern feel.",
+  "colors": {
+   "primary": "#059669",
+   "accent": "#6ee7b7",
+   "nav_bg": "#065f46",
+   "hero_bg_start": "#021a12",
+   "hero_bg_mid": "#052e1e",
+   "hero_bg_end": "#031f14",
+   "welcome_accent": "#6ee7b7",
+   "footer_bg": "#065f46"
+  }
+ },
+ {
+  "slug": "neon",
+  "name": "Neon",
+  "description": "Cyberpunk neon theme \u2014 electric green-purple palette, monospace font, and a futuristic hacker aesthetic.",
+  "colors": {
+   "primary": "#4ade80",
+   "accent": "#c084fc",
+   "nav_bg": "#042f1e",
+   "hero_bg_start": "#020d08",
+   "hero_bg_mid": "#061f12",
+   "hero_bg_end": "#03150c",
+   "welcome_accent": "#c084fc",
+   "footer_bg": "#042f1e"
+  }
+ },
+ {
+  "slug": "ocean",
+  "name": "Ocean",
+  "description": "Deep ocean blue-cyan theme \u2014 calming gradients, fluid design, and crystal-clear navigation.",
+  "colors": {
+   "primary": "#0369a1",
+   "accent": "#06b6d4",
+   "nav_bg": "#0c4a6e",
+   "hero_bg_start": "#001220",
+   "hero_bg_mid": "#042f4a",
+   "hero_bg_end": "#0a1929",
+   "welcome_accent": "#06b6d4",
+   "footer_bg": "#0c4a6e"
+  }
+ },
+ {
+  "slug": "panelica",
+  "name": "Panelica",
+  "description": "Official Panelica theme \u2014 the signature deep blue palette with clean, professional design. Matches the Panelica server panel branding.",
+  "colors": {
+   "primary": "#405189",
+   "primary_light": "#f3f3f9",
+   "primary_dark": "#364374",
+   "accent": "#405189",
+   "accent_dark": "#364374",
+   "nav_bg": "#405189",
+   "sidebar_bg": "#405189",
+   "sidebar_text": "#c8cce5",
+   "body_bg": "#f3f3f9",
+   "card_bg": "#ffffff",
+   "border_color": "#e9ebec",
+   "text_color": "#212529",
+   "muted_color": "#98a6ad",
+   "footer_bg": "#405189",
+   "hero_bg_start": "#1a2140",
+   "hero_bg_mid": "#2d3766",
+   "hero_bg_end": "#1e2850",
+   "welcome_accent": "#0ab39c",
+   "welcome_primary": "#405189",
+   "welcome_secondary": "#6b7caa",
+   "table_header_bg": "#405189",
+   "success": "#0ab39c",
+   "danger": "#f06548",
+   "warning": "#f7b84b",
+   "info": "#299cdb",
+   "link_color": "#405189",
+   "link_hover_color": "#364374",
+   "heading_color": "#495057",
+   "input_focus_border": "#405189",
+   "card_shadow": "rgba(64,81,137,0.08)"
+  }
+ },
+ {
+  "slug": "royal",
+  "name": "Royal",
+  "description": "Premium gold and navy theme \u2014 regal aesthetics, luxurious gradients, and commanding presence.",
+  "colors": {
+   "primary": "#1e3a5f",
+   "accent": "#eab308",
+   "nav_bg": "#172554",
+   "hero_bg_start": "#050d1f",
+   "hero_bg_mid": "#0c1a38",
+   "hero_bg_end": "#091228",
+   "welcome_accent": "#eab308",
+   "footer_bg": "#172554"
+  }
+ },
+ {
+  "slug": "slate",
+  "name": "Slate",
+  "description": "Professional grey theme \u2014 understated elegance, clean corporate look, and timeless neutrality.",
+  "colors": {
+   "primary": "#334155",
+   "accent": "#64748b",
+   "nav_bg": "#1e293b",
+   "hero_bg_start": "#0f172a",
+   "hero_bg_mid": "#1e293b",
+   "hero_bg_end": "#151d2e",
+   "welcome_accent": "#64748b",
+   "footer_bg": "#1e293b"
+  }
+ },
+ {
+  "slug": "starter",
+  "name": "Starter",
+  "description": "Professional blue theme \u2014 the default PNLCS experience. Clean, modern, and trusted.",
+  "colors": {
+   "primary": "#1a4d80",
+   "accent": "#337ab7",
+   "nav_bg": "#1a4d80",
+   "hero_bg_start": "#0c1222",
+   "hero_bg_mid": "#162447",
+   "hero_bg_end": "#1a1a3e",
+   "welcome_accent": "#10b981",
+   "footer_bg": "#1a4d80"
+  }
+ },
+ {
+  "slug": "sunset",
+  "name": "Sunset",
+  "description": "Warm sunset theme \u2014 pink-orange gradients, soft curves, and a romantic golden-hour vibe.",
+  "colors": {
+   "primary": "#be185d",
+   "accent": "#f59e0b",
+   "nav_bg": "#831843",
+   "hero_bg_start": "#1a0511",
+   "hero_bg_mid": "#2d0920",
+   "hero_bg_end": "#1f0615",
+   "welcome_accent": "#f59e0b",
+   "footer_bg": "#831843"
+  }
+ },
+ {
+  "slug": "terra",
+  "name": "Terra",
+  "description": "Warm earth-toned theme \u2014 amber and brown hues, solid ground, timeless and dependable.",
+  "colors": {
+   "primary": "#92400e",
+   "accent": "#d97706",
+   "nav_bg": "#78350f",
+   "hero_bg_start": "#1a0f02",
+   "hero_bg_mid": "#2d1a06",
+   "hero_bg_end": "#221104",
+   "welcome_accent": "#d97706",
+   "footer_bg": "#78350f"
+  }
+ }
+]

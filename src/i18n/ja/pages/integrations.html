@@ -1,0 +1,104 @@
+<!--
+title: 連携
+description: PNLCSに同梱されているサーバーモジュール、決済ゲートウェイ、ドメインレジストラ、SSLプロバイダーと、それぞれの実際の検証状況。
+section: 製品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>連携</h1>
+    <p class="lede">すべてのモジュールはPNLCSに同梱されています。状況の列では、どのモジュールが実運用のシステムで動作しており、どれがまだエンドツーエンドで検証されていないかを示しています。</p>
+    <div class="legend">
+      <span class="badge badge--ok">本番環境で検証済み</span>
+      <span class="badge badge--help">実装済み、実環境での検証が必要</span>
+      <span class="badge badge--plain">同梱</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">サーバーとコントロールパネル</h2>
+      <p>注文の支払いが済んだとき、請求書が未払いのままのときに、アカウントやマシンの作成、停止、停止解除、削除を行います。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">モジュール</th><th scope="col">プロビジョニング対象</th><th scope="col">状況</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">ホスティングアカウント、Dockerアプリ、ポータル内のホスティングツール</td><td><span class="badge badge--ok">本番環境で検証済み</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">クラウドイメージとLXCテンプレートから作成するKVM仮想サーバー</td><td><span class="badge badge--ok">本番環境で検証済み</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">ホスティングアカウント</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">ホスティングサブスクリプション</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">ホスティングアカウント</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">ホスティングアカウント</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">クラウドサーバー</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">カスタム</th><td class="muted">自動化せず手作業で管理するサービス</td><td><span class="badge badge--plain">同梱</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">決済ゲートウェイ</h2>
+      <p>すべての決済ゲートウェイがひとつの決済エンジンを共有しているため、一部支払い、クレジット、返金はどこでも同じように動作します。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">ゲートウェイ</th><th scope="col">備考</th><th scope="col">状況</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents、トークン化されたカード</td><td><span class="badge badge--ok">本番環境で検証済み</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout、REST API v2</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js、トークン化されたカード</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">銀行振込</th><td class="muted">顧客からの支払い通知と領収書のアップロードに対応</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">欧州の決済手段</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">インド</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">トルコ：3Dセキュア、分割払い、登録済みカード</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">ポーランド：BLIK、即時振込、カード</td><td><span class="badge badge--plain">同梱</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">ドメインレジストラとSSL</h2>
+      <p>ホスティングと同じ購入手続きで、ドメインの登録、移管、更新と、証明書の発行ができます。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">モジュール</th><th scope="col">種類</th><th scope="col">状況</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">レジストラ</td><td><span class="badge badge--help">検証が必要</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">レジストラ</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">レジストラ</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">レジストラ</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">レジストラ</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">レジストラ</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">手動</th><td class="muted">レジストラ（自分で管理するドメイン用）</td><td><span class="badge badge--plain">同梱</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL：Sectigo、DigiCert、RapidSSL、GeoTrust、Thawte</td><td><span class="badge badge--plain">同梱</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">アドオン</h2>
+      <p>アドオンは自動で検出されます。<code>modules/Addons/</code>に配置し、管理パネルで有効にするだけです。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">アドオン</th><th scope="col">機能</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">企業情報の検索</th><td class="muted">登録時に公的な登記情報から企業情報を自動入力</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">ポーランドの国家電子請求書システム</td></tr>
+          <tr><th scope="row">プロジェクト管理</th><td class="muted">プロジェクト、タスク、マイルストーン、作業時間を管理し、作業時間から請求</td></tr>
+          <tr><th scope="row">スタッフ掲示板</th><td class="muted">スタッフだけが閲覧できる社内掲示板</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>未検証のモジュールをお使いですか？</h3>
+      <p>cPanel、Plesk、DirectAdmin、PayPal、Authorize.net、銀行振込、Enomをお使いなら、ご自身の環境で1時間ほどテストしていただくだけで、そのモジュールを全員のために「本番環境で検証済み」に進められます。</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">結果を報告する</a></p>
+    </div>
+    <div class="callout">
+      <h3>必要な連携がありませんか？</h3>
+      <p>サーバーモジュールはひとつのクラスで作れます。決済ゲートウェイとレジストラも同じパターンです。開発者ガイドでは、モジュールをひとつ最後まで作る手順を説明しています。</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">モジュールの作り方</a></p>
+    </div>
+  </div>
+</section>

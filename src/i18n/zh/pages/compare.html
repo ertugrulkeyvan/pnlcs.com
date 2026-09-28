@@ -1,0 +1,65 @@
+<!--
+title: PNLCS 与 WHMCS 对比
+heading: 与 WHMCS 对比
+description: PNLCS 与 WHMCS 及其他商业计费系统的对比，哪些可以沿用，以及如何在不停机的情况下迁移。
+section: 产品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>开源的 WHMCS 替代方案</h1>
+    <p class="lede">PNLCS 有意与 WHMCS 保持一致：客户、产品、订单、账单、服务、工单和模块的含义都相同。区别在于许可证：PNLCS 采用 MIT 许可证，不按安装收费。</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">迁移指南</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>逐项对比</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">对比项</span></th><th scope="col">PNLCS</th><th scope="col">常见商业计费系统</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">授权费用</th><td>免费（MIT）</td><td>每个安装按月收费</td></tr>
+          <tr><th scope="row">源代码</th><td>完全开放，可审计</td><td>加密或闭源</td></tr>
+          <tr><th scope="row">自行部署</th><td>任意环境：Docker、VPS、主机面板中</td><td>可以，但需授权验证</td></tr>
+          <tr><th scope="row">扩展</th><td>自己写模块、自己发布、归自己所有</td><td>受应用市场和厂商条款约束</td></tr>
+          <tr><th scope="row">你的数据</th><td>数据库归你所有，可直接查询或导出</td><td>归你所有，但与授权绑定</td></tr>
+          <tr><th scope="row">路线图</th><td>与社区共同决定</td><td>由厂商决定</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>从 WHMCS 沿用的部分</h2></div>
+    <dl class="spec-grid">
+      <div><dt>概念</dt><dd>产品组、产品、可配置选项、服务、订单、账单、余额、工单和部门的行为，都与 WHMCS 使用者的预期一致。</dd></div>
+      <div><dt>API 操作名称</dt><dd>HTTP API 使用 WHMCS 的操作名称，因此大多数集成只需要更换地址和凭据。</dd></div>
+      <div><dt>钩子</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> 的用法完全相同；钩子出错时会记录日志并跳过，不会中断计费。</dd></div>
+      <div><dt>模块</dt><dd>与 WHMCS 一样，服务器、支付网关、域名注册商和 SSL 提供商都是独立的模块。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>不停机迁移</h2>
+      <p class="lede">让 PNLCS 与 WHMCS 并行运行，在客户续费时逐个迁移。整个过程中，账户始终留在原来的服务器上。</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>目前还没有一键导入工具</h3>
+        <p>PNLCS 没有自带自动导入 WHMCS 数据库的工具。这里给出的步骤是一种实用、低风险的迁移方式。欢迎贡献导入工具。</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>重建产品目录</strong><span>按相同的名称和价格重新创建产品组和产品。</span></span></li>
+      <li><span><strong>接入原有服务器</strong><span>账户已经在服务器上，之后由 PNLCS 接管。</span></span></li>
+      <li><span><strong>重新配置设置</strong><span>支付网关（使用相同账户）、税务规则、邮件模板、员工和角色。</span></span></li>
+      <li><span><strong>迁移客户</strong><span>添加每个客户及其现有服务，并设置正确的下次到期日。如果使用 Panelica，直接关联服务器上已有的账户即可。</span></span></li>
+      <li><span><strong>正式切换</strong><span>可以在续费时逐个客户切换，也可以在维护窗口内一次性全部切换。</span></span></li>
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+<!--
+title: PNLCSとWHMCSの比較
+heading: WHMCSとの比較
+description: PNLCSとWHMCSやその他のプロプライエタリな請求管理システムとの違い、引き継げるもの、ダウンタイムなしで移行する方法。
+section: 製品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>WHMCSのオープンソース代替</h1>
+    <p class="lede">PNLCSはあえてWHMCSに合わせて作られています。顧客、商品、注文、請求書、サービス、チケット、モジュールは同じ意味を持ちます。違いはライセンスです。PNLCSはMITライセンスで、インストールごとの料金はかかりません。</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">移行ガイド</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>並べて比較</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">項目</span></th><th scope="col">PNLCS</th><th scope="col">一般的なプロプライエタリの請求管理システム</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">ライセンス費用</th><td>無料（MIT）</td><td>インストールごとの月額料金</td></tr>
+          <tr><th scope="row">ソースコード</th><td>完全に公開、監査可能</td><td>エンコード済み、または非公開</td></tr>
+          <tr><th scope="row">セルフホスト</th><td>Docker、VPS、ホスティングパネル内など、どこでも</td><td>可能、ただしライセンス認証あり</td></tr>
+          <tr><th scope="row">拡張</th><td>モジュールを書いて配布し、自分のものとして保持</td><td>マーケットプレイスとベンダーの規約</td></tr>
+          <tr><th scope="row">データ</th><td>自社のデータベース。直接クエリやエクスポートが可能</td><td>自社のものだが、ライセンスに依存</td></tr>
+          <tr><th scope="row">ロードマップ</th><td>コミュニティとともに決定</td><td>ベンダーが決定</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>WHMCSから引き継げるもの</h2></div>
+    <dl class="spec-grid">
+      <div><dt>概念</dt><dd>商品グループ、商品、構成オプション、サービス、注文、請求書、クレジット、チケット、部門は、WHMCSのスタッフが想定するとおりに動作します。</dd></div>
+      <div><dt>APIのアクション名</dt><dd>HTTP APIはWHMCSのアクション名を使っているため、ほとんどの連携は接続先アドレスと認証情報を変えるだけで済みます。</dd></div>
+      <div><dt>フック</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code>は同じように動作します。失敗したフックは請求処理を止めず、ログに記録されてスキップされます。</dd></div>
+      <div><dt>モジュール</dt><dd>WHMCSと同様に、サーバー、決済ゲートウェイ、レジストラ、SSLプロバイダーはそれぞれ独立したモジュールです。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>ダウンタイムなしで移行</h2>
+      <p class="lede">PNLCSをWHMCSと並行して動かし、更新のタイミングで顧客を順次移していきます。その間も、アカウントは同じサーバー上に置いたままです。</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>ワンクリックのインポーターはまだありません</h3>
+        <p>PNLCSには、WHMCSのデータベースを自動で取り込むインポーターは付属していません。ここで紹介する手順が、現実的でリスクの低い移行方法です。インポーターの開発は大歓迎です。</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>カタログを作り直す</strong><span>商品グループと商品を、同じ名前と価格で作成します。</span></span></li>
+      <li><span><strong>同じサーバーを接続する</strong><span>アカウントはすでにサーバー上にあります。以降はPNLCSがそれらを管理します。</span></span></li>
+      <li><span><strong>設定を再現する</strong><span>決済ゲートウェイ（同じアカウント）、税ルール、メールテンプレート、スタッフと役割。</span></span></li>
+      <li><span><strong>顧客を移す</strong><span>各顧客と既存のサービスを、正しい次回支払期日で登録します。Panelicaの場合は、すでにサーバー上にあるアカウントを紐づけます。</span></span></li>
+      <li><span><strong>切り替える</strong><span>更新のタイミングで1顧客ずつ、またはメンテナンス時間内に全員まとめて切り替えます。</span></span></li>
+    </ol>
+  </div>
+</section>

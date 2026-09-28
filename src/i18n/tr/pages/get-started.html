@@ -1,0 +1,98 @@
+<!--
+title: Başlarken
+cta: no
+description: PNLCS'i Docker ile yaklaşık beş dakikada, kendi sunucunuza ya da bir hosting paneli hesabına kurun. Gereksinimler ve ilk adımlar.
+section: Kaynaklar
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>PNLCS'i çalıştırın</h1>
+    <p class="lede">PNLCS bir Laravel uygulamasıdır. PHP 8.4, MySQL ya da MariaDB ve bir web sunucusu bulunan her yerde çalışır. Önce etrafa göz atmak isterseniz <a href="https://hosting.panelica.com/">canlı demo</a> gerçek bir kurulumdur.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Üç kurulum yolu</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Yol</th><th scope="col">En uygun olduğu durum</th><th scope="col">Süre</th><th scope="col"><span class="sr-only">Rehber</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Docker</th><td class="muted">PNLCS'i denemek ya da tek bir container olarak çalıştırmak</td><td class="muted">Yaklaşık 5 dakika</td><td><a href="#docker">Komutlar</a></td></tr>
+          <tr><th scope="row">Kendi sunucunuz</th><td class="muted">Bir VPS ya da dedicated sunucu: Ubuntu, Debian, AlmaLinux veya Rocky</td><td class="muted">Yaklaşık 30 dakika</td><td><a href="https://docs.pnlcs.com/install/native/">Rehber</a></td></tr>
+          <tr><th scope="row">Bir hosting paneli içinde</th><td class="muted">Zaten Panelica, cPanel ya da benzeri çalıştıran bir sunucu</td><td class="muted">Yaklaşık 20 dakika</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">Rehber</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper" id="docker">
+  <div class="wrap quick">
+    <div>
+      <h2>Docker ile hızlı başlangıç</h2>
+      <p class="lede" style="margin-top:16px">Resmî imaj PHP-FPM 8.4, nginx, Node.js 20 ve supervisor içerir; ilk açılışta en güncel kodu indirir.</p>
+      <ol class="steps" style="margin-top:32px">
+        <li><span><strong>Container'ları başlatın</strong><span>Önce <code>changeme</code> değerlerini kendi şifrelerinizle değiştirin.</span></span></li>
+        <li><span><strong>3 ila 5 dakika bekleyin</strong><span>İlk açılışta bağımlılıklar kurulur ve frontend derlenir.</span></span></li>
+        <li><span><strong>/install adresini açın</strong><span>Sihirbaz gereksinimleri kontrol eder, yönetici hesabınızı oluşturur ve ardından kendini kilitler.</span></span></li>
+      </ol>
+      <p class="links"><a href="https://docs.pnlcs.com/install/docker/">Docker rehberi</a><a href="https://hub.docker.com/r/panelica/pnlcs-runtime">Docker Hub'daki imaj</a></p>
+    </div>
+    <div class="term">
+      <div class="term-head"><span>Terminal</span><button type="button" data-copy="cmd">Kopyala</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Gereksinimler</h2>
+      <p class="lede">Küçük bir kurulum, veritabanı aynı makinedeyken 2 GB bellekle rahatça çalışır.</p>
+      <p class="note"><a href="https://docs.pnlcs.com/install/requirements/">Tüm gereksinimler</a></p>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">PHP</th><td class="muted">8.4 ya da daha yeni</td></tr>
+          <tr><th scope="row">Veritabanı</th><td class="muted">MySQL 8.0 ya da MariaDB 10.6+</td></tr>
+          <tr><th scope="row">Web sunucusu</th><td class="muted">PHP-FPM ile Nginx ya da Apache</td></tr>
+          <tr><th scope="row">Node.js</th><td class="muted">18+ (20 LTS önerilir), yalnızca frontend'i derlemek için</td></tr>
+          <tr><th scope="row">Composer</th><td class="muted">2.x</td></tr>
+          <tr><th scope="row">Bellek</th><td class="muted">Küçük bir kurulum için 1 GB yeterli; 2 GB rahat</td></tr>
+          <tr><th scope="row">Disk</th><td class="muted">Uygulama için yaklaşık 130 MB; veriler büyüdükçe en az 2 GB boş alan bırakın</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Kurulumdan sonra</h2></div>
+    <ul class="link-list">
+      <li><a href="https://docs.pnlcs.com/getting-started/setup-checklist/">Kurulum kontrol listesi</a><span>Firma bilgileri, e-posta, bir ödeme altyapısı, bir sunucu ve ilk ürününüz.</span></li>
+      <li><a href="https://docs.pnlcs.com/getting-started/your-first-sale/">İlk satışınız</a><span>Boş bir katalogdan, ödemesi alınmış ve kurulumu yapılmış bir siparişe.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/security/">Güvenlik kontrol listesi</a><span>HTTPS, debug kapalı, personel için iki adımlı doğrulama, sunucu dışında tutulan yedekler.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/updating/">Güncelleme</a><span>Veri kaybetmeden en son sürüme geçin.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/backups/">Yedekler</a><span>Uygulama anahtarı dahil nelerin yedekleneceği.</span></li>
+      <li><a href="https://docs.pnlcs.com/troubleshooting/faq/">SSS</a><span>Sık sorulan sorular.</span></li>
+    </ul>
+  </div>
+</section>

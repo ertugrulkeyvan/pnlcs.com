@@ -1,0 +1,63 @@
+<!--
+title: Shared hosting
+description: Sell shared hosting with PNLCS. Customers manage files, mail, databases, DNS, cron and backups from the billing portal, fenced to their own account.
+section: Solutions
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Shared hosting</h1>
+      <p class="lede">Most billing systems stop at “here is your control panel password”. With PNLCS and the Panelica server module, the day-to-day hosting work happens in the billing portal itself.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">Connect a server</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="A hosting service in the client portal with live usage and eight management tools"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Eight tools, without a second login</h2><p class="lede">Each hosting service shows live CPU, memory, disk and bandwidth from the server, and these tools.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Tool</th><th scope="col">What the customer can do</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">File manager</th><td class="muted">Browse, upload, download, edit, rename, create folders and delete</td></tr>
+          <tr><th scope="row">Email accounts</th><td class="muted">Create and delete mailboxes, change passwords, open webmail</td></tr>
+          <tr><th scope="row">Databases</th><td class="muted">Create MySQL databases and users, reset passwords, open phpMyAdmin</td></tr>
+          <tr><th scope="row">FTP accounts</th><td class="muted">Create accounts, change passwords, delete, with host and port shown</td></tr>
+          <tr><th scope="row">Subdomains</th><td class="muted">Create and remove; the panel sets up the vhost, document root, PHP pool, SSL and DNS</td></tr>
+          <tr><th scope="row">DNS zone</th><td class="muted">Add, edit and delete A, AAAA, CNAME, MX, TXT, SRV and CAA records</td></tr>
+          <tr><th scope="row">Cron jobs</th><td class="muted">Schedule commands, run one now and read its output, pause, resume, delete</td></tr>
+          <tr><th scope="row">Backups</th><td class="muted">Take restore points, see their size and contents, delete old ones</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">The in-portal tools need the Panelica server module. With cPanel, Plesk, DirectAdmin and HestiaCP, PNLCS provisions and suspends the accounts and customers manage them in their control panel.</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Fenced to the customer’s own account</h2>
+      <p class="lede">The server key a billing system holds can see every account on the box. PNLCS filters every list against the domains of the service being viewed, and checks every change the same way before it is sent.</p>
+      <ul class="checklist checklist--one">
+        <li>A backup that also covers someone else’s domain is not shown and cannot be deleted</li>
+        <li>A cron job, subdomain or DNS record on a foreign domain is refused before any request leaves the billing server</li>
+        <li>Plan limits are read from the hosting plan, and the panel enforces them again on its own</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="The DNS zone editor in the client portal"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>Backups and cron jobs</h2>
+      <p class="lede">Customers take and restore backups and manage cron jobs themselves, within their plan’s limits.</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="The backups page in the client portal with a list of restore points"></figure>
+  </div>
+</section>

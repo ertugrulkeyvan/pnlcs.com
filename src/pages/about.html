@@ -1,0 +1,75 @@
+<!--
+title: About
+cta: no
+description: PNLCS is an open-source hosting billing platform maintained by the Panelica team and volunteers, released under the MIT License.
+section: Project
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>About PNLCS</h1>
+    <p class="lede">PNLCS is a free, self-hosted billing platform and client portal for web hosting companies, resellers and infrastructure providers. It is built in the open and released under the MIT License.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap maker">
+    <div>
+      <h2>Why it exists</h2>
+      <p class="lede" style="margin-top:16px">The Panelica team wanted an open, self-hosted billing system that integrates natively with Panelica and works well with other control panels too. Nothing like that existed, so they built one, in their spare time, alongside their main product.</p>
+      <p class="lede" style="margin-top:16px">It deliberately follows WHMCS concepts, so a WHMCS team can find its way around. Unlike WHMCS, it is MIT licensed.</p>
+    </div>
+    <blockquote class="quote" style="color:var(--text)">
+      We built PNLCS because we needed it ourselves, and we believe the software a hosting business runs on should not be a monthly rent. It should be a tool you own, understand and can improve. That only works if it is built together.
+      <cite style="color:var(--muted)">The Panelica team, maintainers of PNLCS</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>The project at a glance</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">Maintainer</th><td class="muted"><a href="https://panelica.com/">Panelica</a>, with volunteer contributors</td></tr>
+          <tr><th scope="row">License</th><td class="muted"><a href="https://github.com/Panelica/pnlcs/blob/main/LICENSE">MIT</a>: use it commercially, change it, ship modules under any license</td></tr>
+          <tr><th scope="row">First release</th><td class="muted">v1.0.0, April 2026</td></tr>
+          <tr><th scope="row">Latest release</th><td class="muted"><span data-stat="release">v1.2.0</span>, with continuous updates on the main branch</td></tr>
+          <tr><th scope="row">Built with</th><td class="muted">Laravel 13, PHP 8.4+, MySQL 8 or MariaDB, Tailwind CSS 4, Alpine.js</td></tr>
+          <tr><th scope="row">Source</th><td class="muted"><a href="https://github.com/Panelica/pnlcs">github.com/Panelica/pnlcs</a> (<span data-stat="stars">59</span> stars, <span data-stat="forks">22</span> forks)</td></tr>
+          <tr><th scope="row">Documentation</th><td class="muted"><a href="https://docs.pnlcs.com/">docs.pnlcs.com</a></td></tr>
+          <tr><th scope="row">Security contact</th><td class="muted"><a href="mailto:security@panelica.com">security@panelica.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>What is proven, and what needs testing</h2></div>
+    <div class="cols-2">
+      <div class="callout">
+        <h3>Proven on live systems</h3>
+        <ul class="plain-list">
+          <li>Client portal, admin panel and the core billing flows</li>
+          <li>Invoicing, orders, services, domains, tickets, knowledge base</li>
+          <li>The Panelica server module</li>
+          <li>The Proxmox VE module for selling VPS</li>
+          <li>Stripe payments</li>
+          <li>30 languages with editable translations</li>
+        </ul>
+      </div>
+      <div class="callout callout--warn">
+        <h3>Needs real-world testing</h3>
+        <ul class="plain-list">
+          <li>cPanel, Plesk and DirectAdmin server modules</li>
+          <li>PayPal, Authorize.net and bank transfer gateways</li>
+          <li>The Enom domain registrar</li>
+        </ul>
+        <p style="margin-top:12px"><a href="community.html">Help test them</a></p>
+      </div>
+    </div>
+  </div>
+</section>

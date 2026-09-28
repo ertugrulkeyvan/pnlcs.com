@@ -1,0 +1,57 @@
+<!--
+title: Docker uygulamaları
+description: PNLCS ve Panelica ile tek tıkla kurulan Docker uygulamaları satın. WordPress, n8n, veritabanları ve daha fazlası, her müşterinin satın aldığı kaynaklar içinde.
+section: Çözümler
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Docker uygulamaları</h1>
+      <p class="lede">Müşteriler bir katalogdan WordPress, n8n, veritabanları ya da uzak masaüstü kurar. Her uygulama, müşterinin hosting hesabının içinde, paketindeki bellek ve CPU sınırları dahilinde Docker container'ları olarak çalışır. Bir Panelica sunucusu gerektirir.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Docker uygulaması satış rehberi</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Müşteri panelindeki Uygulamalar sayfası: çalışan uygulamalar ve uygulama kataloğu"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Uygulama satmanın üç yolu</h2><p class="lede">Birlikte de kullanılabilirler.</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>Uygulama içeren hosting</dt><dd>Container kotası olan normal bir hosting paketi. Müşteri bir web sitesi alır ve istediği zaman Uygulamalar sekmesinden uygulama ekleyebilir.</dd></div>
+      <div><dt>Uygulama hostingi</dt><dd>Sipariş, müşterinin alan adına tek bir uygulama kurar. Uygulamayı sabitleyin (“Yönetilen WordPress”) ya da müşterinin kataloğunuzdan seçmesine izin verin; böylece tek bir ürün tüm uygulamaları kapsar.</dd></div>
+      <div><dt>Container paketi</dt><dd>Web sitesi olmadan yalnızca kaynak: alan adı yoktur ve hizmet sayfasında sadece Uygulamalar sekmesi görünür.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Her hesabın uygulamaları tek bir cgroup limitini paylaşır</h2>
+      <p class="lede">Müşterinin başlattığı her container, hesabının cgroup dilimi içinde oluşturulur. 2 GB'lık pakete sahip bir müşterinin tüm uygulamaları için toplam 2 GB belleği vardır ve başka bir müşterinin belleğini kullanamaz.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Ayrıcalıklı container, ek yetki (capability) ya da host dizini bağlama yok; faturalandırma anahtarı için bile</li>
+      <li>Paketler uygulama sayısını, toplam belleği ve toplam CPU'yu belirler</li>
+      <li>Müşteriler, sipariş vermeden önce bir uygulamanın bellek ihtiyacını görür</li>
+      <li>Uygulamasını kuramayan bir sipariş geri alınır, asla yarım bırakılmaz</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Kataloğu siz düzenlersiniz</h2>
+      <p class="lede">Hangi uygulamaların var olduğuna Panelica sunucusu karar verir. Onları nasıl satacağınıza ise PNLCS'te siz karar verirsiniz: hangi uygulamaları sunduğunuz, hangilerinin öne çıkarıldığı, sıralamaları, kısa açıklamaları ve logoları.</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>Bir Panelica sunucusu bağlayın</strong><span>Docker yetkilerini içeren bir API anahtarıyla.</span></span></li>
+      <li><span><strong>Satış şeklini seçin</strong><span>Hostinge dahil, uygulama hostingi ya da container paketi.</span></span></li>
+      <li><span><strong>Ürünü oluşturun</strong><span>Container kotasını, belleği ve CPU'yu, ardından fiyatı belirleyin.</span></span></li>
+      <li><span><strong>Kataloğu düzenleyin</strong><span>Uygulamaları sunun, öne çıkarın ve sıralayın; 98 uygulamanın 95'i hazır bir logoyla gelir.</span></span></li>
+    </ol>
+  </div>
+</section>

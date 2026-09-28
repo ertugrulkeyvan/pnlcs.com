@@ -1,0 +1,57 @@
+<!--
+title: Applications Docker
+description: Vendez des applications Docker en un clic avec PNLCS et Panelica. WordPress, n8n, bases de données et plus encore, dans les ressources achetées par chaque client.
+section: Solutions
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Applications Docker</h1>
+      <p class="lede">Les clients installent WordPress, n8n, des bases de données ou des bureaux à distance depuis un catalogue. Chaque application tourne sous forme de conteneurs Docker dans le compte d’hébergement du client, dans la limite de la mémoire et du CPU de son offre. Nécessite un serveur Panelica.</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Guide : vendre des applications Docker</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="La page Applications de l’espace client, avec les applications en cours d’exécution et le catalogue"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Trois façons de vendre des applications</h2><p class="lede">Elles peuvent être combinées.</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>Hébergement avec applications incluses</dt><dd>Une offre d’hébergement classique avec un quota de conteneurs. Les clients ont un site web et peuvent ajouter des applications depuis l’onglet Applications à tout moment.</dd></div>
+      <div><dt>Hébergement d’application</dt><dd>La commande installe une application sur le domaine du client. Imposez l’application (« WordPress infogéré ») ou laissez le client choisir dans votre catalogue : un seul produit couvre alors toutes les applications.</dd></div>
+      <div><dt>Offre conteneurs</dt><dd>Des ressources sans site web : pas de domaine, et la page du service n’affiche que l’onglet Applications.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Les applications d’un compte partagent une même limite cgroup</h2>
+      <p class="lede">Chaque conteneur lancé par un client est créé dans la slice cgroup de son compte. Un client avec une offre de 2 Go dispose de 2 Go pour l’ensemble de ses applications et ne peut pas utiliser la mémoire d’un autre client.</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>Aucun conteneur privilégié, aucune capability supplémentaire ni aucun montage de chemin de l’hôte, même pour la clé de facturation</li>
+      <li>Les offres fixent le nombre d’applications, la mémoire totale et le CPU total</li>
+      <li>Les clients voient les besoins en mémoire d’une application avant de commander</li>
+      <li>Une commande qui ne parvient pas à installer son application est annulée, jamais laissée à moitié construite</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Vous composez le catalogue</h2>
+      <p class="lede">Le serveur Panelica détermine quelles applications existent. PNLCS détermine comment vous les vendez : quelles applications vous proposez, lesquelles sont mises en avant, leur ordre, leur accroche et leur logo.</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>Connectez un serveur Panelica</strong><span>Avec une clé d’API qui dispose des scopes Docker.</span></span></li>
+      <li><span><strong>Choisissez le mode de vente</strong><span>Inclus, hébergement d’application ou offre conteneurs.</span></span></li>
+      <li><span><strong>Créez le produit</strong><span>Définissez le quota de conteneurs, la mémoire et le CPU, puis le prix.</span></span></li>
+      <li><span><strong>Composez le catalogue</strong><span>Proposez, mettez en avant et ordonnez les applications ; 95 sur 98 ont un logo d’origine.</span></span></li>
+    </ol>
+  </div>
+</section>

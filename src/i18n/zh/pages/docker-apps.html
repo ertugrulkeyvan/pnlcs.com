@@ -1,0 +1,57 @@
+<!--
+title: Docker 应用
+description: 使用 PNLCS 和 Panelica 销售一键安装的 Docker 应用。WordPress、n8n、数据库等，均在客户购买的资源范围内运行。
+section: 解决方案
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Docker 应用</h1>
+      <p class="lede">客户从应用目录中安装 WordPress、n8n、数据库或远程桌面。每个应用都以 Docker 容器的形式运行在客户的主机账户内，受其套餐的内存和 CPU 限制。需要一台 Panelica 服务器。</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Docker 应用销售指南</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="客户中心的“应用”页面，显示运行中的应用和应用目录"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>三种销售方式</h2><p class="lede">可以组合使用。</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>主机附带应用</dt><dd>普通主机套餐，另带一定的容器配额。客户拥有一个网站，并可随时在“应用”标签页中添加应用。</dd></div>
+      <div><dt>应用托管</dt><dd>订单会在客户的域名上安装一个应用。你可以固定应用（例如“托管 WordPress”），也可以让客户从你的目录中选择，这样一个产品就能覆盖所有应用。</dd></div>
+      <div><dt>容器套餐</dt><dd>只提供资源，不含网站：没有域名，服务页面只显示“应用”标签页。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>每个账户的所有应用共享一个 cgroup 限额</h2>
+      <p class="lede">客户启动的每个容器都创建在其账户的 cgroup slice 中。2 GB 套餐的客户，所有应用加起来共用 2 GB，无法占用其他客户的内存。</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>不允许特权容器、额外的 capabilities 或挂载宿主机路径，计费系统的密钥也不例外</li>
+      <li>套餐规定应用数量、总内存和总 CPU</li>
+      <li>客户下单前就能看到应用所需的内存</li>
+      <li>应用安装失败的订单会被回滚，不会留下半成品</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>应用目录由你来管理</h2>
+      <p class="lede">有哪些应用由 Panelica 服务器决定，怎么卖由 PNLCS 决定：提供哪些应用、推荐哪些、排列顺序、宣传语和 logo。</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>接入 Panelica 服务器</strong><span>使用带有 Docker 权限范围的 API 密钥。</span></span></li>
+      <li><span><strong>选择销售方式</strong><span>主机附带、应用托管或容器套餐。</span></span></li>
+      <li><span><strong>创建产品</strong><span>设置容器配额、内存和 CPU，再设定价格。</span></span></li>
+      <li><span><strong>整理应用目录</strong><span>上架、推荐和排序应用；98 个应用中有 95 个自带 logo。</span></span></li>
+    </ol>
+  </div>
+</section>

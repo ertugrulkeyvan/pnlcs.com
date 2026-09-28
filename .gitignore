@@ -1,0 +1,5 @@
+# build output: run `python3 build.py`
+site/
+.ruff_cache/
+__pycache__/
+.DS_Store

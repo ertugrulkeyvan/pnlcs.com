@@ -1,0 +1,57 @@
+<!--
+title: Dockerアプリ
+description: PNLCSとPanelicaで、ワンクリックのDockerアプリケーションを販売できます。WordPress、n8n、データベースなどを、各顧客が購入したリソースの範囲内で提供します。
+section: ソリューション
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Dockerアプリ</h1>
+      <p class="lede">顧客はカタログから、WordPress、n8n、データベース、リモートデスクトップをインストールできます。各アプリは顧客のホスティングアカウント内でDockerコンテナとして動作し、プランのメモリとCPUの範囲内に収まります。Panelicaサーバーが必要です。</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-docker-apps/">Dockerアプリ販売ガイド</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-apps-800.webp" srcset="assets/img/client-apps-800.webp 800w, assets/img/client-apps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="顧客ポータルのアプリ画面。稼働中のアプリとアプリカタログが表示されている"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>アプリを販売する3つの方法</h2><p class="lede">組み合わせて使うこともできます。</p></div>
+    <dl class="spec-grid spec-grid--3">
+      <div><dt>アプリ付きホスティング</dt><dd>コンテナ数の枠を持つ通常のホスティングプランです。顧客はWebサイトを持ち、いつでもアプリタブからアプリを追加できます。</dd></div>
+      <div><dt>アプリホスティング</dt><dd>注文すると、顧客のドメインにアプリがひとつインストールされます。アプリを固定する（「マネージドWordPress」など）ことも、カタログから顧客に選ばせることもでき、後者ならひとつの商品ですべてのアプリをカバーできます。</dd></div>
+      <div><dt>コンテナプラン</dt><dd>Webサイトなしのリソースのみのプランです。ドメインは不要で、サービス画面にはアプリタブだけが表示されます。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>アカウント内のアプリはひとつのcgroup制限を共有</h2>
+      <p class="lede">顧客が起動するコンテナはすべて、そのアカウントのcgroupスライス内に作成されます。2 GBのプランの顧客は、すべてのアプリの合計で2 GBを使え、ほかの顧客のメモリを使うことはできません。</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>特権コンテナ、追加のケーパビリティ、ホストパスのマウントは、請求管理用のキーであっても使えません</li>
+      <li>プランでアプリの数、合計メモリ、合計CPUを設定します</li>
+      <li>顧客は注文前にアプリの必要メモリを確認できます</li>
+      <li>アプリをインストールできなかった注文はロールバックされ、中途半端な状態で残ることはありません</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>カタログは自分で選べる</h2>
+      <p class="lede">どのアプリが存在するかはPanelicaサーバーが決めます。それをどう販売するかはPNLCSで決めます。提供するアプリ、おすすめ表示、並び順、キャッチコピー、ロゴを設定できます。</p>
+          </div>
+    <ol class="steps">
+      <li><span><strong>Panelicaサーバーを接続する</strong><span>Dockerのスコープを持つAPIキーを使います。</span></span></li>
+      <li><span><strong>販売方法を選ぶ</strong><span>アプリ付き、アプリホスティング、コンテナプランのいずれか。</span></span></li>
+      <li><span><strong>商品を作る</strong><span>コンテナ数の枠、メモリ、CPUを設定し、価格を決めます。</span></span></li>
+      <li><span><strong>カタログを整える</strong><span>アプリの提供、おすすめ表示、並び順を設定します。98個中95個のアプリには最初からロゴがあります。</span></span></li>
+    </ol>
+  </div>
+</section>

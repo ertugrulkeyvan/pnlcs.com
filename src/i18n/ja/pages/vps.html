@@ -1,0 +1,80 @@
+<!--
+title: Proxmox VEでのVPS
+description: PNLCSで、自社のProxmox VE上の仮想サーバーを販売できます。自動プロビジョニングに加え、顧客ポータルで電源操作、グラフ、スナップショット、バックアップ、再インストールが可能です。
+section: ソリューション
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Proxmox VEでのVPS</h1>
+      <p class="lede">Proxmox VEサーバーを接続し、管理パネルから公式クラウドイメージをインストールして、VPS商品を販売できます。請求書の支払いが済むと、PNLCSがサーバーを複製、設定、起動し、顧客は顧客ポータルからそのサーバーを管理します。</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/sell-vps-on-proxmox/">セットアップガイド</a><a class="btn btn--ghost-dark" href="#lifecycle">各イベントで行われる処理</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-800.webp" srcset="assets/img/client-vps-800.webp 800w, assets/img/client-vps.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="顧客ポータルの仮想サーバー画面。電源操作、リアルタイムの状態、使用状況グラフが表示されている"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>顧客ができること</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">電源</th><td class="muted">起動、再起動、シャットダウン（応答がなければ1分後に強制）、強制停止、リセット</td></tr>
+          <tr><th scope="row">リアルタイムの状態</th><td class="muted">CPU、メモリ、稼働時間、アドレス、ディスクの使用率</td></tr>
+          <tr><th scope="row">グラフ</th><td class="muted">Proxmox自身の統計から取得したCPU、メモリ、ネットワーク、ディスク</td></tr>
+          <tr><th scope="row">rootパスワード</th><td class="muted">ゲストエージェント経由で即時に設定。利用できない場合は次回起動時に設定</td></tr>
+          <tr><th scope="row">再インストール</th><td class="muted">商品で提供している任意のOS。VM、MACアドレス、IPアドレスはそのまま維持</td></tr>
+          <tr><th scope="row">スナップショット</th><td class="muted">プランで定められた数まで作成、ロールバック、削除</td></tr>
+          <tr><th scope="row">バックアップ</th><td class="muted">ローカルストレージまたはProxmox Backup Serverへ。復元と削除も可能</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>破壊的な操作は事前に確認</h2>
+      <p class="lede">データを消去する操作では、サーバー名の入力を求めます。再インストールや復元のような時間のかかる処理はバックグラウンドで実行され、ページを閉じても最後まで完了します。</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-manage.webp" srcset="assets/img/client-vps-manage-800.webp 800w, assets/img/client-vps-manage.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="797" loading="lazy" alt="仮想サーバーのスナップショット、バックアップ、rootパスワード、再インストールの操作画面"></figure>
+  </div>
+</section>
+
+<section class="band" id="lifecycle">
+  <div class="wrap">
+    <div class="band-head"><h2>請求イベントごとにPNLCSが行う処理</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">イベント</th><th scope="col">Proxmox上での処理</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">注文の支払い完了</th><td class="muted">次のVM IDでプールに複製し、cloud-initを適用、ディスクを拡張、保護を有効化して起動</td></tr>
+          <tr><th scope="row">利用停止</th><td class="muted">起動時の自動開始をオフにしてからシャットダウン。ホストを再起動しても復帰しません</td></tr>
+          <tr><th scope="row">停止解除</th><td class="muted">起動時の自動開始をオンにして起動</td></tr>
+          <tr><th scope="row">解約</th><td class="muted">停止し、保護を解除して、ディスクごと削除。アドレスはプールに戻ります</td></tr>
+          <tr><th scope="row">アップグレード</th><td class="muted">コア数とメモリを変更。ディスクは拡張され、縮小されることはありません</td></tr>
+          <tr><th scope="row">1時間ごと</th><td class="muted">Proxmoxの統計からディスク使用量と当月のトラフィックを取得</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--ink">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>PNLCSが作成していないマシンには触れません</h2>
+      <p class="lede">ハイパーバイザー上では、通常、顧客のサーバー以外のものも動いています。以下のルールにより、PNLCSは自分が作成したマシンだけを扱います。</p>
+    </div>
+    <ul class="checklist checklist--one">
+      <li>PNLCSが作成するサーバーにはすべて、対応するサービス名を記したタグとメモが付きます。PNLCSはこの目印があるマシンにのみ操作を行います</li>
+      <li>推奨のAPIトークンは自身のプールにしかアクセスできません。接続テストでは、請求管理に不要な権限があれば警告します</li>
+      <li>サーバーは削除保護付きで作成され、保護は解約の瞬間にのみ解除されます</li>
+      <li>顧客にハイパーバイザーのアドレスが表示されることはありません</li>
+    </ul>
+  </div>
+</section>

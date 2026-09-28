@@ -1,0 +1,98 @@
+<!--
+title: Начало работы
+cta: no
+description: Установите PNLCS через Docker примерно за пять минут, на свой сервер или в аккаунт хостинг-панели. Системные требования и первые шаги.
+section: Ресурсы
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Запуск PNLCS</h1>
+    <p class="lede">PNLCS представляет собой Laravel-приложение. Оно работает везде, где есть PHP 8.4, MySQL или MariaDB и веб-сервер. Чтобы сначала осмотреться, откройте <a href="https://hosting.panelica.com/">демо</a>: это настоящая установка.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Три способа установки</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Способ</th><th scope="col">Подходит для</th><th scope="col">Время</th><th scope="col"><span class="sr-only">Руководство</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Docker</th><td class="muted">Знакомства с PNLCS или работы в одном контейнере</td><td class="muted">Около 5 минут</td><td><a href="#docker">Команды</a></td></tr>
+          <tr><th scope="row">Свой сервер</th><td class="muted">VPS или выделенного сервера: Ubuntu, Debian, AlmaLinux или Rocky</td><td class="muted">Около 30 минут</td><td><a href="https://docs.pnlcs.com/install/native/">Руководство</a></td></tr>
+          <tr><th scope="row">Хостинг-панель</th><td class="muted">Сервера, на котором уже работает Panelica, cPanel или аналог</td><td class="muted">Около 20 минут</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">Руководство</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper" id="docker">
+  <div class="wrap quick">
+    <div>
+      <h2>Быстрый старт с Docker</h2>
+      <p class="lede" style="margin-top:16px">Официальный образ содержит PHP-FPM 8.4, nginx, Node.js 20 и supervisor, а при первом запуске загружает актуальный код.</p>
+      <ol class="steps" style="margin-top:32px">
+        <li><span><strong>Запустите контейнеры</strong><span>Сначала замените <code>changeme</code> на собственные пароли.</span></span></li>
+        <li><span><strong>Подождите от 3 до 5 минут</strong><span>При первом запуске устанавливаются зависимости и собирается фронтенд.</span></span></li>
+        <li><span><strong>Откройте /install</strong><span>Мастер проверит требования, создаст аккаунт администратора и затем заблокирует себя.</span></span></li>
+      </ol>
+      <p class="links"><a href="https://docs.pnlcs.com/install/docker/">Руководство по Docker</a><a href="https://hub.docker.com/r/panelica/pnlcs-runtime">Образ на Docker Hub</a></p>
+    </div>
+    <div class="term">
+      <div class="term-head"><span>Терминал</span><button type="button" data-copy="cmd">Копировать</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Системные требования</h2>
+      <p class="lede">Небольшой установке комфортно на 2 GB памяти, когда база данных находится на той же машине.</p>
+      <p class="note"><a href="https://docs.pnlcs.com/install/requirements/">Полные требования</a></p>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">PHP</th><td class="muted">8.4 или новее</td></tr>
+          <tr><th scope="row">База данных</th><td class="muted">MySQL 8.0 или MariaDB 10.6+</td></tr>
+          <tr><th scope="row">Веб-сервер</th><td class="muted">Nginx или Apache с PHP-FPM</td></tr>
+          <tr><th scope="row">Node.js</th><td class="muted">18+ (рекомендуется 20 LTS), только для сборки фронтенда</td></tr>
+          <tr><th scope="row">Composer</th><td class="muted">2.x</td></tr>
+          <tr><th scope="row">Память</th><td class="muted">Для небольшой установки хватит 1 GB; с 2 GB комфортно</td></tr>
+          <tr><th scope="row">Диск</th><td class="muted">Около 130 MB для приложения; оставьте не менее 2 GB свободного места под растущие данные</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>После установки</h2></div>
+    <ul class="link-list">
+      <li><a href="https://docs.pnlcs.com/getting-started/setup-checklist/">Чек-лист настройки</a><span>Реквизиты компании, почта, платёжный шлюз, сервер и первый продукт.</span></li>
+      <li><a href="https://docs.pnlcs.com/getting-started/your-first-sale/">Ваша первая продажа</a><span>От пустого каталога до оплаченного и выполненного заказа.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/security/">Чек-лист безопасности</a><span>HTTPS, отключённый режим отладки, двухфакторная аутентификация для сотрудников, резервные копии за пределами сервера.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/updating/">Обновление</a><span>Установка последнего выпуска без потери данных.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/backups/">Резервное копирование</a><span>Что нужно сохранять, включая ключ приложения.</span></li>
+      <li><a href="https://docs.pnlcs.com/troubleshooting/faq/">FAQ</a><span>Частые вопросы.</span></li>
+    </ul>
+  </div>
+</section>

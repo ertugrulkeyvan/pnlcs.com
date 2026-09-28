@@ -1,0 +1,98 @@
+<!--
+title: Démarrer
+cta: no
+description: Installez PNLCS avec Docker en cinq minutes environ, sur votre propre serveur ou dans un compte de panneau d’hébergement. Prérequis et premières étapes.
+section: Ressources
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Installer PNLCS</h1>
+    <p class="lede">PNLCS est une application Laravel. Elle fonctionne partout où PHP 8.4, MySQL ou MariaDB et un serveur web sont disponibles. Pour faire d’abord le tour du produit, la <a href="https://hosting.panelica.com/">démo en ligne</a> est une vraie installation.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Trois façons d’installer</h2></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Méthode</th><th scope="col">Idéal pour</th><th scope="col">Durée</th><th scope="col"><span class="sr-only">Guide</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Docker</th><td class="muted">Essayer PNLCS, ou le faire tourner dans un seul conteneur</td><td class="muted">Environ 5 minutes</td><td><a href="#docker">Commandes</a></td></tr>
+          <tr><th scope="row">Votre propre serveur</th><td class="muted">Un VPS ou un serveur dédié : Ubuntu, Debian, AlmaLinux ou Rocky</td><td class="muted">Environ 30 minutes</td><td><a href="https://docs.pnlcs.com/install/native/">Guide</a></td></tr>
+          <tr><th scope="row">Dans un panneau d’hébergement</th><td class="muted">Un serveur qui fait déjà tourner Panelica, cPanel ou équivalent</td><td class="muted">Environ 20 minutes</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">Guide</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper" id="docker">
+  <div class="wrap quick">
+    <div>
+      <h2>Démarrage rapide avec Docker</h2>
+      <p class="lede" style="margin-top:16px">L’image officielle embarque PHP-FPM 8.4, nginx, Node.js 20 et supervisor, et récupère la dernière version du code au premier démarrage.</p>
+      <ol class="steps" style="margin-top:32px">
+        <li><span><strong>Lancez les conteneurs</strong><span>Remplacez d’abord <code>changeme</code> par vos propres mots de passe.</span></span></li>
+        <li><span><strong>Patientez 3 à 5 minutes</strong><span>Le premier démarrage installe les dépendances et compile le frontend.</span></span></li>
+        <li><span><strong>Ouvrez /install</strong><span>L’assistant vérifie les prérequis, crée votre compte administrateur, puis se verrouille.</span></span></li>
+      </ol>
+      <p class="links"><a href="https://docs.pnlcs.com/install/docker/">Guide Docker</a><a href="https://hub.docker.com/r/panelica/pnlcs-runtime">Image sur Docker Hub</a></p>
+    </div>
+    <div class="term">
+      <div class="term-head"><span>Terminal</span><button type="button" data-copy="cmd">Copier</button></div>
+<pre id="cmd"><span class="p">$ </span>docker network create pnlcs-net
+
+<span class="p">$ </span>docker run -d --name pnlcs-db --network pnlcs-net \
+  -e MYSQL_ROOT_PASSWORD=changeme \
+  -e MYSQL_DATABASE=pnlcs -e MYSQL_USER=pnlcs \
+  -e MYSQL_PASSWORD=changeme \
+  mariadb:11
+
+<span class="p">$ </span>docker run -d --name pnlcs --network pnlcs-net \
+  -p 8090:80 \
+  -e DB_HOST=pnlcs-db -e DB_DATABASE=pnlcs \
+  -e DB_USERNAME=pnlcs -e DB_PASSWORD=changeme \
+  -e APP_URL=http://localhost:8090 \
+  panelica/pnlcs-runtime:1.4</pre>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Prérequis</h2>
+      <p class="lede">Une petite installation tourne confortablement avec 2 Go de mémoire et la base de données sur la même machine.</p>
+      <p class="note"><a href="https://docs.pnlcs.com/install/requirements/">Prérequis complets</a></p>
+    </div>
+    <div class="table-wrap">
+      <table class="table">
+        <tbody>
+          <tr><th scope="row">PHP</th><td class="muted">8.4 ou plus récent</td></tr>
+          <tr><th scope="row">Base de données</th><td class="muted">MySQL 8.0 ou MariaDB 10.6+</td></tr>
+          <tr><th scope="row">Serveur web</th><td class="muted">Nginx ou Apache avec PHP-FPM</td></tr>
+          <tr><th scope="row">Node.js</th><td class="muted">18+ (20 LTS recommandé), uniquement pour compiler le frontend</td></tr>
+          <tr><th scope="row">Composer</th><td class="muted">2.x</td></tr>
+          <tr><th scope="row">Mémoire</th><td class="muted">1 Go suffit pour une petite installation ; 2 Go offrent du confort</td></tr>
+          <tr><th scope="row">Disque</th><td class="muted">Environ 130 Mo pour l’application ; prévoyez au moins 2 Go libres, car les données augmentent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Après l’installation</h2></div>
+    <ul class="link-list">
+      <li><a href="https://docs.pnlcs.com/getting-started/setup-checklist/">Liste de configuration</a><span>Coordonnées de l’entreprise, e-mail, une passerelle, un serveur et votre premier produit.</span></li>
+      <li><a href="https://docs.pnlcs.com/getting-started/your-first-sale/">Votre première vente</a><span>D’un catalogue vide à une commande payée et provisionnée.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/security/">Liste de contrôle de sécurité</a><span>HTTPS, mode debug désactivé, double authentification pour le personnel, sauvegardes stockées hors du serveur.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/updating/">Mise à jour</a><span>Passez à la dernière version sans perdre de données.</span></li>
+      <li><a href="https://docs.pnlcs.com/install/backups/">Sauvegardes</a><span>Ce qu’il faut sauvegarder, y compris la clé de l’application.</span></li>
+      <li><a href="https://docs.pnlcs.com/troubleshooting/faq/">FAQ</a><span>Questions fréquentes.</span></li>
+    </ul>
+  </div>
+</section>

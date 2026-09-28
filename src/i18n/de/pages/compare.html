@@ -1,0 +1,65 @@
+<!--
+title: PNLCS vs. WHMCS
+heading: Vergleich mit WHMCS
+description: Wie sich PNLCS im Vergleich zu WHMCS und anderen proprietären Abrechnungssystemen schlägt, was übernommen wird und wie der Wechsel ohne Ausfallzeit gelingt.
+section: Produkt
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Eine Open-Source-Alternative zu WHMCS</h1>
+    <p class="lede">PNLCS orientiert sich bewusst an WHMCS: Kunden, Produkte, Bestellungen, Rechnungen, Dienste, Tickets und Module bedeuten dasselbe. Der Unterschied ist die Lizenz: PNLCS steht unter MIT, ohne Gebühr pro Installation.</p>
+    <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/migrate-from-whmcs/">Migrationsleitfaden</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Im direkten Vergleich</h2></div>
+    <div class="table-wrap">
+      <table class="table compare">
+        <thead><tr><th scope="col"><span class="sr-only">Thema</span></th><th scope="col">PNLCS</th><th scope="col">Typische proprietäre Abrechnung</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Lizenzkosten</th><td>Kostenlos (MIT)</td><td>Monatliche Gebühr pro Installation</td></tr>
+          <tr><th scope="row">Quellcode</th><td>Vollständig offen, prüfbar</td><td>Verschlüsselt oder geschlossen</td></tr>
+          <tr><th scope="row">Selbst hosten</th><td>Überall: Docker, VPS, in einem Hosting-Panel</td><td>Ja, mit Lizenzprüfung</td></tr>
+          <tr><th scope="row">Erweitern</th><td>Modul schreiben, ausliefern, behalten</td><td>Marketplace und Herstellerbedingungen</td></tr>
+          <tr><th scope="row">Ihre Daten</th><td>Ihre Datenbank; direkt abfragen oder exportieren</td><td>Ihre, an die Lizenz gebunden</td></tr>
+          <tr><th scope="row">Roadmap</th><td>Gemeinsam mit der Community festgelegt</td><td>Vom Hersteller festgelegt</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap">
+    <div class="band-head"><h2>Was von WHMCS übernommen wird</h2></div>
+    <dl class="spec-grid">
+      <div><dt>Konzepte</dt><dd>Produktgruppen, Produkte, konfigurierbare Optionen, Dienste, Bestellungen, Rechnungen, Guthaben, Tickets und Abteilungen verhalten sich so, wie WHMCS-Mitarbeiter es erwarten.</dd></div>
+      <div><dt>API-Aktionsnamen</dt><dd>Die HTTP-API verwendet die Aktionsnamen von WHMCS, daher brauchen die meisten Integrationen nur eine neue Adresse und neue Zugangsdaten.</dd></div>
+      <div><dt>Hooks</dt><dd><code>add_hook('InvoicePaid', 1, fn)</code> funktioniert genauso; ein fehlerhafter Hook wird protokolliert und übersprungen, statt die Abrechnung zu unterbrechen.</dd></div>
+      <div><dt>Module</dt><dd>Server, Zahlungsanbieter, Registrare und SSL-Anbieter sind eigene Module, wie in WHMCS.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Wechsel ohne Ausfallzeit</h2>
+      <p class="lede">Betreiben Sie PNLCS parallel zu WHMCS und ziehen Sie Kunden bei ihrer Verlängerung um. Die Konten bleiben dabei durchgehend auf denselben Servern.</p>
+      <div class="callout callout--warn" style="margin-top:28px">
+        <h3>Noch kein Ein-Klick-Importer</h3>
+        <p>PNLCS enthält keinen automatischen Importer für die WHMCS-Datenbank. Die Schritte hier sind der praktische, risikoarme Weg für den Umzug. Ein Importer ist ein willkommener Beitrag.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Katalog neu aufbauen</strong><span>Legen Sie Produktgruppen und Produkte mit denselben Namen und Preisen neu an.</span></span></li>
+      <li><span><strong>Dieselben Server anbinden</strong><span>Die Konten existieren dort bereits; PNLCS verwaltet sie ab jetzt.</span></span></li>
+      <li><span><strong>Einstellungen übertragen</strong><span>Zahlungsanbieter (dieselben Konten), Steuerregeln, E-Mail-Vorlagen, Mitarbeiter und Rollen.</span></span></li>
+      <li><span><strong>Kunden übernehmen</strong><span>Legen Sie jeden Kunden mit seinen bestehenden Diensten und dem richtigen nächsten Fälligkeitsdatum an. Bei Panelica verknüpfen Sie das Konto, das bereits auf dem Server liegt.</span></span></li>
+      <li><span><strong>Umstellen</strong><span>Bei der Verlängerung, Kunde für Kunde, oder alle gemeinsam in einem Wartungsfenster.</span></span></li>
+    </ol>
+  </div>
+</section>

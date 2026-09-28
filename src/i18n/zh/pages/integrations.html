@@ -1,0 +1,104 @@
+<!--
+title: 集成
+description: PNLCS 自带的服务器模块、支付网关、域名注册商和 SSL 提供商，并如实标注每一项的状态。
+section: 产品
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>集成</h1>
+    <p class="lede">所有模块都随 PNLCS 一起提供。“状态”一栏说明了哪些已在生产系统上运行过，哪些还没有经过完整测试。</p>
+    <div class="legend">
+      <span class="badge badge--ok">已在生产环境测试</span>
+      <span class="badge badge--help">代码已完成，需要实际环境测试</span>
+      <span class="badge badge--plain">已包含</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">服务器和控制面板</h2>
+      <p>在订单付款或账单逾期时，自动创建、暂停、解除暂停和终止账户或机器。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">模块</th><th scope="col">开通内容</th><th scope="col">状态</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">主机账户、Docker 应用，以及客户中心内的主机管理工具</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">基于云镜像的 KVM 云服务器和基于模板的 LXC 容器</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">主机账户</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">主机订阅</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">主机账户</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">主机账户</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">云服务器</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">自定义</th><td class="muted">手动管理的服务，不做自动化处理</td><td><span class="badge badge--plain">已包含</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">支付网关</h2>
+      <p>所有支付网关共用一个支付引擎，因此部分付款、余额和退款在各处的行为都一致。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">支付网关</th><th scope="col">说明</th><th scope="col">状态</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents，银行卡令牌化</td><td><span class="badge badge--ok">已在生产环境测试</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout，REST API v2</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js，银行卡令牌化</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">银行转账</th><td class="muted">支持客户提交付款通知和上传凭证</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">欧洲本地支付方式</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">印度</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">土耳其：3D Secure、分期付款、保存银行卡</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">波兰：BLIK、快速转账、银行卡</td><td><span class="badge badge--plain">已包含</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">域名注册商和 SSL</h2>
+      <p>注册、转入和续费域名以及签发证书，与主机使用同一个结账流程。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">模块</th><th scope="col">类型</th><th scope="col">状态</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">域名注册商</td><td><span class="badge badge--help">需要测试</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">域名注册商</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">手动</th><td class="muted">域名注册商，用于你自己手动处理的域名</td><td><span class="badge badge--plain">已包含</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL：Sectigo、DigiCert、RapidSSL、GeoTrust、Thawte</td><td><span class="badge badge--plain">已包含</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">插件</h2>
+      <p>插件会被自动识别：放入 <code>modules/Addons/</code> 目录后，在管理后台中启用即可。</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">插件</th><th scope="col">功能</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">企业信息查询</th><td class="muted">注册时从公开的企业登记信息中自动填写公司资料</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">波兰国家电子发票系统</td></tr>
+          <tr><th scope="row">项目管理</th><td class="muted">项目、任务、里程碑和工时，按项目工时开具账单</td></tr>
+          <tr><th scope="row">员工留言板</th><td class="muted">仅员工可见的内部留言板</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>正在使用尚未测试的模块？</h3>
+      <p>如果你在使用 cPanel、Plesk、DirectAdmin、PayPal、Authorize.net、银行转账或 Enom，在你的环境中花一小时测试，就能让它变成“已在生产环境测试”，所有人都能受益。</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">反馈测试结果</a></p>
+    </div>
+    <div class="callout">
+      <h3>缺少某个集成？</h3>
+      <p>一个服务器模块就是一个类，支付网关和域名注册商模块也采用同样的模式。开发者指南会带你完整实现一个模块。</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">编写模块</a></p>
+    </div>
+  </div>
+</section>

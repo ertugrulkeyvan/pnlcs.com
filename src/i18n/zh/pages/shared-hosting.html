@@ -1,0 +1,63 @@
+<!--
+title: 虚拟主机
+description: 使用 PNLCS 销售虚拟主机。客户在计费门户中管理文件、邮箱、数据库、DNS、计划任务和备份，且只能操作自己的账户。
+section: 解决方案
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>虚拟主机</h1>
+      <p class="lede">大多数计费系统做到“这是你的控制面板密码”就为止了。使用 PNLCS 和 Panelica 服务器模块，日常的主机管理工作直接在计费门户中完成。</p>
+      <div class="btn-row"><a class="btn btn--ghost-dark" href="https://docs.pnlcs.com/guides/connect-a-server/">接入服务器</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/client-hosting-tools-800.webp" srcset="assets/img/client-hosting-tools-800.webp 800w, assets/img/client-hosting-tools.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="客户中心里的一项主机服务，包含实时用量和八个管理工具"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>八个工具，无需再次登录</h2><p class="lede">每项主机服务都会显示来自服务器的实时 CPU、内存、磁盘和带宽数据，并提供以下工具。</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">工具</th><th scope="col">客户可以做什么</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">文件管理器</th><td class="muted">浏览、上传、下载、编辑、重命名、新建文件夹和删除</td></tr>
+          <tr><th scope="row">邮箱账户</th><td class="muted">创建和删除邮箱、修改密码、打开 Webmail</td></tr>
+          <tr><th scope="row">数据库</th><td class="muted">创建 MySQL 数据库和用户、重置密码、打开 phpMyAdmin</td></tr>
+          <tr><th scope="row">FTP 账户</th><td class="muted">创建账户、修改密码、删除，并显示主机地址和端口</td></tr>
+          <tr><th scope="row">子域名</th><td class="muted">创建和删除；面板会自动配置虚拟主机、网站根目录、PHP 进程池、SSL 和 DNS</td></tr>
+          <tr><th scope="row">DNS 区域</th><td class="muted">添加、编辑和删除 A、AAAA、CNAME、MX、TXT、SRV 和 CAA 记录</td></tr>
+          <tr><th scope="row">计划任务</th><td class="muted">定时执行命令，可立即运行并查看输出，也可暂停、恢复、删除</td></tr>
+          <tr><th scope="row">备份</th><td class="muted">创建还原点，查看其大小和内容，删除旧的还原点</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">客户中心内的这些工具需要 Panelica 服务器模块。对于 cPanel、Plesk、DirectAdmin 和 HestiaCP，PNLCS 负责开通和暂停账户，客户在各自的控制面板中管理。</p>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>只能操作客户自己的账户</h2>
+      <p class="lede">计费系统持有的服务器密钥可以看到这台机器上的所有账户。PNLCS 会按当前服务的域名过滤每一个列表，并在发送每一项修改之前以同样的方式进行核对。</p>
+      <ul class="checklist checklist--one">
+        <li>如果某个备份同时包含其他人的域名，则不会显示，也无法删除</li>
+        <li>针对他人域名的计划任务、子域名或 DNS 记录，在请求离开计费服务器之前就会被拒绝</li>
+        <li>套餐限额从主机套餐中读取，面板自身也会再做一次限制</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-dns-zone.webp" srcset="assets/img/client-dns-zone-800.webp 800w, assets/img/client-dns-zone.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="客户中心的 DNS 区域编辑器"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--flip">
+    <div class="split-copy">
+      <h2>备份和计划任务</h2>
+      <p class="lede">客户可以在套餐限额内，自行创建和还原备份，管理计划任务。</p>
+    </div>
+    <figure class="shot"><img src="assets/img/client-backups.webp" srcset="assets/img/client-backups-800.webp 800w, assets/img/client-backups.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="客户中心的备份页面，显示还原点列表"></figure>
+  </div>
+</section>

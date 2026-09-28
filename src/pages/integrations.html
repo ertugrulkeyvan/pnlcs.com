@@ -1,0 +1,104 @@
+<!--
+title: Integrations
+description: Server modules, payment gateways, domain registrars and SSL providers that ship with PNLCS, with an honest status for each.
+section: Product
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Integrations</h1>
+    <p class="lede">All modules ship with PNLCS. The status column says which ones have run on live systems and which have not been tested end to end yet.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Tested in production</span>
+      <span class="badge badge--help">Code complete, needs real-world testing</span>
+      <span class="badge badge--plain">Included</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Servers and control panels</h2>
+      <p>Create, suspend, unsuspend and terminate accounts or machines when orders are paid and invoices go unpaid.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Module</th><th scope="col">What it provisions</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Hosting accounts, Docker apps, and the in-portal hosting tools</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">KVM virtual servers from cloud images and LXC templates</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Hosting accounts</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Hosting subscriptions</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Hosting accounts</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Hosting accounts</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Cloud servers</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">Custom</th><td class="muted">Services you manage by hand, without automation</td><td><span class="badge badge--plain">Included</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Payment gateways</h2>
+      <p>All gateways share one payment engine, so partial payments, credit and refunds behave the same everywhere.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Gateway</th><th scope="col">Notes</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, tokenised cards</td><td><span class="badge badge--ok">Tested in production</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, tokenised cards</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">Bank transfer</th><td class="muted">With customer payment notices and receipt upload</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">European payment methods</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">India</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Türkiye: 3D Secure, instalments, stored cards</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Poland: BLIK, quick transfers, cards</td><td><span class="badge badge--plain">Included</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Domain registrars and SSL</h2>
+      <p>Register, transfer and renew domains, and issue certificates, from the same checkout as hosting.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Module</th><th scope="col">Type</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Registrar</td><td><span class="badge badge--help">Needs testing</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Registrar</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">Manual</th><td class="muted">Registrar, for domains you handle yourself</td><td><span class="badge badge--plain">Included</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Included</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Add-ons</h2>
+      <p>Add-ons are discovered automatically: drop one into <code>modules/Addons/</code> and switch it on in the admin panel.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Add-on</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Company lookup</th><td class="muted">Fills in company details from public registries at sign-up</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Polish national e-invoicing</td></tr>
+          <tr><th scope="row">Project management</th><td class="muted">Projects, tasks, milestones and time, invoiced from project hours</td></tr>
+          <tr><th scope="row">Staff board</th><td class="muted">An internal message board visible only to staff</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>Run one of the untested modules?</h3>
+      <p>If you use cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, bank transfer or Enom, an hour of testing on your stack moves it to “tested in production” for everyone.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Report what you found</a></p>
+    </div>
+    <div class="callout">
+      <h3>Missing an integration?</h3>
+      <p>A server module is a single class; gateways and registrars follow the same pattern. The developer guide walks through a full module.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Writing a module</a></p>
+    </div>
+  </div>
+</section>

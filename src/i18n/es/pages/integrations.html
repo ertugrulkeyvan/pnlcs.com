@@ -1,0 +1,104 @@
+<!--
+title: Integraciones
+description: Módulos de servidor, pasarelas de pago, registradores de dominios y proveedores SSL incluidos en PNLCS, con un estado honesto para cada uno.
+section: Producto
+-->
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>Integraciones</h1>
+    <p class="lede">Todos los módulos vienen con PNLCS. La columna de estado indica cuáles se han ejecutado en sistemas en producción y cuáles aún no se han probado de principio a fin.</p>
+    <div class="legend">
+      <span class="badge badge--ok">Probado en producción</span>
+      <span class="badge badge--help">Código completo, necesita pruebas en entornos reales</span>
+      <span class="badge badge--plain">Incluido</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <section class="int-group" aria-labelledby="g-servers">
+      <h2 id="g-servers">Servidores y paneles de control</h2>
+      <p>Crean, suspenden, reactivan y cancelan cuentas o máquinas cuando se pagan los pedidos y cuando las facturas quedan impagadas.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Módulo</th><th scope="col">Qué aprovisiona</th><th scope="col">Estado</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panelica</th><td class="muted">Cuentas de hosting, apps Docker y las herramientas de hosting del portal</td><td><span class="badge badge--ok">Probado en producción</span></td></tr>
+          <tr><th scope="row">Proxmox VE</th><td class="muted">Servidores virtuales KVM a partir de imágenes cloud y plantillas LXC</td><td><span class="badge badge--ok">Probado en producción</span></td></tr>
+          <tr><th scope="row">cPanel / WHM</th><td class="muted">Cuentas de hosting</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">Plesk</th><td class="muted">Suscripciones de hosting</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">DirectAdmin</th><td class="muted">Cuentas de hosting</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">HestiaCP</th><td class="muted">Cuentas de hosting</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">Vultr</th><td class="muted">Servidores cloud</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">Personalizado</th><td class="muted">Servicios que gestionas a mano, sin automatización</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-gateways">
+      <h2 id="g-gateways">Pasarelas de pago</h2>
+      <p>Todas las pasarelas comparten un único motor de pagos, así que los pagos parciales, el crédito y los reembolsos funcionan igual en todas.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Pasarela</th><th scope="col">Notas</th><th scope="col">Estado</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stripe</th><td class="muted">Payment Intents, tarjetas tokenizadas</td><td><span class="badge badge--ok">Probado en producción</span></td></tr>
+          <tr><th scope="row">PayPal</th><td class="muted">PayPal Checkout, REST API v2</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">Authorize.net</th><td class="muted">Accept.js, tarjetas tokenizadas</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">Transferencia bancaria</th><td class="muted">Con avisos de pago del cliente y subida de justificantes</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">Mollie</th><td class="muted">Métodos de pago europeos</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">Razorpay</th><td class="muted">India</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">iyzico</th><td class="muted">Türkiye: 3D Secure, pago a plazos, tarjetas guardadas</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">Tpay</th><td class="muted">Polonia: BLIK, transferencias rápidas, tarjetas</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-registrars">
+      <h2 id="g-registrars">Registradores de dominios y SSL</h2>
+      <p>Registra, transfiere y renueva dominios, y emite certificados, desde el mismo proceso de compra que el hosting.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Módulo</th><th scope="col">Tipo</th><th scope="col">Estado</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Enom</th><td class="muted">Registrador</td><td><span class="badge badge--help">Necesita pruebas</span></td></tr>
+          <tr><th scope="row">Namecheap</th><td class="muted">Registrador</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">ResellerClub</th><td class="muted">Registrador</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">OpenProvider</th><td class="muted">Registrador</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">DomainNameApi</th><td class="muted">Registrador</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">HRD</th><td class="muted">Registrador</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">Manual</th><td class="muted">Registrador, para dominios que gestionas tú mismo</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+          <tr><th scope="row">GoGetSSL</th><td class="muted">SSL: Sectigo, DigiCert, RapidSSL, GeoTrust, Thawte</td><td><span class="badge badge--plain">Incluido</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="int-group" aria-labelledby="g-addons">
+      <h2 id="g-addons">Complementos</h2>
+      <p>Los complementos se detectan automáticamente: copia uno en <code>modules/Addons/</code> y actívalo en el panel de administración.</p>
+      <div class="table-wrap"><table class="table">
+        <thead><tr><th scope="col">Complemento</th><th scope="col">Qué hace</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Búsqueda de empresas</th><td class="muted">Rellena los datos de la empresa desde registros públicos al darse de alta</td></tr>
+          <tr><th scope="row">KSeF</th><td class="muted">Facturación electrónica nacional de Polonia</td></tr>
+          <tr><th scope="row">Gestión de proyectos</th><td class="muted">Proyectos, tareas, hitos y tiempo, facturados a partir de las horas del proyecto</td></tr>
+          <tr><th scope="row">Tablero del personal</th><td class="muted">Un tablón de mensajes interno visible solo para el personal</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap cols-2">
+    <div class="callout">
+      <h3>¿Usas alguno de los módulos sin probar?</h3>
+      <p>Si usas cPanel, Plesk, DirectAdmin, PayPal, Authorize.net, transferencia bancaria o Enom, una hora de pruebas en tu entorno lo pasa a «probado en producción» para todos.</p>
+      <p><a href="https://github.com/Panelica/pnlcs/issues">Cuéntanos qué encontraste</a></p>
+    </div>
+    <div class="callout">
+      <h3>¿Falta alguna integración?</h3>
+      <p>Un módulo de servidor es una sola clase; las pasarelas y los registradores siguen el mismo patrón. La guía para desarrolladores explica un módulo completo paso a paso.</p>
+      <p><a href="https://docs.pnlcs.com/developer/modules/">Escribir un módulo</a></p>
+    </div>
+  </div>
+</section>
