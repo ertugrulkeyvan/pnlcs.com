@@ -818,3 +818,17 @@ img.mark { object-fit: contain; border-radius: 4px; }
 .code-card pre, .term pre { overflow-x: auto; }
 .hero-links, .links { row-gap: 10px; }
 @media (min-width: 761px) and (max-width: 900px) { .foot-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; } }
+
+/* Hero screenshot floats over the trust bar */
+.hero { padding-bottom: 0; }
+.hero-shot { position: relative; z-index: 2; margin: clamp(40px, 5vw, 64px) 0 clamp(-160px, -11vw, -60px); border: 1px solid rgba(20,26,49,.12); border-radius: var(--radius-l); box-shadow: 0 40px 90px -30px rgba(10,14,30,.55); }
+.hero-shot img { aspect-ratio: auto; object-fit: initial; }
+.trust .proof { padding-top: calc(clamp(60px, 11vw, 160px) + 28px); }
+
+/* About: story next to the facts */
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.about-grid .lede + .lede { margin-top: 16px; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+.hero { overflow: visible; }
+.trust { position: relative; z-index: 1; }
+@media (max-width: 480px) { .getbox-cmd code { white-space: normal; overflow-wrap: anywhere; } }
