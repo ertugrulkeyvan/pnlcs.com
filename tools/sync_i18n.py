@@ -64,7 +64,8 @@ def learn(en_raw, tr_raw, table):
         elif e.strip():
             table.setdefault(e.strip(), t.strip())
             # remember the translation's own spacing around inline links (e.g. Turkish, Japanese)
-            SPACING.setdefault(e.strip(), (t[:len(t) - len(t.lstrip())], t[len(t.rstrip()):]))
+            # (a translation that is only whitespace keeps it once, not as both lead and trail)
+            SPACING.setdefault(e.strip(), (t, '') if not t.strip() else (t[:len(t) - len(t.lstrip())], t[len(t.rstrip()):]))
             # also learn the words around {{placeholders}}, piece by piece
             ep = re.split(r'(\{\{[\w:-]+\}\})', e.strip())
             tp = re.split(r'(\{\{[\w:-]+\}\})', t.strip())

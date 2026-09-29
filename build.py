@@ -64,13 +64,15 @@ LOGOS = {
     'namecheap': 'Namecheap', 'enom': 'Enom', 'resellerclub': 'ResellerClub', 'openprovider': 'OpenProvider',
     'domainnameapi': 'DomainNameApi', 'hrd': 'HRD', 'manual': 'Manual', 'gogetssl': 'GoGetSSL',
     'docker': 'Docker', 'laravel': 'Laravel', 'php': 'PHP', 'mysql': 'MySQL', 'mariadb': 'MariaDB', 'github': 'GitHub',
+    'ubuntu': 'Ubuntu', 'debian': 'Debian', 'almalinux': 'AlmaLinux', 'rockylinux': 'Rocky Linux', 'nginx': 'Nginx',
 }
 
 
 # Brand colours of the Simple Icons marks (from simple-icons 16.33.0 data)
 SI_COLORS = {'cpanel': '#FF6C2C', 'plesk': '#52BBE6', 'proxmox': '#E57000', 'vultr': '#007BFC', 'stripe': '#635BFF',
              'paypal': '#002991', 'razorpay': '#0C2451', 'namecheap': '#DE3723', 'docker': '#2496ED', 'laravel': '#FF2D20',
-             'php': '#777BB4', 'mysql': '#4479A1', 'mariadb': '#003545', 'github': '#181717'}
+             'php': '#777BB4', 'mysql': '#4479A1', 'mariadb': '#003545', 'github': '#181717',
+             'ubuntu': '#E95420', 'debian': '#A81D33', 'almalinux': '#141A31', 'rockylinux': '#10B981', 'nginx': '#009639'}
 # Brands whose only official mark is a wordmark: shown instead of the written name
 WORDMARKS = set()
 

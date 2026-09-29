@@ -857,3 +857,31 @@ img.mark { object-fit: contain; border-radius: 4px; }
 .sc.is-paused .sc-ic-play { display: grid !important; }
 .sc.is-paused .sc-ic-pause { display: none !important; }
 @media (prefers-reduced-motion: reduce) { .sc-track { transition: none; } }
+
+/* ---------- Own-server install: numbered stages, each with its commands ---------- */
+.flow { list-style: none; margin: 8px 0 0; padding: 0; counter-reset: fl; }
+.flow-step { counter-increment: fl; position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); padding: 40px 0 40px 56px; border-top: 1px solid var(--line); }
+.flow-step::before { content: counter(fl); position: absolute; left: 0; top: 38px; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--white); display: grid; place-items: center; font-weight: 700; font-size: .95rem; }
+.flow-step::after { content: ""; position: absolute; left: 16.5px; top: 80px; bottom: -38px; width: 1px; background: var(--line); }
+.flow-step:last-child::after { display: none; }
+.flow-copy h3 { font-size: 1.3rem; margin: 4px 0 12px; }
+.flow-copy p { margin: 0 0 12px; max-width: 60ch; }
+.flow-copy p.muted { color: var(--muted); font-size: .95rem; }
+.flow-copy code, .band-head code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+.flow .term pre { max-height: 460px; font-size: .84rem; }
+.tabs-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tabs-list [role="tab"] { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 5px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font: 600 .9rem var(--font); cursor: pointer; }
+.tabs-list [role="tab"] .lt { width: 26px; height: 26px; border-radius: 50%; border: 0; background: var(--paper); }
+.tabs-list [role="tab"]:hover { border-color: var(--navy); }
+.tabs-list [role="tab"][aria-selected="true"] { border-color: var(--navy); background: var(--navy); color: var(--white); }
+.tabs-list [role="tab"][aria-selected="true"] .lt { background: var(--card); }
+.tabs-list [role="tab"]:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+@media (max-width: 900px) {
+  .flow-step { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-left: 48px; }
+}
+@media (max-width: 480px) {
+  .flow-step { padding-left: 0; padding-top: 84px; }
+  .flow-step::before { top: 36px; }
+  .flow-step::after { display: none; }
+  .flow .term pre { font-size: .8rem; }
+}

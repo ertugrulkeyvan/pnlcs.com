@@ -4,3 +4,4 @@ site/
 __pycache__/
 .DS_Store
 tools/i18n-missing.json*
+tools/i18n-filled*.json

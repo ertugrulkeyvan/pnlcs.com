@@ -1,7 +1,7 @@
 <!--
 title: Primeros pasos
 cta: no
-description: Instala PNLCS con Docker en unos cinco minutos, en tu propio servidor o dentro de una cuenta de un panel de hosting. Requisitos y primeros pasos.
+description: Instala PNLCS con Docker en unos cinco minutos, directamente en un servidor Ubuntu, Debian, AlmaLinux o Rocky Linux sin Docker, o dentro de una cuenta de un panel de hosting.
 section: Recursos
 -->
 <section class="page-intro">
@@ -10,6 +10,7 @@ section: Recursos
     {{crumbs}}
     <h1>Pon PNLCS en marcha</h1>
     <p class="lede">PNLCS es una aplicación Laravel. Funciona en cualquier sitio donde haya PHP 8.4, MySQL o MariaDB y un servidor web. Si antes quieres echar un vistazo, la <a href="https://hosting.panelica.com/">demo en vivo</a> es una instalación real.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="#server">Instalar en tu propio servidor</a><a class="btn btn--ghost" href="#docker">Instalación con Docker</a></div>
     </div>
     <div class="intro-visual">
       <figure class="code-card">
@@ -17,7 +18,7 @@ section: Recursos
 <pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
       </figure>
       <ul class="intro-logos" aria-label="Dónde se ejecuta">
-        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mariadb}}</li>
+        <li>{{logo:ubuntu}}</li><li>{{logo:debian}}</li><li>{{logo:almalinux}}</li><li>{{logo:rockylinux}}</li><li>{{logo:nginx}}</li><li>{{logo:php}}</li><li>{{logo:mariadb}}</li><li>{{logo:docker}}</li>
       </ul>
     </div>
   </div>
@@ -31,7 +32,7 @@ section: Recursos
         <thead><tr><th scope="col">Método</th><th scope="col">Ideal para</th><th scope="col">Tiempo</th><th scope="col"><span class="sr-only">Guía</span></th></tr></thead>
         <tbody>
           <tr><th scope="row">Docker</th><td class="muted">Probar PNLCS, o ejecutarlo como un único contenedor</td><td class="muted">Unos 5 minutos</td><td><a href="#docker">Comandos</a></td></tr>
-          <tr><th scope="row">Tu propio servidor</th><td class="muted">Un VPS o servidor dedicado: Ubuntu, Debian, AlmaLinux o Rocky</td><td class="muted">Unos 30 minutos</td><td><a href="https://docs.pnlcs.com/install/native/">Guía</a></td></tr>
+          <tr><th scope="row">Tu propio servidor</th><td class="muted">Un VPS o servidor dedicado sin Docker: Ubuntu, Debian, AlmaLinux o Rocky Linux</td><td class="muted">Unos 30 minutos</td><td><a href="#server">Comandos</a></td></tr>
           <tr><th scope="row">Dentro de un panel de hosting</th><td class="muted">Un servidor que ya ejecuta Panelica, cPanel o similar</td><td class="muted">Unos 20 minutos</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">Guía</a></td></tr>
         </tbody>
       </table>
@@ -71,7 +72,225 @@ section: Recursos
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="server">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>Instalar en tu propio servidor, sin Docker</h2><p class="lede">PNLCS funciona como una aplicación Laravel normal sobre PHP-FPM 8.4, MySQL o MariaDB y Nginx. Los comandos siguientes cubren Ubuntu 24.04, Debian 13 y AlmaLinux 9; Rocky Linux 9 usa los comandos de AlmaLinux. Sustituye <code>example.com</code> por tu propia dirección.</p></div><a class="more" href="https://docs.pnlcs.com/install/native/">Guía completa</a></div>
+    <ol class="flow">
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>Preparar el servidor</h3>
+          <p>PHP 8.4 con sus extensiones, una base de datos, Nginx, Node.js 20 para compilar el frontend y Composer. Omite este paso si ya están instalados.</p>
+          <p class="muted">Ubuntu 24.04 trae PHP 8.3, así que PHP 8.4 viene del PPA de ondrej. Debian 13 incluye PHP 8.4, trae MariaDB en lugar de MySQL, y el paquete <code>php8.4-imap</code> no existe. En AlmaLinux y Rocky, PHP 8.4 viene del repositorio Remi.</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="Sistema operativo">
+            <button type="button" role="tab" id="t-prep-ubuntu" aria-controls="p-prep-ubuntu" aria-selected="true">{{logo:ubuntu}}Ubuntu 24.04</button>
+            <button type="button" role="tab" id="t-prep-debian" aria-controls="p-prep-debian" aria-selected="false" tabindex="-1">{{logo:debian}}Debian 13</button>
+            <button type="button" role="tab" id="t-prep-alma" aria-controls="p-prep-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux 9, Rocky 9</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-ubuntu" aria-labelledby="t-prep-ubuntu">
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-prep-ubuntu">Copiar</button></div>
+<pre id="c-prep-ubuntu"><span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y software-properties-common git unzip curl cron
+<span class="p">$ </span>sudo add-apt-repository -y ppa:ondrej/php
+<span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y php8.4-fpm php8.4-cli php8.4-mysql php8.4-mbstring \
+  php8.4-xml php8.4-curl php8.4-zip php8.4-gd php8.4-bcmath php8.4-intl php8.4-imap
+<span class="p">$ </span>sudo apt install -y mysql-server nginx
+
+<span class="p">$ </span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+<span class="p">$ </span>sudo apt install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-debian" aria-labelledby="t-prep-debian" hidden>
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-prep-debian">Copiar</button></div>
+<pre id="c-prep-debian"><span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y git unzip curl cron
+<span class="p">$ </span>sudo apt install -y php8.4-fpm php8.4-cli php8.4-mysql php8.4-mbstring \
+  php8.4-xml php8.4-curl php8.4-zip php8.4-gd php8.4-bcmath php8.4-intl
+<span class="p">$ </span>sudo apt install -y mariadb-server nginx
+
+<span class="p">$ </span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+<span class="p">$ </span>sudo apt install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-alma" aria-labelledby="t-prep-alma" hidden>
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-prep-alma">Copiar</button></div>
+<pre id="c-prep-alma"><span class="p">$ </span>sudo dnf install -y epel-release https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+<span class="p">$ </span>sudo dnf module reset php -y
+<span class="p">$ </span>sudo dnf module enable php:remi-8.4 -y
+<span class="p">$ </span>sudo dnf install -y php php-fpm php-mysqlnd php-mbstring php-xml php-gd \
+  php-bcmath php-intl php-imap php-pecl-zip \
+  mysql-server nginx git unzip cronie policycoreutils-python-utils
+
+<span class="p">$ </span>curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+<span class="p">$ </span>sudo dnf install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer
+<span class="p">$ </span>sudo systemctl enable --now php-fpm mysqld nginx</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>Instalar la aplicación</h3>
+          <p>El directorio de PNLCS pertenece al usuario del servidor web, y todo comando <code>composer</code>, <code>artisan</code> y <code>npm</code> se ejecuta como ese usuario. La función <code>pn</code> lo hace por ti. Si el directorio pertenece a root, el asistente de instalación y las actualizaciones posteriores fallan.</p>
+          <p class="muted">Elige una sola contraseña para la base de datos y úsala tanto en <code>CREATE USER</code> como en <code>.env</code> para que coincidan. La función <code>pn</code> solo dura la sesión actual de la shell; vuelve a definirla cuando inicies sesión de nuevo.</p>
+          <p class="muted">No ejecutes <code>db:seed</code>. El asistente de instalación llena la base de datos y crea el administrador que elijas.</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="Sistema operativo">
+            <button type="button" role="tab" id="t-app-deb" aria-controls="p-app-deb" aria-selected="true">{{logo:ubuntu}}Ubuntu, Debian</button>
+            <button type="button" role="tab" id="t-app-alma" aria-controls="p-app-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux, Rocky</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-app-deb" aria-labelledby="t-app-deb">
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-app-deb">Copiar</button></div>
+<pre id="c-app-deb"><span class="p">$ </span>sudo git clone https://github.com/Panelica/pnlcs.git /var/www/pnlcs
+<span class="p">$ </span>sudo chown -R www-data:www-data /var/www/pnlcs
+<span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>pn() { sudo -u www-data HOME=/tmp/pnlcs-home COMPOSER_HOME=/tmp/pnlcs-home/composer "$@"; }
+
+<span class="p">$ </span>pn composer install --no-dev --optimize-autoloader --no-interaction
+
+<span class="p">$ </span>sudo mysql -e "CREATE DATABASE pnlcs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  CREATE USER 'pnlcs'@'localhost' IDENTIFIED BY 'choose-a-strong-password';
+  GRANT ALL PRIVILEGES ON pnlcs.* TO 'pnlcs'@'localhost'; FLUSH PRIVILEGES;"
+
+<span class="p">$ </span>pn cp .env.example .env
+<span class="p">$ </span>pn sed -i 's|^APP_URL=.*|APP_URL=http://example.com|; s|^DB_PASSWORD=.*|DB_PASSWORD=choose-a-strong-password|' .env
+<span class="p">$ </span>sudo chmod 640 .env
+
+<span class="p">$ </span>pn php artisan key:generate
+<span class="p">$ </span>pn php artisan migrate --force
+<span class="p">$ </span>pn npm ci
+<span class="p">$ </span>pn npm run build
+<span class="p">$ </span>pn php artisan storage:link
+<span class="p">$ </span>pn php artisan optimize</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-app-alma" aria-labelledby="t-app-alma" hidden>
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-app-alma">Copiar</button></div>
+<pre id="c-app-alma"><span class="p">$ </span>sudo git clone https://github.com/Panelica/pnlcs.git /var/www/pnlcs
+<span class="p">$ </span>sudo chown -R apache:apache /var/www/pnlcs
+<span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>pn() { sudo -u apache HOME=/tmp/pnlcs-home COMPOSER_HOME=/tmp/pnlcs-home/composer "$@"; }
+
+<span class="p">$ </span>pn /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
+
+<span class="p">$ </span>sudo mysql -e "CREATE DATABASE pnlcs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  CREATE USER 'pnlcs'@'localhost' IDENTIFIED BY 'choose-a-strong-password';
+  GRANT ALL PRIVILEGES ON pnlcs.* TO 'pnlcs'@'localhost'; FLUSH PRIVILEGES;"
+
+<span class="p">$ </span>pn cp .env.example .env
+<span class="p">$ </span>pn sed -i 's|^APP_URL=.*|APP_URL=http://example.com|; s|^DB_PASSWORD=.*|DB_PASSWORD=choose-a-strong-password|' .env
+<span class="p">$ </span>sudo chmod 640 .env
+
+<span class="p">$ </span>pn php artisan key:generate
+<span class="p">$ </span>pn php artisan migrate --force
+<span class="p">$ </span>pn npm ci
+<span class="p">$ </span>pn npm run build
+<span class="p">$ </span>pn php artisan storage:link
+<span class="p">$ </span>pn php artisan optimize
+
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/storage(/.*)?"
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/bootstrap/cache(/.*)?"
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/\.env"
+<span class="p">$ </span>sudo restorecon -R /var/www/pnlcs
+<span class="p">$ </span>sudo setsebool -P httpd_can_network_connect_db 1
+<span class="p">$ </span>sudo setsebool -P httpd_can_network_connect 1</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>Apuntar Nginx a public/</h3>
+          <p>La raíz de documentos es <code>public/</code> y nunca la raíz del proyecto: la raíz del proyecto contiene <code>.env</code>. Elimina el sitio por defecto para que la dirección del servidor no siga mostrando la página de bienvenida de Nginx.</p>
+          <p class="muted">Apache y Caddy también funcionan, con las mismas reglas: raíz de documentos <code>public/</code>, PHP a través de PHP-FPM 8.4 y toda petición que no sea un archivo reescrita a <code>index.php</code>.</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="Sistema operativo">
+            <button type="button" role="tab" id="t-web-deb" aria-controls="p-web-deb" aria-selected="true">{{logo:ubuntu}}Ubuntu, Debian</button>
+            <button type="button" role="tab" id="t-web-alma" aria-controls="p-web-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux, Rocky</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-web-deb" aria-labelledby="t-web-deb">
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-web-deb">Copiar</button></div>
+<pre id="c-web-deb"><span class="p">$ </span>sudo tee /etc/nginx/sites-available/pnlcs &gt; /dev/null &lt;&lt;'EOF'
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/pnlcs/public;
+    index index.php;
+    charset utf-8;
+    client_max_body_size 64M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php8.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* { deny all; }
+}
+EOF
+<span class="p">$ </span>sudo ln -s /etc/nginx/sites-available/pnlcs /etc/nginx/sites-enabled/
+<span class="p">$ </span>sudo rm -f /etc/nginx/sites-enabled/default
+<span class="p">$ </span>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-web-alma" aria-labelledby="t-web-alma" hidden>
+            <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-web-alma">Copiar</button></div>
+<pre id="c-web-alma"><span class="p">$ </span>sudo tee /etc/nginx/conf.d/pnlcs.conf &gt; /dev/null &lt;&lt;'EOF'
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/pnlcs/public;
+    index index.php;
+    charset utf-8;
+    client_max_body_size 64M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* { deny all; }
+}
+EOF
+<span class="p">$ </span>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>Termina en el navegador, luego programa y protege</h3>
+          <p>Abre <code>http://example.com/install</code>. El asistente comprueba los requisitos, crea tu administrador y después se cierra.</p>
+          <p class="muted">Una línea de cron para el usuario del servidor web se encarga de facturas, recordatorios, suspensiones, comprobaciones SSL y copias de seguridad. Los trabajos en cola no necesitan un worker aparte; la misma línea de cron los procesa.</p>
+        </div>
+        <div class="term">
+          <div class="term-head"><span>Terminal</span><button type="button" data-copy="c-finish">Copiar</button></div>
+<pre id="c-finish"><span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>WEB_USER=www-data   # AlmaLinux, Rocky: apache
+<span class="p">$ </span>(sudo crontab -u $WEB_USER -l 2&gt;/dev/null; echo '* * * * * cd /var/www/pnlcs &amp;&amp; php artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1') | sudo crontab -u $WEB_USER -
+
+<span class="p">$ </span>sudo apt install -y certbot python3-certbot-nginx   # Ubuntu, Debian
+<span class="p">$ </span>sudo certbot --nginx -d example.com
+<span class="p">$ </span>pn sed -i 's|^APP_URL=http://|APP_URL=https://|' .env
+<span class="p">$ </span>pn php artisan optimize</pre>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--paper">
   <div class="wrap split split--top">
     <div class="split-copy">
       <h2>Requisitos</h2>
@@ -94,7 +313,7 @@ section: Recursos
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap">
     <div class="band-head"><h2>Después de instalar</h2></div>
     <ul class="link-list">

@@ -1,7 +1,7 @@
 <!--
 title: 快速开始
 cta: no
-description: 使用 Docker 约 5 分钟即可安装 PNLCS，也可以装在自己的服务器上或主机面板账户中。包含系统要求和上手步骤。
+description: 用 Docker 约五分钟安装 PNLCS，也可以不用 Docker 直接安装在 Ubuntu、Debian、AlmaLinux 或 Rocky Linux 服务器上，或装在主机面板账户中。
 section: 资源
 -->
 <section class="page-intro">
@@ -10,6 +10,7 @@ section: 资源
     {{crumbs}}
     <h1>运行 PNLCS</h1>
     <p class="lede">PNLCS 是一个 Laravel 应用，只要有 PHP 8.4、MySQL 或 MariaDB 和 Web 服务器就能运行。想先看看的话， <a href="https://hosting.panelica.com/">在线演示</a> 就是一套真实的安装。</p>
+    <div class="btn-row"><a class="btn btn--primary" href="#server">安装到自己的服务器</a><a class="btn btn--ghost" href="#docker">使用 Docker 安装</a></div>
     </div>
     <div class="intro-visual">
       <figure class="code-card">
@@ -17,7 +18,7 @@ section: 资源
 <pre><span class="k">docker</span> pull panelica/pnlcs-runtime</pre>
       </figure>
       <ul class="intro-logos" aria-label="运行环境">
-        <li>{{logo:docker}}</li><li>{{logo:laravel}}</li><li>{{logo:php}}</li><li>{{logo:mariadb}}</li>
+        <li>{{logo:ubuntu}}</li><li>{{logo:debian}}</li><li>{{logo:almalinux}}</li><li>{{logo:rockylinux}}</li><li>{{logo:nginx}}</li><li>{{logo:php}}</li><li>{{logo:mariadb}}</li><li>{{logo:docker}}</li>
       </ul>
     </div>
   </div>
@@ -31,7 +32,7 @@ section: 资源
         <thead><tr><th scope="col">方式</th><th scope="col">适用场景</th><th scope="col">耗时</th><th scope="col"><span class="sr-only">指南</span></th></tr></thead>
         <tbody>
           <tr><th scope="row">Docker</th><td class="muted">试用 PNLCS，或以单个容器运行</td><td class="muted">约 5 分钟</td><td><a href="#docker">命令</a></td></tr>
-          <tr><th scope="row">自己的服务器</th><td class="muted">VPS 或独立服务器：Ubuntu、Debian、AlmaLinux 或 Rocky</td><td class="muted">约 30 分钟</td><td><a href="https://docs.pnlcs.com/install/native/">指南</a></td></tr>
+          <tr><th scope="row">自己的服务器</th><td class="muted">没有 Docker 的 VPS 或独立服务器：Ubuntu、Debian、AlmaLinux 或 Rocky Linux</td><td class="muted">约 30 分钟</td><td><a href="#server">命令</a></td></tr>
           <tr><th scope="row">装在主机面板中</th><td class="muted">已经运行 Panelica、cPanel 或类似面板的服务器</td><td class="muted">约 20 分钟</td><td><a href="https://docs.pnlcs.com/install/hosting-panel/">指南</a></td></tr>
         </tbody>
       </table>
@@ -71,7 +72,225 @@ section: 资源
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="server">
+  <div class="wrap">
+    <div class="band-head band-head--row"><div><h2>不用 Docker，安装到自己的服务器</h2><p class="lede">PNLCS 作为普通的 Laravel 应用运行在 PHP-FPM 8.4、MySQL 或 MariaDB 以及 Nginx 上。下面的命令适用于 Ubuntu 24.04、Debian 13 和 AlmaLinux 9；Rocky Linux 9 使用 AlmaLinux 的命令。请将 <code>example.com</code> 替换为你自己的地址。</p></div><a class="more" href="https://docs.pnlcs.com/install/native/">完整指南</a></div>
+    <ol class="flow">
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>准备服务器</h3>
+          <p>PHP 8.4 及其扩展、数据库、Nginx、用于构建前端的 Node.js 20，以及 Composer。如果已经安装，可跳过此步。</p>
+          <p class="muted">Ubuntu 24.04 自带 PHP 8.3，因此 PHP 8.4 来自 ondrej PPA。Debian 13 自带 PHP 8.4，用 MariaDB 代替 MySQL，并且没有 <code>php8.4-imap</code> 软件包。在 AlmaLinux 和 Rocky 上，PHP 8.4 来自 Remi 软件源。</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="操作系统">
+            <button type="button" role="tab" id="t-prep-ubuntu" aria-controls="p-prep-ubuntu" aria-selected="true">{{logo:ubuntu}}Ubuntu 24.04</button>
+            <button type="button" role="tab" id="t-prep-debian" aria-controls="p-prep-debian" aria-selected="false" tabindex="-1">{{logo:debian}}Debian 13</button>
+            <button type="button" role="tab" id="t-prep-alma" aria-controls="p-prep-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux 9、Rocky 9</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-ubuntu" aria-labelledby="t-prep-ubuntu">
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-prep-ubuntu">复制</button></div>
+<pre id="c-prep-ubuntu"><span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y software-properties-common git unzip curl cron
+<span class="p">$ </span>sudo add-apt-repository -y ppa:ondrej/php
+<span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y php8.4-fpm php8.4-cli php8.4-mysql php8.4-mbstring \
+  php8.4-xml php8.4-curl php8.4-zip php8.4-gd php8.4-bcmath php8.4-intl php8.4-imap
+<span class="p">$ </span>sudo apt install -y mysql-server nginx
+
+<span class="p">$ </span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+<span class="p">$ </span>sudo apt install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-debian" aria-labelledby="t-prep-debian" hidden>
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-prep-debian">复制</button></div>
+<pre id="c-prep-debian"><span class="p">$ </span>sudo apt update
+<span class="p">$ </span>sudo apt install -y git unzip curl cron
+<span class="p">$ </span>sudo apt install -y php8.4-fpm php8.4-cli php8.4-mysql php8.4-mbstring \
+  php8.4-xml php8.4-curl php8.4-zip php8.4-gd php8.4-bcmath php8.4-intl
+<span class="p">$ </span>sudo apt install -y mariadb-server nginx
+
+<span class="p">$ </span>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+<span class="p">$ </span>sudo apt install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-prep-alma" aria-labelledby="t-prep-alma" hidden>
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-prep-alma">复制</button></div>
+<pre id="c-prep-alma"><span class="p">$ </span>sudo dnf install -y epel-release https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+<span class="p">$ </span>sudo dnf module reset php -y
+<span class="p">$ </span>sudo dnf module enable php:remi-8.4 -y
+<span class="p">$ </span>sudo dnf install -y php php-fpm php-mysqlnd php-mbstring php-xml php-gd \
+  php-bcmath php-intl php-imap php-pecl-zip \
+  mysql-server nginx git unzip cronie policycoreutils-python-utils
+
+<span class="p">$ </span>curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+<span class="p">$ </span>sudo dnf install -y nodejs
+
+<span class="p">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="p">$ </span>sudo mv composer.phar /usr/local/bin/composer
+<span class="p">$ </span>sudo systemctl enable --now php-fpm mysqld nginx</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>安装应用</h3>
+          <p>PNLCS 目录归 Web 服务器用户所有，每一条 <code>composer</code>、 <code>artisan</code> 和 <code>npm</code> 命令都以该用户身份运行。 <code>pn</code> 辅助命令会替你完成这一点。如果目录归 root 所有，安装向导和之后的更新都会失败。</p>
+          <p class="muted">只选定一个数据库密码，并在 <code>CREATE USER</code> 语句和 <code>.env</code> 行中都使用它。 <code>pn</code> 辅助命令只在当前 shell 会话中有效；重新登录后需要再次定义。</p>
+          <p class="muted">不要运行 <code>db:seed</code>。安装向导会填充数据库，并创建你指定的管理员。</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="操作系统">
+            <button type="button" role="tab" id="t-app-deb" aria-controls="p-app-deb" aria-selected="true">{{logo:ubuntu}}Ubuntu、Debian</button>
+            <button type="button" role="tab" id="t-app-alma" aria-controls="p-app-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux、Rocky</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-app-deb" aria-labelledby="t-app-deb">
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-app-deb">复制</button></div>
+<pre id="c-app-deb"><span class="p">$ </span>sudo git clone https://github.com/Panelica/pnlcs.git /var/www/pnlcs
+<span class="p">$ </span>sudo chown -R www-data:www-data /var/www/pnlcs
+<span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>pn() { sudo -u www-data HOME=/tmp/pnlcs-home COMPOSER_HOME=/tmp/pnlcs-home/composer "$@"; }
+
+<span class="p">$ </span>pn composer install --no-dev --optimize-autoloader --no-interaction
+
+<span class="p">$ </span>sudo mysql -e "CREATE DATABASE pnlcs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  CREATE USER 'pnlcs'@'localhost' IDENTIFIED BY 'choose-a-strong-password';
+  GRANT ALL PRIVILEGES ON pnlcs.* TO 'pnlcs'@'localhost'; FLUSH PRIVILEGES;"
+
+<span class="p">$ </span>pn cp .env.example .env
+<span class="p">$ </span>pn sed -i 's|^APP_URL=.*|APP_URL=http://example.com|; s|^DB_PASSWORD=.*|DB_PASSWORD=choose-a-strong-password|' .env
+<span class="p">$ </span>sudo chmod 640 .env
+
+<span class="p">$ </span>pn php artisan key:generate
+<span class="p">$ </span>pn php artisan migrate --force
+<span class="p">$ </span>pn npm ci
+<span class="p">$ </span>pn npm run build
+<span class="p">$ </span>pn php artisan storage:link
+<span class="p">$ </span>pn php artisan optimize</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-app-alma" aria-labelledby="t-app-alma" hidden>
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-app-alma">复制</button></div>
+<pre id="c-app-alma"><span class="p">$ </span>sudo git clone https://github.com/Panelica/pnlcs.git /var/www/pnlcs
+<span class="p">$ </span>sudo chown -R apache:apache /var/www/pnlcs
+<span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>pn() { sudo -u apache HOME=/tmp/pnlcs-home COMPOSER_HOME=/tmp/pnlcs-home/composer "$@"; }
+
+<span class="p">$ </span>pn /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
+
+<span class="p">$ </span>sudo mysql -e "CREATE DATABASE pnlcs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+  CREATE USER 'pnlcs'@'localhost' IDENTIFIED BY 'choose-a-strong-password';
+  GRANT ALL PRIVILEGES ON pnlcs.* TO 'pnlcs'@'localhost'; FLUSH PRIVILEGES;"
+
+<span class="p">$ </span>pn cp .env.example .env
+<span class="p">$ </span>pn sed -i 's|^APP_URL=.*|APP_URL=http://example.com|; s|^DB_PASSWORD=.*|DB_PASSWORD=choose-a-strong-password|' .env
+<span class="p">$ </span>sudo chmod 640 .env
+
+<span class="p">$ </span>pn php artisan key:generate
+<span class="p">$ </span>pn php artisan migrate --force
+<span class="p">$ </span>pn npm ci
+<span class="p">$ </span>pn npm run build
+<span class="p">$ </span>pn php artisan storage:link
+<span class="p">$ </span>pn php artisan optimize
+
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/storage(/.*)?"
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/bootstrap/cache(/.*)?"
+<span class="p">$ </span>sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/pnlcs/\.env"
+<span class="p">$ </span>sudo restorecon -R /var/www/pnlcs
+<span class="p">$ </span>sudo setsebool -P httpd_can_network_connect_db 1
+<span class="p">$ </span>sudo setsebool -P httpd_can_network_connect 1</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>将 Nginx 指向 public/</h3>
+          <p>文档根目录是 <code>public/</code> 目录，绝不能是项目根目录：项目根目录中存放着 <code>.env</code>。请删除默认站点，否则服务器地址会一直显示 Nginx 欢迎页。</p>
+          <p class="muted">Apache 和 Caddy 也可以使用，规则相同：文档根目录为 <code>public/</code>，PHP 通过 PHP-FPM 8.4 运行，所有不是文件的请求都重写到 <code>index.php</code>。</p>
+        </div>
+        <div class="tabs">
+          <div class="tabs-list" role="tablist" aria-label="操作系统">
+            <button type="button" role="tab" id="t-web-deb" aria-controls="p-web-deb" aria-selected="true">{{logo:ubuntu}}Ubuntu、Debian</button>
+            <button type="button" role="tab" id="t-web-alma" aria-controls="p-web-alma" aria-selected="false" tabindex="-1">{{logo:almalinux}}AlmaLinux、Rocky</button>
+          </div>
+          <div class="term" role="tabpanel" id="p-web-deb" aria-labelledby="t-web-deb">
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-web-deb">复制</button></div>
+<pre id="c-web-deb"><span class="p">$ </span>sudo tee /etc/nginx/sites-available/pnlcs &gt; /dev/null &lt;&lt;'EOF'
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/pnlcs/public;
+    index index.php;
+    charset utf-8;
+    client_max_body_size 64M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php8.4-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* { deny all; }
+}
+EOF
+<span class="p">$ </span>sudo ln -s /etc/nginx/sites-available/pnlcs /etc/nginx/sites-enabled/
+<span class="p">$ </span>sudo rm -f /etc/nginx/sites-enabled/default
+<span class="p">$ </span>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</pre>
+          </div>
+          <div class="term" role="tabpanel" id="p-web-alma" aria-labelledby="t-web-alma" hidden>
+            <div class="term-head"><span>终端</span><button type="button" data-copy="c-web-alma">复制</button></div>
+<pre id="c-web-alma"><span class="p">$ </span>sudo tee /etc/nginx/conf.d/pnlcs.conf &gt; /dev/null &lt;&lt;'EOF'
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/pnlcs/public;
+    index index.php;
+    charset utf-8;
+    client_max_body_size 64M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* { deny all; }
+}
+EOF
+<span class="p">$ </span>sudo nginx -t &amp;&amp; sudo systemctl reload nginx</pre>
+          </div>
+        </div>
+      </li>
+      <li class="flow-step">
+        <div class="flow-copy">
+          <h3>在浏览器中完成安装，然后配置计划任务和安全</h3>
+          <p>打开 <code>http://example.com/install</code>。向导会检查运行要求，创建管理员，然后自行关闭。</p>
+          <p class="muted">为 Web 服务器用户添加一行 cron，即可驱动账单、提醒、暂停、SSL 检查和备份。队列任务不需要单独的 worker，同一行 cron 会一并处理。</p>
+        </div>
+        <div class="term">
+          <div class="term-head"><span>终端</span><button type="button" data-copy="c-finish">复制</button></div>
+<pre id="c-finish"><span class="p">$ </span>cd /var/www/pnlcs
+<span class="p">$ </span>WEB_USER=www-data   # AlmaLinux, Rocky: apache
+<span class="p">$ </span>(sudo crontab -u $WEB_USER -l 2&gt;/dev/null; echo '* * * * * cd /var/www/pnlcs &amp;&amp; php artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1') | sudo crontab -u $WEB_USER -
+
+<span class="p">$ </span>sudo apt install -y certbot python3-certbot-nginx   # Ubuntu, Debian
+<span class="p">$ </span>sudo certbot --nginx -d example.com
+<span class="p">$ </span>pn sed -i 's|^APP_URL=http://|APP_URL=https://|' .env
+<span class="p">$ </span>pn php artisan optimize</pre>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--paper">
   <div class="wrap split split--top">
     <div class="split-copy">
       <h2>系统要求</h2>
@@ -94,7 +313,7 @@ section: 资源
   </div>
 </section>
 
-<section class="band band--paper">
+<section class="band">
   <div class="wrap">
     <div class="band-head"><h2>安装之后</h2></div>
     <ul class="link-list">
