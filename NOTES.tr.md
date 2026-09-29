@@ -49,7 +49,7 @@ GitHub API'nin anonim sınırı saatte 60 istek / IP — ziyaretçi başına 4 i
 1. **Ürün görünüyor** — açılışta 4 sekmeli gerçek ekran görüntüsü; her çözüm sayfasında ilgili görüntüler.
 2. **Güven sinyalleri geri geldi** (kullanıcı istedi, 2026-09-28): teknoloji yığını + canlı proje durumu açılışta ve alt bilgide.
    Düğme hiyerarşisi: ana = Live demo, ikincil = Documentation, metin bağlantısı = GitHub / Docker / katkı.
-3. **Dürüst durum tablosu** — Entegrasyonlar sayfasında "Tested in production / Needs testing / Included" (kaynak: pnlcs README "What needs your help").
+3. **Test etiketi yok** (kullanıcı kararı, 2026-09-28) — modül başına "tested / needs testing" yazılmaz; entegrasyonlar renkli logo karolarıyla listelenir.
 4. **WHMCS'ten geçiş** — "tek tık içe aktarma yok" açıkça yazıyor (docs/guides/migrate-from-whmcs.md), kademeli geçiş adımları var.
 5. Sola hizalı başlıklar, AA kontrast, klavye ile menü (Esc kapatır), mobil akordeon menü, `prefers-reduced-motion`.
 
@@ -68,6 +68,19 @@ Rehber: `impeccable` + bağımsız metin denetimi (ajan). Bağlam dosyası: `PRO
   that belongs to everyone" ekibin kendi cümlesi; yerine somut başlık kondu, ekip isterse geri alınabilir.
 - Tema açıklamaları (`themes.json`) pnlcs'in kendi verisi, olduğu gibi gösteriliyor.
 
+## Diller (9): en, es, de, fr, pt-br, tr, ru, zh, ja
+
+İngilizce kök dizinde, diğerleri `/<kod>/` altında. Çeviriler `src/i18n/<kod>/` (sayfalar, partial'lar, `strings.json`).
+Akış: İngilizceyi değiştir → `python3 tools/sync_i18n.py` (eski çevirileri taşır, eksikleri `tools/i18n-missing.json`'a yazar)
+→ eksikleri doldur → `python3 tools/sync_i18n.py --apply <dolu.json>` → `python3 tools/check_i18n.py` (CI de çalıştırır).
+
+## Sonradan eklenenler (2026-09-29)
+
+- Mega menüler (ikonlu), dil seçici en sağda (SVG bayraklar), ana sayfada katkıcı duvarı ve showcase karuseli (dolma çubuğu, oklar, otomatik geçiş).
+- Showcase: firmalar `data/showcase.json`'a PR atar (ikahost, ENA Hosting).
+- Get started: Docker'sız kurulum (`#server`) — Ubuntu 24.04, Debian 13, AlmaLinux 9 / Rocky 9 sekmeleri; komutlar pnlcs
+  `docs/install/native.md`'den (81f96c7). Kopyala-yapıştır güvenli olsun diye `.env` `pn sed` ile, cron `crontab -l | … | crontab -` ile, Nginx `tee` ile yazılıyor.
+
 ## Kaynaktan doğrulanan her sayı (pnlcs 4717255)
 
 30 dil · 16 tema · 7 sunucu modülü + Custom · 8 ödeme · 6 kayıt firması + Manual · GoGetSSL · 4 Addon · 27 rapor ·
@@ -78,8 +91,7 @@ Bütün docs.pnlcs.com bağlantıları 200 döndü (2026-09-28).
 ## Açık işler
 
 - [ ] Ekibe sun; geri bildirim.
-- [ ] Vitrindeki ikahost metni — kullanıcı + ekip onayı.
-- [ ] "Needs testing" etiketleri — ekip teyit etsin (README'deki listeden alındı; HestiaCP, Vultr, Mollie… için durum yazmıyor → "Included").
+- [ ] Vitrindeki ikahost (taslak) ve ENA Hosting metinleri — firmaların onayı.
 - [ ] og:image için 1200×630 özel görsel (şimdilik ürün ekran görüntüsü).
 - [ ] Tema önizlemesi şematik; ileride her temanın gerçek ekran görüntüsü.
 - [ ] Ekip siteyi nasıl yayınlıyor — `site/` klasörü mü, kendi araçları mı.
