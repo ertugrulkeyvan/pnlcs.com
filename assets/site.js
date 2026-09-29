@@ -188,6 +188,64 @@
     });
   }
 
+  // ---------- Showcase carousel: story-style progress bars, arrows, swipe, pause ----------
+  $$('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('.sc-track');
+    var slides = $$('.sc-slide', root);
+    var bars = $$('.sc-bar', root);
+    var toggle = root.querySelector('.sc-toggle');
+    var n = slides.length, i = 0;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var userPaused = reduce, hoverPaused = false;
+    root.style.setProperty('--sc-dur', (+root.dataset.interval || 6500) + 'ms');
+
+    var sync = function () {
+      var paused = userPaused || hoverPaused;
+      root.classList.toggle('is-paused', paused);
+      toggle.setAttribute('aria-label', userPaused ? L('play', 'Play') : L('pause', 'Pause'));
+    };
+    var go = function (to) {
+      i = (to + n) % n;
+      track.style.transform = 'translateX(' + (-100 * i) + '%)';
+      slides.forEach(function (s, k) {
+        var on = k === i;
+        s.setAttribute('aria-hidden', String(!on));
+        $$('a, button', s).forEach(function (el) { el.tabIndex = on ? 0 : -1; });
+      });
+      bars.forEach(function (b, k) {
+        b.classList.toggle('is-done', k < i);
+        b.classList.remove('is-active');
+        b.setAttribute('aria-current', String(k === i));
+      });
+      void bars[i].offsetWidth;  // restart the fill animation
+      bars[i].classList.add('is-active');
+    };
+
+    root.addEventListener('animationend', function (e) {
+      if (e.target.parentElement === bars[i]) go(i + 1);
+    });
+    root.querySelector('.sc-prev').addEventListener('click', function () { go(i - 1); });
+    root.querySelector('.sc-next').addEventListener('click', function () { go(i + 1); });
+    bars.forEach(function (b, k) { b.addEventListener('click', function () { go(k); }); });
+    toggle.addEventListener('click', function () { userPaused = !userPaused; sync(); });
+    root.addEventListener('mouseenter', function () { hoverPaused = true; sync(); });
+    root.addEventListener('mouseleave', function () { hoverPaused = false; sync(); });
+    root.addEventListener('focusin', function () { hoverPaused = true; sync(); });
+    root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) { hoverPaused = false; sync(); } });
+    var x0 = null;
+    track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1);
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') go(i + 1);
+      if (e.key === 'ArrowLeft') go(i - 1);
+    });
+    go(0); sync();
+  });
+
   // ---------- Theme preview: repaints the mini portal with each theme's real colours ----------
   var mini = document.querySelector('.mini');
   var pickers = document.querySelector('[data-theme-pickers]');

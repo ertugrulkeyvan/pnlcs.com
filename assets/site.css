@@ -832,3 +832,28 @@ img.mark { object-fit: contain; border-radius: 4px; }
 .hero { overflow: visible; }
 .trust { position: relative; z-index: 1; }
 @media (max-width: 480px) { .getbox-cmd code { white-space: normal; overflow-wrap: anywhere; } }
+
+/* ---------- Showcase carousel (home) ---------- */
+.sc { display: grid; gap: 14px; }
+.sc-viewport { overflow: hidden; border-radius: var(--radius-l); }
+.sc-track { display: flex; transition: transform .55s cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+.sc-slide { flex: 0 0 100%; min-width: 0; }
+.sc-slide .case { height: 100%; }
+.sc-controls { display: flex; align-items: center; gap: 10px; }
+.sc-bars { flex: 1; display: flex; gap: 6px; }
+.sc-bar { flex: 1; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; }
+.sc-bar i { position: relative; display: block; width: 100%; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.sc-bar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 0; background: var(--navy); border-radius: 2px; }
+.sc-bar.is-done i::after { width: 100%; }
+.sc-bar.is-active i::after { animation: sc-fill var(--sc-dur, 6500ms) linear forwards; }
+.sc.is-paused .sc-bar.is-active i::after { animation-play-state: paused; }
+.sc-bar:hover i { background: #cfd4e2; }
+@keyframes sc-fill { to { width: 100%; } }
+.sc-btn { flex: none; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--card); color: var(--text); cursor: pointer; }
+.sc-btn:hover { border-color: var(--navy); color: var(--navy); }
+.sc-btn .ico { width: 17px; height: 17px; }
+.sc-btn span { display: grid; place-items: center; }
+.sc-ic-play { display: none !important; }
+.sc.is-paused .sc-ic-play { display: grid !important; }
+.sc.is-paused .sc-ic-pause { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .sc-track { transition: none; } }

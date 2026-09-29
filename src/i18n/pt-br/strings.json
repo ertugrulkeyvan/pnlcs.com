@@ -26,5 +26,11 @@
   "showcase_sells": "Vende",
   "showcase_runs_on": "Usa",
   "showcase_location": "Sede",
-  "js_theme_colors": "Cor principal {p}, cor de destaque {a}"
+  "js_theme_colors": "Cor principal {p}, cor de destaque {a}",
+  "carousel_label": "Empresas que usam o PNLCS",
+  "carousel_prev": "Empresa anterior",
+  "carousel_next": "Próxima empresa",
+  "carousel_slide": "{n} de {total}",
+  "js_pause": "Pausar",
+  "js_play": "Reproduzir"
 }

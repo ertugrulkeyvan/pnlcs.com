@@ -26,5 +26,11 @@
   "showcase_sells": "Sells",
   "showcase_runs_on": "Runs on",
   "showcase_location": "Based in",
-  "js_theme_colors": "Primary {p}, accent {a}"
+  "js_theme_colors": "Primary {p}, accent {a}",
+  "carousel_label": "Companies running PNLCS",
+  "carousel_prev": "Previous company",
+  "carousel_next": "Next company",
+  "carousel_slide": "{n} of {total}",
+  "js_pause": "Pause",
+  "js_play": "Play"
 }

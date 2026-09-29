@@ -26,5 +26,11 @@
   "showcase_sells": "販売",
   "showcase_runs_on": "利用環境",
   "showcase_location": "所在地",
-  "js_theme_colors": "メインカラー{p}、アクセントカラー{a}"
+  "js_theme_colors": "メインカラー{p}、アクセントカラー{a}",
+  "carousel_label": "PNLCSを導入している企業",
+  "carousel_prev": "前の企業",
+  "carousel_next": "次の企業",
+  "carousel_slide": "{total}件中{n}件目",
+  "js_pause": "一時停止",
+  "js_play": "再生"
 }

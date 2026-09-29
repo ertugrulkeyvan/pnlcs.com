@@ -26,5 +26,11 @@
   "showcase_sells": "Продаёт",
   "showcase_runs_on": "Работает на",
   "showcase_location": "Расположение",
-  "js_theme_colors": "Основной цвет {p}, акцентный цвет {a}"
+  "js_theme_colors": "Основной цвет {p}, акцентный цвет {a}",
+  "carousel_label": "Компании, использующие PNLCS",
+  "carousel_prev": "Предыдущая компания",
+  "carousel_next": "Следующая компания",
+  "carousel_slide": "{n} из {total}",
+  "js_pause": "Пауза",
+  "js_play": "Воспроизвести"
 }

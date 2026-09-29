@@ -26,5 +26,11 @@
   "showcase_sells": "Sattıkları",
   "showcase_runs_on": "Kullandıkları",
   "showcase_location": "Konum",
-  "js_theme_colors": "Ana renk {p}, vurgu rengi {a}"
+  "js_theme_colors": "Ana renk {p}, vurgu rengi {a}",
+  "carousel_label": "PNLCS kullanan firmalar",
+  "carousel_prev": "Önceki firma",
+  "carousel_next": "Sonraki firma",
+  "carousel_slide": "{n} / {total}",
+  "js_pause": "Duraklat",
+  "js_play": "Oynat"
 }

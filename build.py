@@ -274,6 +274,32 @@ def showcase_card(e, s, compact=False):
             f'<dl>{dl}</dl>{draft}</div></article>')
 
 
+def showcase_carousel(entries, s):
+    """Home page: every showcase entry in a small carousel with story-style progress bars."""
+    if not entries:
+        return ''
+    total = len(entries)
+    slides = ''.join(
+        f'<div class="sc-slide" role="group" aria-roledescription="slide" '
+        f'aria-label="{html.escape(s["carousel_slide"].replace("{n}", str(i + 1)).replace("{total}", str(total)))}"'
+        f'{"" if i == 0 else " aria-hidden=\"true\""}>{showcase_card(e, s, compact=True)}</div>'
+        for i, e in enumerate(entries))
+    if total == 1:
+        return f'<div class="sc sc--single">{slides}</div>'
+    bars = ''.join(f'<button type="button" class="sc-bar" data-to="{i}" aria-label="{html.escape(s["carousel_slide"].replace("{n}", str(i + 1)).replace("{total}", str(total)))}"><i></i></button>'
+                   for i in range(total))
+    return (f'<div class="sc" data-carousel data-interval="6500" role="region" aria-roledescription="carousel" '
+            f'aria-label="{html.escape(s["carousel_label"])}">'
+            f'<div class="sc-viewport"><div class="sc-track" aria-live="off">{slides}</div></div>'
+            f'<div class="sc-controls">'
+            f'<button type="button" class="sc-btn sc-prev" aria-label="{html.escape(s["carousel_prev"])}">{{{{icon:chevron-left}}}}</button>'
+            f'<div class="sc-bars">{bars}</div>'
+            f'<button type="button" class="sc-btn sc-toggle" aria-label="{html.escape(s["js_pause"])}">'
+            f'<span class="sc-ic-pause">{{{{icon:pause}}}}</span><span class="sc-ic-play">{{{{icon:play}}}}</span></button>'
+            f'<button type="button" class="sc-btn sc-next" aria-label="{html.escape(s["carousel_next"])}">{{{{icon:chevron-right}}}}</button>'
+            f'</div></div>')
+
+
 # ---------- pages ----------
 
 def parse_page(raw):
@@ -368,7 +394,7 @@ def build():
             meta, body = parse_page(raw)
             body = body.replace('{{whats_new}}', whats_new_html(entries, s, code))
             body = body.replace('{{showcase}}', '\n'.join(showcase_card(e, s) for e in showcase))
-            body = body.replace('{{showcase_featured}}', showcase_card(showcase[0], s, compact=True) if showcase else '')
+            body = body.replace('{{showcase_featured}}', showcase_carousel(showcase, s))
             body = body.replace('{{showcase_count}}', str(len(showcase)))
             if meta.get('cta', 'yes') != 'no':
                 body += cta

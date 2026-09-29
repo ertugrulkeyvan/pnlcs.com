@@ -26,5 +26,11 @@
   "showcase_sells": "销售",
   "showcase_runs_on": "使用",
   "showcase_location": "所在地",
-  "js_theme_colors": "主色 {p}，强调色 {a}"
+  "js_theme_colors": "主色 {p}，强调色 {a}",
+  "carousel_label": "使用 PNLCS 的公司",
+  "carousel_prev": "上一家公司",
+  "carousel_next": "下一家公司",
+  "carousel_slide": "第 {n} 个，共 {total} 个",
+  "js_pause": "暂停",
+  "js_play": "播放"
 }

@@ -26,5 +26,11 @@
   "showcase_sells": "Angebot",
   "showcase_runs_on": "Läuft mit",
   "showcase_location": "Standort",
-  "js_theme_colors": "Primärfarbe {p}, Akzentfarbe {a}"
+  "js_theme_colors": "Primärfarbe {p}, Akzentfarbe {a}",
+  "carousel_label": "Unternehmen, die PNLCS einsetzen",
+  "carousel_prev": "Vorheriges Unternehmen",
+  "carousel_next": "Nächstes Unternehmen",
+  "carousel_slide": "{n} von {total}",
+  "js_pause": "Pausieren",
+  "js_play": "Abspielen"
 }
