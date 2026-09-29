@@ -313,6 +313,17 @@ def lang_switcher(code, name, s):
             f'<ul>{"".join(items)}</ul></details>')
 
 
+_VERSIONS = {}
+
+
+def asset_version(path):
+    """?v=<content hash> so browsers fetch an image again when it changes."""
+    if path not in _VERSIONS:
+        f = ROOT / path.lstrip('/')
+        _VERSIONS[path] = '?v=' + hashlib.sha256(f.read_bytes()).hexdigest()[:8] if f.exists() else ''
+    return _VERSIONS[path]
+
+
 def read_localized(code, rel):
     """Translated file if it exists, otherwise the English source."""
     if code != 'en':
@@ -390,6 +401,7 @@ def build():
             doc = logos_in(doc)
             # every page links assets from the site root, so /de/… pages find them too
             doc = re.sub(r'(?<=["\s,(])assets/', '/assets/', doc)
+            doc = re.sub(r'(/assets/[\w./-]+\.(?:webp|png|jpg|svg))(?![?\w])', lambda m: m.group(1) + asset_version(m.group(1)), doc)
             leftover = re.findall(r'\{\{\w+\}\}', doc)
             if leftover:
                 sys.exit(f'{code}/{name}: unreplaced {leftover}')
