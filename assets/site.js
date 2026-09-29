@@ -15,7 +15,7 @@
   var header = document.querySelector('.site-header');
   var menuBtn = document.querySelector('.menu-btn');
   var triggers = $$('.nav-trigger');
-  var desktop = window.matchMedia('(min-width: 1021px)');
+  var desktop = window.matchMedia('(min-width: 1101px)');
   var hover = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   var setOpen = function (trigger, open) {

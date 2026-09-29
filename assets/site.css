@@ -130,8 +130,9 @@ p { margin: 0; }
 .gh-stars::before { content: "★ "; color: var(--teal); }
 .menu-btn { display: none; margin-left: auto; background: none; border: 1.5px solid rgba(255,255,255,.3); color: var(--white); border-radius: var(--radius-s); min-height: 40px; padding: 0 14px; font: 600 .95rem var(--font); cursor: pointer; }
 
-@media (max-width: 1120px) { .gh-label { display: none; } .site-header > .wrap { gap: 20px; } }
-@media (max-width: 1020px) {
+@media (max-width: 1320px) { .gh-label { display: none; } .site-header > .wrap { gap: 20px; } }
+@media (min-width: 1101px) and (max-width: 1240px) { .header-actions .btn--ghost-dark { display: none; } .nav-trigger, .nav-link { padding-inline: 9px; } }
+@media (max-width: 1100px) {
   .menu-btn { display: inline-flex; align-items: center; }
   .nav, .header-actions { display: none; }
   .site-header.is-open { max-height: 100vh; overflow-y: auto; }
@@ -458,7 +459,7 @@ figcaption { font-size: .9rem; color: var(--muted); padding: 12px 2px 0; }
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line-dark); font-size: .88rem; }
 .foot-base a { color: var(--on-dark); }
 .to-top { text-decoration: none; }
-@media (max-width: 1020px) { .foot-top { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .foot-top { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
   .foot-cols { grid-template-columns: 1fr 1fr; }
   .foot-status { grid-template-columns: 1fr 1fr; }
@@ -559,7 +560,7 @@ figcaption { font-size: .9rem; color: var(--muted); padding: 12px 2px 0; }
 .lang li a { display: block; padding: 8px 12px; border-radius: var(--radius-s); color: var(--text); text-decoration: none; }
 .lang li a:hover { background: var(--paper); color: var(--text); }
 .lang li a[aria-current] { font-weight: 600; background: var(--navy-tint); }
-@media (max-width: 1020px) {
+@media (max-width: 1100px) {
   .lang { order: -1; width: 100%; }
   .lang ul { position: static; box-shadow: none; background: transparent; display: grid; grid-template-columns: 1fr 1fr; padding: 4px 0; }
   .lang li a { color: var(--on-dark); }
@@ -673,7 +674,7 @@ a.mega-feature:hover { background: var(--navy-tint); color: var(--text); }
 .mega-stats dt { color: var(--muted); }
 .mega-stats dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-@media (max-width: 1020px) {
+@media (max-width: 1100px) {
   .nav-item--mega { position: relative; }
   .menu--mega { transform: none; width: auto; left: auto; }
   .menu--mega.is-open { display: block; }
@@ -685,7 +686,7 @@ a.mega-feature:hover { background: var(--navy-tint); color: var(--text); }
 }
 .menu li a .mi { display: grid; place-items: center; margin: 0; color: var(--navy); }
 .menu li a:hover .mi { color: var(--white); }
-@media (max-width: 1020px) { .menu li a .mi { color: var(--on-dark); } }
+@media (max-width: 1100px) { .menu li a .mi { color: var(--on-dark); } }
 .mega-feature--code code { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
 
 /* ---------- People + showcase ---------- */
@@ -803,3 +804,17 @@ img.mark { object-fit: contain; border-radius: 4px; }
 .table th .with-logo { display: inline-flex; align-items: center; }
 .intro-logos .mark, .intro-logos img.mark { width: 40px !important; height: 40px !important; }
 .intro-logos li { aspect-ratio: 4 / 3; }
+
+/* ---------- Small phones (≤480px) ---------- */
+@media (max-width: 480px) {
+  .btn { white-space: normal; text-align: center; line-height: 1.25; padding: 10px 18px; min-height: 46px; max-width: 100%; }
+  .more { white-space: normal; }
+  .intro-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .intro-logos .mark, .intro-logos img.mark { width: 30px !important; height: 30px !important; }
+  .getbox th { width: 36%; }
+}
+.code-card, .term, .intro-visual, .getbox { min-width: 0; max-width: 100%; }
+.code-card { overflow: hidden; }
+.code-card pre, .term pre { overflow-x: auto; }
+.hero-links, .links { row-gap: 10px; }
+@media (min-width: 761px) and (max-width: 900px) { .foot-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; } }
