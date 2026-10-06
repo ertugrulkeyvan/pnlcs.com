@@ -69,21 +69,21 @@ cta: no
         <div class="field"><label for="lf-email">Электронная почта</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <div class="field-row">
-        <div class="field"><label for="lf-company">Компания <span class="opt">необязательно</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
-        <div class="field"><label for="lf-country">Страна</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+        <div class="field"><label for="lf-company">Компания <span class="opt">необязательно</span></label><input id="lf-company" name="Company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">Страна</label><input id="lf-country" name="Country" type="text" autocomplete="country-name" required></div>
       </div>
       <fieldset class="field">
         <legend>Что вы хотите продавать?</legend>
         <div class="choices">
-          <label><input type="checkbox" name="sell" value="Shared hosting">Виртуальный хостинг</label>
-          <label><input type="checkbox" name="sell" value="Docker apps">Docker-приложения</label>
-          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
-          <label><input type="checkbox" name="sell" value="Domains">Домены</label>
-          <label><input type="checkbox" name="sell" value="Not sure yet"> Пока не знаю</label>
+          <label><input type="checkbox" name="What they want to sell" value="Shared hosting">Виртуальный хостинг</label>
+          <label><input type="checkbox" name="What they want to sell" value="Docker apps">Docker-приложения</label>
+          <label><input type="checkbox" name="What they want to sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="What they want to sell" value="Domains">Домены</label>
+          <label><input type="checkbox" name="What they want to sell" value="Not sure yet"> Пока не знаю</label>
         </div>
       </fieldset>
-      <div class="field"><label for="lf-message">Расскажите о своих планах</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">Что у вас уже есть (серверы, домен, установленный WHMCS) и когда вы хотите начать.</p></div>
-      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>Мои данные можно использовать, чтобы ответить на этот запрос. <a href="privacy.html#form">Политика конфиденциальности</a></span></label>
+      <div class="field"><label for="lf-message">Расскажите о своих планах</label><textarea id="lf-message" name="Message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">Что у вас уже есть (серверы, домен, установленный WHMCS) и когда вы хотите начать.</p></div>
+      <label class="agree"><input type="checkbox" name="Privacy consent" value="Accepted" required> <span>Мои данные можно использовать, чтобы ответить на этот запрос. <a href="privacy.html#form">Политика конфиденциальности</a></span></label>
       <button class="btn btn--navy" type="submit" data-cta="discovery-submit">Запросить звонок</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>

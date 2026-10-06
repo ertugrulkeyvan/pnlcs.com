@@ -69,21 +69,21 @@ cta: no
         <div class="field"><label for="lf-email">邮箱</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <div class="field-row">
-        <div class="field"><label for="lf-company">公司 <span class="opt">选填</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
-        <div class="field"><label for="lf-country">国家</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+        <div class="field"><label for="lf-company">公司 <span class="opt">选填</span></label><input id="lf-company" name="Company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">国家</label><input id="lf-country" name="Country" type="text" autocomplete="country-name" required></div>
       </div>
       <fieldset class="field">
         <legend>你想卖什么？</legend>
         <div class="choices">
-          <label><input type="checkbox" name="sell" value="Shared hosting">虚拟主机</label>
-          <label><input type="checkbox" name="sell" value="Docker apps">Docker 应用</label>
-          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
-          <label><input type="checkbox" name="sell" value="Domains">域名</label>
-          <label><input type="checkbox" name="sell" value="Not sure yet"> 还不确定</label>
+          <label><input type="checkbox" name="What they want to sell" value="Shared hosting">虚拟主机</label>
+          <label><input type="checkbox" name="What they want to sell" value="Docker apps">Docker 应用</label>
+          <label><input type="checkbox" name="What they want to sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="What they want to sell" value="Domains">域名</label>
+          <label><input type="checkbox" name="What they want to sell" value="Not sure yet"> 还不确定</label>
         </div>
       </fieldset>
-      <div class="field"><label for="lf-message">说说你的计划</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">你已经有什么（服务器、域名、现有的 WHMCS），以及希望什么时候开始。</p></div>
-      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>我的信息可用于回复此请求。 <a href="privacy.html#form">隐私政策</a></span></label>
+      <div class="field"><label for="lf-message">说说你的计划</label><textarea id="lf-message" name="Message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">你已经有什么（服务器、域名、现有的 WHMCS），以及希望什么时候开始。</p></div>
+      <label class="agree"><input type="checkbox" name="Privacy consent" value="Accepted" required> <span>我的信息可用于回复此请求。 <a href="privacy.html#form">隐私政策</a></span></label>
       <button class="btn btn--navy" type="submit" data-cta="discovery-submit">预约沟通</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>

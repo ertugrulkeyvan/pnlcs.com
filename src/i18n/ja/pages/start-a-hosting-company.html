@@ -69,21 +69,21 @@ cta: no
         <div class="field"><label for="lf-email">メールアドレス</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <div class="field-row">
-        <div class="field"><label for="lf-company">会社名 <span class="opt">任意</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
-        <div class="field"><label for="lf-country">国</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+        <div class="field"><label for="lf-company">会社名 <span class="opt">任意</span></label><input id="lf-company" name="Company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">国</label><input id="lf-country" name="Country" type="text" autocomplete="country-name" required></div>
       </div>
       <fieldset class="field">
         <legend>何を販売したいですか？</legend>
         <div class="choices">
-          <label><input type="checkbox" name="sell" value="Shared hosting">共用ホスティング</label>
-          <label><input type="checkbox" name="sell" value="Docker apps">Dockerアプリ</label>
-          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
-          <label><input type="checkbox" name="sell" value="Domains">ドメイン</label>
-          <label><input type="checkbox" name="sell" value="Not sure yet"> まだ決めていない</label>
+          <label><input type="checkbox" name="What they want to sell" value="Shared hosting">共用ホスティング</label>
+          <label><input type="checkbox" name="What they want to sell" value="Docker apps">Dockerアプリ</label>
+          <label><input type="checkbox" name="What they want to sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="What they want to sell" value="Domains">ドメイン</label>
+          <label><input type="checkbox" name="What they want to sell" value="Not sure yet"> まだ決めていない</label>
         </div>
       </fieldset>
-      <div class="field"><label for="lf-message">計画を教えてください</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">すでにあるもの（サーバー、ドメイン、既存の WHMCS）と、いつ始めたいか。</p></div>
-      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>このお問い合わせへの返信のために情報を使用することに同意します。 <a href="privacy.html#form">プライバシーポリシー</a></span></label>
+      <div class="field"><label for="lf-message">計画を教えてください</label><textarea id="lf-message" name="Message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">すでにあるもの（サーバー、ドメイン、既存の WHMCS）と、いつ始めたいか。</p></div>
+      <label class="agree"><input type="checkbox" name="Privacy consent" value="Accepted" required> <span>このお問い合わせへの返信のために情報を使用することに同意します。 <a href="privacy.html#form">プライバシーポリシー</a></span></label>
       <button class="btn btn--navy" type="submit" data-cta="discovery-submit">相談を申し込む</button>
       <p class="form-status" role="status" aria-live="polite"></p>
     </form>

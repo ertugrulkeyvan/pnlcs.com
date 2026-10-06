@@ -365,8 +365,8 @@
       e.preventDefault();
       var data = {};
       new FormData(form).forEach(function (v, k) { data[k] = data[k] ? data[k] + ', ' + v : v; });
-      data.language = document.documentElement.lang;
-      data.page = location.pathname;
+      data['Site language'] = document.documentElement.lang;
+      data.Page = location.pathname;
       submit.disabled = true;
       status.className = 'form-status';
       status.textContent = L('form_sending', 'Sending…');
