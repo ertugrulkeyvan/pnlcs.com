@@ -76,6 +76,43 @@ You can do all of it in the browser.
 An automatic check builds the site with your entry. It fails if a required field is missing, the URL is not `https://`, or the screenshot file does not exist.
 A maintainer then reviews and merges it. Entries stay in English on every language version of the site.
 
+## List a module or theme
+
+[Modules and themes](https://pnlcs.com/extensions.html) lists modules and themes built for PNLCS by the community.
+Free and paid, open and closed source are all welcome. The listing links to your own page; nothing is sold on pnlcs.com.
+Every listing is marked as community-built: the PNLCS team does not review, test or support it.
+
+1. Open [`data/extensions.json`](data/extensions.json), press the pencil icon, and add your entry:
+
+   ```json
+   {
+     "slug": "your-module",
+     "name": "Your Module",
+     "type": "module",
+     "category": "addon",
+     "publisher": "Your Company",
+     "publisher_url": "https://example.com/",
+     "url": "https://example.com/your-module",
+     "summary": "One sentence, under 160 characters.",
+     "description": "What it does, how it is installed and how it is supported. Paragraphs are separated by a blank line. Under 1500 characters.",
+     "price": "free",
+     "license": "MIT",
+     "requires": "PNLCS 1.4+",
+     "source": "https://github.com/you/your-module",
+     "updated": "2026-10-06",
+     "screenshots": ["assets/extensions/your-module-1.webp"]
+   }
+   ```
+
+   - `type` is `module` or `theme`. A module's `category` is `server`, `gateway`, `registrar`, `ssl` or `addon`; a theme's is `theme`.
+   - `price` is `free`, `paid` or `freemium` (free and paid). Prices themselves stay on your own page.
+   - `url` is where people get it. Every address must start with `https://`.
+   - `source` and `screenshots` are optional. Screenshots are `.webp`, 1600 × 1000 px, under 300 KB, at most four.
+     An optional square icon goes in `assets/extensions/<slug>-icon.svg` (or `.png`, `.webp`).
+2. Choose **Propose changes**, then **Create pull request**. Add `?template=extension.md` to the pull request address to get the checklist.
+
+The listing gets its own page at `/module-<slug>.html` or `/theme-<slug>.html`. Listings stay in English on every language version of the site.
+
 ## Content rules
 
 Every number and feature on the site must be verifiable in the PNLCS repository or its documentation. The site does not publish per-module test status. See `PRODUCT.md`.

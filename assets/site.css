@@ -465,6 +465,29 @@ figcaption { font-size: .9rem; color: var(--muted); padding: 12px 2px 0; }
 .consent .btn { min-height: 42px; }
 .foot-link { background: none; border: 0; padding: 0; font: inherit; color: var(--on-dark-muted); cursor: pointer; }
 .foot-link:hover { color: var(--white); text-decoration: underline; }
+.notice { border: 1px solid #ecd9a8; background: var(--amber-tint); border-radius: var(--radius-m); padding: 20px 22px; }
+.notice h2 { font-size: 1.1rem; font-stretch: 100%; letter-spacing: 0; color: var(--amber-ink); margin-bottom: 8px; }
+.notice p { font-size: .95rem; color: var(--text); }
+.notice p + p { margin-top: 8px; }
+.ext-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.ext-card a { display: flex; gap: 16px; height: 100%; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-l); background: var(--card); color: var(--text); text-decoration: none; transition: border-color .15s ease, box-shadow .15s ease; }
+.ext-card a:hover { border-color: var(--navy); box-shadow: 0 14px 30px -24px rgba(20,26,49,.5); }
+.ext-mark { flex: none; width: 48px; height: 48px; border-radius: var(--radius-m); object-fit: contain; background: var(--white); border: 1px solid var(--line); }
+.ext-mark--mono { display: grid; place-items: center; font-weight: 700; color: var(--navy); background: var(--navy-tint); border-color: transparent; }
+.ext-body { display: grid; gap: 4px; align-content: start; min-width: 0; }
+.ext-body strong { font-size: 1.1rem; }
+.ext-pub { font-size: .9rem; color: var(--muted); }
+.ext-sum { font-size: .95rem; color: var(--text); margin-top: 4px; }
+.ext-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.ext-empty { padding: clamp(20px, 3vw, 28px); border: 1.5px dashed #c5cadb; border-radius: var(--radius-l); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.ext-empty p { color: var(--muted); margin: 0; }
+.ext-head { display: flex; gap: 20px; align-items: flex-start; }
+.ext-head .ext-mark { width: 72px; height: 72px; font-size: 1.4rem; margin-top: 6px; }
+.ext-detail .notice { margin-bottom: 28px; }
+.ext-desc { margin-top: 0; }
+.ext-shots { display: grid; gap: 16px; margin-top: 28px; }
+.ext-facts td .badge { vertical-align: middle; }
+@media (max-width: 560px) { .ext-head .ext-mark { width: 56px; height: 56px; } }
 .closing { background: var(--navy); color: var(--white); }
 .closing .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 56px; }
 .closing h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }

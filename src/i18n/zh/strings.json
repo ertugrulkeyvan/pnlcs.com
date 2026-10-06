@@ -35,5 +35,22 @@
   "js_play": "播放",
   "js_form_sending": "正在发送…",
   "js_form_sent": "谢谢。你的请求已发送，PNLCS 团队会通过邮件回复。",
-  "js_form_error": "请求未能发送。请重试，或发邮件至 info@panelica.com。"
+  "js_form_error": "请求未能发送。请重试，或发邮件至 info@panelica.com。",
+  "ext_section": "模块和主题",
+  "ext_type_module": "模块",
+  "ext_type_theme": "主题",
+  "ext_cat_server": "服务器模块",
+  "ext_cat_gateway": "支付网关",
+  "ext_cat_registrar": "域名注册商",
+  "ext_cat_ssl": "SSL",
+  "ext_cat_addon": "插件",
+  "ext_cat_theme": "主题",
+  "ext_price_free": "免费",
+  "ext_price_paid": "付费",
+  "ext_price_freemium": "免费和付费",
+  "ext_by": "发布者：{publisher}",
+  "ext_empty_module": "还没有列出的模块。你的可以成为第一个。",
+  "ext_empty_theme": "还没有列出的主题。你的可以成为第一个。",
+  "ext_list_yours": "添加你的",
+  "ext_source_none": "未公开"
 }

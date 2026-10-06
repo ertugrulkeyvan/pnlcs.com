@@ -35,5 +35,22 @@
   "js_play": "Abspielen",
   "js_form_sending": "Wird gesendet…",
   "js_form_sent": "Danke. Ihre Anfrage wurde gesendet, das PNLCS-Team antwortet per E-Mail.",
-  "js_form_error": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@panelica.com."
+  "js_form_error": "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@panelica.com.",
+  "ext_section": "Module und Themes",
+  "ext_type_module": "Modul",
+  "ext_type_theme": "Theme",
+  "ext_cat_server": "Servermodul",
+  "ext_cat_gateway": "Zahlungsanbieter",
+  "ext_cat_registrar": "Domain-Registrar",
+  "ext_cat_ssl": "SSL",
+  "ext_cat_addon": "Addon",
+  "ext_cat_theme": "Theme",
+  "ext_price_free": "Kostenlos",
+  "ext_price_paid": "Kostenpflichtig",
+  "ext_price_freemium": "Kostenlos und kostenpflichtig",
+  "ext_by": "von {publisher}",
+  "ext_empty_module": "Noch keine Module gelistet. Ihres kann das erste sein.",
+  "ext_empty_theme": "Noch keine Themes gelistet. Ihres kann das erste sein.",
+  "ext_list_yours": "Eigenes eintragen",
+  "ext_source_none": "Nicht veröffentlicht"
 }

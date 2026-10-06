@@ -1,0 +1,54 @@
+<!--
+title: Модули и темы
+description: Модули и темы для PNLCS от сообщества. Каждый публикует, оценивает и поддерживает его собственный разработчик; pnlcs.com только собирает их в список.
+section: Продукт
+cta: no
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Модули и темы</h1>
+      <p class="lede">Серверные модули, платёжные шлюзы, дополнения и темы, созданные сообществом для PNLCS. Каждый публикует, оценивает и поддерживает его собственный разработчик. Эта страница только собирает их в список.</p>
+      <div class="btn-row"><a class="btn btn--light" href="#add">Добавить свой модуль или тему</a><a class="btn btn--ghost-dark" href="integrations.html">Официальные интеграции</a></div>
+    </div>
+    <div class="notice notice--intro" role="note">
+      <h2>Создано сообществом, не официально</h2>
+      <p>Команда PNLCS не создаёт, не проверяет, не тестирует и не поддерживает эти записи. Цены, лицензии и поддержку определяет каждый автор, а pnlcs.com не участвует в продажах.</p>
+      <p>Прежде чем что-то устанавливать на рабочую систему, прочитайте код или спросите автора.</p>
+      <p class="links"><a href="integrations.html">Интеграции, которые поставляются с PNLCS</a><a href="themes.html">Темы, входящие в PNLCS</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="modules">
+  <div class="wrap">
+    <div class="band-head"><h2>Модули</h2><p class="lede">Серверные модули, платёжные шлюзы, регистраторы доменов, SSL и дополнения.</p></div>
+    {{extensions_modules}}
+  </div>
+</section>
+
+<section class="band band--paper" id="themes">
+  <div class="wrap">
+    <div class="band-head"><h2>Темы</h2><p class="lede">Темы витрины и личного кабинета в дополнение к шестнадцати, которые входят в PNLCS.</p></div>
+    {{extensions_themes}}
+  </div>
+</section>
+
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Добавить свой модуль или тему</h2>
+      <p class="lede">Список представляет собой файл в репозитории этого сайта. Бесплатное или платное, открытое или закрытое: всё, что сделано для PNLCS, можно добавить. Продажи идут на вашем собственном сайте.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json" data-cta="extension-add">Изменить файл списка</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#list-a-module-or-theme">Полная инструкция</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Откройте файл списка на GitHub</strong><span>Кнопка открывает его в редакторе. В первый раз GitHub создаёт копию в вашем аккаунте.</span></span></li>
+      <li><span><strong>Добавьте свою запись</strong><span>Название, краткое описание, тип цены, лицензия, совместимая версия PNLCS и страница, где его можно получить.</span></span></li>
+      <li><span><strong>Откройте pull request</strong><span>Автоматическая проверка собирает сайт с вашей записью. Мейнтейнер просматривает её и выполняет слияние.</span></span></li>
+    </ol>
+  </div>
+</section>

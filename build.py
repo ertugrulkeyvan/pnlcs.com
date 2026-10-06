@@ -306,6 +306,114 @@ def showcase_carousel(entries, s):
             f'</div></div>')
 
 
+# ---------- modules & themes (data/extensions.json, extended through pull requests) ----------
+
+EXT_TYPES = {'module': ('server', 'gateway', 'registrar', 'ssl', 'addon'), 'theme': ('theme',)}
+EXT_PRICES = ('free', 'paid', 'freemium')
+EXT_REQUIRED = {'slug': str, 'name': str, 'type': str, 'category': str, 'publisher': str, 'publisher_url': str,
+                'url': str, 'summary': str, 'description': str, 'price': str, 'license': str, 'requires': str,
+                'updated': str}
+
+
+def load_extensions():
+    entries = json.loads((DATA / 'extensions.json').read_text())
+    seen = set()
+    for i, e in enumerate(entries):
+        where = f'data/extensions.json entry {i + 1}'
+        for key, kind in EXT_REQUIRED.items():
+            if not isinstance(e.get(key), kind) or not e.get(key).strip():
+                sys.exit(f'{where}: "{key}" is required ({kind.__name__})')
+        if not re.fullmatch(r'[a-z0-9]+(-[a-z0-9]+)*', e['slug']) or len(e['slug']) > 40:
+            sys.exit(f'{where}: "slug" must be lowercase letters, digits and dashes, at most 40 characters')
+        if e['slug'] in seen:
+            sys.exit(f'{where}: slug "{e["slug"]}" is used twice')
+        seen.add(e['slug'])
+        if e['type'] not in EXT_TYPES:
+            sys.exit(f'{where}: "type" must be one of {", ".join(EXT_TYPES)}')
+        if e['category'] not in EXT_TYPES[e['type']]:
+            sys.exit(f'{where}: "category" for a {e["type"]} must be one of {", ".join(EXT_TYPES[e["type"]])}')
+        if e['price'] not in EXT_PRICES:
+            sys.exit(f'{where}: "price" must be one of {", ".join(EXT_PRICES)}')
+        for key in ('url', 'publisher_url', 'source'):
+            if e.get(key) and not re.match(r'https://', e[key]):
+                sys.exit(f'{where}: "{key}" must start with https://')
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', e['updated']):
+            sys.exit(f'{where}: "updated" must be a date like 2026-10-06')
+        if len(e['summary']) > 160:
+            sys.exit(f'{where}: "summary" is longer than 160 characters')
+        if len(e['description']) > 1500:
+            sys.exit(f'{where}: "description" is longer than 1500 characters')
+        if len(e['requires']) > 40 or len(e['license']) > 40:
+            sys.exit(f'{where}: "requires" and "license" must be short (at most 40 characters)')
+        for shot in e.get('screenshots', []):
+            if not re.fullmatch(r'assets/extensions/[\w.-]+\.webp', shot) or not (ROOT / shot).exists():
+                sys.exit(f'{where}: screenshot {shot} must be an existing .webp in assets/extensions/')
+        if len(e.get('screenshots', [])) > 4:
+            sys.exit(f'{where}: at most 4 screenshots')
+    return sorted(entries, key=lambda e: e['name'].lower())
+
+
+def ext_page_name(e):
+    return f'{e["type"]}-{e["slug"]}.html'
+
+
+def ext_mark(e):
+    for ext in ('svg', 'png', 'webp'):
+        f = ROOT / 'assets' / 'extensions' / f'{e["slug"]}-icon.{ext}'
+        if f.exists():
+            return f'<img class="ext-mark" src="assets/extensions/{f.name}" alt="" width="48" height="48" loading="lazy">'
+    letters = ''.join(w[0] for w in re.findall(r'[A-Za-z0-9]+', e['name']))[:2].upper() or '?'
+    return f'<span class="ext-mark ext-mark--mono" aria-hidden="true">{html.escape(letters)}</span>'
+
+
+def ext_price_badge(e, s):
+    tone = 'ok' if e['price'] == 'free' else 'plain'
+    return f'<span class="badge badge--{tone}">{html.escape(s["ext_price_" + e["price"]])}</span>'
+
+
+def ext_cards(entries, kind, s):
+    """Cards for the listing page; an invitation when nothing is listed yet."""
+    esc = html.escape
+    items = [e for e in entries if e['type'] == kind]
+    if not items:
+        return (f'<div class="ext-empty"><p>{esc(s["ext_empty_" + kind])}</p>'
+                f'<a class="btn btn--ghost" href="#add">{esc(s["ext_list_yours"])}</a></div>')
+    cards = []
+    for e in items:
+        by = esc(s['ext_by']).replace('{publisher}', f'<span lang="en">{esc(e["publisher"])}</span>')
+        cards.append(
+            f'<li class="ext-card"><a href="{ext_page_name(e)}">{ext_mark(e)}<span class="ext-body">'
+            f'<strong lang="en">{esc(e["name"])}</strong><span class="ext-pub">{by}</span>'
+            f'<span class="ext-sum" lang="en">{esc(e["summary"])}</span>'
+            f'<span class="ext-meta"><span class="badge badge--plain">{esc(s["ext_cat_" + e["category"]])}</span>{ext_price_badge(e, s)}</span>'
+            f'</span></a></li>')
+    return f'<ul class="ext-grid">{"".join(cards)}</ul>'
+
+
+def ext_page(e, template, s):
+    """A generated detail page: front matter + the localized partials/extension.html."""
+    esc = html.escape
+    paras = ''.join(f'<p>{esc(" ".join(p.split()))}</p>' for p in re.split(r'\n\s*\n', e['description']) if p.strip())
+    shots = ''.join(f'<figure class="shot"><img src="{esc(src)}" width="1600" height="1000" loading="lazy" alt=""></figure>'
+                    for src in e.get('screenshots', []))
+    source = (f'<a href="{esc(e["source"])}" rel="ugc noopener">{esc(re.sub(r"^https://(www\.)?", "", e["source"]).rstrip("/"))}</a>'
+              if e.get('source') else esc(s['ext_source_none']))
+    values = {
+        'ext_name': esc(e['name']), 'ext_summary': esc(e['summary']), 'ext_url': esc(e['url']),
+        'ext_publisher': esc(e['publisher']), 'ext_publisher_url': esc(e['publisher_url']),
+        'ext_type': esc(s['ext_type_' + e['type']]), 'ext_category': esc(s['ext_cat_' + e['category']]),
+        'ext_price': ext_price_badge(e, s), 'ext_license': esc(e['license']), 'ext_requires': esc(e['requires']),
+        'ext_updated': esc(e['updated']), 'ext_source': source, 'ext_mark': ext_mark(e),
+        'ext_description': paras, 'ext_shots': f'<div class="ext-shots">{shots}</div>' if shots else '',
+    }
+    body = template
+    for k, v in values.items():
+        body = body.replace('{{' + k + '}}', v)
+    front = (f'<!--\ntitle: {e["name"]}\ndescription: {" ".join(e["summary"].split())}\n'
+             f'section: {s["ext_section"]}\ncta: no\n-->\n')
+    return front + body
+
+
 # ---------- pages ----------
 
 def parse_page(raw):
@@ -374,7 +482,13 @@ def build():
     entries = changelog_entries()
     latest = entries[0]
     showcase = load_showcase()
+    extensions = load_extensions()
+    ext_pages = {ext_page_name(e): e for e in extensions}
     pages = sorted(p.name for p in (SRC / 'pages').glob('*.html'))
+    clash = set(pages) & set(ext_pages)
+    if clash:
+        sys.exit(f'data/extensions.json: {sorted(clash)} would replace a site page')
+    pages += sorted(ext_pages)
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -391,13 +505,17 @@ def build():
         cta, _ = read_localized(code, 'partials/cta.html')
         offer, _ = read_localized(code, 'partials/offer.html')
         consent, _ = read_localized(code, 'partials/consent.html')
+        ext_template, _ = read_localized(code, 'partials/extension.html')
         js_strings = {k[3:]: v for k, v in s.items() if k.startswith('js_')}
         outdir = OUT if code == 'en' else OUT / code
         outdir.mkdir(parents=True, exist_ok=True)
         translated = 0
 
         for name in pages:
-            raw, is_translated = read_localized(code, f'pages/{name}')
+            if name in ext_pages:
+                raw, is_translated = ext_page(ext_pages[name], ext_template, s), True
+            else:
+                raw, is_translated = read_localized(code, f'pages/{name}')
             translated += is_translated
             meta, body = parse_page(raw)
             body = body.replace('{{whats_new}}', whats_new_html(entries, s, code))
@@ -405,6 +523,8 @@ def build():
             body = body.replace('{{showcase_featured}}', showcase_carousel(showcase, s))
             body = body.replace('{{showcase_count}}', str(len(showcase)))
             body = body.replace('{{offer}}', offer)
+            body = body.replace('{{extensions_modules}}', ext_cards(extensions, 'module', s))
+            body = body.replace('{{extensions_themes}}', ext_cards(extensions, 'theme', s))
             body = body.replace('{{web3forms_key}}', WEB3FORMS_KEY)
             if meta.get('cta', 'yes') != 'no':
                 body += cta

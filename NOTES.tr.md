@@ -111,3 +111,12 @@ Eski tek sayfalık ilk taslak: `../.playwright-mcp/eski-tek-sayfa/` (karşılaş
   Başarılı gönderimde `dataLayer` → `discovery_form_submit`. CTA'larda `data-cta` (offer-band, page-intro, menu, footer, discovery-submit …).
 - **Gizlilik politikası** `privacy.html`, veri sorumlusu Panelica, LLC. Hukuki metin: ekip/avukat okumalı.
 - Not: `sync_i18n.py` tr `get-started.html`'de `<code>index.php</code>` sonrasına boşluk ekliyor; senkron sonrası kontrol et.
+
+## Modüller ve temalar dizini (2026-10-06)
+
+- Topluluk modül/temaları `data/extensions.json`'dan (PR ile eklenir; alanlar ve kurallar README "List a module or theme").
+  Liste `extensions.html`, her kayda otomatik detay sayfası `module-<slug>.html` / `theme-<slug>.html`
+  (alt klasör değil: sitedeki bağlantılar göreli). Şablon `partials/extension.html`, etiketler `strings.json` → `ext_*`.
+- Her yerde "Community-built, not official" uyarısı; satış yayıncının sitesinde, dış bağlantılar `rel="ugc noopener"`.
+- Görseller `assets/extensions/` (`<slug>-icon.svg|png|webp`, `<slug>-1.webp`). PR şablonu `?template=extension.md`.
+- Rozetler bilerek yok (kayırma görünmesin); sonra herkese aynı kuralla verilen rozetler düşünülecek.

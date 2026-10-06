@@ -1,0 +1,54 @@
+<!--
+title: Modüller ve temalar
+description: Topluluğun PNLCS için geliştirdiği modüller ve temalar. Her birini kendi geliştiricisi yayınlar, fiyatlar ve destekler; pnlcs.com yalnızca listeler.
+section: Ürün
+cta: no
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Modüller ve temalar</h1>
+      <p class="lede">Topluluğun PNLCS için geliştirdiği sunucu modülleri, ödeme altyapıları, eklentiler ve temalar. Her birini kendi geliştiricisi yayınlar, fiyatlar ve destekler. Bu sayfa yalnızca listeler.</p>
+      <div class="btn-row"><a class="btn btn--light" href="#add">Modülünüzü veya temanızı ekleyin</a><a class="btn btn--ghost-dark" href="integrations.html">Resmî entegrasyonlar</a></div>
+    </div>
+    <div class="notice notice--intro" role="note">
+      <h2>Topluluk yapımı, resmî değil</h2>
+      <p>PNLCS ekibi bu kayıtları geliştirmez, incelemez, test etmez ve desteklemez. Fiyatları, lisansları ve desteği her yayıncı kendisi belirler; pnlcs.com hiçbir satışta yer almaz.</p>
+      <p>Canlı bir sisteme bir şey kurmadan önce kodu inceleyin ya da yayıncıya sorun.</p>
+      <p class="links"><a href="integrations.html">PNLCS ile birlikte gelen entegrasyonlar</a><a href="themes.html">PNLCS ile gelen temalar</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="modules">
+  <div class="wrap">
+    <div class="band-head"><h2>Modüller</h2><p class="lede">Sunucu modülleri, ödeme altyapıları, alan adı kayıt firmaları, SSL ve eklentiler.</p></div>
+    {{extensions_modules}}
+  </div>
+</section>
+
+<section class="band band--paper" id="themes">
+  <div class="wrap">
+    <div class="band-head"><h2>Temalar</h2><p class="lede">PNLCS ile gelen on altı temaya ek olarak mağaza ve müşteri paneli temaları.</p></div>
+    {{extensions_themes}}
+  </div>
+</section>
+
+<section class="band" id="add">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Modülünüzü veya temanızı ekleyin</h2>
+      <p class="lede">Liste, bu web sitesinin deposundaki bir dosyadır. Ücretsiz ya da ücretli, açık ya da kapalı kaynak: PNLCS için yapılmış her şey listelenebilir. Satış sizin kendi sitenizde olur.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json" data-cta="extension-add">Liste dosyasını düzenle</a>
+        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#list-a-module-or-theme">Ayrıntılı talimatlar</a>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><span><strong>Liste dosyasını GitHub'da açın</strong><span>Düğme dosyayı düzenleyicide açar. İlk seferde GitHub, hesabınızda bir kopya oluşturur.</span></span></li>
+      <li><span><strong>Bilgilerinizi ekleyin</strong><span>Ad, kısa bir özet, fiyat türü, lisans, uyumlu olduğu PNLCS sürümü ve insanların onu edindiği sayfa.</span></span></li>
+      <li><span><strong>Pull request açın</strong><span>Otomatik bir kontrol, siteyi eklediğiniz bilgilerle oluşturur. Bir proje sorumlusu değişikliği inceler ve birleştirir.</span></span></li>
+    </ol>
+  </div>
+</section>

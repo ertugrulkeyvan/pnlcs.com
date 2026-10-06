@@ -35,5 +35,22 @@
   "js_play": "再生",
   "js_form_sending": "送信中…",
   "js_form_sent": "ありがとうございます。送信が完了しました。PNLCS チームからメールで返信します。",
-  "js_form_error": "送信できませんでした。もう一度お試しいただくか、info@panelica.com までご連絡ください。"
+  "js_form_error": "送信できませんでした。もう一度お試しいただくか、info@panelica.com までご連絡ください。",
+  "ext_section": "モジュールとテーマ",
+  "ext_type_module": "モジュール",
+  "ext_type_theme": "テーマ",
+  "ext_cat_server": "サーバーモジュール",
+  "ext_cat_gateway": "決済ゲートウェイ",
+  "ext_cat_registrar": "ドメインレジストラ",
+  "ext_cat_ssl": "SSL",
+  "ext_cat_addon": "アドオン",
+  "ext_cat_theme": "テーマ",
+  "ext_price_free": "無料",
+  "ext_price_paid": "有料",
+  "ext_price_freemium": "無料と有料",
+  "ext_by": "公開者：{publisher}",
+  "ext_empty_module": "まだ掲載されたモジュールはありません。最初の掲載者になれます。",
+  "ext_empty_theme": "まだ掲載されたテーマはありません。最初の掲載者になれます。",
+  "ext_list_yours": "掲載する",
+  "ext_source_none": "非公開"
 }

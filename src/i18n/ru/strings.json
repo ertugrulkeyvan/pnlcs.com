@@ -35,5 +35,22 @@
   "js_play": "Воспроизвести",
   "js_form_sending": "Отправка…",
   "js_form_sent": "Спасибо. Запрос отправлен, команда PNLCS ответит по электронной почте.",
-  "js_form_error": "Не удалось отправить запрос. Попробуйте ещё раз или напишите на info@panelica.com."
+  "js_form_error": "Не удалось отправить запрос. Попробуйте ещё раз или напишите на info@panelica.com.",
+  "ext_section": "Модули и темы",
+  "ext_type_module": "Модуль",
+  "ext_type_theme": "Тема",
+  "ext_cat_server": "Серверный модуль",
+  "ext_cat_gateway": "Платёжный шлюз",
+  "ext_cat_registrar": "Регистратор доменов",
+  "ext_cat_ssl": "SSL",
+  "ext_cat_addon": "Дополнение",
+  "ext_cat_theme": "Тема",
+  "ext_price_free": "Бесплатно",
+  "ext_price_paid": "Платно",
+  "ext_price_freemium": "Бесплатно и платно",
+  "ext_by": "автор: {publisher}",
+  "ext_empty_module": "Модулей пока нет. Ваш может стать первым.",
+  "ext_empty_theme": "Тем пока нет. Ваша может стать первой.",
+  "ext_list_yours": "Добавить свой",
+  "ext_source_none": "Не опубликован"
 }

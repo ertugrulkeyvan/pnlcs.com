@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build the site (validates data/showcase.json)
+      - name: Build the site (validates data/showcase.json and data/extensions.json)
         run: python3 build.py
       - name: Check translations
         run: python3 tools/check_i18n.py

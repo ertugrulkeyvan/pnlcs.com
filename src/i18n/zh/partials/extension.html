@@ -1,0 +1,42 @@
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="ext-head">
+      {{ext_mark}}
+      <div>
+        <h1 lang="en">{{ext_name}}</h1>
+        <p class="lede" lang="en">{{ext_summary}}</p>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn btn--light" href="{{ext_url}}" rel="ugc noopener" data-cta="extension-publisher">前往发布者页面</a><a class="btn btn--ghost-dark" href="extensions.html">全部模块和主题</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top ext-detail">
+    <div class="split-copy">
+      <div class="notice" role="note">
+        <h2>社区开发，非官方</h2>
+        <p>此条目由发布者撰写。PNLCS 团队没有开发、审核或测试它，也不提供支持。价格、许可证和支持由发布者负责，pnlcs.com 不参与任何销售。在生产环境安装之前，请先阅读代码或咨询发布者。</p>
+      </div>
+      <div class="prose ext-desc" lang="en">{{ext_description}}</div>
+      {{ext_shots}}
+    </div>
+    <aside class="getbox ext-facts">
+      <h2>关于此条目</h2>
+      <table>
+        <tbody>
+          <tr><th scope="row">发布者</th><td><a href="{{ext_publisher_url}}" rel="ugc noopener" lang="en">{{ext_publisher}}</a></td></tr>
+          <tr><th scope="row">类型</th><td>{{ext_type}}</td></tr>
+          <tr><th scope="row">类别</th><td>{{ext_category}}</td></tr>
+          <tr><th scope="row">价格</th><td>{{ext_price}}</td></tr>
+          <tr><th scope="row">许可证</th><td lang="en">{{ext_license}}</td></tr>
+          <tr><th scope="row">兼容版本</th><td lang="en">{{ext_requires}}</td></tr>
+          <tr><th scope="row">源代码</th><td>{{ext_source}}</td></tr>
+          <tr><th scope="row">最后更新</th><td>{{ext_updated}}</td></tr>
+        </tbody>
+      </table>
+      <a class="getbox-more" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json">报告此条目的问题</a>
+    </aside>
+  </div>
+</section>

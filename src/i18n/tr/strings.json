@@ -35,5 +35,22 @@
   "js_play": "Oynat",
   "js_form_sending": "Gönderiliyor…",
   "js_form_sent": "Teşekkürler. Talebiniz gönderildi; PNLCS ekibi e-postayla yanıt verecek.",
-  "js_form_error": "Talep gönderilemedi. Lütfen tekrar deneyin ya da info@panelica.com adresine yazın."
+  "js_form_error": "Talep gönderilemedi. Lütfen tekrar deneyin ya da info@panelica.com adresine yazın.",
+  "ext_section": "Modüller ve temalar",
+  "ext_type_module": "Modül",
+  "ext_type_theme": "Tema",
+  "ext_cat_server": "Sunucu modülü",
+  "ext_cat_gateway": "Ödeme altyapısı",
+  "ext_cat_registrar": "Alan adı kayıt firması",
+  "ext_cat_ssl": "SSL",
+  "ext_cat_addon": "Eklenti",
+  "ext_cat_theme": "Tema",
+  "ext_price_free": "Ücretsiz",
+  "ext_price_paid": "Ücretli",
+  "ext_price_freemium": "Ücretsiz ve ücretli",
+  "ext_by": "Yayıncı: {publisher}",
+  "ext_empty_module": "Henüz listelenmiş modül yok. İlk siz olabilirsiniz.",
+  "ext_empty_theme": "Henüz listelenmiş tema yok. İlk siz olabilirsiniz.",
+  "ext_list_yours": "Sizinkini ekleyin",
+  "ext_source_none": "Yayınlanmamış"
 }

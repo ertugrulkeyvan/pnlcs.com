@@ -1,0 +1,42 @@
+<section class="page-intro">
+  <div class="wrap">
+    {{crumbs}}
+    <div class="ext-head">
+      {{ext_mark}}
+      <div>
+        <h1 lang="en">{{ext_name}}</h1>
+        <p class="lede" lang="en">{{ext_summary}}</p>
+      </div>
+    </div>
+    <div class="btn-row"><a class="btn btn--light" href="{{ext_url}}" rel="ugc noopener" data-cta="extension-publisher">Yayıncının sayfasına git</a><a class="btn btn--ghost-dark" href="extensions.html">Tüm modüller ve temalar</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split split--top ext-detail">
+    <div class="split-copy">
+      <div class="notice" role="note">
+        <h2>Topluluk yapımı, resmî değil</h2>
+        <p>Bu kaydı yayıncısı yazdı. PNLCS ekibi bunu geliştirmedi, incelemedi, test etmedi ve desteklemiyor. Fiyat, lisans ve destek yayıncıya aittir; pnlcs.com hiçbir satışta yer almaz. Canlı bir sisteme kurmadan önce kodu inceleyin ya da yayıncıya sorun.</p>
+      </div>
+      <div class="prose ext-desc" lang="en">{{ext_description}}</div>
+      {{ext_shots}}
+    </div>
+    <aside class="getbox ext-facts">
+      <h2>Bu kayıt hakkında</h2>
+      <table>
+        <tbody>
+          <tr><th scope="row">Yayıncı</th><td><a href="{{ext_publisher_url}}" rel="ugc noopener" lang="en">{{ext_publisher}}</a></td></tr>
+          <tr><th scope="row">Tür</th><td>{{ext_type}}</td></tr>
+          <tr><th scope="row">Kategori</th><td>{{ext_category}}</td></tr>
+          <tr><th scope="row">Fiyat</th><td>{{ext_price}}</td></tr>
+          <tr><th scope="row">Lisans</th><td lang="en">{{ext_license}}</td></tr>
+          <tr><th scope="row">Uyumlu sürüm</th><td lang="en">{{ext_requires}}</td></tr>
+          <tr><th scope="row">Kaynak kod</th><td>{{ext_source}}</td></tr>
+          <tr><th scope="row">Son güncelleme</th><td>{{ext_updated}}</td></tr>
+        </tbody>
+      </table>
+      <a class="getbox-more" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json">Bu kayıtla ilgili bir sorun bildirin</a>
+    </aside>
+  </div>
+</section>
