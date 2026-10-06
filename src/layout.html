@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+// Consent Mode v2: everything that measures waits for the visitor's choice (banner: partials/consent.html)
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500});
+try {
+  var pc = JSON.parse(localStorage.getItem('pnlcs-consent'));
+  if (pc && pc.v === 1) {
+    var pg = pc.ok ? 'granted' : 'denied';
+    gtag('consent', 'update', {ad_storage: pg, ad_user_data: pg, ad_personalization: pg, analytics_storage: pg});
+    dataLayer.push({event: 'consent_update', consent_status: pg});
+  }
+} catch (e) {}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MDCZNJKP');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}}</title>
@@ -25,12 +46,17 @@
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDCZNJKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">Skip to content</a>
 {{header}}
 <main id="main">
 {{content}}
 </main>
 {{footer}}
+{{consent}}
 <script src="assets/site.js" defer></script>
 </body>
 </html>

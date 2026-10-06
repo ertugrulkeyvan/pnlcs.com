@@ -1,0 +1,91 @@
+<!--
+title: Crea una empresa de hosting
+description: Puesta en marcha de pago por los desarrolladores de PNLCS, para empresas que crean un negocio de hosting desde cero. Empieza con una llamada gratuita. PNLCS sigue siendo gratuito y con licencia MIT.
+section: Soluciones
+cta: no
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Crea una empresa de hosting</h1>
+      <p class="lede">PNLCS es gratuito y puedes instalarlo y ejecutarlo tú mismo. Si estás montando una empresa de hosting desde cero y prefieres que te lo hagan, los desarrolladores de PNLCS ofrecen la puesta en marcha como servicio de pago. Empieza con una llamada gratuita.</p>
+      <div class="btn-row"><a class="btn btn--light" href="#discovery" data-cta="page-intro">Reserva una llamada gratuita</a><a class="btn btn--ghost-dark" href="get-started.html" data-cta="page-intro-diy">Instálalo tú mismo</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/admin-appearance-800.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="La pantalla Apariencia del panel de administración de PNLCS con los temas instalados"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Servicios de pago del equipo de PNLCS</h2><p class="lede">Elige una parte o todo. Cada proyecto se presupuesta por separado y recibes un presupuesto por escrito después de la llamada.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Área</th><th scope="col">Qué incluye</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Instalación y configuración</th><td class="muted">PNLCS instalado y conectado a tus servidores, pasarelas de pago, un registrador de dominios y tu correo; productos, precios e impuestos configurados contigo</td></tr>
+          <tr><th scope="row">Servidores y panel de control</th><td class="muted">Dimensionamiento y configuración de servidores, y licencias del panel de control Panelica para hosting compartido y apps Docker</td></tr>
+          <tr><th scope="row">Marca y tema</th><td class="muted">Uno de los dieciséis temas con tu logo, tus colores y tu pie de página, o un tema hecho para tu marca</td></tr>
+          <tr><th scope="row">Asesoría</th><td class="muted">Con qué productos empezar, cómo ponerles precio y cómo pasar a los clientes desde WHMCS paso a paso</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Lo que no cambia</h2>
+      <p class="lede">El servicio de pago es opcional. El software y la licencia son iguales para todos.</p>
+      <ul class="checklist checklist--one">
+        <li>PNLCS sigue siendo gratuito y con licencia MIT</li>
+        <li>La instalación, los datos y la lista de clientes son tuyos</li>
+        <li>Puedes asumir el control y gestionarlo todo tú mismo en cualquier momento</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Configurando un pedido de VPS en la tienda de PNLCS"></figure>
+  </div>
+</section>
+
+<section class="band" id="discovery">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Reserva una llamada gratuita</h2>
+      <p class="lede">Una llamada corta sobre tus planes con un desarrollador de PNLCS. Es gratis y no te compromete a nada. Si el servicio de pago encaja, después recibes un presupuesto por escrito.</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>Envía el formulario</strong><span>El equipo responde por correo para acordar un horario.</span></span></li>
+        <li><span><strong>Lo hablamos</strong><span>Qué quieres vender, dónde están tus clientes y qué tienes ya.</span></span></li>
+        <li><span><strong>Recibe un presupuesto</strong><span>Para las partes que quieras encargar. No se cobra nada antes de que lo aceptes.</span></span></li>
+      </ol>
+    </div>
+    <form class="lead-form" action="https://api.web3forms.com/submit" method="POST" data-lead-form>
+      <input type="hidden" name="access_key" value="{{web3forms_key}}">
+      <input type="hidden" name="subject" value="Discovery call request from pnlcs.com">
+      <input type="hidden" name="from_name" value="pnlcs.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <div class="field"><label for="lf-name">Nombre</label><input id="lf-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="lf-email">Correo electrónico</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="lf-company">Empresa <span class="opt">opcional</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">País</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+      </div>
+      <fieldset class="field">
+        <legend>¿Qué quieres vender?</legend>
+        <div class="choices">
+          <label><input type="checkbox" name="sell" value="Shared hosting">Hosting compartido</label>
+          <label><input type="checkbox" name="sell" value="Docker apps">Apps Docker</label>
+          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="sell" value="Domains">Dominios</label>
+          <label><input type="checkbox" name="sell" value="Not sure yet"> Aún no lo sé</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="lf-message">Cuéntanos tus planes</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">Lo que ya tienes (servidores, un dominio, una instalación de WHMCS) y cuándo te gustaría empezar.</p></div>
+      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>Mis datos pueden usarse para responder a esta solicitud. <a href="privacy.html#form">Política de privacidad</a></span></label>
+      <button class="btn btn--navy" type="submit" data-cta="discovery-submit">Solicitar una llamada</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

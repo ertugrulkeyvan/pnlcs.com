@@ -32,5 +32,8 @@
   "carousel_next": "Próxima empresa",
   "carousel_slide": "{n} de {total}",
   "js_pause": "Pausar",
-  "js_play": "Reproduzir"
+  "js_play": "Reproduzir",
+  "js_form_sending": "Enviando…",
+  "js_form_sent": "Obrigado. Sua solicitação foi enviada, e a equipe do PNLCS vai responder por e-mail.",
+  "js_form_error": "Não foi possível enviar a solicitação. Tente de novo ou escreva para info@panelica.com."
 }

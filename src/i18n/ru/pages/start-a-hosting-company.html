@@ -1,0 +1,91 @@
+<!--
+title: Открыть хостинг-компанию
+description: Платная настройка от разработчиков PNLCS для компаний, которые открывают хостинг-бизнес с нуля. Всё начинается с бесплатной консультации. Сам PNLCS остаётся бесплатным, под лицензией MIT.
+section: Решения
+cta: no
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>Открыть хостинг-компанию</h1>
+      <p class="lede">PNLCS бесплатен, его можно установить и запустить самостоятельно. Если вы открываете хостинг-компанию с нуля и хотите, чтобы всё сделали за вас, разработчики PNLCS предлагают настройку как платную услугу. Всё начинается с бесплатной консультации.</p>
+      <div class="btn-row"><a class="btn btn--light" href="#discovery" data-cta="page-intro">Записаться на бесплатную консультацию</a><a class="btn btn--ghost-dark" href="get-started.html" data-cta="page-intro-diy">Установить самостоятельно</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/admin-appearance-800.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="Экран «Оформление» в панели администратора PNLCS с установленными темами"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>Платные услуги команды PNLCS</h2><p class="lede">Возьмите часть или всё. Каждый проект оценивается отдельно, и после консультации вы получаете письменное предложение.</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Раздел</th><th scope="col">Что входит</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Установка и настройка</th><td class="muted">Установка PNLCS и подключение к вашим серверам, платёжным шлюзам, регистратору доменов и почте; товары, цены и налоги настраиваются вместе с вами</td></tr>
+          <tr><th scope="row">Серверы и панель управления</th><td class="muted">Подбор конфигурации и настройка серверов, лицензии панели управления Panelica для виртуального хостинга и Docker-приложений</td></tr>
+          <tr><th scope="row">Бренд и тема</th><td class="muted">Одна из шестнадцати тем с вашим логотипом, цветами и подвалом или тема, сделанная под ваш бренд</td></tr>
+          <tr><th scope="row">Консультации</th><td class="muted">С каких продуктов начать, как назначить цены и как поэтапно перевести клиентов с WHMCS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>Что не меняется</h2>
+      <p class="lede">Платная услуга необязательна. Программа и лицензия одинаковы для всех.</p>
+      <ul class="checklist checklist--one">
+        <li>PNLCS остаётся бесплатным, под лицензией MIT</li>
+        <li>Установка, данные и список клиентов принадлежат вам</li>
+        <li>Вы в любой момент можете взять всё на себя и управлять самостоятельно</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="Настройка заказа VPS в витрине PNLCS"></figure>
+  </div>
+</section>
+
+<section class="band" id="discovery">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>Записаться на бесплатную консультацию</h2>
+      <p class="lede">Короткий разговор о ваших планах с разработчиком PNLCS. Он бесплатный и ни к чему вас не обязывает. Если платная услуга подходит, после него вы получите письменное предложение.</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>Отправьте форму</strong><span>Команда ответит по почте, чтобы договориться о времени.</span></span></li>
+        <li><span><strong>Обсудим</strong><span>Что вы хотите продавать, где ваши клиенты и что у вас уже есть.</span></span></li>
+        <li><span><strong>Получите предложение</strong><span>На те части, которые вы хотите поручить. Ничего не оплачивается, пока вы не примете предложение.</span></span></li>
+      </ol>
+    </div>
+    <form class="lead-form" action="https://api.web3forms.com/submit" method="POST" data-lead-form>
+      <input type="hidden" name="access_key" value="{{web3forms_key}}">
+      <input type="hidden" name="subject" value="Discovery call request from pnlcs.com">
+      <input type="hidden" name="from_name" value="pnlcs.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <div class="field"><label for="lf-name">Имя</label><input id="lf-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="lf-email">Электронная почта</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="lf-company">Компания <span class="opt">необязательно</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">Страна</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+      </div>
+      <fieldset class="field">
+        <legend>Что вы хотите продавать?</legend>
+        <div class="choices">
+          <label><input type="checkbox" name="sell" value="Shared hosting">Виртуальный хостинг</label>
+          <label><input type="checkbox" name="sell" value="Docker apps">Docker-приложения</label>
+          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="sell" value="Domains">Домены</label>
+          <label><input type="checkbox" name="sell" value="Not sure yet"> Пока не знаю</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="lf-message">Расскажите о своих планах</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">Что у вас уже есть (серверы, домен, установленный WHMCS) и когда вы хотите начать.</p></div>
+      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>Мои данные можно использовать, чтобы ответить на этот запрос. <a href="privacy.html#form">Политика конфиденциальности</a></span></label>
+      <button class="btn btn--navy" type="submit" data-cta="discovery-submit">Запросить звонок</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

@@ -97,3 +97,17 @@ Bütün docs.pnlcs.com bağlantıları 200 döndü (2026-09-28).
 - [ ] Ekip siteyi nasıl yayınlıyor — `site/` klasörü mü, kendi araçları mı.
 
 Eski tek sayfalık ilk taslak: `../.playwright-mcp/eski-tek-sayfa/` (karşılaştırma için).
+
+## Ölçüm, çerez onayı ve ücretli kurulum CTA'sı (2026-10-06)
+
+- **GTM** (`GTM-MDCZNJKP`) `src/layout.html` içinde. Önünde Consent Mode v2 varsayılanı: her şey `denied`.
+  Bant `partials/consent.html`, tercih `localStorage` → `pnlcs-consent`. Seçim yapılınca `dataLayer`'a
+  `{event: 'consent_update', consent_status: 'granted'|'denied'}` gider (Meta Pixel / Clarity tetikleyicisi bu).
+  Footer'daki "Cookie settings" bandı yeniden açar. GA, Clarity, Meta Pixel siteye değil GTM'e eklenir.
+- **"Start a hosting company"**: PNLCS geliştiricilerinden **ücretli** kurulum, ilk görüşme ücretsiz.
+  Sayfa `start-a-hosting-company.html`; bant `partials/offer.html`, sayfaya `{{offer}}` yazınca çıkar
+  (ana sayfa, shared-hosting, docker-apps, vps, get-started). Menü: Resources → Start; footer: Solutions.
+- **Ön görüşme formu** Web3Forms'a gider (anahtar `build.py` → `WEB3FORMS_KEY`, herkese açık olması normal).
+  Başarılı gönderimde `dataLayer` → `discovery_form_submit`. CTA'larda `data-cta` (offer-band, page-intro, menu, footer, discovery-submit …).
+- **Gizlilik politikası** `privacy.html`, veri sorumlusu Panelica, LLC. Hukuki metin: ekip/avukat okumalı.
+- Not: `sync_i18n.py` tr `get-started.html`'de `<code>index.php</code>` sonrasına boşluk ekliyor; senkron sonrası kontrol et.

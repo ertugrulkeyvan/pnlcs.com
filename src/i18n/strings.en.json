@@ -32,5 +32,8 @@
   "carousel_next": "Next company",
   "carousel_slide": "{n} of {total}",
   "js_pause": "Pause",
-  "js_play": "Play"
+  "js_play": "Play",
+  "js_form_sending": "Sending…",
+  "js_form_sent": "Thank you. Your request has been sent, and the PNLCS team will reply by email.",
+  "js_form_error": "The request could not be sent. Please try again, or write to info@panelica.com."
 }

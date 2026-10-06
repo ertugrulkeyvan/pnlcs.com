@@ -32,5 +32,8 @@
   "carousel_next": "Sonraki firma",
   "carousel_slide": "{n} / {total}",
   "js_pause": "Duraklat",
-  "js_play": "Oynat"
+  "js_play": "Oynat",
+  "js_form_sending": "Gönderiliyor…",
+  "js_form_sent": "Teşekkürler. Talebiniz gönderildi; PNLCS ekibi e-postayla yanıt verecek.",
+  "js_form_error": "Talep gönderilemedi. Lütfen tekrar deneyin ya da info@panelica.com adresine yazın."
 }

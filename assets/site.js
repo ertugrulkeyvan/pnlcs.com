@@ -333,4 +333,57 @@
       });
     });
   });
+
+  // ---------- Cookie consent (defaults are set in <head>, before Tag Manager) ----------
+  var banner = document.getElementById('consent');
+  var stored = null;
+  try { stored = JSON.parse(localStorage.getItem('pnlcs-consent')); } catch (e) {}
+  if (banner) {
+    if (!stored || stored.v !== 1) banner.hidden = false;
+    $$('[data-consent]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var ok = btn.dataset.consent === 'accept', g = ok ? 'granted' : 'denied';
+        try { localStorage.setItem('pnlcs-consent', JSON.stringify({ v: 1, ok: ok, t: new Date().toISOString() })); } catch (e) {}
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', { ad_storage: g, ad_user_data: g, ad_personalization: g, analytics_storage: g });
+        }
+        (window.dataLayer = window.dataLayer || []).push({ event: 'consent_update', consent_status: g });
+        banner.hidden = true;
+      });
+    });
+    $$('[data-consent-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () { banner.hidden = false; banner.querySelector('button').focus(); });
+    });
+  }
+
+  // ---------- Discovery call form (Web3Forms) ----------
+  $$('[data-lead-form]').forEach(function (form) {
+    var status = form.querySelector('.form-status');
+    var submit = form.querySelector('[type="submit"]');
+    form.addEventListener('submit', function (e) {
+      if (!window.fetch) return; // plain POST still works
+      e.preventDefault();
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = data[k] ? data[k] + ', ' + v : v; });
+      data.language = document.documentElement.lang;
+      data.page = location.pathname;
+      submit.disabled = true;
+      status.className = 'form-status';
+      status.textContent = L('form_sending', 'Sending…');
+      fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.success) throw new Error(res.message);
+          form.reset();
+          status.className = 'form-status is-ok';
+          status.textContent = L('form_sent', 'Thank you. Your request has been sent.');
+          (window.dataLayer = window.dataLayer || []).push({ event: 'discovery_form_submit' });
+        })
+        .catch(function () {
+          status.className = 'form-status is-error';
+          status.textContent = L('form_error', 'The request could not be sent. Please try again.');
+        })
+        .then(function () { submit.disabled = false; });
+    });
+  });
 })();

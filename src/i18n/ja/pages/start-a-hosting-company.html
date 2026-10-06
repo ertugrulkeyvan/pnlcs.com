@@ -1,0 +1,91 @@
+<!--
+title: ホスティング会社を始める
+description: ホスティング事業をゼロから始める企業向けの、PNLCS 開発者による有償の構築サービス。まずは無料の事前相談から。PNLCS 自体は引き続き無料、MIT ライセンスです。
+section: ソリューション
+cta: no
+-->
+<section class="page-intro">
+  <div class="wrap page-intro-grid">
+    <div>
+      {{crumbs}}
+      <h1>ホスティング会社を始める</h1>
+      <p class="lede">PNLCS は無料で、自分でインストールして運用できます。ホスティング事業をゼロから始めるにあたって構築を任せたい場合は、PNLCS の開発者が有償で構築を行います。まずは無料の事前相談から。</p>
+      <div class="btn-row"><a class="btn btn--light" href="#discovery" data-cta="page-intro">無料の事前相談を予約する</a><a class="btn btn--ghost-dark" href="get-started.html" data-cta="page-intro-diy">自分でインストールする</a></div>
+    </div>
+    <figure class="shot"><img src="assets/img/admin-appearance-800.webp" srcset="assets/img/admin-appearance-800.webp 800w, assets/img/admin-appearance.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw" width="800" height="500" alt="PNLCS 管理パネルの外観画面とインストール済みのテーマ"></figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head"><h2>PNLCS チームの有償サービス</h2><p class="lede">一部だけでも、すべてでも依頼できます。案件ごとに見積もり、事前相談の後に書面で見積もりをお送りします。</p></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">セットアップと設定</th><td class="muted">PNLCS のインストールと、サーバー、決済ゲートウェイ、ドメインレジストラ、メールへの接続。商品、価格、税の設定も一緒に行います</td></tr>
+          <tr><th scope="row">サーバーとコントロールパネル</th><td class="muted">サーバー構成の検討と構築、共有ホスティングおよび Docker アプリ向けの Panelica コントロールパネルのライセンス</td></tr>
+          <tr><th scope="row">ブランドとテーマ</th><td class="muted">16 のテーマのいずれかにロゴ、配色、フッターを反映、またはブランド専用のテーマ</td></tr>
+          <tr><th scope="row">アドバイス</th><td class="muted">どの商品から始めるか、価格の付け方、WHMCS からの段階的な顧客移行</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band band--paper">
+  <div class="wrap split">
+    <div class="split-copy">
+      <h2>変わらないこと</h2>
+      <p class="lede">有償サービスは任意です。ソフトウェアとライセンスは誰にとっても同じです。</p>
+      <ul class="checklist checklist--one">
+        <li>PNLCS は引き続き無料、MIT ライセンスです</li>
+        <li>インストール、データ、顧客リストはあなたのものです</li>
+        <li>いつでもすべてを引き取り、自分で運用できます</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="assets/img/client-vps-order.webp" srcset="assets/img/client-vps-order-800.webp 800w, assets/img/client-vps-order.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" width="1600" height="1000" loading="lazy" alt="PNLCS の販売サイトで VPS の注文を設定しているところ"></figure>
+  </div>
+</section>
+
+<section class="band" id="discovery">
+  <div class="wrap split split--top">
+    <div class="split-copy">
+      <h2>無料の事前相談を予約する</h2>
+      <p class="lede">PNLCS の開発者と、あなたの計画について短く話す場です。無料で、何かを約束する必要もありません。有償サービスが合いそうなら、その後に書面で見積もりをお送りします。</p>
+      <ol class="steps" style="margin-top:28px">
+        <li><span><strong>フォームを送信</strong><span>日程調整のため、チームからメールで返信します。</span></span></li>
+        <li><span><strong>相談する</strong><span>販売したいもの、お客様の所在地、すでにあるもの。</span></span></li>
+        <li><span><strong>見積もりを受け取る</strong><span>依頼したい部分について。承諾いただくまで費用は発生しません。</span></span></li>
+      </ol>
+    </div>
+    <form class="lead-form" action="https://api.web3forms.com/submit" method="POST" data-lead-form>
+      <input type="hidden" name="access_key" value="{{web3forms_key}}">
+      <input type="hidden" name="subject" value="Discovery call request from pnlcs.com">
+      <input type="hidden" name="from_name" value="pnlcs.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <div class="field"><label for="lf-name">お名前</label><input id="lf-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="lf-email">メールアドレス</label><input id="lf-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="lf-company">会社名 <span class="opt">任意</span></label><input id="lf-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="lf-country">国</label><input id="lf-country" name="country" type="text" autocomplete="country-name" required></div>
+      </div>
+      <fieldset class="field">
+        <legend>何を販売したいですか？</legend>
+        <div class="choices">
+          <label><input type="checkbox" name="sell" value="Shared hosting">共用ホスティング</label>
+          <label><input type="checkbox" name="sell" value="Docker apps">Dockerアプリ</label>
+          <label><input type="checkbox" name="sell" value="VPS">VPS</label>
+          <label><input type="checkbox" name="sell" value="Domains">ドメイン</label>
+          <label><input type="checkbox" name="sell" value="Not sure yet"> まだ決めていない</label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="lf-message">計画を教えてください</label><textarea id="lf-message" name="message" rows="5" aria-describedby="lf-message-hint" required></textarea><p class="hint" id="lf-message-hint">すでにあるもの（サーバー、ドメイン、既存の WHMCS）と、いつ始めたいか。</p></div>
+      <label class="agree"><input type="checkbox" name="privacy" value="accepted" required> <span>このお問い合わせへの返信のために情報を使用することに同意します。 <a href="privacy.html#form">プライバシーポリシー</a></span></label>
+      <button class="btn btn--navy" type="submit" data-cta="discovery-submit">相談を申し込む</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

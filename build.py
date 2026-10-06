@@ -16,6 +16,8 @@ Each page starts with a front-matter comment:
     section: Product            (breadcrumb parent; omit on the home page)
     heading: Features           (optional breadcrumb label, defaults to title)
     cta: no                     (optional; hides the closing call-to-action band)
+
+Write {{offer}} in a page for the "start a hosting company" band (src/partials/offer.html).
     -->
 
 Only the standard library is used.
@@ -36,6 +38,8 @@ OUT = ROOT / 'site'
 SITE_URL = 'https://pnlcs.com/'
 # Repository of this website: showcase entries arrive here as pull requests.
 SITE_REPO = 'ertugrulkeyvan/pnlcs.com'
+# Web3Forms access key for the discovery call form (public by design; set it here or in WEB3FORMS_KEY).
+WEB3FORMS_KEY = os.environ.get('WEB3FORMS_KEY', '6592ffbb-2b49-497c-b0f5-a1201b785cbb')
 PNLCS_CHECKOUT = Path(os.environ.get('PNLCS_SRC', Path.home() / 'Desktop/pratix/pnlcs-moduller/kaynak/pnlcs'))
 
 # code (folder), hreflang, native name. English is the source and lives at the root.
@@ -385,6 +389,8 @@ def build():
         header, _ = read_localized(code, 'partials/header.html')
         footer, _ = read_localized(code, 'partials/footer.html')
         cta, _ = read_localized(code, 'partials/cta.html')
+        offer, _ = read_localized(code, 'partials/offer.html')
+        consent, _ = read_localized(code, 'partials/consent.html')
         js_strings = {k[3:]: v for k, v in s.items() if k.startswith('js_')}
         outdir = OUT if code == 'en' else OUT / code
         outdir.mkdir(parents=True, exist_ok=True)
@@ -398,6 +404,8 @@ def build():
             body = body.replace('{{showcase}}', '\n'.join(showcase_card(e, s) for e in showcase))
             body = body.replace('{{showcase_featured}}', showcase_carousel(showcase, s))
             body = body.replace('{{showcase_count}}', str(len(showcase)))
+            body = body.replace('{{offer}}', offer)
+            body = body.replace('{{web3forms_key}}', WEB3FORMS_KEY)
             if meta.get('cta', 'yes') != 'no':
                 body += cta
             crumbs = ''
@@ -420,6 +428,7 @@ def build():
                    .replace('{{head_extra}}', head_extra)
                    .replace('{{header}}', hdr)
                    .replace('{{footer}}', footer)
+                   .replace('{{consent}}', consent)
                    .replace('{{content}}', body)
                    .replace('{{latest_title}}', inline(latest['title']))
                    .replace('{{latest_slug}}', latest['slug'])
@@ -445,6 +454,8 @@ def build():
     sitemap.append('</urlset>')
     (OUT / 'sitemap.xml').write_text('\n'.join(sitemap) + '\n')
     (OUT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n')
+    if not WEB3FORMS_KEY:
+        print('warning: WEB3FORMS_KEY is empty, the discovery call form cannot send')
     print(f'built {len(pages)} pages x {len(LANGS)} languages into {OUT.relative_to(ROOT)}/  (translated: {", ".join(report)})')
 
 

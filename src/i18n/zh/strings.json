@@ -32,5 +32,8 @@
   "carousel_next": "下一家公司",
   "carousel_slide": "第 {n} 个，共 {total} 个",
   "js_pause": "暂停",
-  "js_play": "播放"
+  "js_play": "播放",
+  "js_form_sending": "正在发送…",
+  "js_form_sent": "谢谢。你的请求已发送，PNLCS 团队会通过邮件回复。",
+  "js_form_error": "请求未能发送。请重试，或发邮件至 info@panelica.com。"
 }

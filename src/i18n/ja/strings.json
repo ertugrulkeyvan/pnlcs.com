@@ -32,5 +32,8 @@
   "carousel_next": "次の企業",
   "carousel_slide": "{total}件中{n}件目",
   "js_pause": "一時停止",
-  "js_play": "再生"
+  "js_play": "再生",
+  "js_form_sending": "送信中…",
+  "js_form_sent": "ありがとうございます。送信が完了しました。PNLCS チームからメールで返信します。",
+  "js_form_error": "送信できませんでした。もう一度お試しいただくか、info@panelica.com までご連絡ください。"
 }
