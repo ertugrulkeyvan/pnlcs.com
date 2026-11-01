@@ -274,15 +274,15 @@ def showcase_card(e, s, compact=False):
         srcset = f' srcset="{small} 800w, {src} 1600w"' if (ROOT / small).exists() else ''
         shot = (f'<a class="case-shot" href="{esc(e["url"])}"><img src="{small if srcset else src}"{srcset} '
                 f'sizes="(min-width: 900px) 45vw, 100vw" alt="" loading="lazy" width="800" height="500"></a>')
-    facts = [(s['showcase_sells'], ', '.join(e['sells'])), (s['showcase_runs_on'], ', '.join(e['runs_on']))]
-    if e.get('location'):
-        facts.append((s['showcase_location'], e['location']))
+    # "sells" and "runs_on" stay in the data but are not shown: the card reads as a list of tags otherwise
+    facts = [(s['showcase_location'], e['location'])] if e.get('location') else []
     dl = ''.join(f'<dt>{esc(k)}</dt><dd lang="en">{esc(v)}</dd>' for k, v in facts)
+    dl = f'<dl>{dl}</dl>' if dl else ''
     draft = ''  # drafts are listed like any other entry; the flag is for maintainers
     desc = '' if compact else f'<p lang="en">{esc(e["description"])}</p>'
     return (f'<article class="case{" case--compact" if compact else ""}">{shot}<div class="case-body">'
             f'<h3>{esc(e["name"])}</h3><p class="where"><a href="{esc(e["url"])}">{esc(host)}</a></p>{desc}'
-            f'<dl>{dl}</dl>{draft}</div></article>')
+            f'{dl}{draft}</div></article>')
 
 
 def showcase_carousel(entries, s):

@@ -2,7 +2,7 @@
   {
     "name": "ikahost",
     "url": "https://ikahost.com/en",
-    "location": "Türkiye",
+    "location": "Europe",
     "description": "Shared hosting, one-click Docker apps and virtual servers, sold and managed entirely through PNLCS. Orders are provisioned on Panelica and Proxmox VE, and customers manage their services from the PNLCS client portal.",
     "sells": [
       "Shared hosting",
@@ -19,7 +19,7 @@
   {
     "name": "ENA Hosting",
     "url": "https://enahosting.com/",
-    "location": "Türkiye",
+    "location": "Europe",
     "description": "Shared hosting on isolated accounts with the Panelica control panel, domains including .com.tr and .gen.tr, one-click apps such as n8n, Matomo and Nextcloud, and SSL certificates, all sold through PNLCS. ENA Hosting also found and fixed domain issues that are now part of every PNLCS install.",
     "sells": [
       "Shared hosting",
