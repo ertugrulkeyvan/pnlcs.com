@@ -49,6 +49,12 @@
     if (desktop.matches && !e.target.closest('.nav-item')) closeAll();
     $$('details.lang[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
   });
+  // A language picked here wins over the browser's language (see lang_redirect in build.py)
+  $$('.lang a[data-lang]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('pnlcs-lang', a.getAttribute('data-lang')); } catch (e) {}
+    });
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     var open = triggers.filter(function (t) { return t.getAttribute('aria-expanded') === 'true'; })[0];
@@ -68,14 +74,6 @@
   var setStat = function (name, value) {
     $$('[data-stat="' + name + '"]').forEach(function (el) { el.textContent = value; });
   };
-  var ago = function (iso) {
-    var days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-    if (days <= 0) return L('today', 'today');
-    if (days === 1) return L('yesterday', 'yesterday');
-    if (days < 30) return L('days_ago', '{n} days ago', { n: days });
-    var months = Math.floor(days / 30);
-    return months === 1 ? L('month_ago', 'a month ago') : L('months_ago', '{n} months ago', { n: months });
-  };
   // Remote JSON is cached for an hour in sessionStorage: the GitHub API allows 60 anonymous
   // requests per hour per visitor, and every page asks for the same few numbers.
   var TTL = 3600000;
@@ -93,16 +91,16 @@
     });
   };
 
+  // The repository numbers come from shields.io (cached there, no per-visitor limit), so the GitHub API's
+  // 60 requests an hour per address is left for the contributors list below.
   if (document.querySelector('[data-stat]')) {
-    json('https://api.github.com/repos/' + REPO).then(function (repo) {
-      setStat('stars', repo.stargazers_count.toLocaleString('en'));
-      setStat('forks', repo.forks_count.toLocaleString('en'));
-      setStat('issues', repo.open_issues_count.toLocaleString('en'));
-      setStat('pushed', ago(repo.pushed_at));
-    }).catch(function () {});
-    json('https://api.github.com/repos/' + REPO + '/releases/latest').then(function (rel) {
-      setStat('release', rel.tag_name);
-    }).catch(function () {});
+    var shields = { stars: 'github/stars/', forks: 'github/forks/', issues: 'github/issues/', release: 'github/v/release/' };
+    Object.keys(shields).forEach(function (name) {
+      if (!document.querySelector('[data-stat="' + name + '"]')) return;
+      json('https://img.shields.io/' + shields[name] + REPO + '.json').then(function (d) {
+        if (d && d.value && !/invalid|inaccessible|not found/i.test(d.value)) setStat(name, String(d.value).split(' ')[0]);
+      }).catch(function () {});
+    });
     json('https://img.shields.io/docker/pulls/panelica/pnlcs-runtime.json').then(function (d) {
       if (d && d.value) setStat('pulls', d.value);
     }).catch(function () {});
@@ -384,6 +382,227 @@
           status.textContent = L('form_error', 'The request could not be sent. Please try again.');
         })
         .then(function () { submit.disabled = false; });
+    });
+  });
+
+  // ---------- Dates written as 2026-10-06 in the visitor's own format ----------
+  $$('time[data-date]').forEach(function (t) {
+    try {
+      t.textContent = new Intl.DateTimeFormat(document.documentElement.lang, { year: 'numeric', month: 'short', day: 'numeric' })
+        .format(new Date(t.getAttribute('datetime') + 'T12:00:00'));
+    } catch (e) {}
+  });
+
+  // ---------- Modules and themes: search, filters, sort (every card is in the HTML; this only hides) ----------
+  var groups = $$('#browse .xm-group');
+  if (groups.length) {
+    var side = document.getElementById('xm-filters');
+    var fitSide = function () {
+      var room = window.innerHeight - (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72) - 40;
+      side.classList.toggle('is-sticky', side.offsetHeight <= room);
+    };
+    if (window.ResizeObserver) new ResizeObserver(fitSide).observe(side);
+    window.addEventListener('resize', fitSide);
+    var search = document.getElementById('xm-q');
+    var cards = $$('#browse .xc');
+    var sortSel = document.querySelector('[data-xm-sort]');
+    var countEl = document.querySelector('.xm-count');
+    var activeEl = document.querySelector('.xm-active');
+    var noneEl = document.querySelector('.xm-none');
+    var filterBtn = document.querySelector('.xm-filter-btn');
+    var badge = document.querySelector('.xm-badge');
+    var chips = $$('[data-chip]');
+    var MULTI = ['cat', 'price', 'pub', 'open'];
+    $$('.xm-side, .xm-bar, .xm-chips').forEach(function (el) { el.hidden = false; });
+
+    var norm = function (s) {
+      return (s || '').toLocaleLowerCase().replace(/ı/g, 'i').normalize('NFD').replace(/[̀-ͯ]/g, '');
+    };
+    cards.forEach(function (c) { c._q = norm(c.dataset.q); });
+    var inputs = function (name) { return $$('input[name="' + name + '"]', side); };
+    var checked = function (name) { return inputs(name).filter(function (i) { return i.checked; }).map(function (i) { return i.value; }); };
+    var labelOf = function (input) { return input.parentNode.querySelector('span').textContent.trim(); };
+
+    var pubSet = document.querySelector('.xm-pub-filter');
+    var moreBtn = document.querySelector('[data-xm-more]');
+    if (pubSet && inputs('pub').length > 6) {
+      pubSet.classList.add('is-collapsed');
+      moreBtn.hidden = false;
+      moreBtn.addEventListener('click', function () { pubSet.classList.remove('is-collapsed'); moreBtn.hidden = true; });
+    }
+
+    // state from the address, so a filtered view can be shared
+    var params = new URLSearchParams(location.search);
+    search.value = params.get('q') || '';
+    var type = params.get('type') || '';
+    inputs('type').forEach(function (i) { i.checked = i.value === type; });
+    if (!checked('type').length) inputs('type')[0].checked = true;
+    MULTI.forEach(function (name) {
+      var wanted = (params.get(name) || '').split(',');
+      inputs(name).forEach(function (i) { i.checked = wanted.indexOf(i.value) > -1 && !i.disabled; });
+    });
+    if (params.get('sort')) sortSel.value = params.get('sort');
+
+    var apply = function () {
+      var words = norm(search.value).split(/\s+/).filter(Boolean);
+      var t = checked('type')[0] || '';
+      var sel = {}; MULTI.forEach(function (n) { sel[n] = checked(n); });
+      var shown = 0;
+      cards.forEach(function (c) {
+        var d = c.dataset;
+        var ok = (!t || d.type === t) &&
+          (!sel.cat.length || sel.cat.indexOf(d.cat) > -1) &&
+          (!sel.price.length || sel.price.indexOf(d.price) > -1) &&
+          (!sel.pub.length || sel.pub.indexOf(d.pub) > -1) &&
+          (!sel.open.length || d.open === '1') &&
+          words.every(function (w) { return c._q.indexOf(w) > -1; });
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      var by = sortSel.value;
+      cards.slice().sort(function (a, b) {
+        if (by === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+        return b.dataset.updated.localeCompare(a.dataset.updated) || a.dataset.name.localeCompare(b.dataset.name);
+      }).forEach(function (c) { c.parentNode.appendChild(c); });
+      // with nothing narrowing the list, a long group shows its first rows and a button that opens the rest
+      var browsing = !words.length && !t && MULTI.every(function (n) { return !sel[n].length; });
+      groups.forEach(function (g) {
+        var visible = $$('.xc', g).filter(function (c) { return !c.hidden; });
+        var n = visible.length;
+        var limit = g.dataset.group === 'theme' ? 6 : 9;
+        var cut = browsing && groups.length > 1 && n > limit + 3;
+        if (cut) visible.slice(limit).forEach(function (c) { c.hidden = true; });
+        g.querySelector('.xm-group-more').hidden = !cut;
+        g.hidden = !n;
+        g.querySelector('.xm-group-n').textContent = n;
+      });
+
+      countEl.textContent = countEl.dataset.template.replace('{n}', shown).replace('{total}', cards.length);
+      noneEl.hidden = shown > 0;
+
+      // removable tags for everything that narrows the list
+      var tags = [];
+      if (words.length) tags.push({ label: L('search_for', 'Search: {q}', { q: search.value.trim() }), clear: function () { search.value = ''; } });
+      if (t) {
+        var ti = inputs('type').filter(function (i) { return i.checked; })[0];
+        tags.push({ label: labelOf(ti), clear: function () { inputs('type')[0].checked = true; } });
+      }
+      MULTI.forEach(function (n) {
+        inputs(n).filter(function (i) { return i.checked; }).forEach(function (i) {
+          tags.push({ label: labelOf(i), clear: function () { i.checked = false; } });
+        });
+      });
+      activeEl.innerHTML = '';
+      tags.forEach(function (tag) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'xm-tag';
+        b.setAttribute('aria-label', L('remove_filter', 'Remove filter: {name}', { name: tag.label }));
+        b.innerHTML = '<span></span><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+        b.firstChild.textContent = tag.label;
+        b.addEventListener('click', function () { tag.clear(); apply(); });
+        activeEl.appendChild(b);
+      });
+      activeEl.hidden = !tags.length;
+      var n = tags.length - (words.length ? 1 : 0);
+      badge.hidden = !n;
+      badge.textContent = n;
+
+      // category chips mirror the category checkboxes
+      chips.forEach(function (ch) {
+        var on = ch.dataset.chip ? sel.cat.length === 1 && sel.cat[0] === ch.dataset.chip : !sel.cat.length;
+        ch.setAttribute('aria-pressed', String(on));
+      });
+
+      var q = new URLSearchParams();
+      if (search.value.trim()) q.set('q', search.value.trim());
+      if (t) q.set('type', t);
+      MULTI.forEach(function (n) { if (sel[n].length) q.set(n, sel[n].join(',')); });
+      if (by !== 'updated') q.set('sort', by);
+      var qs = q.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    };
+
+    var clearAll = function () {
+      search.value = '';
+      inputs('type')[0].checked = true;
+      MULTI.forEach(function (n) { inputs(n).forEach(function (i) { i.checked = false; }); });
+      apply();
+    };
+    $$('.xm-group-more').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        inputs('type').forEach(function (i) { i.checked = i.value === btn.dataset.moreType; });
+        apply();
+        document.getElementById('browse').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    side.addEventListener('change', apply);
+    sortSel.addEventListener('change', apply);
+    search.addEventListener('input', apply);
+    search.form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      search.blur();
+      document.getElementById('browse').scrollIntoView({ behavior: 'smooth' });
+    });
+    chips.forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        inputs('cat').forEach(function (i) { i.checked = !!ch.dataset.chip && i.value === ch.dataset.chip; });
+        apply();
+      });
+    });
+    $$('[data-xm-clear]').forEach(function (b) { b.addEventListener('click', clearAll); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== '/' || e.metaKey || e.ctrlKey || /input|textarea|select/i.test(e.target.tagName)) return;
+      e.preventDefault();
+      search.focus();
+    });
+
+    // narrow screens: the filters slide in from the side
+    var scrim = null;
+    var drawer = function (open) {
+      side.classList.toggle('is-open', open);
+      filterBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        scrim = document.createElement('div');
+        scrim.className = 'xm-scrim';
+        scrim.addEventListener('click', function () { drawer(false); });
+        document.body.appendChild(scrim);
+        side.querySelector('input').focus();
+      } else {
+        if (scrim) scrim.remove();
+        scrim = null;
+        filterBtn.focus();
+      }
+    };
+    filterBtn.addEventListener('click', function () { drawer(true); });
+    $$('[data-xm-close]').forEach(function (b) { b.addEventListener('click', function () { drawer(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && side.classList.contains('is-open')) drawer(false); });
+
+    apply();
+  }
+
+  // ---------- Listing screenshots: open larger, step through with the arrow keys ----------
+  $$('[data-gallery]').forEach(function (gallery) {
+    var dialog = gallery.nextElementSibling;
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    var shots = $$('.xd-shot img', gallery).map(function (img) { return img.getAttribute('src'); });
+    var big = dialog.querySelector('img');
+    var at = 0;
+    var show = function (i) { at = (i + shots.length) % shots.length; big.src = shots[at]; };
+    $$('.xd-shot', gallery).forEach(function (b, i) {
+      b.addEventListener('click', function () { show(i); dialog.showModal(); });
+    });
+    var single = shots.length < 2;
+    dialog.querySelector('.xd-lb-prev').hidden = single;
+    dialog.querySelector('.xd-lb-next').hidden = single;
+    dialog.querySelector('.xd-lb-prev').addEventListener('click', function () { show(at - 1); });
+    dialog.querySelector('.xd-lb-next').addEventListener('click', function () { show(at + 1); });
+    dialog.querySelector('.xd-lb-close').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') show(at + 1);
+      if (e.key === 'ArrowLeft') show(at - 1);
     });
   });
 })();

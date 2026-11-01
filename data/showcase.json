@@ -1,7 +1,7 @@
 [
   {
     "name": "ikahost",
-    "url": "https://ikahost.com/",
+    "url": "https://ikahost.com/en",
     "location": "Türkiye",
     "description": "Shared hosting, one-click Docker apps and virtual servers, sold and managed entirely through PNLCS. Orders are provisioned on Panelica and Proxmox VE, and customers manage their services from the PNLCS client portal.",
     "sells": [
@@ -14,8 +14,7 @@
       "Panelica",
       "Proxmox VE"
     ],
-    "screenshot": "assets/showcase/ikahost.webp",
-    "draft": true
+    "screenshot": "assets/showcase/ikahost.webp"
   },
   {
     "name": "ENA Hosting",

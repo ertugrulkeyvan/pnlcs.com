@@ -1,54 +1,7 @@
 <!--
 title: モジュールとテーマ
 description: コミュニティが PNLCS 向けに開発したモジュールとテーマ。公開、価格設定、サポートはそれぞれの開発者が行い、pnlcs.com は掲載するだけです。
-section: 製品
+crumbs: short
 cta: no
 -->
-<section class="page-intro">
-  <div class="wrap page-intro-grid">
-    <div>
-      {{crumbs}}
-      <h1>モジュールとテーマ</h1>
-      <p class="lede">コミュニティが PNLCS 向けに開発したサーバーモジュール、決済ゲートウェイ、アドオン、テーマ。公開、価格設定、サポートはそれぞれの開発者が行います。このページは掲載するだけです。</p>
-      <div class="btn-row"><a class="btn btn--light" href="#add">モジュールやテーマを掲載する</a><a class="btn btn--ghost-dark" href="integrations.html">公式の連携</a></div>
-    </div>
-    <div class="notice notice--intro" role="note">
-      <h2>コミュニティ製、公式ではありません</h2>
-      <p>PNLCS チームはこれらの掲載の開発、審査、テスト、サポートを行いません。価格、ライセンス、サポートは各公開者が決め、pnlcs.com はいかなる販売にも関与しません。</p>
-      <p>本番環境に何かをインストールする前に、コードを確認するか公開者に問い合わせてください。</p>
-      <p class="links"><a href="integrations.html">PNLCSに同梱されている連携</a><a href="themes.html">PNLCS に付属するテーマ</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="modules">
-  <div class="wrap">
-    <div class="band-head"><h2>モジュール</h2><p class="lede">サーバーモジュール、決済ゲートウェイ、ドメインレジストラ、SSL、アドオン。</p></div>
-    {{extensions_modules}}
-  </div>
-</section>
-
-<section class="band band--paper" id="themes">
-  <div class="wrap">
-    <div class="band-head"><h2>テーマ</h2><p class="lede">PNLCS に付属する 16 のテーマに加えて、販売サイトと顧客エリアのテーマ。</p></div>
-    {{extensions_themes}}
-  </div>
-</section>
-
-<section class="band" id="add">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>モジュールやテーマを掲載する</h2>
-      <p class="lede">リストはこのウェブサイトのリポジトリにあるファイルです。無料でも有料でも、オープンソースでもそうでなくても、PNLCS 向けに作られたものなら掲載できます。販売はあなた自身のサイトで行います。</p>
-      <div class="btn-row" style="margin-top:28px">
-        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json" data-cta="extension-add">リストファイルを編集</a>
-        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#list-a-module-or-theme">詳しい手順</a>
-      </div>
-    </div>
-    <ol class="steps">
-      <li><span><strong>GitHub でリストファイルを開く</strong><span>ボタンを押すとエディターで開きます。初回はGitHubがあなたのアカウントにコピーを作成します。</span></span></li>
-      <li><span><strong>エントリーを追加する</strong><span>名前、短い概要、価格の種類、ライセンス、対応する PNLCS のバージョン、入手できるページ。</span></span></li>
-      <li><span><strong>プルリクエストを作成する</strong><span>自動チェックがエントリーを含めてサイトをビルドします。メンテナーがレビューしてマージします。</span></span></li>
-    </ol>
-  </div>
-</section>
+{{extensions_page}}

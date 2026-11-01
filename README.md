@@ -80,7 +80,7 @@ A maintainer then reviews and merges it. Entries stay in English on every langua
 
 [Modules and themes](https://pnlcs.com/extensions.html) lists modules and themes built for PNLCS by the community.
 Free and paid, open and closed source are all welcome. The listing links to your own page; nothing is sold on pnlcs.com.
-Every listing is marked as community-built: the PNLCS team does not review, test or support it.
+Every listing is marked as community-built: a maintainer checks that the entry is complete before merging it, but the PNLCS team does not test or support the code.
 
 1. Open [`data/extensions.json`](data/extensions.json), press the pencil icon, and add your entry:
 
@@ -95,23 +95,54 @@ Every listing is marked as community-built: the PNLCS team does not review, test
      "url": "https://example.com/your-module",
      "summary": "One sentence, under 160 characters.",
      "description": "What it does, how it is installed and how it is supported. Paragraphs are separated by a blank line. Under 1500 characters.",
+     "features": ["One line per feature", "At most ten"],
+     "tags": ["billing", "sms"],
      "price": "free",
      "license": "MIT",
+     "version": "1.2.0",
      "requires": "PNLCS 1.4+",
-     "source": "https://github.com/you/your-module",
      "updated": "2026-10-06",
+     "source": "https://github.com/you/your-module",
+     "demo_url": "https://demo.example.com/",
+     "docs_url": "https://example.com/docs/your-module",
+     "support_url": "https://example.com/support",
+     "changelog_url": "https://example.com/your-module/changes",
      "screenshots": ["assets/extensions/your-module-1.webp"]
    }
    ```
 
+   - Required: `slug`, `name`, `type`, `category`, `publisher`, `publisher_url`, `url`, `summary`, `description`, `price`, `license`, `requires`, `updated`. Everything else is optional.
    - `type` is `module` or `theme`. A module's `category` is `server`, `gateway`, `registrar`, `ssl` or `addon`; a theme's is `theme`.
    - `price` is `free`, `paid` or `freemium` (free and paid). Prices themselves stay on your own page.
    - `url` is where people get it. Every address must start with `https://`.
-   - `source` and `screenshots` are optional. Screenshots are `.webp`, 1600 × 1000 px, under 300 KB, at most four.
-     An optional square icon goes in `assets/extensions/<slug>-icon.svg` (or `.png`, `.webp`).
+   - `features`: at most 10 lines, each under 140 characters. `tags`: at most 6 short lowercase words, used by the search.
+   - A listing counts as open source when `source` is set and `license` names an open licence (MIT, GPL, Apache, BSD …).
+   - Pictures are optional; a listing without them gets a pattern drawn from its slug.
+     - Cover: `assets/extensions/<slug>-cover.webp`, 1600 × 800 px, under 300 KB. It tops the card in the directory and
+       opens the gallery on the listing page. Without one, the card shows the first screenshot.
+     - Screenshots: `.webp`, 1600 × 1000 px, under 300 KB, at most six, listed in `screenshots`.
+     - Icon: a square `assets/extensions/<slug>-icon.svg` (or `.png`, `.webp`). Without one, the card shows the initials.
 2. Choose **Propose changes**, then **Create pull request**. Add `?template=extension.md` to the pull request address to get the checklist.
 
-The listing gets its own page at `/module-<slug>.html` or `/theme-<slug>.html`. Listings stay in English on every language version of the site.
+The listing gets its own page at `/module-<slug>.html` or `/theme-<slug>.html`, and every publisher gets a page at
+`/publisher-<name>.html` with all of their listings. Listings stay in English on every language version of the site.
+
+### Your publisher page
+
+To add a description, a location and a support link to your publisher page, add yourself to [`data/publishers.json`](data/publishers.json).
+`name` must be written exactly as `publisher` in your listings:
+
+```json
+{
+  "name": "Your Company",
+  "url": "https://example.com/",
+  "location": "Berlin, Germany",
+  "description": "Who you are and what you build for PNLCS, under 400 characters.",
+  "support_url": "https://example.com/support"
+}
+```
+
+A square logo can go in `assets/publishers/<name>-logo.svg` (or `.png`, `.webp`), where `<name>` is the publisher in lowercase with dashes.
 
 ## Content rules
 

@@ -1,54 +1,7 @@
 <!--
-title: Modules and themes
+title: Modules and Themes
 description: Modules and themes for PNLCS built by the community. Each one is published, priced and supported by its own developer; pnlcs.com only lists them.
-section: Product
+crumbs: short
 cta: no
 -->
-<section class="page-intro">
-  <div class="wrap page-intro-grid">
-    <div>
-      {{crumbs}}
-      <h1>Modules and themes</h1>
-      <p class="lede">Server modules, payment gateways, addons and themes built for PNLCS by the community. Each one is published, priced and supported by its own developer. This page only lists them.</p>
-      <div class="btn-row"><a class="btn btn--light" href="#add">List your module or theme</a><a class="btn btn--ghost-dark" href="integrations.html">Official integrations</a></div>
-    </div>
-    <div class="notice notice--intro" role="note">
-      <h2>Community-built, not official</h2>
-      <p>The PNLCS team does not build, review, test or support these listings. Prices, licences and support are set by each publisher, and pnlcs.com takes no part in any sale.</p>
-      <p>Read the code or ask the publisher before you install anything on a live system.</p>
-      <p class="links"><a href="integrations.html">Integrations that ship with PNLCS</a><a href="themes.html">Themes that ship with PNLCS</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="modules">
-  <div class="wrap">
-    <div class="band-head"><h2>Modules</h2><p class="lede">Server modules, payment gateways, domain registrars, SSL and addons.</p></div>
-    {{extensions_modules}}
-  </div>
-</section>
-
-<section class="band band--paper" id="themes">
-  <div class="wrap">
-    <div class="band-head"><h2>Themes</h2><p class="lede">Storefront and client portal themes, in addition to the sixteen that ship with PNLCS.</p></div>
-    {{extensions_themes}}
-  </div>
-</section>
-
-<section class="band" id="add">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>List your module or theme</h2>
-      <p class="lede">The list is a file in this website’s repository. Free or paid, open or closed source: anything built for PNLCS can be listed. Sales happen on your own website.</p>
-      <div class="btn-row" style="margin-top:28px">
-        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json" data-cta="extension-add">Edit the list file</a>
-        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#list-a-module-or-theme">Full instructions</a>
-      </div>
-    </div>
-    <ol class="steps">
-      <li><span><strong>Open the list file on GitHub</strong><span>The button opens it in the editor. GitHub makes a copy in your account the first time.</span></span></li>
-      <li><span><strong>Add your entry</strong><span>Name, a short summary, the price type, the licence, the PNLCS version it works with and the page where people get it.</span></span></li>
-      <li><span><strong>Open a pull request</strong><span>An automatic check builds the site with your entry. A maintainer reviews it and merges.</span></span></li>
-    </ol>
-  </div>
-</section>
+{{extensions_page}}

@@ -40,9 +40,11 @@ Derleme ayrıca `sitemap.xml`, `robots.txt` üretir; css/js adresine içerik öz
 
 ## Canlı veriler (tarayıcıda, yedek değer HTML'de)
 
-`[data-stat]` öğeleri: yıldız / fork / son commit (GitHub API), son sürüm (GitHub releases), katkıcı sayısı + duvar
-(contributors API), Docker indirme (shields.io JSON, CORS açık). API erişilemezse HTML'deki değer kalır.
-GitHub API'nin anonim sınırı saatte 60 istek / IP — ziyaretçi başına 4 istek, sorun değil.
+`[data-stat]` öğeleri: yıldız, fork, açık issue, son sürüm ve Docker indirme tarayıcıda shields.io JSON'dan (CORS açık,
+ziyaretçi sınırı yok); katkıcı sayısı + duvar GitHub contributors API'den (anonim sınır saatte 60 istek / IP, artık sayfa başına 1).
+HTML'deki yedek değerler elle yazılmaz: `build.py` her derlemede shields.io'dan çeker ve `data/stats.json`'a yazar; ağ yoksa
+(ya da `--offline`) o dosyadaki son değerler kullanılır. 2026-10-12'de canlı sitede 59 yıldız görünmesinin sebebi buydu:
+testler kullanıcının IP'sinin GitHub hakkını bitirmişti ve yedek değer 29 Eylül'den kalmaydı.
 
 ## Kararlar
 
@@ -88,13 +90,28 @@ Akış: İngilizceyi değiştir → `python3 tools/sync_i18n.py` (eski çevirile
 güvenlik süreleri SECURITY.md'den. Hosting araçları **yalnız Panelica modülüyle**. Docker komutları README'den birebir.
 Bütün docs.pnlcs.com bağlantıları 200 döndü (2026-09-28).
 
+## Tarayıcı diline göre açılış (2026-10-12)
+
+İngilizce (kök) sayfalarda `<head>`'in en başındaki küçük betik (`build.py` → `lang_redirect`): ziyaretçi siteye dışarıdan geldiyse ve
+tarayıcı dili sitedeki 9 dilden biriyse `/<dil>/aynı-sayfa`'ya geçer (pt → pt-br; zh-TW/HK geleneksel Çince olduğu için geçmez).
+Dil menüsünden seçilen dil `localStorage` → `pnlcs-lang` olarak hatırlanır ve her zaman kazanır; site içi tıklamalar yönlendirmez.
+
+## Paylaşım görselleri ve yazı tipleri (2026-10-12)
+
+- `python3 tools/og.py` (Pillow + Mac sistem yazı tipleri; ru/zh/ja için Arial Narrow / Hiragino Sans GB) → `assets/og/<dil>/<sayfa>.jpg`,
+  kayıt ve yayıncı sayfaları için `assets/og/x/`. Yalnız başlığı/açıklaması değişenleri yeniden çizer (`assets/og/stamps.json`); `--all` hepsini.
+  **Sayfa başlığı ya da açıklaması değişince ve yeni kayıt birleşince çalıştırıp commit et.** Görsel yoksa build ürün ekran görüntüsünü kullanır.
+- Yazı tipleri artık siteden: `assets/fonts/` (Archivo değişken, JetBrains Mono; OFL lisans dosyaları yanında). Google Fonts bağlantısı ve
+  gizlilik sayfasındaki "Google Fonts" satırı kaldırıldı.
+
 ## Açık işler
 
 - [ ] Ekibe sun; geri bildirim.
-- [ ] Vitrindeki ikahost (taslak) ve ENA Hosting metinleri — firmaların onayı.
-- [ ] og:image için 1200×630 özel görsel (şimdilik ürün ekran görüntüsü).
+- [x] Vitrindeki ikahost ve ENA Hosting metinleri onaylandı (2026-10-12); `draft` işareti kaldırıldı.
+- [x] og:image: her sayfa ve dil için 1200×630 görsel (2026-10-12), yukarıda.
 - [ ] Tema önizlemesi şematik; ileride her temanın gerçek ekran görüntüsü.
-- [ ] Ekip siteyi nasıl yayınlıyor — `site/` klasörü mü, kendi araçları mı.
+- [x] Yayın (2026-10-15): site artık kendi sunucumuzda (srv1.pratix.ai), statik. `main`'e push yayınlamaz;
+  yeni sürüm: karar → `python3 build.py` → `site/` içeriği sunucuya kopyalanır. Yayındaki sürüm şu an 8b4a1a9.
 
 Eski tek sayfalık ilk taslak: `../.playwright-mcp/eski-tek-sayfa/` (karşılaştırma için).
 
@@ -112,11 +129,35 @@ Eski tek sayfalık ilk taslak: `../.playwright-mcp/eski-tek-sayfa/` (karşılaş
 - **Gizlilik politikası** `privacy.html`, veri sorumlusu Panelica, LLC. Hukuki metin: ekip/avukat okumalı.
 - Not: `sync_i18n.py` tr `get-started.html`'de `<code>index.php</code>` sonrasına boşluk ekliyor; senkron sonrası kontrol et.
 
-## Modüller ve temalar dizini (2026-10-06)
+## Modüller ve temalar dizini (2026-10-06, marketplace düzeni 2026-10-12)
 
-- Topluluk modül/temaları `data/extensions.json`'dan (PR ile eklenir; alanlar ve kurallar README "List a module or theme").
-  Liste `extensions.html`, her kayda otomatik detay sayfası `module-<slug>.html` / `theme-<slug>.html`
-  (alt klasör değil: sitedeki bağlantılar göreli). Şablon `partials/extension.html`, etiketler `strings.json` → `ext_*`.
-- Her yerde "Community-built, not official" uyarısı; satış yayıncının sitesinde, dış bağlantılar `rel="ugc noopener"`.
-- Görseller `assets/extensions/` (`<slug>-icon.svg|png|webp`, `<slug>-1.webp`). PR şablonu `?template=extension.md`.
-- Rozetler bilerek yok (kayırma görünmesin); sonra herkese aynı kuralla verilen rozetler düşünülecek.
+- Kayıtlar `data/extensions.json`'dan (PR ile), isteğe bağlı yayıncı bilgisi `data/publishers.json`'dan. Alanlar README "List a module or theme".
+- Üç tür üretilen sayfa, hepsi `build.py` içinde Python ile yazılır (çevrilmiş şablon dosyası yok, metinler `strings.json` → `ext_*`):
+  `extensions.html` (gezinme), `module-<slug>.html` / `theme-<slug>.html` (kayıt), `publisher-<ad>.html` (yayıncı).
+  `src/**/pages/extensions.html` yalnız front matter + `{{extensions_page}}`.
+- Header'da üst seviye link (Ürün menüsündeki kopya kaldırıldı). Yer açmak için GitHub yazısı kalktı (ikon + yıldız kaldı), menü
+  boşlukları daraldı, "Başlarken" 1101–1300px arası gizli, GitHub linki 1101–1180px arası gizli. 9 dil × 1116–1460px ölçüldü, taşma yok.
+- Filtre sırası: tür, fiyat, kategori, kaynak kod, yayıncı. Tür, fiyat ve kaynak kod hep tam görünür (0 olan seçenek gri, seçilemez);
+  kategori ve yayıncıda 0 olan gösterilmez. Üstteki sayaçlar "8 Kayıt | 8 Modül" diye bölmeli kutu; 0 olan sayaç gösterilmez.
+- Uyarı metni: ekip kaydın bilgilerini kontrol eder (PR'ı birleştiren yönetici), kodu test etmez/desteklemez. Eski "incelemez" ifadesi
+  PR inceleme adımıyla çelişiyordu.
+- Duyuru şeridi ve "son güncelleme" başlığı: `src/i18n/<dil>/releases.json` (changelog slug → çeviri). Yeni sürüm notu gelip çevirisi
+  eklenmezse çevrili sayfalar "<tarih> sürüm notları" yazar, İngilizce başlık göstermez.
+- Görseller: her kartın üstünde kapak alanı var. Sıra: `assets/extensions/<slug>-cover.webp` (2:1) → ilk ekran görüntüsü →
+  slug'dan üretilen desen (`ext_pattern`, WordPress.org'un üretilmiş banner'ları gibi; temada sahte sayfa çizimi). Telefonda
+  üretilmiş desen kartta gizlenir. Kayıt sayfasında kapak galerinin başında tam genişlikte; desen her zaman başlığın sağ arka planında.
+- Filtre paneli masaüstünde iç kaydırma yapmaz: ekrana sığıyorsa yapışkan (site.js `is-sticky`), sığmıyorsa sayfayla kayar. Mobil çekmece kendi içinde kayar.
+- Resmî 16 tema "Hazır Temalar" adını aldı (menü, footer, themes.html başlığı, 9 dil) ki üst menüdeki topluluk kataloğuyla karışmasın; katalogdaki Temalar grubunun başlığında ona link var.
+- Sayfa yolu: `crumbs: short` front matter'ı "Ana sayfa / Sayfa" verir (üst menüdeki sayfalar için).
+- Filtre yokken uzun grup ilk 9 modül / 6 temayı gösterir, altında "Tümünü gör (n)" türü seçer.
+- Kayıt sayfasında "… sitesinden edinin" kutusu hero'nun sağında (ilk ekranda); yan sütunda yayıncı kartı ve uyarı.
+- Gezinme sayfası: büyük arama kutusu (`/` kısayolu), kategori çipleri, solda filtreler (tür, kategori, fiyat, açık kaynak, yayıncı;
+  sayısı 0 olan seçenek gösterilmez), sıralama, kaldırılabilir filtre etiketleri. Filtreler adres satırına yazılır (`?q=&type=&cat=&price=&pub=&open=&sort=`),
+  paylaşılabilir. Modüller ve temalar ayrı gruplarda (tema kartı görselli). Dar ekranda filtreler yandan açılan panel.
+  JS'siz her kart görünür; JS yalnız gizler/sıralar (`site.js` → "Modules and themes").
+- Kayıt sayfası: başlık, galeri (büyütme penceresi, ok tuşları), genel bakış, özellikler, ayrıntılar; sağda "{yayıncı} sitesinden edinin"
+  düğmesi + demo/belge/destek/kaynak bağlantıları, yayıncı kartı, uyarı, sorun bildir (GitHub issue). Altta "yayıncıdan diğerleri" ve "benzer kayıtlar".
+- Her yerde "Community-built, not official"; satış yayıncının sitesinde, dış bağlantılar `rel="ugc noopener"`.
+- Rozet/öne çıkarma bilerek yok (kayırma görünmesin). Varsayılan sıra "son güncellenen".
+- Tarihler HTML'de `2026-10-06`, tarayıcıda ziyaretçinin dil biçimine çevrilir.
+- Ölçek denemesi: `.playwright-mcp/sandbox/` (sahte 24 kayıt + 7 yayıncı; depoya girmez).

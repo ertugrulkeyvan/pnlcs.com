@@ -5,6 +5,7 @@
 - [ ] `url`, `publisher_url` and `source` (if set) start with `https://` and open public pages
 - [ ] `summary` and `description` are in English, factual, and within the limits (160 / 1500 characters)
 - [ ] The price, licence and support terms are on the page `url` points to
-- [ ] Screenshots, if any, are `.webp` files in `assets/extensions/`, under 300 KB, with no customer data
+- [ ] Screenshots and the cover, if any, are `.webp` files in `assets/extensions/` (at most six screenshots), under 300 KB, with no customer data
+- [ ] `features`, if set, describe what the listing really does today
 
 Anything the reviewers should know:

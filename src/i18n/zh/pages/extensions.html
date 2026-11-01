@@ -1,54 +1,7 @@
 <!--
 title: 模块和主题
 description: 社区为 PNLCS 开发的模块和主题。每一个都由开发者自行发布、定价和提供支持；pnlcs.com 只负责列出。
-section: 产品
+crumbs: short
 cta: no
 -->
-<section class="page-intro">
-  <div class="wrap page-intro-grid">
-    <div>
-      {{crumbs}}
-      <h1>模块和主题</h1>
-      <p class="lede">社区为 PNLCS 开发的服务器模块、支付网关、插件和主题。每一个都由开发者自行发布、定价和提供支持。本页只负责列出。</p>
-      <div class="btn-row"><a class="btn btn--light" href="#add">添加你的模块或主题</a><a class="btn btn--ghost-dark" href="integrations.html">官方集成</a></div>
-    </div>
-    <div class="notice notice--intro" role="note">
-      <h2>社区开发，非官方</h2>
-      <p>PNLCS 团队不开发、不审核、不测试这些条目，也不提供支持。价格、许可证和支持由各发布者自行决定，pnlcs.com 不参与任何销售。</p>
-      <p>在生产环境安装任何东西之前，请先阅读代码或咨询发布者。</p>
-      <p class="links"><a href="integrations.html">PNLCS 自带的集成</a><a href="themes.html">PNLCS 自带的主题</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="modules">
-  <div class="wrap">
-    <div class="band-head"><h2>模块</h2><p class="lede">服务器模块、支付网关、域名注册商、SSL 和插件。</p></div>
-    {{extensions_modules}}
-  </div>
-</section>
-
-<section class="band band--paper" id="themes">
-  <div class="wrap">
-    <div class="band-head"><h2>主题</h2><p class="lede">店面和客户中心主题，PNLCS 自带的十六款主题之外的选择。</p></div>
-    {{extensions_themes}}
-  </div>
-</section>
-
-<section class="band" id="add">
-  <div class="wrap split split--top">
-    <div class="split-copy">
-      <h2>添加你的模块或主题</h2>
-      <p class="lede">列表是本网站仓库中的一个文件。免费或付费、开源或闭源：为 PNLCS 开发的都可以列出。销售在你自己的网站上进行。</p>
-      <div class="btn-row" style="margin-top:28px">
-        <a class="btn btn--navy" href="https://github.com/{{site_repo}}/edit/main/data/extensions.json" data-cta="extension-add">编辑列表文件</a>
-        <a class="btn btn--ghost" href="https://github.com/{{site_repo}}#list-a-module-or-theme">完整说明</a>
-      </div>
-    </div>
-    <ol class="steps">
-      <li><span><strong>在 GitHub 上打开列表文件</strong><span>按钮会在编辑器中打开该文件。第一次使用时，GitHub 会在你的账户中创建一份副本。</span></span></li>
-      <li><span><strong>添加你的条目</strong><span>名称、简短介绍、价格类型、许可证、兼容的 PNLCS 版本，以及获取它的页面。</span></span></li>
-      <li><span><strong>提交 pull request</strong><span>自动检查会用你的条目构建网站，维护者审核后合并。</span></span></li>
-    </ol>
-  </div>
-</section>
+{{extensions_page}}
