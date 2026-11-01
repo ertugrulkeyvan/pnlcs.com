@@ -275,8 +275,11 @@ def showcase_card(e, s, compact=False):
         shot = (f'<a class="case-shot" href="{esc(e["url"])}"><img src="{small if srcset else src}"{srcset} '
                 f'sizes="(min-width: 900px) 45vw, 100vw" alt="" loading="lazy" width="800" height="500"></a>')
     # "sells" and "runs_on" stay in the data but are not shown: the card reads as a list of tags otherwise
-    facts = [(s['showcase_location'], e['location'])] if e.get('location') else []
-    dl = ''.join(f'<dt>{esc(k)}</dt><dd lang="en">{esc(v)}</dd>' for k, v in facts)
+    # a location with a showcase_location_<name> string ("Europe") is shown in the page language
+    loc = e.get('location', '')
+    key = 'showcase_location_' + re.sub(r'[^a-z0-9]+', '_', loc.lower()).strip('_')
+    facts = [(s['showcase_location'], s[key] if key in s else loc, '' if key in s else ' lang="en"')] if loc else []
+    dl = ''.join(f'<dt>{esc(k)}</dt><dd{lang}>{esc(v)}</dd>' for k, v, lang in facts)
     dl = f'<dl>{dl}</dl>' if dl else ''
     draft = ''  # drafts are listed like any other entry; the flag is for maintainers
     desc = '' if compact else f'<p lang="en">{esc(e["description"])}</p>'
